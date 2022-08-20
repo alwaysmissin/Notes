@@ -3322,13 +3322,18 @@
 <p>通过create方式实现</p>
 </li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="n">Mat</span><span class="w"> </span><span class="n">M</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Mat</span><span class="w"> </span><span class="n">M</span><span class="p">;</span><span class="w"></span>
 <span class="n">M</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">CV_8UC2</span><span class="p">);</span><span class="w"></span>
 <span class="n">M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Scalar</span><span class="p">(</span><span class="mi">127</span><span class="p">,</span><span class="mi">127</span><span class="p">);</span><span class="w"></span>
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;M = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 <span class="n">uchar</span><span class="o">*</span><span class="w"> </span><span class="n">firstRow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">M</span><span class="p">.</span><span class="n">ptr</span><span class="o">&lt;</span><span class="n">uchar</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
 <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="n">firstRow</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <ol>
 <li>
 <p>定义小数组(掩膜操作里使用过)</p>
@@ -3344,11 +3349,14 @@
 <li><code>Mat::eye()</code>：使对角线上都是1，其他地方为0</li>
 <li><code>Mat::zeros()</code>：全为0</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">Mat</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mat</span><span class="o">::</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">CV_8UC1</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="n">Mat</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mat</span><span class="o">::</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">CV_8UC1</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;t =&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="n">Mat</span><span class="w"> </span><span class="n">t1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mat</span><span class="o">::</span><span class="n">eye</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">type</span><span class="p">());</span><span class="w"></span>
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;t1 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">t1</span><span class="p">;</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 
 
 

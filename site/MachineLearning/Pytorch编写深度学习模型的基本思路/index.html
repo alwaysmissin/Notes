@@ -3311,13 +3311,21 @@
 </li>
 </ul>
 <h3 id="_4">定义代价函数和优化器模块<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">(</span><span class="n">reduction</span> <span class="o">=</span> <span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">(</span><span class="n">reduction</span> <span class="o">=</span> <span class="s1">&#39;mean&#39;</span><span class="p">)</span>
 <span class="n">optimizer</span> <span class="o">=</span>  <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span> <span class="o">=</span> <span class="mf">0.001</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="_5">构建训练过程<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ul>
 <li>循环大致如下
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">epoch</span><span class="p">):</span>    <span class="c1"># </span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">epoch</span><span class="p">):</span>    <span class="c1"># </span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dataLoader</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
         <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data</span>
         <span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># 前向传播</span>
@@ -3325,7 +3333,7 @@
         <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>   <span class="c1"># 梯度清零，进行下一步计算</span>
         <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>   <span class="c1"># 反向传播</span>
         <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>  <span class="c1"># 更新训练参数</span>
-</code></pre></div></li>
+</code></pre></div></td></tr></table></div></li>
 </ul>
 <p><img alt="" src="https://s2.loli.net/2022/07/18/2OAuod83iEGPIyz.png" /></p>
 

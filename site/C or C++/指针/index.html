@@ -3343,11 +3343,14 @@
 <li>获得<strong>变量</strong>的地址，其操作数必须是<strong>变量</strong></li>
 <li>%p，输出变量的地址</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%p&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">i</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%p&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">i</span><span class="p">);</span><span class="w"></span>
 <span class="c1">//or</span>
 <span class="n">p</span><span class="o">=</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">&amp;</span><span class="n">i</span><span class="p">;</span><span class="w"></span>
 <span class="n">printf</span><span class="p">(</span><span class="s">&quot;0x%x&quot;</span><span class="p">,</span><span class="n">p</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <ol>
 <li>&amp;<strong>不能对没有地址的东西</strong>取地址（如表达式）</li>
 <li>地址从上往下分配</li>
@@ -3362,11 +3365,14 @@
 </li>
 <li>
 <p>作为参数的指针</p>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">);</span><span class="w"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="n">f</span><span class="p">(</span><span class="o">&amp;</span><span class="n">i</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>借此访问<strong>外部的i</strong></p>
@@ -3379,8 +3385,8 @@
 <ul>
 <li>(p指的是地址，*表示取地址对应的变量)</li>
 </ul>
-<div class="highlight"><pre><span></span><code>*(指针)=值
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>*(指针)=值
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>*p 整体作为一个整数</p>
@@ -3405,7 +3411,20 @@
 <p>交换</p>
 </li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">swap</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">b</span><span class="p">){</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">;</span><span class="w"></span>
@@ -3419,11 +3438,34 @@
 <span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d %d&quot;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"> </span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <ol>
 <li>最大最小值</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">maxmin</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[],</span><span class="kt">int</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">max</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">min</span><span class="p">);</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
@@ -3447,7 +3489,7 @@
 <span class="w">            </span><span class="o">*</span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <ul>
 <li>地址变量没有被赋值之前，不能通过“*”访问任何数据</li>
 </ul>
@@ -3498,7 +3540,23 @@
 <li><code>a[i]</code></li>
 <li><code>*(a+i)</code></li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="c1">//通过多种方式输出数组</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">//通过多种方式输出数组</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">],</span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
 <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w">       </span><span class="c1">//数组名指针法</span>
 <span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">i</span><span class="p">));</span><span class="w"></span>
@@ -3515,7 +3573,7 @@
 <span class="k">for</span><span class="p">(;</span><span class="n">p</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="n">p</span><span class="o">++</span><span class="p">){</span><span class="w">        </span><span class="c1">//通过指针变量访问数组</span>
 <span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">*</span><span class="n">p</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="_6">五、传入函数的数组<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
@@ -3533,7 +3591,20 @@
 <p>四种写法</p>
 </li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="c1">//实参用数组名，形参用数组</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">//实参用数组名，形参用数组</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">reverse</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[]);</span><span class="w"></span>
 <span class="n">reverse</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"></span>
 <span class="c1">//实参用数组名，形参用指针</span>
@@ -3547,7 +3618,7 @@
 <span class="kt">void</span><span class="w"> </span><span class="nf">reverse</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[]);</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="o">=</span><span class="n">a</span><span class="p">;</span><span class="w"></span>
 <span class="n">reverse</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="const">六、指针与const<a class="headerlink" href="#const" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
@@ -3569,19 +3640,25 @@
 <p>表示不能通过这个指针去修改变量</p>
 </li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="o">=&amp;</span><span class="n">i</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="o">=&amp;</span><span class="n">i</span><span class="p">;</span><span class="w"></span>
 <span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">26</span><span class="p">;</span><span class="w">     </span><span class="c1">//错误，*p（地址）是const(p所指向的地址是常量，不可更改)</span>
 <span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">26</span><span class="p">;</span><span class="w">      </span><span class="c1">//ok</span>
 <span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">j</span><span class="p">;</span><span class="w">      </span><span class="c1">//ok（给p所指向的地址赋值，而不是改变地址）</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <ol>
 <li>什么意思？<strong>（存疑，待解决）</strong></li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">i</span><span class="p">;</span><span class="w">      </span>
 <span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">i</span><span class="p">;</span><span class="w">      </span>
 <span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">p3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">i</span><span class="p">;</span><span class="w">      </span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <ul>
 <li>const在*号前：表示const所指的东西不能被修改</li>
 <li>
@@ -3594,14 +3671,20 @@
 <p>总是可以把一个非const的值转化成const的(通过函数)</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span><span class="w"></span>
 <span class="n">f</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">);</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
 
 <span class="n">f</span><span class="p">(</span><span class="o">&amp;</span><span class="n">b</span><span class="p">);</span><span class="w">       </span><span class="c1">//const</span>
 <span class="n">b</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w">       </span><span class="c1">//error</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <ol>
 <li>
 <p>作用：当要传递的参数类型比地址大的时候，能以较少的字节数传递值给参数，又能避免函数外面对变量的修改；</p>
@@ -3610,8 +3693,8 @@
 <p>const数组</p>
 </li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,};</span><span class="w"></span>
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,};</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 <ul>
 <li>数组变量已经是const的指针</li>
 <li>必须通过初始化赋值</li>
@@ -3631,7 +3714,68 @@
 </ol>
 </li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="c1">//*********************************************************</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">//*********************************************************</span>
 <span class="c1">//File name   : 0608.cpp </span>
 <span class="c1">//Author      :陈健达 </span>
 <span class="c1">//Date        : 2021.11.18</span>
@@ -3693,7 +3837,7 @@
 <span class="w">         </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 <span class="w">     </span><span class="p">}</span><span class="w"></span>
 <span class="w"> </span><span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="_8">八、指针运算<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <ol>
 <li>可用的有</li>
@@ -3746,8 +3890,8 @@
 <ol>
 <li>void*表示不知道指向什么东西的指针</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">q</span><span class="o">=</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="n">p</span><span class="p">;</span><span class="w"></span>
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">q</span><span class="o">=</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="n">p</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>指针可以做什么？</p>
@@ -3785,10 +3929,12 @@
 <li>在内存的动态存储区分配一块长size字节的连续区域</li>
 <li>返回值为该区域的首地址</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">pc</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">pc</span><span class="p">;</span><span class="w"></span>
 <span class="n">pc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
 <span class="c1">//表示分配100个字节的内存空间，若申请失败则返回NULL</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>分配内存空间函数calloc</p>
@@ -3816,7 +3962,15 @@
 </li>
 <li>
 <p>内存的动态分配和释放</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
@@ -3825,11 +3979,29 @@
 <span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="o">*</span><span class="n">p</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>输入某班学生的某门课程的成绩，计算器平均分并输出，班级人数由键盘输入</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
@@ -3848,25 +4020,28 @@
 <span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;average = %5.2f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">ave</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 </li>
 </ol>
 <h2 id="_10">十、引用<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <ol>
 <li>引用即给对象起了另一个名字
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">iVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">iVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span><span class="p">;</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">refval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iVal</span><span class="p">;</span><span class="w"></span>
-</code></pre></div></li>
+</code></pre></div></td></tr></table></div></li>
 <li>定义了一个引用之后，对其进行的所有操作都是在与之绑定的对象上进行的</li>
 <li>不能定义引用的引用</li>
 <li>不能与字面值或某个表达式的计算结果绑定在一起</li>
 <li>也常用于函数传参</li>
 <li>指向指针的引用<ol>
 <li>指针也是一个对象，因此可以进行引用
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">i</span><span class="p">;</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="o">*&amp;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w">              </span><span class="c1">//int *是数据类型</span>
-</code></pre></div></li>
+</code></pre></div></td></tr></table></div></li>
 </ol>
 </li>
 </ol>

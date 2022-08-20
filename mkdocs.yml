@@ -31,30 +31,27 @@ repo_url: https://github.com/alwaysmissin/Notes
 repo_name: alwaysmissin
 
 plugins:
-  - search: # 现在还不支持中文搜索 支持之后可以设置语言
-    # insider已经支持中文的分词搜索了 https://squidfunk.github.io/mkdocs-material/blog/2022/chinese-search-support/
+  - search: 
       lang:
         - en
         - ja
-  - tags # 给单篇文章添加标签 https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/?h=tags
+  - tags 
 markdown_extensions:
   - pymdownx.arithmatex: # latex支持
       generic: true
-  - attr_list # 给图片后面添加{width="300"}设置大小
+  - attr_list 
   - toc:
-      permalink: true # 固定标题位置为当前位置
+      permalink: true
   - pymdownx.highlight: # 代码块高亮
-      # linenums: true # 显示行号
-      # auto_title: true # 显示编程语言名称
+      linenums: true # 显示行号
+      auto_title: true # 显示编程语言名称
   - pymdownx.superfences # 代码块高亮插件
   - meta # 支持Markdown文件上方自定义标题标签等
 extra_javascript:
   # latex支持
-  # check https://squidfunk.github.io/mkdocs-material/reference/mathjax/?h=math for more information
-  # notice `curl https://polyfill.io/v3/polyfill.min.js?features=es6 > docs/mkdocs/javascripts/polyfill.min.js && curl https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js > docs/mkdocs/javascripts/tex-mml-chtml.js` not works... because there are other resources that need to load
   - mkdocs/javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js # https://cdn.bytedance.com/?query=mathjax&version=3.2.0
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 extra_css:
-  - mkdocs/css/no-footer.css # 不使用底部的翻页
-  - mkdocs/css/unordered-list-symbols.css # multiplt unordered list symbols
+  - mkdocs/css/no-footer.css
+  - mkdocs/css/unordered-list-symbols.css

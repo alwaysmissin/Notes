@@ -3461,9 +3461,10 @@
 </ol>
 </li>
 <li>用<code>DatagramSocket</code> 类的对象来发送数据包
-    <div class="highlight"><pre><span></span><code><span class="n">DatagramSocket</span><span class="w"> </span><span class="n">mail_out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DatagramSocket</span><span class="p">();</span><span class="w"></span>
+    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">DatagramSocket</span><span class="w"> </span><span class="n">mail_out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DatagramSocket</span><span class="p">();</span><span class="w"></span>
 <span class="n">mail_out</span><span class="p">.</span><span class="na">send</span><span class="p">(</span><span class="n">data_pack</span><span class="p">);</span><span class="w"></span>
-</code></pre></div></li>
+</code></pre></div></td></tr></table></div></li>
 </ol>
 <h4 id="_7">接收数据包<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <ol>
@@ -3474,11 +3475,14 @@
 </li>
 <li>使用<code>receive(DatagramPacket pack)</code> 接收数据包<ul>
 <li>提前准备一个数据包以便收取数据包
-<div class="highlight"><pre><span></span><code><span class="kt">byte</span><span class="w"> </span><span class="n">data</span><span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">byte</span><span class="o">[</span><span class="mi">100</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">byte</span><span class="w"> </span><span class="n">data</span><span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">byte</span><span class="o">[</span><span class="mi">100</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">90</span><span class="p">;</span><span class="w"></span>
 <span class="n">DatagramPacket</span><span class="w"> </span><span class="n">pack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DatagramPacket</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="p">);</span><span class="w"></span>
 <span class="n">mail_in</span><span class="p">.</span><span class="na">receive</span><span class="p">(</span><span class="n">pack</span><span class="p">);</span><span class="w"></span>
-</code></pre></div></li>
+</code></pre></div></td></tr></table></div></li>
 <li><code>receive()</code> 方法可能会阻塞，直到收到数据包</li>
 </ul>
 </li>

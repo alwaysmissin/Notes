@@ -3237,10 +3237,12 @@
 <li>获取当前像素点P(row, col)的像素值：<code>current[col]</code></li>
 <li>像素范围处理：<code>saturate_cast&lt;uchar&gt;</code></li>
 <li>作用：确保RGB值在0~255间
-<div class="highlight"><pre><span></span><code><span class="n">saturate_cast</span><span class="o">&lt;</span><span class="n">uchar</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">-100</span><span class="p">)</span><span class="w">      </span><span class="c1">//返回0</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">saturate_cast</span><span class="o">&lt;</span><span class="n">uchar</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">-100</span><span class="p">)</span><span class="w">      </span><span class="c1">//返回0</span>
 <span class="n">saturate_cast</span><span class="o">&lt;</span><span class="n">uchar</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">288</span><span class="p">)</span><span class="w">       </span><span class="c1">//返回255</span>
 <span class="n">saturate_cast</span><span class="o">&lt;</span><span class="n">uchar</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w">       </span><span class="c1">//返回100</span>
-</code></pre></div></li>
+</code></pre></div></td></tr></table></div></li>
 </ol>
 <h2 id="_3">二、掩膜操作解释<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>

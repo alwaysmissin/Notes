@@ -3576,9 +3576,10 @@
 </li>
 <li>方法的调用只与定义的数据类型有关</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">A</span><span class="p">();</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">A</span><span class="p">();</span><span class="w"></span>
 <span class="n">B</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">A</span><span class="p">();</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <ol>
 <li>
 <p>非静态方法</p>
@@ -3593,9 +3594,10 @@
 <li>方法体可以不同</li>
 <li>抛出的异常：范围可以被缩小但不能扩大</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="n">B</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">A</span><span class="p">();</span><span class="w">       </span><span class="c1">//同名方法为非静态方法</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">B</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">A</span><span class="p">();</span><span class="w">       </span><span class="c1">//同名方法为非静态方法</span><span class="w"></span>
 <span class="c1">//调用同名方法时，使用的都是A类的方法</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <ol>
 <li>为什么需要重写：<ol>
 <li>父类的功能子类不一定需要或不一定满足</li>
@@ -3626,7 +3628,15 @@
 <li>动态编译</li>
 <li>通过父类new子类</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="c1">//Student是person的子类</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">//Student是person的子类</span><span class="w"></span>
 
 <span class="c1">//Student能调用的方法都是自己或者继承父类的</span><span class="w"></span>
 <span class="n">Student</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">();</span><span class="w"></span>
@@ -3635,7 +3645,7 @@
 <span class="c1">//想要调用的话，可以使用强制类型转化</span><span class="w"></span>
 <span class="c1">//将对象类型强制转化为目标类型</span><span class="w"></span>
 <span class="p">((</span><span class="n">Student</span><span class="p">)</span><span class="n">s2</span><span class="p">).</span><span class="na">eat</span><span class="p">();</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="instanceof">八、Instanceof和类型转化<a class="headerlink" href="#instanceof" title="Permanent link">&para;</a></h2>
 <ol>
 <li><code>X Instanceof Y</code></li>
@@ -3689,10 +3699,12 @@
 <li><strong>Lambda表达式</strong><ol>
 <li>匿名方法</li>
 <li>书写方法：参数列表和方法体之间的符号是-&gt;
-    <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">参数列表</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">{</span><span class="w"></span>
+    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="n">参数列表</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">方法体</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></li>
+</code></pre></div></td></tr></table></div></li>
 <li>必须有特殊的上下文，编译器才能推断出Lambda表达式是哪个方法，Lambda表达式的值就是方法的入口地址</li>
 </ol>
 </li>

@@ -3302,7 +3302,20 @@
 <li>如何算出数组中每个值离散化（映射）后是多少（二分)</li>
 </ol>
 <h2 id="_3">三、模板<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">alls</span><span class="p">;</span><span class="w">       </span><span class="c1">//存储所有待离散化的值</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">alls</span><span class="p">;</span><span class="w">       </span><span class="c1">//存储所有待离散化的值</span>
 <span class="n">sort</span><span class="p">(</span><span class="n">alls</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">alls</span><span class="p">.</span><span class="n">end</span><span class="p">());</span><span class="w">     </span><span class="c1">//将所有的值排序</span>
 <span class="n">alls</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">unique</span><span class="p">(</span><span class="n">alls</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">alls</span><span class="p">.</span><span class="n">end</span><span class="p">()),</span><span class="n">alls</span><span class="p">.</span><span class="n">end</span><span class="p">());</span><span class="w">     </span><span class="c1">//去除重复元素</span>
 <span class="c1">//二分求出x对应的离散化的值</span>
@@ -3316,7 +3329,7 @@
 
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="eg802">EG：802区间和<a class="headerlink" href="#eg802" title="Permanent link">&para;</a></h2>
 <p>假定有一个无限长的数轴，数轴上每个坐标上的数都是 0。</p>
 <p>现在，我们首先进行 n 次操作，每次操作将某一位置 x 上的数加 c。</p>
@@ -3332,7 +3345,84 @@
 1≤n,m≤1051≤n,m≤105,
 −109≤l≤r≤109−109≤l≤r≤109,
 −10000≤c≤10000</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
 
@@ -3410,7 +3500,7 @@
 <span class="n">链接</span><span class="err">：</span><span class="n">https</span><span class="o">:</span><span class="c1">//www.acwing.com/activity/content/code/content/40105/</span>
 <span class="n">来源</span><span class="err">：</span><span class="n">AcWing</span><span class="w"></span>
 <span class="n">著作权归作者所有</span><span class="err">。</span><span class="n">商业转载请联系作者获得授权</span><span class="err">，</span><span class="n">非商业转载请注明出处</span><span class="err">。</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 
 
 

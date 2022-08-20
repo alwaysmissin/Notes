@@ -3513,11 +3513,14 @@
 <h3 id="_6">链式存储结构<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ul>
 <li>使用二叉链表存储
-<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">BiNode</span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">BiNode</span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w">                    </span><span class="c1">//数据域</span>
 <span class="w">    </span><span class="n">BiNode</span><span class="w"> </span><span class="o">*</span><span class="n">lchild</span><span class="p">,</span><span class="o">*</span><span class="n">rchild</span><span class="p">;</span><span class="w">       </span><span class="c1">//左右孩子</span>
 <span class="p">};</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <img alt="" src="https://s2.loli.net/2022/05/02/5vmS3WUEM6AatBd.png" /></li>
 </ul>
 <p><img alt="" src="https://s2.loli.net/2022/05/02/j2rLtMGpnys9zXa.png" /></p>
@@ -3535,7 +3538,17 @@
 <blockquote>
 <p><strong>注意：由于使用的时先序遍历的方式，从第一个字符到第一个特殊字符（代表空）的前一个字符的数量为二叉树的层数，在测试的时候要适量，否则数量过多的话，二叉树的层数过多，可能让结点数量过多，产生程序错误的错觉</strong>
 2. 代码实现：
-<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">CreateBiTree</span><span class="p">(</span><span class="n">BiNode</span><span class="o">*</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">){</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">CreateBiTree</span><span class="p">(</span><span class="n">BiNode</span><span class="o">*</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">){</span><span class="w"></span>
 <span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;#&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w">              </span><span class="c1">//输入特殊字符时为空</span>
@@ -3546,7 +3559,7 @@
 <span class="w">        </span><span class="n">CreateBiTree</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="p">);</span><span class="w">        </span><span class="c1">//进行右孩子的创建</span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></p>
+</code></pre></div></td></tr></table></div></p>
 </blockquote>
 <h2 id="_8">二叉树的遍历<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3564,13 +3577,18 @@
 </ul>
 <p><img alt="" src="https://s2.loli.net/2022/05/02/bxJ26isvGwj7Pko.png" />
 - 代码实现：
-<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">PreOrderTravellser</span><span class="p">(</span><span class="n">BiNode</span><span class="o">*</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">){</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">PreOrderTravellser</span><span class="p">(</span><span class="n">BiNode</span><span class="o">*</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">){</span><span class="w"></span>
 <span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="n">PreOrderTravellser</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">PreOrderTravellser</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></p>
+</code></pre></div></td></tr></table></div></p>
 <h3 id="_10">中序遍历<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <ul>
 <li>步骤<ol>
@@ -3582,13 +3600,18 @@
 </ul>
 <p><img alt="" src="https://s2.loli.net/2022/05/02/hTI8XPykEpwrz1e.png" />
 - 代码实现：
-<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">InOrderTravellser</span><span class="p">(</span><span class="n">BiNode</span><span class="o">*</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">){</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">InOrderTravellser</span><span class="p">(</span><span class="n">BiNode</span><span class="o">*</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">){</span><span class="w"></span>
 <span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="n">InOrderTravellser</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="n">InOrderTravellser</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></p>
+</code></pre></div></td></tr></table></div></p>
 <h3 id="_11">后序遍历<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <ul>
 <li>步骤<ol>
@@ -3600,13 +3623,18 @@
 </ul>
 <p><img alt="" src="https://s2.loli.net/2022/05/02/8DJAk5p6tQOdxC4.png" />
 - 代码实现：
-<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">PostOrderTravellser</span><span class="p">(</span><span class="n">BiNode</span><span class="o">*</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">){</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">PostOrderTravellser</span><span class="p">(</span><span class="n">BiNode</span><span class="o">*</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">){</span><span class="w"></span>
 <span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="n">PostOrderTravellser</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">PostOrderTravellser</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></p>
+</code></pre></div></td></tr></table></div></p>
 <blockquote>
 <p>先序、中序、后序遍历之间的区别仅仅是先输出、递归左孩子、递归右孩子的顺序之间的区别</p>
 </blockquote>
