@@ -1,4 +1,28 @@
 site_name: My Notes
+
 # Theme
 theme:
   name: material
+  palette: 
+    - scheme: default 
+      primary: indigo 
+      accent: orange 
+      toggle:
+        icon: material/weather-night 
+        name: 切换至夜间模式 
+    - scheme: slate 
+      primary: indigo
+      accent: orange
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至日间模式
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.indexes
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+  language: zh
+  icon:
+    repo: fontawesome/brands/github
