@@ -1,417 +1,2854 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>强化学习(Reinforce Learning) - My Notes</title>
-    <link rel="stylesheet" href="../../../css/theme.css" />
-    <link rel="stylesheet" href="../../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
     
-      <script>
-        // Current page data
-        var mkdocs_page_name = "\u5f3a\u5316\u5b66\u4e60(Reinforce Learning)";
-        var mkdocs_page_input_path = "MachineLearning\\\u5f3a\u5316\u5b66\u4e60\uff08Reinforce Learning\uff09\\\u5f3a\u5316\u5b66\u4e60(Reinforce Learning).md";
-        var mkdocs_page_url = null;
-      </script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.0">
     
-    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
-    <!--[if lt IE 9]>
-      <script src="../../../js/html5shiv.min.js"></script>
-    <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
-</head>
+    
+      
+        <title>强化学习(Reinforce Learning) - My Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
 
-<body class="wy-body-for-nav" role="document">
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reinforce-learning" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-          <a href="../../.." class="icon icon-home"> My Notes
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="My Notes" class="md-header__button md-logo" aria-label="My Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../..">Welcome to MkDocs</a>
-                </li>
-              </ul>
-              <p class="caption"><span class="caption-text">C or C++</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/CC%2B%2B%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/">C/C++学习路线</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/CSDN%E4%B9%A0%E9%A2%98/">CSDN习题</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E4%BD%8D%E8%BF%90%E7%AE%97/">位运算</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E5%87%BD%E6%95%B0/">函数</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84/">字符数组</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E5%AE%A3%E8%80%81%E7%AC%AC%E4%B8%89%E7%AB%A0%E7%A8%8B%E5%BA%8F/">宣老第三章程序</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E5%BE%AA%E7%8E%AF/">第三周：循环</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6/">第五周 循环控制</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E6%8C%87%E9%92%88/">第九周 指针</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">第六周数据类型</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E6%95%B0%E7%BB%84/">数组</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E6%96%87%E4%BB%B6/">文件</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E7%BB%93%E6%9E%84%E4%BD%93/">结构体</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E8%BF%9B%E4%B8%80%E6%AD%A5%E7%9A%84%E5%88%A4%E6%96%AD%E4%B8%8E%E5%BE%AA%E7%8E%AF/">第四周 进一步的判断与循环</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E9%93%BE%E8%A1%A8/">链表</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">C Primer Plus</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../C%20or%20C%2B%2B/C%20Primer%20Plus/%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E6%95%B0%E6%8D%AE%E5%92%8CC/">第三章 数据和C</a>
-                </li>
-    </ul>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">HTML</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../HTML/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">基本语法</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Java</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="#">基础</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E5%9F%BA%E7%A1%80/Arrays%E7%B1%BB/">Arrays类</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E5%9F%BA%E7%A1%80/Java%20%E6%B5%81%28Stream%29%E3%80%81%E6%96%87%E4%BB%B6%28File%29%E5%92%8CIO/">Java 流(Stream)、文件(File)和IO</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E5%9F%BA%E7%A1%80/JavaDoc/">JavaDoc</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E5%9F%BA%E7%A1%80/Scanner%E5%AF%B9%E8%B1%A1/">Scanner对象</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E5%9F%BA%E7%A1%80/%E5%8C%85%E6%9C%BA%E5%88%B6/">包机制</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E5%9F%BA%E7%A1%80/%E5%BC%82%E5%B8%B8/">异常</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E5%9F%BA%E7%A1%80/%E6%95%B0%E7%BB%84/">数组</a>
-                </li>
-    </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">进阶</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E8%BF%9B%E9%98%B6/GUI/">GUI</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E8%BF%9B%E9%98%B6/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%9C%BA%E5%88%B6/">Java多线程机制</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E8%BF%9B%E9%98%B6/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">Java网络编程</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E8%BF%9B%E9%98%B6/StringBuffer%E5%92%8CStringBuilder/">StringBuffer和StringBuilder</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E8%BF%9B%E9%98%B6/%E5%A4%84%E7%90%86%E4%BA%8B%E4%BB%B6/">处理事件</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E8%BF%9B%E9%98%B6/%E7%B1%BB%E5%9E%8B%E4%BF%A1%E6%81%AF/">类型信息</a>
-                </li>
-    </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">面向对象</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%A4%8D%E7%94%A8%E7%B1%BB/">复用类</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E6%96%B9%E6%B3%95/">方法</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E9%9B%86%E5%90%88/">集合</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
-                </li>
-    </ul>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">MachineLearning</span></p>
-              <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../../Numpy/">Numpy</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Pytorch%E7%BC%96%E5%86%99%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF/">Pytorch编写深度学习模型的基本思路</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%89%8D%E5%90%91%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/">前向与反向传播</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">分类(Classification)</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../%E5%88%86%E7%B1%BB%28Classification%29/%E5%88%86%E7%B1%BB%28Classification%29/">分类(Classification)</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../%E5%88%86%E7%B1%BB%28Classification%29/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%28Logistic%20Regression%29/">逻辑回归(Logistic Regression)</a>
-                </li>
-    </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">回归问题(Regression)</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98%28Regression%29/%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98/">回归问题</a>
-                </li>
-    </ul>
-                  </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">强化学习（Reinforce Learning）</a>
-    <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="../MDP%EF%BC%88%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%86%B3%E7%AD%96%E8%BF%87%E7%A8%8B%EF%BC%89/">马尔可夫决策过程</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../%E5%86%B3%E7%AD%96%E7%BD%91%E7%BB%9C%28Decision%20Network%29/">决策网络(Decision Network)</a>
-                </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">强化学习(Reinforce Learning)</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#offline-planningonline-planning">Offline planning/Online planning</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#offline-planning">Offline planning</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#online-planning">Online planning</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#model-based-learning">Model-Based Learning</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#model-free-learning">Model-Free Learning</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#direct-evaluation">直接评估(Direct Evaluation)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#temporal-difference-learning">时间差分学习(Temporal Difference Learning)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#q-learning">Q-Learning</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#approximate-q-learning">==Approximate Q-Learning==</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#exploration-or-exploitation">Exploration or Exploitation</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#-greedy-policies">$ε$-Greedy Policies</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#exploration-function">Exploration Function</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../%E6%A6%82%E7%8E%87%28Probabilistic%29/">概率(Probabilistic)</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%BD%91%E7%BB%9C%28Bayesian%20Network%29/">贝叶斯网络(Bayesian Network)</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../%E9%9A%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B%28HMMs%29/">隐马尔可夫模型(Hidden Markov Models-HMMs)</a>
-                </li>
-    </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">模型优化</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A8%A1%E5%9E%8B%E4%BC%98%E5%8C%96/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%BB%BB%E5%8A%A1%E6%94%BB%E7%95%A5/">机器学习任务攻略</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A8%A1%E5%9E%8B%E4%BC%98%E5%8C%96/%E7%B1%BB%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%AE%AD%E7%BB%83%E6%96%B9%E6%B3%95/">类神经网络训练</a>
-                </li>
-    </ul>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Opencv</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../opencv/Mat%E5%AF%B9%E8%B1%A1/">Mat对象</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../opencv/OpenCV%E5%88%9D%E6%8E%A2/">OpenCV初探</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../opencv/%E5%8A%A0%E8%BD%BD%E3%80%81%E4%BF%AE%E6%94%B9%E3%80%81%E4%BF%9D%E5%AD%98%E5%9B%BE%E5%83%8F/">[加载、修改、保存图像](C:\Users\11146\OneDrive\coding\program\opencv\OpenCV_Learning\加载、修改、保存图像.cpp)</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../opencv/%E5%9B%BE%E5%83%8F%E6%93%8D%E4%BD%9C/">图像操作</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../opencv/%E7%9F%A9%E9%98%B5%E7%9A%84%E6%8E%A9%E8%86%9C%E6%93%8D%E4%BD%9C/">[矩阵的掩膜操作](C:\Users\11146\OneDrive\coding\program\opencv\OpenCV_Learning\矩阵的掩膜操作.cpp)</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Python</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../python/Python/">Python基础</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Robocup</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../robocup/robocup%E9%A2%84%E4%B9%A0%E6%9D%90%E6%96%99%202/">robocup预习材料 2</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../robocup/%E9%A2%84%E4%B9%A0%E6%9D%90%E6%96%99%203/">预习材料 3</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">其他</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../%E5%85%B6%E4%BB%96/%E4%BB%A3%E7%A0%81%E7%AE%80%E6%B4%81%E4%B9%8B%E9%81%93/">整洁代码</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">数据结构</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/vector%E6%A8%A1%E6%9D%BF/">vector模板</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B8%B8%E7%94%A8STL/">常用STL</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%BF%E4%B9%89%E8%A1%A8/">广义表</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%A3%E5%88%97%E8%A1%A8/">散列表（哈希表）查找</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%80%BB%E8%AE%BA/">数据结构</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%88/">栈</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A8%A1%E6%9D%BF/">模板</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%B1%89%E8%AF%BA%E5%A1%94/">汉诺塔[[递归]]</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%80%A7%E8%A1%A8/">线性表</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/">链表</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%98%9F%E5%88%97/">队列</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">图</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE/%E5%9B%BE/">图</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE/%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD/">基本术语</a>
-                </li>
-    </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">排序</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/%E6%8E%92%E5%BA%8F/">排序</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">插入排序</a>
-                </li>
-    </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">树</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91/%E6%A0%91/">树</a>
-                </li>
-    </ul>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">算法</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/STL/">STL</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9B%9E%E6%BA%AF%E6%B3%95/">回溯法</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/">常用代码模板</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E9%80%92%E5%BD%92/">递归</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">动态规划</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E6%A6%82%E8%BF%B0/">动态规划概述</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">背包问题</a>
-                </li>
-    </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">基础算法</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86/">二分</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/">前缀和与差分</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E5%8F%8C%E6%8C%87%E9%92%88%E7%AE%97%E6%B3%95/">双指针算法</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F/">排序</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E6%95%B4%E6%95%B0%E7%A6%BB%E6%95%A3%E5%8C%96/">整数离散化</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E9%AB%98%E7%B2%BE%E5%BA%A6/">高精度计算</a>
-                </li>
-    </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">搜索与图论</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/Bellman-Ford/">Bellman Ford</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/B%E6%A0%91/">B树</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/DFS%E4%B8%8EBFS/">DFS与BFS</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/Dijkstra/">Dijkstra</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/Floyd/">Floyd</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/SPFA/">SPFA</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/">关键路径</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/">拓扑排序</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">最小生成树</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%9C%80%E7%9F%AD%E8%B7%AF%E6%A6%82%E8%BF%B0/">最短路概述</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%A0%91%E5%92%8C%E5%9B%BE/">树和图</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%A0%91%E8%A1%A8%E6%9F%A5%E6%89%BE/">树表查找</a>
-                </li>
-    </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">数据结构</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/KMP/">KMP</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8D%95%E8%B0%83%E6%A0%88%E4%B8%8E%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/">单调栈与单调队列</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%93%88%E5%B8%8C%E8%A1%A8/">哈希表</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%A0%86/">堆</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/">并查集</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%A0%86/">斐波那契堆</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/">表达式求值</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8%E4%B8%8E%E9%82%BB%E6%8E%A5%E8%A1%A8/">链表与邻接表</a>
-                </li>
-    </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">贪心</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E8%B4%AA%E5%BF%83/Huffman/">Huffman</a>
-                </li>
-    </ul>
-                  </li>
-              </ul>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              强化学习(Reinforce Learning)
+            
+          </span>
+        </div>
       </div>
     </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../..">My Notes</a>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
         
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
       </nav>
-      <div class="wy-nav-content">
-        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>MachineLearning &raquo;</li>
-          <li>强化学习（Reinforce Learning） &raquo;</li>
-      <li>强化学习(Reinforce Learning)</li>
-    <li class="wy-breadcrumbs-aside">
-    </li>
-  </ul>
-  <hr/>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div class="section" itemprop="articleBody">
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
               
-                <h1 id="reinforce-learning">强化学习(Reinforce Learning)</h1>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="My Notes" class="md-nav__button md-logo" aria-label="My Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    My Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          C or C++
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="C or C++" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          C or C++
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%20or%20C%2B%2B/CC%2B%2B%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/" class="md-nav__link">
+        C/C++学习路线
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%20or%20C%2B%2B/CSDN%E4%B9%A0%E9%A2%98/" class="md-nav__link">
+        CSDN习题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%20or%20C%2B%2B/%E4%BD%8D%E8%BF%90%E7%AE%97/" class="md-nav__link">
+        位运算
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%20or%20C%2B%2B/%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%20or%20C%2B%2B/%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        字符数组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%20or%20C%2B%2B/%E5%AE%A3%E8%80%81%E7%AC%AC%E4%B8%89%E7%AB%A0%E7%A8%8B%E5%BA%8F/" class="md-nav__link">
+        宣老第三章程序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%20or%20C%2B%2B/%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
+        第三周：循环
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%20or%20C%2B%2B/%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6/" class="md-nav__link">
+        第五周 循环控制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%20or%20C%2B%2B/%E6%8C%87%E9%92%88/" class="md-nav__link">
+        第九周 指针
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%20or%20C%2B%2B/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+        第六周数据类型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%20or%20C%2B%2B/%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        数组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%20or%20C%2B%2B/%E6%96%87%E4%BB%B6/" class="md-nav__link">
+        文件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%20or%20C%2B%2B/%E7%BB%93%E6%9E%84%E4%BD%93/" class="md-nav__link">
+        结构体
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%20or%20C%2B%2B/%E8%BF%9B%E4%B8%80%E6%AD%A5%E7%9A%84%E5%88%A4%E6%96%AD%E4%B8%8E%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
+        第四周 进一步的判断与循环
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%20or%20C%2B%2B/%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        链表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%20or%20C%2B%2B/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="md-nav__link">
+        面向对象
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_17" type="checkbox" id="__nav_2_17" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_17">
+          C Primer Plus
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="C Primer Plus" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_17">
+          <span class="md-nav__icon md-icon"></span>
+          C Primer Plus
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%20or%20C%2B%2B/C%20Primer%20Plus/%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E6%95%B0%E6%8D%AE%E5%92%8CC/" class="md-nav__link">
+        第三章 数据和C
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          HTML
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="HTML" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          HTML
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HTML/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="md-nav__link">
+        基本语法
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Java
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Java" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Java
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          基础
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="基础" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/%E5%9F%BA%E7%A1%80/Arrays%E7%B1%BB/" class="md-nav__link">
+        Arrays类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/%E5%9F%BA%E7%A1%80/Java%20%E6%B5%81%28Stream%29%E3%80%81%E6%96%87%E4%BB%B6%28File%29%E5%92%8CIO/" class="md-nav__link">
+        Java 流(Stream)、文件(File)和IO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/%E5%9F%BA%E7%A1%80/JavaDoc/" class="md-nav__link">
+        JavaDoc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/%E5%9F%BA%E7%A1%80/Scanner%E5%AF%B9%E8%B1%A1/" class="md-nav__link">
+        Scanner对象
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/%E5%9F%BA%E7%A1%80/%E5%8C%85%E6%9C%BA%E5%88%B6/" class="md-nav__link">
+        包机制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/%E5%9F%BA%E7%A1%80/%E5%BC%82%E5%B8%B8/" class="md-nav__link">
+        异常
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/%E5%9F%BA%E7%A1%80/%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        数组
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          进阶
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="进阶" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          进阶
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/%E8%BF%9B%E9%98%B6/GUI/" class="md-nav__link">
+        GUI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/%E8%BF%9B%E9%98%B6/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%9C%BA%E5%88%B6/" class="md-nav__link">
+        Java多线程机制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/%E8%BF%9B%E9%98%B6/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" class="md-nav__link">
+        Java网络编程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/%E8%BF%9B%E9%98%B6/StringBuffer%E5%92%8CStringBuilder/" class="md-nav__link">
+        StringBuffer和StringBuilder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/%E8%BF%9B%E9%98%B6/%E5%A4%84%E7%90%86%E4%BA%8B%E4%BB%B6/" class="md-nav__link">
+        处理事件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/%E8%BF%9B%E9%98%B6/%E7%B1%BB%E5%9E%8B%E4%BF%A1%E6%81%AF/" class="md-nav__link">
+        类型信息
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          面向对象
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="面向对象" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          面向对象
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%A4%8D%E7%94%A8%E7%B1%BB/" class="md-nav__link">
+        复用类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E9%9B%86%E5%90%88/" class="md-nav__link">
+        集合
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="md-nav__link">
+        面向对象
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          MachineLearning
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MachineLearning" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          MachineLearning
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Numpy/" class="md-nav__link">
+        Numpy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Pytorch%E7%BC%96%E5%86%99%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF/" class="md-nav__link">
+        Pytorch编写深度学习模型的基本思路
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E5%90%91%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/" class="md-nav__link">
+        前向与反向传播
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_4">
+          分类(Classification)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="分类(Classification)" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          分类(Classification)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%88%86%E7%B1%BB%28Classification%29/%E5%88%86%E7%B1%BB%28Classification%29/" class="md-nav__link">
+        分类(Classification)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%88%86%E7%B1%BB%28Classification%29/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%28Logistic%20Regression%29/" class="md-nav__link">
+        逻辑回归(Logistic Regression)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5">
+          回归问题(Regression)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="回归问题(Regression)" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          回归问题(Regression)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98%28Regression%29/%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        回归问题
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6" type="checkbox" id="__nav_5_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_6">
+          强化学习（Reinforce Learning）
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="强化学习（Reinforce Learning）" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_6">
+          <span class="md-nav__icon md-icon"></span>
+          强化学习（Reinforce Learning）
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MDP%EF%BC%88%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%86%B3%E7%AD%96%E8%BF%87%E7%A8%8B%EF%BC%89/" class="md-nav__link">
+        马尔可夫决策过程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%86%B3%E7%AD%96%E7%BD%91%E7%BB%9C%28Decision%20Network%29/" class="md-nav__link">
+        决策网络(Decision Network)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          强化学习(Reinforce Learning)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        强化学习(Reinforce Learning)
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#offline-planningonline-planning" class="md-nav__link">
+    Offline planning/Online planning
+  </a>
+  
+    <nav class="md-nav" aria-label="Offline planning/Online planning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#offline-planning" class="md-nav__link">
+    Offline planning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#online-planning" class="md-nav__link">
+    Online planning
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-based-learning" class="md-nav__link">
+    Model-Based Learning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-free-learning" class="md-nav__link">
+    Model-Free Learning
+  </a>
+  
+    <nav class="md-nav" aria-label="Model-Free Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct-evaluation" class="md-nav__link">
+    直接评估(Direct Evaluation)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporal-difference-learning" class="md-nav__link">
+    时间差分学习(Temporal Difference Learning)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-learning" class="md-nav__link">
+    Q-Learning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approximate-q-learning" class="md-nav__link">
+    ==Approximate Q-Learning==
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploration-or-exploitation" class="md-nav__link">
+    Exploration or Exploitation
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploration or Exploitation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-greedy-policies" class="md-nav__link">
+    $ε$-Greedy Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploration-function" class="md-nav__link">
+    Exploration Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%A6%82%E7%8E%87%28Probabilistic%29/" class="md-nav__link">
+        概率(Probabilistic)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%BD%91%E7%BB%9C%28Bayesian%20Network%29/" class="md-nav__link">
+        贝叶斯网络(Bayesian Network)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%9A%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B%28HMMs%29/" class="md-nav__link">
+        隐马尔可夫模型(Hidden Markov Models-HMMs)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7">
+          模型优化
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="模型优化" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_7">
+          <span class="md-nav__icon md-icon"></span>
+          模型优化
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A8%A1%E5%9E%8B%E4%BC%98%E5%8C%96/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%BB%BB%E5%8A%A1%E6%94%BB%E7%95%A5/" class="md-nav__link">
+        机器学习任务攻略
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A8%A1%E5%9E%8B%E4%BC%98%E5%8C%96/%E7%B1%BB%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%AE%AD%E7%BB%83%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        类神经网络训练
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Opencv
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Opencv" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Opencv
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../opencv/Mat%E5%AF%B9%E8%B1%A1/" class="md-nav__link">
+        Mat对象
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../opencv/OpenCV%E5%88%9D%E6%8E%A2/" class="md-nav__link">
+        OpenCV初探
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../opencv/%E5%8A%A0%E8%BD%BD%E3%80%81%E4%BF%AE%E6%94%B9%E3%80%81%E4%BF%9D%E5%AD%98%E5%9B%BE%E5%83%8F/" class="md-nav__link">
+        [加载、修改、保存图像](C:\Users\11146\OneDrive\coding\program\opencv\OpenCV_Learning\加载、修改、保存图像.cpp)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../opencv/%E5%9B%BE%E5%83%8F%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+        图像操作
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../opencv/%E7%9F%A9%E9%98%B5%E7%9A%84%E6%8E%A9%E8%86%9C%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+        [矩阵的掩膜操作](C:\Users\11146\OneDrive\coding\program\opencv\OpenCV_Learning\矩阵的掩膜操作.cpp)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/Python/" class="md-nav__link">
+        Python基础
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Robocup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Robocup" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Robocup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../robocup/robocup%E9%A2%84%E4%B9%A0%E6%9D%90%E6%96%99%202/" class="md-nav__link">
+        robocup预习材料 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../robocup/%E9%A2%84%E4%B9%A0%E6%9D%90%E6%96%99%203/" class="md-nav__link">
+        预习材料 3
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          其他
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="其他" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          其他
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%85%B6%E4%BB%96/%E4%BB%A3%E7%A0%81%E7%AE%80%E6%B4%81%E4%B9%8B%E9%81%93/" class="md-nav__link">
+        整洁代码
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          数据结构
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="数据结构" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          数据结构
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/vector%E6%A8%A1%E6%9D%BF/" class="md-nav__link">
+        vector模板
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B8%B8%E7%94%A8STL/" class="md-nav__link">
+        常用STL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%BF%E4%B9%89%E8%A1%A8/" class="md-nav__link">
+        广义表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%A3%E5%88%97%E8%A1%A8/" class="md-nav__link">
+        散列表（哈希表）查找
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%80%BB%E8%AE%BA/" class="md-nav__link">
+        数据结构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%88/" class="md-nav__link">
+        栈
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A8%A1%E6%9D%BF/" class="md-nav__link">
+        模板
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%B1%89%E8%AF%BA%E5%A1%94/" class="md-nav__link">
+        汉诺塔[[递归]]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%80%A7%E8%A1%A8/" class="md-nav__link">
+        线性表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        链表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%98%9F%E5%88%97/" class="md-nav__link">
+        队列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_12" type="checkbox" id="__nav_10_12" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10_12">
+          图
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="图" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_12">
+          <span class="md-nav__icon md-icon"></span>
+          图
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE/%E5%9B%BE/" class="md-nav__link">
+        图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE/%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD/" class="md-nav__link">
+        基本术语
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_13" type="checkbox" id="__nav_10_13" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10_13">
+          排序
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="排序" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_13">
+          <span class="md-nav__icon md-icon"></span>
+          排序
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        排序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        插入排序
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_14" type="checkbox" id="__nav_10_14" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10_14">
+          树
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="树" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_14">
+          <span class="md-nav__icon md-icon"></span>
+          树
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91/" class="md-nav__link">
+        二叉树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91/%E6%A0%91/" class="md-nav__link">
+        树
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          算法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="算法" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          算法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/STL/" class="md-nav__link">
+        STL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9B%9E%E6%BA%AF%E6%B3%95/" class="md-nav__link">
+        回溯法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/" class="md-nav__link">
+        常用代码模板
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E9%80%92%E5%BD%92/" class="md-nav__link">
+        递归
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_5" type="checkbox" id="__nav_11_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11_5">
+          动态规划
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="动态规划" data-md-level="2">
+        <label class="md-nav__title" for="__nav_11_5">
+          <span class="md-nav__icon md-icon"></span>
+          动态规划
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E6%A6%82%E8%BF%B0/" class="md-nav__link">
+        动态规划概述
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        背包问题
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_6" type="checkbox" id="__nav_11_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11_6">
+          基础算法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="基础算法" data-md-level="2">
+        <label class="md-nav__title" for="__nav_11_6">
+          <span class="md-nav__icon md-icon"></span>
+          基础算法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86/" class="md-nav__link">
+        二分
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/" class="md-nav__link">
+        前缀和与差分
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E5%8F%8C%E6%8C%87%E9%92%88%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        双指针算法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        排序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E6%95%B4%E6%95%B0%E7%A6%BB%E6%95%A3%E5%8C%96/" class="md-nav__link">
+        整数离散化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E9%AB%98%E7%B2%BE%E5%BA%A6/" class="md-nav__link">
+        高精度计算
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_7" type="checkbox" id="__nav_11_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11_7">
+          搜索与图论
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="搜索与图论" data-md-level="2">
+        <label class="md-nav__title" for="__nav_11_7">
+          <span class="md-nav__icon md-icon"></span>
+          搜索与图论
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/Bellman-Ford/" class="md-nav__link">
+        Bellman Ford
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/B%E6%A0%91/" class="md-nav__link">
+        B树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/DFS%E4%B8%8EBFS/" class="md-nav__link">
+        DFS与BFS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/Dijkstra/" class="md-nav__link">
+        Dijkstra
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/Floyd/" class="md-nav__link">
+        Floyd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/SPFA/" class="md-nav__link">
+        SPFA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/" class="md-nav__link">
+        关键路径
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        拓扑排序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" class="md-nav__link">
+        最小生成树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%9C%80%E7%9F%AD%E8%B7%AF%E6%A6%82%E8%BF%B0/" class="md-nav__link">
+        最短路概述
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%A0%91%E5%92%8C%E5%9B%BE/" class="md-nav__link">
+        树和图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%A0%91%E8%A1%A8%E6%9F%A5%E6%89%BE/" class="md-nav__link">
+        树表查找
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_8" type="checkbox" id="__nav_11_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11_8">
+          数据结构
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="数据结构" data-md-level="2">
+        <label class="md-nav__title" for="__nav_11_8">
+          <span class="md-nav__icon md-icon"></span>
+          数据结构
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/KMP/" class="md-nav__link">
+        KMP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8D%95%E8%B0%83%E6%A0%88%E4%B8%8E%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" class="md-nav__link">
+        单调栈与单调队列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%93%88%E5%B8%8C%E8%A1%A8/" class="md-nav__link">
+        哈希表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%A0%86/" class="md-nav__link">
+        堆
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/" class="md-nav__link">
+        并查集
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%A0%86/" class="md-nav__link">
+        斐波那契堆
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/" class="md-nav__link">
+        表达式求值
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8%E4%B8%8E%E9%82%BB%E6%8E%A5%E8%A1%A8/" class="md-nav__link">
+        链表与邻接表
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_9" type="checkbox" id="__nav_11_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11_9">
+          贪心
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="贪心" data-md-level="2">
+        <label class="md-nav__title" for="__nav_11_9">
+          <span class="md-nav__icon md-icon"></span>
+          贪心
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E8%B4%AA%E5%BF%83/Huffman/" class="md-nav__link">
+        Huffman
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#offline-planningonline-planning" class="md-nav__link">
+    Offline planning/Online planning
+  </a>
+  
+    <nav class="md-nav" aria-label="Offline planning/Online planning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#offline-planning" class="md-nav__link">
+    Offline planning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#online-planning" class="md-nav__link">
+    Online planning
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-based-learning" class="md-nav__link">
+    Model-Based Learning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-free-learning" class="md-nav__link">
+    Model-Free Learning
+  </a>
+  
+    <nav class="md-nav" aria-label="Model-Free Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct-evaluation" class="md-nav__link">
+    直接评估(Direct Evaluation)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporal-difference-learning" class="md-nav__link">
+    时间差分学习(Temporal Difference Learning)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-learning" class="md-nav__link">
+    Q-Learning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approximate-q-learning" class="md-nav__link">
+    ==Approximate Q-Learning==
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploration-or-exploitation" class="md-nav__link">
+    Exploration or Exploitation
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploration or Exploitation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-greedy-policies" class="md-nav__link">
+    $ε$-Greedy Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploration-function" class="md-nav__link">
+    Exploration Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="reinforce-learning">强化学习(Reinforce Learning)</h1>
 <h2 id="offline-planningonline-planning">Offline planning/Online planning</h2>
 <h3 id="offline-planning">Offline planning</h3>
 <ul>
@@ -606,50 +3043,82 @@ w_{1} &amp; w_{2} &amp; \ldots &amp; w_{n}\end{matrix}\right]^{T}$$</li>
 </li>
 <li>随时间推移，探索的次数逐渐减少，更多执行以确定的策略</li>
 </ul>
+
+
+
+
               
-            </div>
-          </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../%E5%86%B3%E7%AD%96%E7%BD%91%E7%BB%9C%28Decision%20Network%29/" class="btn btn-neutral float-left" title="决策网络(Decision Network)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../%E6%A6%82%E7%8E%87%28Probabilistic%29/" class="btn btn-neutral float-right" title="概率(Probabilistic)">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-  </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-          
+            </article>
+            
+          </div>
         </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="Versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
+        
+      </main>
+      
+        <footer class="md-footer">
+  
     
-    
-      <span><a href="../%E5%86%B3%E7%AD%96%E7%BD%91%E7%BB%9C%28Decision%20Network%29/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../%E6%A6%82%E7%8E%87%28Probabilistic%29/" style="color: #fcfcfc">Next &raquo;</a></span>
-    
-  </span>
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../%E5%86%B3%E7%AD%96%E7%BD%91%E7%BB%9C%28Decision%20Network%29/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 决策网络(Decision Network)" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              决策网络(Decision Network)
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../%E6%A6%82%E7%8E%87%28Probabilistic%29/" class="md-footer__link md-footer__link--next" aria-label="Next: 概率(Probabilistic)" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              概率(Probabilistic)
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
 </div>
-    <script>var base_url = '../../..';</script>
-    <script src="../../../js/theme_extra.js" defer></script>
-    <script src="../../../js/theme.js" defer></script>
-      <script src="../../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
-    </script>
-
-</body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+    
+  </body>
 </html>
