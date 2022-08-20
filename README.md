@@ -4,11 +4,11 @@
 # 数据结构
 ## 书籍
 - **趣学数据结构**
-- ==**算法导论**==
+- **算法导论**
 - 数据结构（清华大学教材）
 ## 网课
-- ==**[数据结构（上）——清华大学](https://www.xuetangx.com/learn/THU08091000384/THU08091000384/10322765/article/17436683)**==
-- **==[数据结构（下）——清华大学](https://www.xuetangx.com/learn/THU08091002048/THU08091002048/10322575/article/17418293)==**
+- **[数据结构（上）——清华大学](https://www.xuetangx.com/learn/THU08091000384/THU08091000384/10322765/article/17436683)**
+- **[数据结构（下）——清华大学](https://www.xuetangx.com/learn/THU08091002048/THU08091002048/10322575/article/17418293)**
 - [【MIT6.006最新】算法导论(中英|2020春) Introduction to Algorithms 麻省理工_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1fu41127MN?p=9&share_medium=android&share_plat=android&share_session_id=fede1fc7-4a1b-48fd-9e90-91c2170a1d77&share_source=COPY&share_tag=s_i&timestamp=1652158205&unique_k=GnUmWNh&share_times=1)
 ## 其他
 - [Data Structure Visualization|数据结构可视化](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
@@ -16,7 +16,7 @@
 # 算法
 ## 书籍
 - 趣学算法
-- ==**算法导论**==
+- **算法导论**
 - 算法笔记
 - 漫画算法合集
 ## 网课
@@ -26,13 +26,13 @@
 # 机器学习
 ## 书籍
 - 机器学习（西瓜书）
-- **==统计学习方法==**
+- **统计学习方法**
 - 模式识别与机器学习
 ## 网课
-- **==[【机器学习】【白板推导系列】【合集 1～33】_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1aE411o7qd?spm_id_from=333.999.0.0)==**
+- **[【机器学习】【白板推导系列】【合集 1～33】_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1aE411o7qd?spm_id_from=333.999.0.0)**
 - [林轩田机器学习基石(国语)_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1Cx411i7op?spm_id_from=333.337.search-card.all.click)
 - [机器学习技法（林轩田）_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1ix411i7yp?spm_id_from=333.337.search-card.all.click)
-- **==[(强推)李宏毅2021/2022春机器学习课程_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1Wv411h7kN?spm_id_from=333.337.search-card.all.click)==**
+- **[(强推)李宏毅2021/2022春机器学习课程_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1Wv411h7kN?spm_id_from=333.337.search-card.all.click)**
 	- 课程目录：[ML 2022 Spring](https://speech.ee.ntu.edu.tw/~hylee/ml/2022-spring.php)
 - [【合集】十分钟 机器学习 系列视频 《统计学习方法》_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1No4y1o7ac?share_source=copy_web)
 - [CS188 UCBerkeley 伯克利 人工智能课程 2018 中英文字幕 机器学习 深度学习_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1X64y1i7hf?p=4&vd_source=104ff9cc1b7010d178a8d3c0d37be81e)
@@ -42,9 +42,9 @@
 ---
 # Java
 ## 书籍
-- ==**Think in Java**==
+- **Think in Java**
 - **Head First Java**
-- ==**Effective Java**==
+- **Effective Java**
 - Java核心技术卷
 ## 网课
 - [【零基础 快速学Java】韩顺平 零基础30天学会Java_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1fh411y7R8)
@@ -54,7 +54,7 @@
 ---
 # C++/C
 ## 书籍
-- ==**C++ Primer**==
+- **C++ Primer**
 - Effective Mordern C++
 ## 网课
 - [程序设计入门——C语言_浙江大学_中国大学MOOC(慕课)](https://www.icourse163.org/learn/ZJU-199001?tid=1465619444#/learn/announce)
