@@ -1,5 +1,4 @@
-# 综合
-## 博客
+# 博客
 - [菜鸟教程 - 学的不仅是技术，更是梦想！](https://www.runoob.com/)
 - [Road 2 Coding](https://www.r2coding.com/#/README)
 # 数据结构
