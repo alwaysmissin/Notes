@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>类型信息 - My Notes</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u7c7b\u578b\u4fe1\u606f";
+        var mkdocs_page_input_path = "Java\\\u8fdb\u9636\\\u7c7b\u578b\u4fe1\u606f.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> My Notes
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">C or C++</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/CC%2B%2B%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/">C/C++学习路线</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/CSDN%E4%B9%A0%E9%A2%98/">CSDN习题</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E4%BD%8D%E8%BF%90%E7%AE%97/">位运算</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E5%87%BD%E6%95%B0/">函数</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84/">字符数组</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E5%AE%A3%E8%80%81%E7%AC%AC%E4%B8%89%E7%AB%A0%E7%A8%8B%E5%BA%8F/">宣老第三章程序</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E5%BE%AA%E7%8E%AF/">第三周：循环</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6/">第五周 循环控制</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E6%8C%87%E9%92%88/">第九周 指针</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">第六周数据类型</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E6%95%B0%E7%BB%84/">数组</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E6%96%87%E4%BB%B6/">文件</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E7%BB%93%E6%9E%84%E4%BD%93/">结构体</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E8%BF%9B%E4%B8%80%E6%AD%A5%E7%9A%84%E5%88%A4%E6%96%AD%E4%B8%8E%E5%BE%AA%E7%8E%AF/">第四周 进一步的判断与循环</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E9%93%BE%E8%A1%A8/">链表</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">C Primer Plus</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../C%20or%20C%2B%2B/C%20Primer%20Plus/%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E6%95%B0%E6%8D%AE%E5%92%8CC/">第三章 数据和C</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">HTML</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../HTML/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">基本语法</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Java</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">基础</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80/Arrays%E7%B1%BB/">Arrays类</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80/Java%20%E6%B5%81%28Stream%29%E3%80%81%E6%96%87%E4%BB%B6%28File%29%E5%92%8CIO/">Java 流(Stream)、文件(File)和IO</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80/JavaDoc/">JavaDoc</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80/Scanner%E5%AF%B9%E8%B1%A1/">Scanner对象</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80/%E5%8C%85%E6%9C%BA%E5%88%B6/">包机制</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80/%E5%BC%82%E5%B8%B8/">异常</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%9F%BA%E7%A1%80/%E6%95%B0%E7%BB%84/">数组</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">进阶</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../GUI/">GUI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%9C%BA%E5%88%B6/">Java多线程机制</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">Java网络编程</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../StringBuffer%E5%92%8CStringBuilder/">StringBuffer和StringBuilder</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E5%A4%84%E7%90%86%E4%BA%8B%E4%BB%B6/">处理事件</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">类型信息</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#rtti">为什么需要RTTI</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#class">Class对象</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_2">类字面常量</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#class_1">泛化的Class引用</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cast">新的转型语法：cast()</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#instanceofclass">instanceof与Class的等价性</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">反射：运行时的类信息</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">面向对象</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%A4%8D%E7%94%A8%E7%B1%BB/">复用类</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E6%96%B9%E6%B3%95/">方法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E9%9B%86%E5%90%88/">集合</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">MachineLearning</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../MachineLearning/Numpy/">Numpy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../MachineLearning/Pytorch%E7%BC%96%E5%86%99%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF/">Pytorch编写深度学习模型的基本思路</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../MachineLearning/%E5%89%8D%E5%90%91%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/">前向与反向传播</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">分类(Classification)</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MachineLearning/%E5%88%86%E7%B1%BB%28Classification%29/%E5%88%86%E7%B1%BB%28Classification%29/">分类(Classification)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MachineLearning/%E5%88%86%E7%B1%BB%28Classification%29/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%28Logistic%20Regression%29/">逻辑回归(Logistic Regression)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">回归问题(Regression)</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MachineLearning/%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98%28Regression%29/%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98/">回归问题</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">强化学习（Reinforce Learning）</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MachineLearning/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%88Reinforce%20Learning%EF%BC%89/MDP%EF%BC%88%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%86%B3%E7%AD%96%E8%BF%87%E7%A8%8B%EF%BC%89/">马尔可夫决策过程</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MachineLearning/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%88Reinforce%20Learning%EF%BC%89/%E5%86%B3%E7%AD%96%E7%BD%91%E7%BB%9C%28Decision%20Network%29/">决策网络(Decision Network)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MachineLearning/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%88Reinforce%20Learning%EF%BC%89/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%28Reinforce%20Learning%29/">强化学习(Reinforce Learning)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MachineLearning/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%88Reinforce%20Learning%EF%BC%89/%E6%A6%82%E7%8E%87%28Probabilistic%29/">概率(Probabilistic)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MachineLearning/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%88Reinforce%20Learning%EF%BC%89/%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%BD%91%E7%BB%9C%28Bayesian%20Network%29/">贝叶斯网络(Bayesian Network)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MachineLearning/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%88Reinforce%20Learning%EF%BC%89/%E9%9A%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B%28HMMs%29/">隐马尔可夫模型(Hidden Markov Models-HMMs)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">模型优化</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MachineLearning/%E6%A8%A1%E5%9E%8B%E4%BC%98%E5%8C%96/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%BB%BB%E5%8A%A1%E6%94%BB%E7%95%A5/">机器学习任务攻略</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MachineLearning/%E6%A8%A1%E5%9E%8B%E4%BC%98%E5%8C%96/%E7%B1%BB%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%AE%AD%E7%BB%83%E6%96%B9%E6%B3%95/">类神经网络训练</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Opencv</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../opencv/Mat%E5%AF%B9%E8%B1%A1/">Mat对象</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../opencv/OpenCV%E5%88%9D%E6%8E%A2/">OpenCV初探</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../opencv/%E5%8A%A0%E8%BD%BD%E3%80%81%E4%BF%AE%E6%94%B9%E3%80%81%E4%BF%9D%E5%AD%98%E5%9B%BE%E5%83%8F/">[加载、修改、保存图像](C:\Users\11146\OneDrive\coding\program\opencv\OpenCV_Learning\加载、修改、保存图像.cpp)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../opencv/%E5%9B%BE%E5%83%8F%E6%93%8D%E4%BD%9C/">图像操作</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../opencv/%E7%9F%A9%E9%98%B5%E7%9A%84%E6%8E%A9%E8%86%9C%E6%93%8D%E4%BD%9C/">[矩阵的掩膜操作](C:\Users\11146\OneDrive\coding\program\opencv\OpenCV_Learning\矩阵的掩膜操作.cpp)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Python</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../python/Python/">Python基础</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Robocup</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../robocup/robocup%E9%A2%84%E4%B9%A0%E6%9D%90%E6%96%99%202/">robocup预习材料 2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../robocup/%E9%A2%84%E4%B9%A0%E6%9D%90%E6%96%99%203/">预习材料 3</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">其他</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E5%85%B6%E4%BB%96/%E4%BB%A3%E7%A0%81%E7%AE%80%E6%B4%81%E4%B9%8B%E9%81%93/">整洁代码</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">数据结构</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/vector%E6%A8%A1%E6%9D%BF/">vector模板</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B8%B8%E7%94%A8STL/">常用STL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%BF%E4%B9%89%E8%A1%A8/">广义表</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%A3%E5%88%97%E8%A1%A8/">散列表（哈希表）查找</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%80%BB%E8%AE%BA/">数据结构</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%88/">栈</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A8%A1%E6%9D%BF/">模板</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%B1%89%E8%AF%BA%E5%A1%94/">汉诺塔[[递归]]</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%80%A7%E8%A1%A8/">线性表</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/">链表</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%98%9F%E5%88%97/">队列</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">图</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE/%E5%9B%BE/">图</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE/%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD/">基本术语</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">排序</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/%E6%8E%92%E5%BA%8F/">排序</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">插入排序</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">树</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91/%E6%A0%91/">树</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/STL/">STL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9B%9E%E6%BA%AF%E6%B3%95/">回溯法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/">常用代码模板</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E9%80%92%E5%BD%92/">递归</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">动态规划</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E6%A6%82%E8%BF%B0/">动态规划概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">背包问题</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">基础算法</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86/">二分</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/">前缀和与差分</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E5%8F%8C%E6%8C%87%E9%92%88%E7%AE%97%E6%B3%95/">双指针算法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F/">排序</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E6%95%B4%E6%95%B0%E7%A6%BB%E6%95%A3%E5%8C%96/">整数离散化</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E9%AB%98%E7%B2%BE%E5%BA%A6/">高精度计算</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">搜索与图论</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/Bellman-Ford/">Bellman Ford</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/B%E6%A0%91/">B树</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/DFS%E4%B8%8EBFS/">DFS与BFS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/Dijkstra/">Dijkstra</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/Floyd/">Floyd</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/SPFA/">SPFA</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/">关键路径</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/">拓扑排序</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">最小生成树</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%9C%80%E7%9F%AD%E8%B7%AF%E6%A6%82%E8%BF%B0/">最短路概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%A0%91%E5%92%8C%E5%9B%BE/">树和图</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%A0%91%E8%A1%A8%E6%9F%A5%E6%89%BE/">树表查找</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">数据结构</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/KMP/">KMP</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8D%95%E8%B0%83%E6%A0%88%E4%B8%8E%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/">单调栈与单调队列</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%93%88%E5%B8%8C%E8%A1%A8/">哈希表</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%A0%86/">堆</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/">并查集</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%A0%86/">斐波那契堆</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/">表达式求值</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8%E4%B8%8E%E9%82%BB%E6%8E%A5%E8%A1%A8/">链表与邻接表</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">贪心</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E8%B4%AA%E5%BF%83/Huffman/">Huffman</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">My Notes</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Java &raquo;</li>
+          <li>进阶 &raquo;</li>
+      <li>类型信息</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">类型信息</h1>
+<blockquote>
+<p>运行时类型信息使得你可以在程序运行时发现个使用类型信息
+主要有两种方式
+1. 传统的RTTI：假定我们在编译时已经知道了所有的类型
+2. 反射：允许我们在运行时发现和使用类的信息</p>
+</blockquote>
+<h2 id="rtti">为什么需要RTTI</h2>
+<ol>
+<li>RTTI名字的含义：在运行时，识别一个对象的类型</li>
+</ol>
+<h2 id="class">Class对象</h2>
+<ul>
+<li>它包含了与<strong>类有关的信息</strong></li>
+<li>每一个类都有一个Class对象-&gt;Class对象是被保存在一个<strong>同名的.class文件</strong>中</li>
+<li>为了生成这个类的对象，运行这个程序的JVM将使用被称为“<strong>类加载器</strong>“的子系统</li>
+<li>所有的类都是在对其第一次使用时，动态加载到JVM中</li>
+<li>
+<p>当程序创建第一个对类的静态成员引用时，就会加载这个类</p>
+<blockquote>
+<p>构造器也是类的静态方法，即使在构造器前没有使用static关键字。因此，使用new操作符创建类的新对象也会被当作对类的静态成员引用。</p>
+</blockquote>
+</li>
+<li>
+<p>其余各个部分实在必需时才加载</p>
+</li>
+<li>创建的过程：<ol>
+<li>首先检查这个<strong>类的Class对象</strong>是否已经加载<ol>
+<li>如果尚未加载，默认的类加载器就<strong>会根据类名查找<code>.class</code>文件</strong></li>
+</ol>
+</li>
+<li>在这个类的字节码被加载时，他们会接受验证，确保其没有被破坏、并且不包含不良的java代码</li>
+<li>一旦某个类的Class对象被载入内存，他就<strong>被用来创建这个类的所有对象</strong></li>
+</ol>
+</li>
+<li>Class对象的基本操作：<ol>
+<li><code>forName()</code><ol>
+<li>参数：String</li>
+<li>返回值：一个Class对象的引用</li>
+<li>如果找不到要加载的类，及抛出异常<code>ClassNotFoundException</code></li>
+<li>如果已经拥有了一个类型的对象，就可以通过调用<code>getClass()</code>方法来取得Class的引用，这个方法属于<code>Object</code>的一部分</li>
+<li>在传递给<code>forName()</code>的字符串中，必须使用全限定名（包含包名）</li>
+</ol>
+</li>
+<li><code>getName()</code><ol>
+<li>产生全限定的类名</li>
+<li>分别使用<code>getSimpleName()</code>和<code>getCanonicalName()</code>来产生是否完整的类名</li>
+</ol>
+</li>
+<li><code>isInterface()</code><ol>
+<li>是否是一个接口</li>
+</ol>
+</li>
+<li><code>getSUperclass()</code><ol>
+<li>查询其直接基类</li>
+<li>可以在运行时发现一个对象完整的类继承结构</li>
+</ol>
+</li>
+<li><code>newInstance()</code><ul>
+<li>实现虚拟构造器的一种途径</li>
+<li>使用<code>newInstance()</code>来创建的类，必须带有默认的构造器
+<img alt="类的加载过程" src="https://s2.loli.net/2022/06/05/v5wWBsJHbASV6Ra.png" /></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="_2">类字面常量</h3>
+<ul>
+<li>另一种生成对Class对象的引用：<code>对象.class</code></li>
+<li>优势：<ol>
+<li>更简单</li>
+<li>更安全</li>
+<li>更高效</li>
+<li>适用范围：<ol>
+<li>普通的类</li>
+<li>接口、数组以及基本数据类型</li>
+<li>对于基本数据类型的包装器类还有一个标准字段<code>TYPE</code>：TYPE字段是一个引用，指向对应的基本数据类型的Class对象
+<img alt="" src="https://s2.loli.net/2022/06/05/yLhOXa1H2bIJw3F.png" /></li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="class_1">泛化的Class引用</h3>
+<ul>
+<li><code>Class&lt;Integer&gt; IntegerClass = int.class</code></li>
+<li>通过使用泛型语法，可以让编译器强制执行额外的类型检查</li>
+<li>可以使用通配符<code>?</code>来表示任何事物：<code>Class&lt;?&gt; class = something.class</code><ol>
+<li><code>Class&lt;?&gt;</code>与<code>Class</code>等价，但优于后者</li>
+<li>表示你并非是碰巧或者由于疏忽，而使用了一个非具体的引用</li>
+</ol>
+</li>
+<li>将通配符与<code>extends</code>结合，限定一个范围：<code>Class&lt;? extends SuperClass&gt; class = something.class</code></li>
+<li><code>newInstance()</code>将返回对象的确切类型</li>
+</ul>
+<h3 id="cast">新的转型语法：<code>cast()</code></h3>
+<ul>
+<li><code>cast()</code>方法接受参数对象，将其转型为Class引用的类型</li>
+<li><code>类 a = classname.cast(b)</code></li>
+</ul>
+<h2 id="instanceofclass">instanceof与Class的等价性</h2>
+<ol>
+<li><code>instanceof()</code> 与<code>isInstance()</code>等价</li>
+<li><code>==</code>与<code>equals()</code>等价</li>
+<li><code>instanceof()</code>保持了类型的概念，指：<strong>你是这个类嘛？或你是这个类的派生类嘛？</strong></li>
+<li><code>==</code>比较实际的对象，不考虑继承</li>
+</ol>
+<h2 id="_3">反射：运行时的类信息</h2>
+<ul>
+<li>RTTI的限制：这个类型在编译时必须一致，这样才能使用RTTI识别它，并利用这些信息做一些有用的事</li>
+<li>
+<p>运行时获得类的信息的另一个动机：远程方法调用（RMI）</p>
+</li>
+<li>
+<p>java.lang.reflect</p>
+<ol>
+<li>Class类与java.lang.reflect类库一起对反射的概念进行了支持</li>
+<li><code>Field</code>类<ol>
+<li><code>Class.getFields()</code>：返回字段的对象数组<ul>
+<li>不能得到私有的属性</li>
+</ul>
+</li>
+<li>使用<code>get()</code> <code>set()</code>方法读取和修改与Field对象关联的字段</li>
+</ol>
+</li>
+<li><code>Method</code>类<ol>
+<li><code>Class.getMethod()</code>：返回方法的对象数组</li>
+<li>使用<code>invoke()</code>方法对用与Method对象关联的方法</li>
+</ol>
+</li>
+<li><code>Constructor</code>类<ol>
+<li><code>Class.getConstructors()</code>：返回构造器的对象数组</li>
+<li><code>Class.getConstructor()</code>：在()可以指定构造器参数类型，空即返回无参构造器</li>
+<li>使用Constructor创建新的对象</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><code>Class.forName()</code>生成的结果在编译时是不可知的，因此所有方法特征签名信息都是在执行时被提取出来</li>
+<li>优点和缺点<ol>
+<li>优点：可以动态的创建和使用对象（也是框架底层核心）使用灵活</li>
+<li>使用反射基本是解释执行，对执行速度有影响</li>
+</ol>
+</li>
+<li>反射对用优化——关闭访问检查<ol>
+<li><code>Method</code>、<code>Field</code>、<code>Constructor</code>对象都有<code>setAccessible()</code>方法<ol>
+<li><code>setAccessible()</code>：启动和禁用访问安全检查的开关</li>
+<li>参数值为true表示反射的对象在使用时取消访问检查，提高反射的效率</li>
+</ol>
+</li>
+<li><a href="https://www.bilibili.com/video/BV1kr4y1J76F?share_source=copy_web">java反射真的很慢吗_哔哩哔哩_bilibili</a></li>
+</ol>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../%E5%A4%84%E7%90%86%E4%BA%8B%E4%BB%B6/" class="btn btn-neutral float-left" title="处理事件"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%A4%8D%E7%94%A8%E7%B1%BB/" class="btn btn-neutral float-right" title="复用类">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../%E5%A4%84%E7%90%86%E4%BA%8B%E4%BB%B6/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%A4%8D%E7%94%A8%E7%B1%BB/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

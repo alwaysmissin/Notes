@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>马尔可夫决策过程 - My Notes</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u9a6c\u5c14\u53ef\u592b\u51b3\u7b56\u8fc7\u7a0b";
+        var mkdocs_page_input_path = "MachineLearning\\\u5f3a\u5316\u5b66\u4e60\uff08Reinforce Learning\uff09\\MDP\uff08\u9a6c\u5c14\u53ef\u592b\u51b3\u7b56\u8fc7\u7a0b\uff09.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> My Notes
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">C or C++</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/CC%2B%2B%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/">C/C++学习路线</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/CSDN%E4%B9%A0%E9%A2%98/">CSDN习题</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E4%BD%8D%E8%BF%90%E7%AE%97/">位运算</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E5%87%BD%E6%95%B0/">函数</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84/">字符数组</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E5%AE%A3%E8%80%81%E7%AC%AC%E4%B8%89%E7%AB%A0%E7%A8%8B%E5%BA%8F/">宣老第三章程序</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E5%BE%AA%E7%8E%AF/">第三周：循环</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6/">第五周 循环控制</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E6%8C%87%E9%92%88/">第九周 指针</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">第六周数据类型</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E6%95%B0%E7%BB%84/">数组</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E6%96%87%E4%BB%B6/">文件</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E7%BB%93%E6%9E%84%E4%BD%93/">结构体</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E8%BF%9B%E4%B8%80%E6%AD%A5%E7%9A%84%E5%88%A4%E6%96%AD%E4%B8%8E%E5%BE%AA%E7%8E%AF/">第四周 进一步的判断与循环</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E9%93%BE%E8%A1%A8/">链表</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">C Primer Plus</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../C%20or%20C%2B%2B/C%20Primer%20Plus/%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E6%95%B0%E6%8D%AE%E5%92%8CC/">第三章 数据和C</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">HTML</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../HTML/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">基本语法</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Java</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">基础</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E5%9F%BA%E7%A1%80/Arrays%E7%B1%BB/">Arrays类</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E5%9F%BA%E7%A1%80/Java%20%E6%B5%81%28Stream%29%E3%80%81%E6%96%87%E4%BB%B6%28File%29%E5%92%8CIO/">Java 流(Stream)、文件(File)和IO</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E5%9F%BA%E7%A1%80/JavaDoc/">JavaDoc</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E5%9F%BA%E7%A1%80/Scanner%E5%AF%B9%E8%B1%A1/">Scanner对象</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E5%9F%BA%E7%A1%80/%E5%8C%85%E6%9C%BA%E5%88%B6/">包机制</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E5%9F%BA%E7%A1%80/%E5%BC%82%E5%B8%B8/">异常</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E5%9F%BA%E7%A1%80/%E6%95%B0%E7%BB%84/">数组</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">进阶</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E8%BF%9B%E9%98%B6/GUI/">GUI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E8%BF%9B%E9%98%B6/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%9C%BA%E5%88%B6/">Java多线程机制</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E8%BF%9B%E9%98%B6/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">Java网络编程</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E8%BF%9B%E9%98%B6/StringBuffer%E5%92%8CStringBuilder/">StringBuffer和StringBuilder</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E8%BF%9B%E9%98%B6/%E5%A4%84%E7%90%86%E4%BA%8B%E4%BB%B6/">处理事件</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E8%BF%9B%E9%98%B6/%E7%B1%BB%E5%9E%8B%E4%BF%A1%E6%81%AF/">类型信息</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">面向对象</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%A4%8D%E7%94%A8%E7%B1%BB/">复用类</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E6%96%B9%E6%B3%95/">方法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E9%9B%86%E5%90%88/">集合</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">MachineLearning</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../Numpy/">Numpy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Pytorch%E7%BC%96%E5%86%99%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF/">Pytorch编写深度学习模型的基本思路</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%89%8D%E5%90%91%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/">前向与反向传播</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">分类(Classification)</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%88%86%E7%B1%BB%28Classification%29/%E5%88%86%E7%B1%BB%28Classification%29/">分类(Classification)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%88%86%E7%B1%BB%28Classification%29/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%28Logistic%20Regression%29/">逻辑回归(Logistic Regression)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">回归问题(Regression)</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98%28Regression%29/%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98/">回归问题</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">强化学习（Reinforce Learning）</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">马尔可夫决策过程</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_2">马尔可夫决策过程</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">属性：</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#eg">eg:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">无限效益</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#discount-factors">折扣因子(Discount Factors)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#finite-horizon">有限界（Finite Horizon）</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#absorbing-state">必然最终态(Absorbing State)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#optimal-quantities">最优量(Optimal Quantities)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#markovianess">马尔可夫性（Markovianess）</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bellman-equations">贝尔曼方程(Bellman Equations)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#value-iteration">值迭代(Value Iteration)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#time-limited-value">限时值(Time-limited Value)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#eg_1">eg</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">策略提取</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">策略迭代</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#eg_2">eg：</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E5%86%B3%E7%AD%96%E7%BD%91%E7%BB%9C%28Decision%20Network%29/">决策网络(Decision Network)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%28Reinforce%20Learning%29/">强化学习(Reinforce Learning)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E6%A6%82%E7%8E%87%28Probabilistic%29/">概率(Probabilistic)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%BD%91%E7%BB%9C%28Bayesian%20Network%29/">贝叶斯网络(Bayesian Network)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E9%9A%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B%28HMMs%29/">隐马尔可夫模型(Hidden Markov Models-HMMs)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">模型优化</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A8%A1%E5%9E%8B%E4%BC%98%E5%8C%96/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%BB%BB%E5%8A%A1%E6%94%BB%E7%95%A5/">机器学习任务攻略</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A8%A1%E5%9E%8B%E4%BC%98%E5%8C%96/%E7%B1%BB%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%AE%AD%E7%BB%83%E6%96%B9%E6%B3%95/">类神经网络训练</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Opencv</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../opencv/Mat%E5%AF%B9%E8%B1%A1/">Mat对象</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../opencv/OpenCV%E5%88%9D%E6%8E%A2/">OpenCV初探</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../opencv/%E5%8A%A0%E8%BD%BD%E3%80%81%E4%BF%AE%E6%94%B9%E3%80%81%E4%BF%9D%E5%AD%98%E5%9B%BE%E5%83%8F/">[加载、修改、保存图像](C:\Users\11146\OneDrive\coding\program\opencv\OpenCV_Learning\加载、修改、保存图像.cpp)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../opencv/%E5%9B%BE%E5%83%8F%E6%93%8D%E4%BD%9C/">图像操作</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../opencv/%E7%9F%A9%E9%98%B5%E7%9A%84%E6%8E%A9%E8%86%9C%E6%93%8D%E4%BD%9C/">[矩阵的掩膜操作](C:\Users\11146\OneDrive\coding\program\opencv\OpenCV_Learning\矩阵的掩膜操作.cpp)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Python</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../python/Python/">Python基础</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Robocup</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../robocup/robocup%E9%A2%84%E4%B9%A0%E6%9D%90%E6%96%99%202/">robocup预习材料 2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../robocup/%E9%A2%84%E4%B9%A0%E6%9D%90%E6%96%99%203/">预习材料 3</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">其他</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E5%85%B6%E4%BB%96/%E4%BB%A3%E7%A0%81%E7%AE%80%E6%B4%81%E4%B9%8B%E9%81%93/">整洁代码</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">数据结构</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/vector%E6%A8%A1%E6%9D%BF/">vector模板</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B8%B8%E7%94%A8STL/">常用STL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%BF%E4%B9%89%E8%A1%A8/">广义表</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%A3%E5%88%97%E8%A1%A8/">散列表（哈希表）查找</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%80%BB%E8%AE%BA/">数据结构</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%88/">栈</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A8%A1%E6%9D%BF/">模板</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%B1%89%E8%AF%BA%E5%A1%94/">汉诺塔[[递归]]</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%80%A7%E8%A1%A8/">线性表</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/">链表</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%98%9F%E5%88%97/">队列</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">图</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE/%E5%9B%BE/">图</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE/%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD/">基本术语</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">排序</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/%E6%8E%92%E5%BA%8F/">排序</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">插入排序</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">树</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91/%E6%A0%91/">树</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/STL/">STL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9B%9E%E6%BA%AF%E6%B3%95/">回溯法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/">常用代码模板</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E9%80%92%E5%BD%92/">递归</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">动态规划</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E6%A6%82%E8%BF%B0/">动态规划概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">背包问题</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">基础算法</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86/">二分</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/">前缀和与差分</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E5%8F%8C%E6%8C%87%E9%92%88%E7%AE%97%E6%B3%95/">双指针算法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F/">排序</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E6%95%B4%E6%95%B0%E7%A6%BB%E6%95%A3%E5%8C%96/">整数离散化</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E9%AB%98%E7%B2%BE%E5%BA%A6/">高精度计算</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">搜索与图论</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/Bellman-Ford/">Bellman Ford</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/B%E6%A0%91/">B树</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/DFS%E4%B8%8EBFS/">DFS与BFS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/Dijkstra/">Dijkstra</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/Floyd/">Floyd</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/SPFA/">SPFA</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/">关键路径</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/">拓扑排序</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">最小生成树</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%9C%80%E7%9F%AD%E8%B7%AF%E6%A6%82%E8%BF%B0/">最短路概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%A0%91%E5%92%8C%E5%9B%BE/">树和图</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%A0%91%E8%A1%A8%E6%9F%A5%E6%89%BE/">树表查找</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">数据结构</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/KMP/">KMP</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8D%95%E8%B0%83%E6%A0%88%E4%B8%8E%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/">单调栈与单调队列</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%93%88%E5%B8%8C%E8%A1%A8/">哈希表</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%A0%86/">堆</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/">并查集</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%A0%86/">斐波那契堆</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/">表达式求值</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8%E4%B8%8E%E9%82%BB%E6%8E%A5%E8%A1%A8/">链表与邻接表</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">贪心</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E8%B4%AA%E5%BF%83/Huffman/">Huffman</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">My Notes</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>MachineLearning &raquo;</li>
+          <li>强化学习（Reinforce Learning） &raquo;</li>
+      <li>马尔可夫决策过程</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">马尔可夫决策过程</h1>
+<ul>
+<li>不确定搜索问题：世界中存在一定程度的不确定性的问题被称为不确定搜索问题$\rightarrow$使用<strong>马尔可夫决策过程</strong>解决</li>
+</ul>
+<h2 id="_2">马尔可夫决策过程</h2>
+<h3 id="_3">属性：</h3>
+<ul>
+<li>一个<strong>状态</strong>集$S$ </li>
+<li>一个<strong>操作</strong>集$A$</li>
+<li>一个起始状态</li>
+<li>可能存在一个或多个最终状态</li>
+<li>一个<strong>转换函数(transition function)</strong>$T(state, action, state')$： 表示任意状态执行任意行动后得到的各种输出的可能性</li>
+<li>一个<strong>奖励函数(reward function)</strong>$R(state, action, state')$：： 表示任意状态执行任意行动后得到的各种输出的奖励</li>
+<li>可能存在一个或多个最终状态</li>
+<li>可能会有一个<strong>折扣因子(discount factor)</strong>$\gamma$</li>
+</ul>
+<h3 id="eg">eg:</h3>
+<p><img alt="" src="https://s2.loli.net/2022/07/27/AUpzLSyxk9tOEFv.png" />
+- 三种状态：$S={cool, warm, overheated}$
+- 两种可能的操作：$A={slow, fast}$
+- 一个最终状态：Overheated
+- 转移函数：$T(state, action, state')$ 
+    - $T(cool, slow, cool) = 1$
+    - $T(warm, slow, cool) = 0.5$
+    - $T(warm, slow, warm) = 0.5$
+    - $T(cool, fast, cool) = 0.5$
+    - $T(cool, slow, warm) = 0.5$
+    - $T(warm, fast, overheated) = 1$
+<img alt="" src="https://s2.loli.net/2022/07/27/2TAtvlONeFaxfYP.png" />
+- 奖励函数：$R(state, action, state')$
+    - $R(cool, slow, cool) = 1$
+    - $R(warm, slow, cool) = 1$
+    - $R(warm, slow, warm) = 1$
+    - $R(cool, fast, cool) = 2$
+    - $R(cool, slow, warm) = 2$
+    - $R(warm, fast, overheated) = -10$
+- 一个agent的行动可以表示为：$s_0 \overset{a_0} \rightarrow s_{1} \overset{a_1} \rightarrow s_{2}\overset{a_2} \rightarrow s_{3}……$
+- 其效益为：$U([s_0, a_0,s_1, ,a_1,s_2,a_2,s_3…]) = R\left(s_{0}, a_{0}, s_{1}\right)+R\left(s_{1}, a_{1}, s_{2}\right) \+R\left(s_{2}, a_{2}, s_{3}\right)+\ldots$</p>
+<h2 id="_4">无限效益</h2>
+<h3 id="discount-factors">折扣因子(Discount Factors)</h3>
+<ul>
+<li>折扣因子$\gamma(0&lt;\gamma&lt;1)$表示奖励值随时间变化的<strong>指数</strong>衰减</li>
+<li>现折扣后效益：$U\left(\left[s_{0}, a_{0}, s_{1}, a_{1}, s_{2}, \ldots\right]\right)=R\left(s_{0}, a_{0}, s_{1}\right)+\gamma R\left(s_{1}, a_{1}, s_{2}\right)+\gamma^{2} R\left(s_{2}, a_{2}, s_{3}\right)+\ldots$</li>
+<li>eg：$\gamma = 0.1$
+<img alt="" src="https://s2.loli.net/2022/07/28/QiaLl6Wxeb4fsq8.png" />
+<img alt="" src="https://s2.loli.net/2022/07/28/otyRzJKeX72hMAv.png" />
+<img alt="" src="https://s2.loli.net/2022/07/28/afcTyS3lnOJkBDx.png" /></li>
+</ul>
+<h3 id="finite-horizon">有限界（Finite Horizon）</h3>
+<ul>
+<li>类似于深度限制搜索(Depth-Limited Search)<ul>
+<li>在固定步数后结束“生命”</li>
+</ul>
+</li>
+</ul>
+<h3 id="absorbing-state">必然最终态(Absorbing State)</h3>
+<ul>
+<li>无论选择何种策略，最后必然达到一个最终状态(Terminal State)</li>
+</ul>
+<h2 id="optimal-quantities">最优量(Optimal Quantities)</h2>
+<p><img alt="" src="https://s2.loli.net/2022/07/28/rLiEmo9Dna4WtOv.png" />
+1. state s：$V^<em>(s)=$ 从状态s开始，剩余寿命中选择执行</em><em>最优行为</em><em>所获得的</em><em>期望效益</em><em>
+2. q-state(s,a)：$Q^</em>（s,a)=$ 状态s下选择执行<strong>行为a</strong>，并且获得<strong>最优结果</strong>的<strong>期望效益</strong>，并且从此后采取的都是最优行动
+3. optimal policy：$\pi^<em>(s)=$ 状态s下的</em><em>最优行为</em><em>
+4. 价值(Value)的递归定义：
+$$
+\begin{array}{l}
+V^{</em>}(s)=\max <em>{a} Q^{<em>}(s, a) \
+Q^{</em>}(s, a)=\sum</em>{s^{\prime}} T\left(s, a, s^{\prime}\right)\left[R\left(s, a, s^{\prime}\right)+\gamma V^{<em>}\left(s^{\prime}\right)\right] \
+V^{</em>}(s)=\max <em>{a} \sum</em>{s^{\prime}} T\left(s, a, s^{\prime}\right)\left[R\left(s, a, s^{\prime}\right)+\gamma V^{*}\left(s^{\prime}\right)\right]
+\end{array}
+$$
+- egs:
+<img alt="" src="https://s2.loli.net/2022/07/28/dbulKwp9NEVLBy4.png" />
+<img alt="" src="https://s2.loli.net/2022/07/28/Dkde58XrJKtUSzL.png" /></p>
+<h2 id="markovianess">马尔可夫性（Markovianess）</h2>
+<ul>
+<li>马尔可夫性：过去与未来是条件独立的$\rightarrow S_{t+1}$ 与 $S_{t}$之间存在关系，与先前无关，即只与最近的状态有关
+$P\left(S_{t+1}=s_{t+1} \mid S_{t}=s_{t}, A_{t}=a_{t}, S_{t-1}=s_{t-1}, A_{t-1}=a_{t-1}, \ldots, S_{0}=s_{0}\right)=P\left(S_{t+1}=s_{t+1} \mid S_{t}=s_{t}, A_{t}=a_{t}\right)$</li>
+</ul>
+<h2 id="bellman-equations">贝尔曼方程(Bellman Equations)</h2>
+<ul>
+<li>定义$$V^{<em>}(s)=\max <em>{a} \sum</em>{s^{\prime}} T\left(s, a, s^{\prime}\right)\left[R\left(s, a, s^{\prime}\right)+\gamma V^{</em>}\left(s^{\prime}\right)\right]$$</li>
+<li>Bellman Equation是动态规划的一个例子，这种方程可以通过其内在的递归结构将问题拆分成一个个小问题</li>
+</ul>
+<h2 id="value-iteration">值迭代(Value Iteration)</h2>
+<ul>
+<li>如何计算出最优值-&gt;限时值(time-limited value)</li>
+</ul>
+<h3 id="time-limited-value">限时值(Time-limited Value)</h3>
+<ul>
+<li>限时值：强化有限界得到的结果</li>
+<li>限制时间步数为$k$的一个状态$s$的限时值为$V_k(s)$，代表在已知当前MDP会在$k$时间步后终止的情况下，从s出发能得到的最大期望效益</li>
+<li>执行流程：<ol>
+<li>初始化：$\forall s \in S, V_0(s) = 0$   </li>
+<li>重复如下更新操作：$\forall s \in S, V_{k + 1}(s)=\max_{a}\sum_{s\prime}T(s,a,s\prime)[R(s,a,s\prime)+\gamma V_k(S\prime)]$  <ul>
+<li>通过计算子问题的解(所有$V_k(s)$)来迭代得到更高一级的解(所有$V_{k+1}(s)$)-&gt;<strong>动态规划</strong>算法</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>与Bellman方程的区别<ul>
+<li>Bellman：给出最优化的条件</li>
+<li>更新规则给出的是迭代更新值直至收敛的方法</li>
+</ul>
+</li>
+<li>达到收敛时，每个状态的Bellman方程都不会改变&lt;-$\forall s \in S, V(s)=V_{k+1}(s)=V^*(s)$ </li>
+</ul>
+<h3 id="eg_1">eg</h3>
+<p>$\gamma = 0.5$ 
+<img alt="" src="https://s2.loli.net/2022/07/28/Y9SmvHRVt2oZi8e.png" />
+1. 初始化：
+|       | cool | warm | overheated |
+| :-----: | :----: | :----: | :----------: |
+| $V_0$ | 0    | 0    | 0          | 
+2. 计算：
+<img alt="" src="https://s2.loli.net/2022/07/28/u6NxCfqjdsI8ncA.png" />
+<img alt="" src="https://s2.loli.net/2022/07/28/LW1glC7veV64rQx.png" />
+|       | cool | warm | overheated |
+|:-----:|:----:|:----:|:----------:|
+| $V_0$ |  0   |  0   |     0      |
+| $V_1$ |  2   |  1   |     0      |
+| $V_2$ | 2.75 | 1.75 | 0           |</p>
+<h2 id="_5">策略提取</h2>
+<ul>
+<li>解决：如何确定最优策略？</li>
+<li>表达式：$$\forall s \in S, \pi^<em>(s) = arg\max_aQ^</em>(s,a)\
+ =arg\max_a\sum_{s\prime}T(s,a,s^\prime)[R(s,a,s\prime)+\gamma V^*(s^\prime)$$<ul>
+<li>其中$a$即为将我们带到具有最大Q-value的$q$状态操作</li>
+</ul>
+</li>
+</ul>
+<h2 id="_6">策略迭代</h2>
+<ul>
+<li>值迭代存在的问题：<ul>
+<li><strong>时间成本高</strong>：对每个q值得计算，需要轮流对|S|个状态再次进行迭代</li>
+<li>进行了大量<strong>多余的计算</strong>&lt;-<strong>策略提取得到的策略通常会比值本身更快的收敛</strong></li>
+</ul>
+</li>
+<li>策略迭代得操作：<ul>
+<li>定义一个初始策略<ul>
+<li>可以随意确定，但是初始策略越接近最优策略，策列迭代收敛得越快</li>
+</ul>
+</li>
+<li>重复以下操作：<ol>
+<li>评估：使用策略评估对当前得策略进行评估：$V^\pi(s)$表示期望效益 $$V^\pi(s)=\sum_{s^\prime}T(s,\pi(s),s^\prime)[R(s,\pi(s),s^\prime)+\gamma V^\pi(s^\prime)]$$</li>
+<li>评估：利用以下更新规则，直至收敛：$$V_{k+1}^{\pi_{i}}(s) \leftarrow\sum_{s^{\prime}} T\left(s, \pi(s), s^{\prime}\right)\left[R\left(s, \pi_{i}(s), s^{\prime}\right)+\gamma V_{k}^{\pi_{i}}\left(s^{\prime}\right)\right]$$</li>
+<li>提升：使用策略提取获得一个更好得策略：$$\pi_{i+1}(s)=arg\max_a\sum_{s\prime}T(s,a,s^\prime)[R(s,a,s\prime)+\gamma V^{\pi_i}(s^\prime)]$$</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="eg_2">eg：</h3>
+<p>$\gamma = 0.5$
+<img alt="" src="https://s2.loli.net/2022/07/29/D92Vb6gRmInNyMp.png" />
+- 任意确定初始状态：
+|         | cool | warm | overheated |
+| :-------: | :----: | :----: | :----------: |
+| $\pi_0$ | slow | slow | -           |
+- 第一轮值迭代：
+<img alt="" src="https://s2.loli.net/2022/07/29/BcFVMiLamOEHIYu.png" />
+|             | cool | warm | overheated |
+| :-----------: | :----: | :----: | :----------: |
+| $V^{\pi_0}$ | 2    | 2    | 0          | 
+- 策略提取：
+<img alt="" src="https://s2.loli.net/2022/07/29/FtODHc37InWuRYM.png" />
+- 第二轮策略迭代可得$\pi_2(cool)=fast,\pi_2(warm)=slow$
+    - 与$\pi_1$策略相同，则$\pi_1=\pi_2=\pi^*$
+|         | cool | warm |
+|:-------:|:----:|:----:|
+| $\pi_0$ | slow | slow |
+| $\pi_1$ | fast | slow |
+| $\pi_2$ | fast | slow     |</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98%28Regression%29/%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98/" class="btn btn-neutral float-left" title="回归问题"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../%E5%86%B3%E7%AD%96%E7%BD%91%E7%BB%9C%28Decision%20Network%29/" class="btn btn-neutral float-right" title="决策网络(Decision Network)">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98%28Regression%29/%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../%E5%86%B3%E7%AD%96%E7%BD%91%E7%BB%9C%28Decision%20Network%29/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

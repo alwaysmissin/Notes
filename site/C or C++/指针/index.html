@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>第九周 指针 - My Notes</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u7b2c\u4e5d\u5468 \u6307\u9488";
+        var mkdocs_page_input_path = "C or C++\\\u6307\u9488.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> My Notes
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">C or C++</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../CC%2B%2B%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/">C/C++学习路线</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../CSDN%E4%B9%A0%E9%A2%98/">CSDN习题</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E4%BD%8D%E8%BF%90%E7%AE%97/">位运算</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%87%BD%E6%95%B0/">函数</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84/">字符数组</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%AE%A3%E8%80%81%E7%AC%AC%E4%B8%89%E7%AB%A0%E7%A8%8B%E5%BA%8F/">宣老第三章程序</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%BE%AA%E7%8E%AF/">第三周：循环</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6/">第五周 循环控制</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">第九周 指针</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_2">一、&amp;</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">二、指针</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">三、使用</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_5">四、指针与数组</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_6">五、传入函数的数组</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#const">六、指针与const</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_7">七、行指针变量</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_8">八、指针运算</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_9">九、动态内存分配</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_10">十、引用</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">第六周数据类型</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E6%95%B0%E7%BB%84/">数组</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E6%96%87%E4%BB%B6/">文件</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E7%BB%93%E6%9E%84%E4%BD%93/">结构体</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E8%BF%9B%E4%B8%80%E6%AD%A5%E7%9A%84%E5%88%A4%E6%96%AD%E4%B8%8E%E5%BE%AA%E7%8E%AF/">第四周 进一步的判断与循环</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E9%93%BE%E8%A1%A8/">链表</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">C Primer Plus</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../C%20Primer%20Plus/%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E6%95%B0%E6%8D%AE%E5%92%8CC/">第三章 数据和C</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">HTML</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../HTML/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">基本语法</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Java</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">基础</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Java/%E5%9F%BA%E7%A1%80/Arrays%E7%B1%BB/">Arrays类</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Java/%E5%9F%BA%E7%A1%80/Java%20%E6%B5%81%28Stream%29%E3%80%81%E6%96%87%E4%BB%B6%28File%29%E5%92%8CIO/">Java 流(Stream)、文件(File)和IO</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Java/%E5%9F%BA%E7%A1%80/JavaDoc/">JavaDoc</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Java/%E5%9F%BA%E7%A1%80/Scanner%E5%AF%B9%E8%B1%A1/">Scanner对象</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Java/%E5%9F%BA%E7%A1%80/%E5%8C%85%E6%9C%BA%E5%88%B6/">包机制</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Java/%E5%9F%BA%E7%A1%80/%E5%BC%82%E5%B8%B8/">异常</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Java/%E5%9F%BA%E7%A1%80/%E6%95%B0%E7%BB%84/">数组</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">进阶</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Java/%E8%BF%9B%E9%98%B6/GUI/">GUI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Java/%E8%BF%9B%E9%98%B6/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%9C%BA%E5%88%B6/">Java多线程机制</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Java/%E8%BF%9B%E9%98%B6/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">Java网络编程</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Java/%E8%BF%9B%E9%98%B6/StringBuffer%E5%92%8CStringBuilder/">StringBuffer和StringBuilder</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Java/%E8%BF%9B%E9%98%B6/%E5%A4%84%E7%90%86%E4%BA%8B%E4%BB%B6/">处理事件</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Java/%E8%BF%9B%E9%98%B6/%E7%B1%BB%E5%9E%8B%E4%BF%A1%E6%81%AF/">类型信息</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">面向对象</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%A4%8D%E7%94%A8%E7%B1%BB/">复用类</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E6%96%B9%E6%B3%95/">方法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E9%9B%86%E5%90%88/">集合</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">MachineLearning</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../MachineLearning/Numpy/">Numpy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../MachineLearning/Pytorch%E7%BC%96%E5%86%99%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF/">Pytorch编写深度学习模型的基本思路</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../MachineLearning/%E5%89%8D%E5%90%91%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/">前向与反向传播</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">分类(Classification)</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../MachineLearning/%E5%88%86%E7%B1%BB%28Classification%29/%E5%88%86%E7%B1%BB%28Classification%29/">分类(Classification)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../MachineLearning/%E5%88%86%E7%B1%BB%28Classification%29/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%28Logistic%20Regression%29/">逻辑回归(Logistic Regression)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">回归问题(Regression)</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../MachineLearning/%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98%28Regression%29/%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98/">回归问题</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">强化学习（Reinforce Learning）</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../MachineLearning/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%88Reinforce%20Learning%EF%BC%89/MDP%EF%BC%88%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%86%B3%E7%AD%96%E8%BF%87%E7%A8%8B%EF%BC%89/">马尔可夫决策过程</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../MachineLearning/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%88Reinforce%20Learning%EF%BC%89/%E5%86%B3%E7%AD%96%E7%BD%91%E7%BB%9C%28Decision%20Network%29/">决策网络(Decision Network)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../MachineLearning/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%88Reinforce%20Learning%EF%BC%89/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%28Reinforce%20Learning%29/">强化学习(Reinforce Learning)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../MachineLearning/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%88Reinforce%20Learning%EF%BC%89/%E6%A6%82%E7%8E%87%28Probabilistic%29/">概率(Probabilistic)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../MachineLearning/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%88Reinforce%20Learning%EF%BC%89/%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%BD%91%E7%BB%9C%28Bayesian%20Network%29/">贝叶斯网络(Bayesian Network)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../MachineLearning/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%88Reinforce%20Learning%EF%BC%89/%E9%9A%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B%28HMMs%29/">隐马尔可夫模型(Hidden Markov Models-HMMs)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">模型优化</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../MachineLearning/%E6%A8%A1%E5%9E%8B%E4%BC%98%E5%8C%96/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%BB%BB%E5%8A%A1%E6%94%BB%E7%95%A5/">机器学习任务攻略</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../MachineLearning/%E6%A8%A1%E5%9E%8B%E4%BC%98%E5%8C%96/%E7%B1%BB%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%AE%AD%E7%BB%83%E6%96%B9%E6%B3%95/">类神经网络训练</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Opencv</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../opencv/Mat%E5%AF%B9%E8%B1%A1/">Mat对象</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../opencv/OpenCV%E5%88%9D%E6%8E%A2/">OpenCV初探</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../opencv/%E5%8A%A0%E8%BD%BD%E3%80%81%E4%BF%AE%E6%94%B9%E3%80%81%E4%BF%9D%E5%AD%98%E5%9B%BE%E5%83%8F/">[加载、修改、保存图像](C:\Users\11146\OneDrive\coding\program\opencv\OpenCV_Learning\加载、修改、保存图像.cpp)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../opencv/%E5%9B%BE%E5%83%8F%E6%93%8D%E4%BD%9C/">图像操作</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../opencv/%E7%9F%A9%E9%98%B5%E7%9A%84%E6%8E%A9%E8%86%9C%E6%93%8D%E4%BD%9C/">[矩阵的掩膜操作](C:\Users\11146\OneDrive\coding\program\opencv\OpenCV_Learning\矩阵的掩膜操作.cpp)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Python</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../python/Python/">Python基础</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Robocup</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../robocup/robocup%E9%A2%84%E4%B9%A0%E6%9D%90%E6%96%99%202/">robocup预习材料 2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../robocup/%E9%A2%84%E4%B9%A0%E6%9D%90%E6%96%99%203/">预习材料 3</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">其他</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E4%BB%A3%E7%A0%81%E7%AE%80%E6%B4%81%E4%B9%8B%E9%81%93/">整洁代码</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">数据结构</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/vector%E6%A8%A1%E6%9D%BF/">vector模板</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B8%B8%E7%94%A8STL/">常用STL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%BF%E4%B9%89%E8%A1%A8/">广义表</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%A3%E5%88%97%E8%A1%A8/">散列表（哈希表）查找</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%80%BB%E8%AE%BA/">数据结构</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%88/">栈</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A8%A1%E6%9D%BF/">模板</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%B1%89%E8%AF%BA%E5%A1%94/">汉诺塔[[递归]]</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%80%A7%E8%A1%A8/">线性表</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/">链表</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%98%9F%E5%88%97/">队列</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">图</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE/%E5%9B%BE/">图</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE/%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD/">基本术语</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">排序</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/%E6%8E%92%E5%BA%8F/">排序</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">插入排序</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">树</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91/%E6%A0%91/">树</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/STL/">STL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E5%9B%9E%E6%BA%AF%E6%B3%95/">回溯法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/">常用代码模板</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E9%80%92%E5%BD%92/">递归</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">动态规划</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E6%A6%82%E8%BF%B0/">动态规划概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">背包问题</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">基础算法</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86/">二分</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/">前缀和与差分</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E5%8F%8C%E6%8C%87%E9%92%88%E7%AE%97%E6%B3%95/">双指针算法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F/">排序</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E6%95%B4%E6%95%B0%E7%A6%BB%E6%95%A3%E5%8C%96/">整数离散化</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E9%AB%98%E7%B2%BE%E5%BA%A6/">高精度计算</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">搜索与图论</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/Bellman-Ford/">Bellman Ford</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/B%E6%A0%91/">B树</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/DFS%E4%B8%8EBFS/">DFS与BFS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/Dijkstra/">Dijkstra</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/Floyd/">Floyd</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/SPFA/">SPFA</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/">关键路径</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/">拓扑排序</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">最小生成树</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%9C%80%E7%9F%AD%E8%B7%AF%E6%A6%82%E8%BF%B0/">最短路概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%A0%91%E5%92%8C%E5%9B%BE/">树和图</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%A0%91%E8%A1%A8%E6%9F%A5%E6%89%BE/">树表查找</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">数据结构</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/KMP/">KMP</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8D%95%E8%B0%83%E6%A0%88%E4%B8%8E%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/">单调栈与单调队列</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%93%88%E5%B8%8C%E8%A1%A8/">哈希表</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%A0%86/">堆</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/">并查集</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%A0%86/">斐波那契堆</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/">表达式求值</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8%E4%B8%8E%E9%82%BB%E6%8E%A5%E8%A1%A8/">链表与邻接表</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">贪心</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95/%E8%B4%AA%E5%BF%83/Huffman/">Huffman</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">My Notes</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>C or C++ &raquo;</li>
+      <li>第九周 指针</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">第九周 指针</h1>
+<h2 id="_2">一、&amp;</h2>
+<ol>
+<li>获得<strong>变量</strong>的地址，其操作数必须是<strong>变量</strong></li>
+<li>%p，输出变量的地址</li>
+</ol>
+<pre><code class="language-c">printf(&quot;%p&quot;,&amp;i);
+//or
+p=(int)&amp;i;
+printf(&quot;0x%x&quot;,p);
+</code></pre>
+<ol>
+<li>&amp;<strong>不能对没有地址的东西</strong>取地址（如表达式）</li>
+<li>地址从上往下分配</li>
+</ol>
+<h2 id="_3">二、指针</h2>
+<ul>
+<li>
+<p>保存地址的变量（int *p)</p>
+</li>
+<li>
+<p>变量的值是内存的地址</p>
+</li>
+<li>
+<p>作为参数的指针</p>
+<p>```c
+void f(int *p);</p>
+<p>int i = 0;
+f(&amp;i);
+```</p>
+</li>
+<li>
+<p>借此访问<strong>外部的i</strong></p>
+</li>
+<li>
+<p>改变地址的变量</p>
+</li>
+<li>
+<p>*（间接运算）</p>
+<ul>
+<li>(p指的是地址，*表示取地址对应的变量)</li>
+</ul>
+<p><code>*(指针)=值</code></p>
+</li>
+<li>
+<p>*p 整体作为一个整数</p>
+</li>
+<li>
+<p>函数间依旧是值的传递，但是所传递的是地址，因此能够对地址上的值访问</p>
+</li>
+</ul>
+<h2 id="_4">三、使用</h2>
+<ol>
+<li>三部曲</li>
+<li>说明指针<code>short a=0,*p;</code><ol>
+<li>指针必须指向对象后才能使用</li>
+<li>*与&amp;为互补运算</li>
+</ol>
+</li>
+<li>指针指向对象<code>p=&amp;a;</code></li>
+<li>
+<p>通过指针引用对象<code>*p=*p+2;</code></p>
+</li>
+<li>
+<p>交换</p>
+</li>
+</ol>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+void swap(int *a,int *b){
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
+int main(){
+    int a,b;
+    scanf(&quot;%d%d&quot;,&amp;a,&amp;b);
+    swap(&amp;a,&amp;b);
+    printf(&quot;%d %d&quot;,a,b);
+    return 0;
+} 
+</code></pre>
+<ol>
+<li>最大最小值</li>
+</ol>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+void maxmin(int a[],int length,int *max,int *min);
+int main()
+{
+    int a[10],i;
+    int max,min;
+    for (i=0;i&lt;10;i++){
+        scanf(&quot;%d&quot;,&amp;a[i]);
+    }
+    maxmin(a,sizeof(a)/sizeof(a[0]),&amp;max,&amp;min);
+    printf(&quot;%d %d&quot;,max,min);
+    return 0; 
+}
+void maxmin(int a[],int len,int *max,int *min)
+{
+    int i;
+    *max=*min=a[0];
+    for(i=0;i&lt;len;i++){
+        if (a[i]&gt;*max)
+            *max = a[i];
+        else if (a[i]&lt;*min)
+            *min = a[i];
+    }
+}
+</code></pre>
+<ul>
+<li>地址变量没有被赋值之前，不能通过“*”访问任何数据</li>
+</ul>
+<h2 id="_5">四、指针与数组</h2>
+<ol>
+<li>数组变量本身表达地址</li>
+<li><strong>不需要用&amp;取地址</strong></li>
+<li><strong>warning：数组的单元是变量，需要&amp;取地址</strong></li>
+<li>*运算符可以对指针做，也可以对数组做<ol>
+<li>数组变量是const的指针，因此<strong>不能被赋值</strong>（不能改变数组的地址，因此不能使<code>数组名++</code>的方式遍历数组）（int *const 数组）</li>
+</ol>
+</li>
+<li>
+<p>引用数组元素的步骤</p>
+</li>
+<li>
+<p>说明指针和数组<code>int *p,a[10];</code></p>
+</li>
+<li>指针指向数组<code>p=a;</code>(指向首地址，也可写作<code>p=a[0];</code>)</li>
+<li>通过指针引用数组元素<ol>
+<li>下标法：<code>a[i]</code></li>
+<li>指针法：<code>*(p+i)</code></li>
+<li>数组名法：<code>*(a+i)</code></li>
+</ol>
+</li>
+<li>
+<p>二维数组的地址<code>int a[3][4]</code></p>
+</li>
+<li>
+<p>a+1一次加一行（一个一维数组）</p>
+</li>
+<li>a[0]+1,一次加一个（一个元素）</li>
+<li>i行j列的数组元素可以由以下方式得到<ol>
+<li><code>*(a[i] + j)</code></li>
+<li><code>p[i][j]</code></li>
+<li><code>*(*(a + i) + j)</code></li>
+</ol>
+</li>
+<li>
+<p>数组中，以下三种地址等价</p>
+</li>
+<li>
+<p><code>a+i</code></p>
+</li>
+<li><code>(a+i)</code></li>
+<li><code>&amp;a[i]</code></li>
+<li>以下数组元素等价</li>
+<li><code>a[i]</code></li>
+<li><code>*(a+i)</code></li>
+</ol>
+<pre><code class="language-c">//通过多种方式输出数组
+int a[N],*p = a;
+for(i = 0;i &lt; N;i++){       //数组名指针法
+    printf(&quot;%d&quot;,*(a+i));
+}
+
+for(i = 0;i &lt; N;i++){       //指针变量下标
+    printf(&quot;%d&quot;,p[i]);
+}
+
+for(i = 0;i &lt; N;i++){       //指针变量指针法
+    printf(&quot;%d&quot;,*(p+i));
+}
+
+for(;p &lt; a + N;p++){        //通过指针变量访问数组
+    printf(&quot;%d&quot;,*p);
+}
+</code></pre>
+<h2 id="_6">五、传入函数的数组</h2>
+<ol>
+<li>
+<p>函数中的数组实际上是指针(特殊的指针)</p>
+</li>
+<li>
+<p><code>c
+      //以下的函数原型是等价的
+      int sum(int *ar, int n);
+      int sum(int *, int);
+      int sum(int ar[],int n);
+      int sum(int [],int);</code></p>
+</li>
+<li>
+<p>四种写法</p>
+</li>
+</ol>
+<p><code>c
+   //实参用数组名，形参用数组
+   void reverse(int a[]);
+   reverse(a);
+   //实参用数组名，形参用指针
+   void reverse(int *a);
+   reverse(a);
+   //实参与形参都用指针变量
+   void reverse(int *a);
+   int *p=a;
+   reverse(p);
+   //实参用指针变量，形参用数组
+   void reverse(int a[]);
+   int *p=a;
+   reverse(p);</code></p>
+<h2 id="const">六、指针与const</h2>
+<ol>
+<li>
+<p>指针是const</p>
+</li>
+<li>
+<p>表示一旦得到了某个变量的地址，不能再指向其他变量</p>
+</li>
+<li>
+<p><code>c
+      int *const q=&amp;i;  //q的值不能被改变  
+      *q = 26;      //ok,指向的是i（*q所指）
+      q++;      //error，指向的是q</code></p>
+</li>
+<li>
+<p>所指是const</p>
+</li>
+<li>
+<p>表示不能通过这个指针去修改变量</p>
+</li>
+</ol>
+<p><code>c
+   const int *p=&amp;i;
+   *p = 26;     //错误，*p（地址）是const(p所指向的地址是常量，不可更改)
+   i = 26;      //ok
+   p = &amp;j;      //ok（给p所指向的地址赋值，而不是改变地址）</code></p>
+<ol>
+<li>什么意思？<strong>（存疑，待解决）</strong></li>
+</ol>
+<p><code>c
+   int i;
+   const int* p1 = &amp;i;      
+   int const* p2 = &amp;i;      
+   int *const p3 = &amp;i;</code></p>
+<ul>
+<li>const在*号前：表示const所指的东西不能被修改</li>
+<li>
+<p>const在*号后：表示指针不能被修改</p>
+</li>
+<li>
+<p>转换</p>
+</li>
+<li>
+<p>总是可以把一个非const的值转化成const的(通过函数)</p>
+</li>
+</ul>
+<p>```c
+   void f(const int* x);
+   int a = 15;
+   f(&amp;a);
+   const int b = a;</p>
+<p>f(&amp;b);       //const
+   b=a+1;       //error
+   ```</p>
+<ol>
+<li>
+<p>作用：当要传递的参数类型比地址大的时候，能以较少的字节数传递值给参数，又能避免函数外面对变量的修改；</p>
+</li>
+<li>
+<p>const数组</p>
+</li>
+</ol>
+<p><code>c
+   const int a[]={1,2,3,4,5,6,};</code></p>
+<ul>
+<li>数组变量已经是const的指针</li>
+<li>必须通过初始化赋值</li>
+</ul>
+<h2 id="_7">七、行指针变量</h2>
+<ol>
+<li>
+<p>行指针</p>
+<ol>
+<li>行指针是指向数组的指针，即<code>int (*p)[N]</code></li>
+<li>当二维数组要作为参数进行传递时，声明如下<ol>
+<li><code>void fun(int (*p)[N]);</code></li>
+<li><code>void fun(int p[][N]);</code></li>
+</ol>
+</li>
+<li>实例：矩阵加法</li>
+</ol>
+</li>
+</ol>
+<p>```c++
+   //<strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><em>
+   //File name   : 0608.cpp 
+   //Author      :陈健达 
+   //Date        : 2021.11.18
+   //Student ID   :2021218250
+   //</em><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong>
+   #include <iostream>
+   using namespace std;</p>
+<p>#define N 4
+   #define M 5</p>
+<p>void input(int (<em>p)[M]);
+   void plusMat(int (</em>p)[M],int (<em>q)[M]);
+   void output(int (</em>p)[M]);</p>
+<p>int main(){
+    int iMat1[N][M],iMat2[N][M],iMatsum[N][M];
+    int (<em>p)[M] = iMat1,(</em>q)[M] = iMat2,(*r)[M] = iMatsum;</p>
+<pre><code>cout &lt;&lt; "请输入矩阵1" &lt;&lt; endl; 
+input(p);
+
+
+cout &lt;&lt; "请输入矩阵2" &lt;&lt; endl; 
+input(q);
+
+plusMat(p,q);
+
+output(p);
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>void input(int (<em>p)[M]){     //输入 
+    int i, j;
+    for(i = 0;i &lt; N;i++){
+        for(j = 0;j &lt; M;j++){
+            cin &gt;&gt; </em>(*(p + i) + j);
+        }
+    }
+   }</p>
+<p>void plusMat(int (<em>p)[M],int (</em>q)[M]){       //矩阵相加 
+    int i, j;
+    for(i = 0;i &lt; N;i++){
+        for(j = 0;j &lt; M;j++){
+            <em>(</em>(p + i) + j) = <em>(</em>(p + i) + j) + <em>(</em>(q + i) + j);
+        }
+    }
+   }</p>
+<p>void output(int (<em>p)[M]){        //输出 
+    int i, j;
+    for(i = 0;i &lt; N;i++){
+        for(j = 0;j &lt; M;j++){
+            cout &lt;&lt; </em>(*(p + i) + j) &lt;&lt; "\t";
+            }
+            cout &lt;&lt; endl;
+        }
+    }</p>
+<p>```</p>
+<h2 id="_8">八、指针运算</h2>
+<ol>
+<li>可用的有</li>
+<li>五种算数运算<ol>
+<li><code>p++;</code></li>
+<li><code>p--;</code></li>
+<li><code>p+=n;</code></li>
+<li><code>p-=n;</code></li>
+<li><code>p1-p2;</code></li>
+</ol>
+</li>
+<li>
+<p>六种关系运算</p>
+</li>
+<li>
+<p>+1实际上是+sizeof（数据类型），其他同理</p>
+</li>
+<li>
+<p>如果不是指向一片连续的数据，则无意义</p>
+</li>
+<li>指针可以做比较</li>
+<li>
+<p>比较地址</p>
+</li>
+<li>
+<p>0地址</p>
+</li>
+<li>
+<p>指针不应有</p>
+</li>
+<li>可做<ol>
+<li>返回的指针无效</li>
+<li>指针没有被真正的初始化<strong>（使用0（NULL）给指针初始化）</strong></li>
+</ol>
+</li>
+<li>
+<p><strong>NULL</strong>是一个预定定义的符号，表示0地址</p>
+</li>
+<li>
+<p>指针的类型</p>
+</li>
+<li>
+<p>无论指向什么类型，<strong>指针的大小</strong>都一样</p>
+</li>
+<li>
+<p>但不同类型之间不能相互赋值</p>
+</li>
+<li>
+<p>可以进行类型转化</p>
+<ol>
+<li>void*表示不知道指向什么东西的指针</li>
+</ol>
+<p><code>c
+  void* q=(void*)p;</code></p>
+</li>
+<li>
+<p>指针可以做什么？</p>
+</li>
+<li>
+<p>需要传入较大的数据时用作参数</p>
+</li>
+<li>传入数组后对数组进行操作</li>
+<li>函数返回不止一个结果</li>
+<li>通过函数修改变量</li>
+<li><strong>动态申请内存</strong></li>
+</ol>
+<h2 id="_9">九、动态内存分配</h2>
+<ol>
+<li>
+<p>分配内存空间函数malloc (需要有stdlib.h或maloc.h头文件)</p>
+</li>
+<li>
+<p>函数原型</p>
+<p><code>void *malloc(unsigned int size)</code></p>
+</li>
+<li>
+<p>函数调用形式</p>
+<p><code>(类型标识符*) malloc(size)</code></p>
+<p>其中：</p>
+<ul>
+<li>类型标识符：表示把该区域用于何种数据类型</li>
+<li>(类型标识符*)：表示把返回值强制转化为该类型指针</li>
+<li>size：无符号整数</li>
+</ul>
+</li>
+<li>
+<p>函数功能</p>
+<ol>
+<li>在内存的动态存储区分配一块长size字节的连续区域</li>
+<li>返回值为该区域的首地址</li>
+</ol>
+<p><code>c
+  char *pc;
+  pc = (char *)malloc(100);
+  //表示分配100个字节的内存空间，若申请失败则返回NULL</code></p>
+</li>
+<li>
+<p>分配内存空间函数calloc</p>
+</li>
+<li>
+<p>示范内存空间函数free</p>
+</li>
+<li>
+<p>函数原型</p>
+<p><code>void free (void * ptr);</code></p>
+</li>
+<li>
+<p>函数调用形式</p>
+<p><code>free (ptr);</code></p>
+</li>
+<li>
+<p>函数功能</p>
+<ol>
+<li>释放ptr所指向的一块内存空间</li>
+<li>被释放的区域必须是由malloc或calloc函数所分配的区域</li>
+</ol>
+</li>
+<li>
+<p>示例</p>
+</li>
+<li>
+<p>内存的动态分配和释放</p>
+<p><code>c
+  #include &lt;stdio.h&gt;
+  #include &lt;stdlib.h&gt;
+  void main(){
+      int *p = NULL;
+      p = (int *)malloc(sizeof(int));
+      *p = 100;
+      printf("%d\n",*p);
+      free(p);
+  }</code></p>
+</li>
+<li>
+<p>输入某班学生的某门课程的成绩，计算器平均分并输出，班级人数由键盘输入</p>
+<p><code>c
+  #include &lt;stdio.h&gt;
+  #include &lt;stdlib.h&gt;
+  void main(){
+      int n, t, *p = NULL;
+      float sum, ave;
+      scanf("%d",&amp;n);       //输入学生个数
+      p = (int*)malloc(n * sizeof(int));        //x
+      if(p = NULL){
+          printf("No enough memory\n");
+          exit(1);
+      }
+      for(t = 0,sum = 0; t &lt; n;t++){
+          scanf("%d",p + t);
+          sum = sum + *(p + t);
+      }
+      ave = sum/n;
+      printf("average = %5.2f\n",ave);
+      free(p);
+  }</code></p>
+</li>
+</ol>
+<h2 id="_10">十、引用</h2>
+<ol>
+<li>引用即给对象起了另一个名字</li>
+</ol>
+<pre><code class="language-C++">int iVal = 1024;
+int &amp;refval = iVal;
+</code></pre>
+<ol>
+<li>定义了一个引用之后，对其进行的所有操作都是在与之绑定的对象上进行的</li>
+<li>不能定义引用的引用</li>
+<li>不能与字面值或某个表达式的计算结果绑定在一起</li>
+<li>也常用于函数传参</li>
+<li>指向指针的引用<ol>
+<li>指针也是一个对象，因此可以进行引用
+<code>C++
+int i = 2;
+int *p = &amp;i;
+int *&amp; = p;              //int *是数据类型</code></li>
+</ol>
+</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6/" class="btn btn-neutral float-left" title="第五周 循环控制"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="btn btn-neutral float-right" title="第六周数据类型">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

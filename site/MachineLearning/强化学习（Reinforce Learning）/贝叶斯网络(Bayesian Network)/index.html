@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>贝叶斯网络(Bayesian Network) - My Notes</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u8d1d\u53f6\u65af\u7f51\u7edc(Bayesian Network)";
+        var mkdocs_page_input_path = "MachineLearning\\\u5f3a\u5316\u5b66\u4e60\uff08Reinforce Learning\uff09\\\u8d1d\u53f6\u65af\u7f51\u7edc(Bayesian Network).md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> My Notes
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">C or C++</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/CC%2B%2B%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/">C/C++学习路线</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/CSDN%E4%B9%A0%E9%A2%98/">CSDN习题</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E4%BD%8D%E8%BF%90%E7%AE%97/">位运算</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E5%87%BD%E6%95%B0/">函数</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84/">字符数组</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E5%AE%A3%E8%80%81%E7%AC%AC%E4%B8%89%E7%AB%A0%E7%A8%8B%E5%BA%8F/">宣老第三章程序</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E5%BE%AA%E7%8E%AF/">第三周：循环</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6/">第五周 循环控制</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E6%8C%87%E9%92%88/">第九周 指针</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">第六周数据类型</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E6%95%B0%E7%BB%84/">数组</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E6%96%87%E4%BB%B6/">文件</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E7%BB%93%E6%9E%84%E4%BD%93/">结构体</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E8%BF%9B%E4%B8%80%E6%AD%A5%E7%9A%84%E5%88%A4%E6%96%AD%E4%B8%8E%E5%BE%AA%E7%8E%AF/">第四周 进一步的判断与循环</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E9%93%BE%E8%A1%A8/">链表</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../C%20or%20C%2B%2B/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">C Primer Plus</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../C%20or%20C%2B%2B/C%20Primer%20Plus/%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E6%95%B0%E6%8D%AE%E5%92%8CC/">第三章 数据和C</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">HTML</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../HTML/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">基本语法</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Java</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">基础</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E5%9F%BA%E7%A1%80/Arrays%E7%B1%BB/">Arrays类</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E5%9F%BA%E7%A1%80/Java%20%E6%B5%81%28Stream%29%E3%80%81%E6%96%87%E4%BB%B6%28File%29%E5%92%8CIO/">Java 流(Stream)、文件(File)和IO</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E5%9F%BA%E7%A1%80/JavaDoc/">JavaDoc</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E5%9F%BA%E7%A1%80/Scanner%E5%AF%B9%E8%B1%A1/">Scanner对象</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E5%9F%BA%E7%A1%80/%E5%8C%85%E6%9C%BA%E5%88%B6/">包机制</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E5%9F%BA%E7%A1%80/%E5%BC%82%E5%B8%B8/">异常</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E5%9F%BA%E7%A1%80/%E6%95%B0%E7%BB%84/">数组</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">进阶</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E8%BF%9B%E9%98%B6/GUI/">GUI</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E8%BF%9B%E9%98%B6/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%9C%BA%E5%88%B6/">Java多线程机制</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E8%BF%9B%E9%98%B6/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">Java网络编程</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E8%BF%9B%E9%98%B6/StringBuffer%E5%92%8CStringBuilder/">StringBuffer和StringBuilder</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E8%BF%9B%E9%98%B6/%E5%A4%84%E7%90%86%E4%BA%8B%E4%BB%B6/">处理事件</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E8%BF%9B%E9%98%B6/%E7%B1%BB%E5%9E%8B%E4%BF%A1%E6%81%AF/">类型信息</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">面向对象</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%A4%8D%E7%94%A8%E7%B1%BB/">复用类</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E6%96%B9%E6%B3%95/">方法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E9%9B%86%E5%90%88/">集合</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">MachineLearning</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../Numpy/">Numpy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Pytorch%E7%BC%96%E5%86%99%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF/">Pytorch编写深度学习模型的基本思路</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E5%89%8D%E5%90%91%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/">前向与反向传播</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">分类(Classification)</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%88%86%E7%B1%BB%28Classification%29/%E5%88%86%E7%B1%BB%28Classification%29/">分类(Classification)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%88%86%E7%B1%BB%28Classification%29/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%28Logistic%20Regression%29/">逻辑回归(Logistic Regression)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">回归问题(Regression)</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98%28Regression%29/%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98/">回归问题</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">强化学习（Reinforce Learning）</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../MDP%EF%BC%88%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%86%B3%E7%AD%96%E8%BF%87%E7%A8%8B%EF%BC%89/">马尔可夫决策过程</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E5%86%B3%E7%AD%96%E7%BD%91%E7%BB%9C%28Decision%20Network%29/">决策网络(Decision Network)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%28Reinforce%20Learning%29/">强化学习(Reinforce Learning)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E6%A6%82%E7%8E%87%28Probabilistic%29/">概率(Probabilistic)</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">贝叶斯网络(Bayesian Network)</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#indenpendence">独立(Indenpendence)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#conditional-independence">条件独立(Conditional Independence)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bayesian-networkrepresentation">贝叶斯网络：表示(Bayesian Network:Representation)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_1">联合分布的缺点</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_2">贝叶斯网络</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#conditional-indenpendence">贝叶斯网络：条件独立(Conditional Indenpendence)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#probabilistic-inference">贝叶斯网络：推导(Probabilistic Inference)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#inference-by-enumeration">枚举推理(Inference by Enumeration)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#variable-elimination">变量剔除（Variable Elimination）</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#factors">因子（Factors）</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">两种方案对比</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sampling">贝叶斯网络：取样(Sampling)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#prior-sampling">Prior Sampling</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#rejection-sampling">Rejection Sampling</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#likelihood-weighting">Likelihood Weighting</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#gibbs-sampling">Gibbs Sampling</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E9%9A%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B%28HMMs%29/">隐马尔可夫模型(Hidden Markov Models-HMMs)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">模型优化</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A8%A1%E5%9E%8B%E4%BC%98%E5%8C%96/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%BB%BB%E5%8A%A1%E6%94%BB%E7%95%A5/">机器学习任务攻略</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A8%A1%E5%9E%8B%E4%BC%98%E5%8C%96/%E7%B1%BB%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%AE%AD%E7%BB%83%E6%96%B9%E6%B3%95/">类神经网络训练</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Opencv</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../opencv/Mat%E5%AF%B9%E8%B1%A1/">Mat对象</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../opencv/OpenCV%E5%88%9D%E6%8E%A2/">OpenCV初探</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../opencv/%E5%8A%A0%E8%BD%BD%E3%80%81%E4%BF%AE%E6%94%B9%E3%80%81%E4%BF%9D%E5%AD%98%E5%9B%BE%E5%83%8F/">[加载、修改、保存图像](C:\Users\11146\OneDrive\coding\program\opencv\OpenCV_Learning\加载、修改、保存图像.cpp)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../opencv/%E5%9B%BE%E5%83%8F%E6%93%8D%E4%BD%9C/">图像操作</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../opencv/%E7%9F%A9%E9%98%B5%E7%9A%84%E6%8E%A9%E8%86%9C%E6%93%8D%E4%BD%9C/">[矩阵的掩膜操作](C:\Users\11146\OneDrive\coding\program\opencv\OpenCV_Learning\矩阵的掩膜操作.cpp)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Python</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../python/Python/">Python基础</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Robocup</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../robocup/robocup%E9%A2%84%E4%B9%A0%E6%9D%90%E6%96%99%202/">robocup预习材料 2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../robocup/%E9%A2%84%E4%B9%A0%E6%9D%90%E6%96%99%203/">预习材料 3</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">其他</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E5%85%B6%E4%BB%96/%E4%BB%A3%E7%A0%81%E7%AE%80%E6%B4%81%E4%B9%8B%E9%81%93/">整洁代码</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">数据结构</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/vector%E6%A8%A1%E6%9D%BF/">vector模板</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B8%B8%E7%94%A8STL/">常用STL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%BF%E4%B9%89%E8%A1%A8/">广义表</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%A3%E5%88%97%E8%A1%A8/">散列表（哈希表）查找</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%80%BB%E8%AE%BA/">数据结构</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%88/">栈</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A8%A1%E6%9D%BF/">模板</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%B1%89%E8%AF%BA%E5%A1%94/">汉诺塔[[递归]]</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%80%A7%E8%A1%A8/">线性表</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/">链表</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%98%9F%E5%88%97/">队列</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">图</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE/%E5%9B%BE/">图</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE/%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD/">基本术语</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">排序</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/%E6%8E%92%E5%BA%8F/">排序</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">插入排序</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">树</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91/%E6%A0%91/">树</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/STL/">STL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9B%9E%E6%BA%AF%E6%B3%95/">回溯法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/">常用代码模板</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E9%80%92%E5%BD%92/">递归</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">动态规划</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E6%A6%82%E8%BF%B0/">动态规划概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">背包问题</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">基础算法</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86/">二分</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/">前缀和与差分</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E5%8F%8C%E6%8C%87%E9%92%88%E7%AE%97%E6%B3%95/">双指针算法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F/">排序</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E6%95%B4%E6%95%B0%E7%A6%BB%E6%95%A3%E5%8C%96/">整数离散化</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E9%AB%98%E7%B2%BE%E5%BA%A6/">高精度计算</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">搜索与图论</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/Bellman-Ford/">Bellman Ford</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/B%E6%A0%91/">B树</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/DFS%E4%B8%8EBFS/">DFS与BFS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/Dijkstra/">Dijkstra</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/Floyd/">Floyd</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/SPFA/">SPFA</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/">关键路径</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/">拓扑排序</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">最小生成树</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%9C%80%E7%9F%AD%E8%B7%AF%E6%A6%82%E8%BF%B0/">最短路概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%A0%91%E5%92%8C%E5%9B%BE/">树和图</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E6%A0%91%E8%A1%A8%E6%9F%A5%E6%89%BE/">树表查找</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">数据结构</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/KMP/">KMP</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8D%95%E8%B0%83%E6%A0%88%E4%B8%8E%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/">单调栈与单调队列</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%93%88%E5%B8%8C%E8%A1%A8/">哈希表</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%A0%86/">堆</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/">并查集</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%A0%86/">斐波那契堆</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/">表达式求值</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8%E4%B8%8E%E9%82%BB%E6%8E%A5%E8%A1%A8/">链表与邻接表</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">贪心</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%AE%97%E6%B3%95/%E8%B4%AA%E5%BF%83/Huffman/">Huffman</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">My Notes</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>MachineLearning &raquo;</li>
+          <li>强化学习（Reinforce Learning） &raquo;</li>
+      <li>贝叶斯网络(Bayesian Network)</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="bayesian-network">贝叶斯网络(Bayesian Network)</h1>
+<h2 id="indenpendence">独立(Indenpendence)</h2>
+<ul>
+<li>两者（随机变量）之间互不影响
+$$\forall x,y:P(x,y)=P(x)P(y)\Longrightarrow X \perp Y$$
+$$\forall x,y:P(x|y)=P(x)\Longrightarrow x \perp y$$
+$$\forall x,y:P(y|x)=P(y)\Longrightarrow x \perp y$$</li>
+<li>可以将投掷硬币的情况写成如下，极大减少了数据量
+<img alt="" src="https://s2.loli.net/2022/08/02/zpMNxJAP5fq217Z.png" /></li>
+</ul>
+<h2 id="conditional-independence">条件独立(Conditional Independence)</h2>
+<ul>
+<li>对于未知的环境，条件独立是我们最基础的和最直接的了解形式</li>
+<li>$X$与$Y|Z$条件独立：$X \perp !!! \perp Y|Z$<ul>
+<li>当且仅当Z发生时，知道X发生是否无助于知道Y发生与否
+$$\forall x,y,z:P(x,y|z)=P(x|z)P(y|z) \Longrightarrow X\perp !!! \perp Y|Z$$
+$$\forall x,y,z:P(x|z,y)=P(x|z)$$</li>
+</ul>
+</li>
+<li>链式法则：$P(X_1,X_2,...,X_n)=P(X_1)P(X_2|X_1)P(X_3|X_1,X_2)...$
+<img alt="" src="https://s2.loli.net/2022/08/03/emLznxWrGMFaXli.png" /></li>
+<li>$P(Traffic, Rain, Umbrella)$<ul>
+<li>链式法则：$P(Traffic, Rain, Umbrella) = P(Rain)P(Traffic|Rain)P(Umbrella|Rain, Traffic)$</li>
+<li>由于$Traffic\perp !!! \perp Umbrella|Rain$：$P(Traffic, Rain, Umbrella) = P(rain)P(Traffic|Rain)P(Umbrella|Rain)$</li>
+</ul>
+</li>
+</ul>
+<h2 id="bayesian-networkrepresentation">贝叶斯网络：表示(Bayesian Network:Representation)</h2>
+<h3 id="_1">联合分布的缺点</h3>
+<ul>
+<li>在随机变量较多的时候，数据量大</li>
+<li>难以一次从经验上学习关于多个变量的任何东西</li>
+</ul>
+<h3 id="_2">贝叶斯网络</h3>
+<ul>
+<li>贝叶斯网络：使用简单的方式（有向无环图(DAG)）表达复杂的联合分布概率模型
+<img alt="image.png" src="https://s2.loli.net/2022/08/03/Vqv4H1hbSjRp56z.png" /></li>
+<li>图<ul>
+<li>结点：随机变量<ul>
+<li>每个节点具有一个条件概率分布</li>
+<li><strong>Each node is conditionally independent of all its ancestor nodes in the graph, given all of its parents</strong></li>
+<li>让$A_1,A_2,...,A_N$为X的双亲以存储$P(X|A_1,A_2,...,A_N)$</li>
+</ul>
+</li>
+<li>弧：因果关系或非条件独立
+<img alt="" src="https://s2.loli.net/2022/08/03/HQeFDT5zJuMmlKt.png" /></li>
+</ul>
+</li>
+<li>贝叶斯网络与条件独立：$$P(x_1,x_2,...,x_n)=\prod^{n}_{i=1}P(x_i|parents(X_i))$$<ul>
+<li>案例：$P(+cavity,+catch,-toothache)=P(+cavity)·P(+catch|+cavity)·P(-toochache|+cavity)$
+<img alt="" src="https://s2.loli.net/2022/08/06/ndPcGg6OH15ZsfI.png" /></li>
+</ul>
+</li>
+<li>大小<ul>
+<li>联合分布概率模型：$2^n$</li>
+<li>n个节点且每个节点最多k个双亲的贝叶斯网络：$n*2^{k+1}$</li>
+</ul>
+</li>
+</ul>
+<h2 id="conditional-indenpendence">贝叶斯网络：条件独立(Conditional Indenpendence)</h2>
+<ul>
+<li>D-separation<ul>
+<li>研究三元组的<strong>独立性</strong></li>
+<li>通过多个三元组研究复杂的情况</li>
+</ul>
+</li>
+<li>分类：<ul>
+<li>Causal Chains<img alt="" src="https://s2.loli.net/2022/08/06/dvTErLA1wXuYokM.png" /><ul>
+<li>$X\perp!!!\perp Y|Z$</li>
+</ul>
+</li>
+<li>Common Cause<img alt="" src="https://s2.loli.net/2022/08/06/qPMk1vGguyF4VDn.png" /><ul>
+<li>$X\perp!!!\perp Y|Z$</li>
+</ul>
+</li>
+<li>Common Effect<img alt="" src="https://s2.loli.net/2022/08/06/JPh9AcwCtDuEKHg.png" /><ul>
+<li>$X\perp!!!!!!!!\not\perp Y|Z,X\perp Y$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Active/Inactive Paths<img alt="" src="https://s2.loli.net/2022/08/06/XHmMI63CRDAPTFa.png" /> ^84522f</li>
+<li>可达性<ul>
+<li>方法：将证据节点涂上阴影，再查看两个节点之间的路径</li>
+<li>判断：如果两个节点之间的<strong>所有三元组均为Inactive Paths，则两个节点代表的随机变量条件独立</strong></li>
+<li>示例：<img alt="" src="https://s2.loli.net/2022/08/06/1IgGT5jP3pBmDRq.png" /><img alt="" src="https://s2.loli.net/2022/08/06/jcEIuzr2KhomwTp.png" /><img alt="" src="https://s2.loli.net/2022/08/06/qB3hrbYXVPAWCey.png" /><img alt="" src="https://s2.loli.net/2022/08/06/UmW7EyHfiakDTQs.png" /></li>
+</ul>
+</li>
+<li>不同的贝叶斯网络可能指向相同的独立性：
+<img alt="" src="https://s2.loli.net/2022/08/06/JRHUG1xItg9bwE3.png" /></li>
+<li>一个贝叶斯网络可能<strong>不存在任何独立性</strong>：<img alt="" src="https://s2.loli.net/2022/08/06/TQHNLe4r7jU3Icw.png" /></li>
+</ul>
+<h2 id="probabilistic-inference">贝叶斯网络：推导(Probabilistic Inference)</h2>
+<ul>
+<li>Inference：从一个联合分布概率模型中计算其他想要的概率</li>
+</ul>
+<h3 id="inference-by-enumeration">枚举推理(Inference by Enumeration)</h3>
+<p><img alt="" src="https://s2.loli.net/2022/08/06/BsgjFJ8Wrioe5vh.png" />
+- 步骤：
+    - Select the entries consistent with the evidence
+    - <strong>Sum out</strong> H to get joint of Query and evidence（<strong>Marginalize</strong>)
+    - Normalize
+<img alt="" src="https://s2.loli.net/2022/08/01/sfmrR7HCwoexF98.png" />
+- 案例：<img alt="" src="https://s2.loli.net/2022/08/06/uQlObzE3tevLgNV.png" /></p>
+<h3 id="variable-elimination">变量剔除（Variable Elimination）</h3>
+<ul>
+<li>在枚举推理中，在去除其他隐变量之前，加入了完整的联合分布概率，导致<strong>枚举推理运行效率低</strong><img alt="" src="https://s2.loli.net/2022/08/06/dBCLhjcGURyqvtz.png" /></li>
+<li>变量剔除：交叉加入并且即时进行边缘化操作</li>
+</ul>
+<h3 id="factors">因子（Factors）</h3>
+<ul>
+<li><strong>Joint Distribution</strong>:$P(X,Y)$<ul>
+<li>和为1</li>
+<li>包含了x，y的所有条目
+<img alt="" src="https://s2.loli.net/2022/08/06/StLADv4KrGaflpj.png" /></li>
+</ul>
+</li>
+<li><strong>Selected Joint</strong>：$P(x,Y)$<ul>
+<li>联合概率分布的一部分</li>
+<li>包含固定的x，所有的y的条目</li>
+<li>和为$P(x)$
+<img alt="" src="https://s2.loli.net/2022/08/06/a4HkSCfjGLbuX9J.png" /><blockquote>
+<p>大写字母的数量=表的维度数</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><strong>Single Conditional</strong>：$P(Y|x)$<ul>
+<li>$x$条件下的所有$P(y|x)$</li>
+<li>和为1
+<img alt="" src="https://s2.loli.net/2022/08/06/Hltno7EaIesJ4Kb.png" /></li>
+</ul>
+</li>
+<li><strong>Family of conditionals</strong>：$P(Y|X)$<ul>
+<li>所有的$P(y|x)$条目</li>
+<li>和为$|X|$
+<img alt="" src="https://s2.loli.net/2022/08/06/1fQR4FxjZWdc7bn.png" /></li>
+</ul>
+</li>
+<li><strong>Specified Family</strong>：$P(y|X)$<ul>
+<li>固定$y$的所有$P(y|x)$条目
+<img alt="" src="https://s2.loli.net/2022/08/06/DnPyRzBQoaZWCfN.png" /></li>
+</ul>
+</li>
+</ul>
+<h3 id="_3">两种方案对比</h3>
+<p><img alt="" src="https://s2.loli.net/2022/08/06/SOqlyJ9ucVKGk7E.png" /></p>
+<h4 id="inference-by-enumeration_1">Inference by Enumeration</h4>
+<ul>
+<li><strong>Join all factors</strong><img alt="" src="https://s2.loli.net/2022/08/06/YZ2hpN3L4E6fHR7.png" /><img alt="" src="https://s2.loli.net/2022/08/06/6gRHxarFXjTcSGd.png" /><img alt="" src="https://s2.loli.net/2022/08/06/2waKRp8ysutS6N5.png" /></li>
+</ul>
+<p>$$\forall r,t:P(r,t)=P(r)·P(t|r)$$
+- <strong>Eliminate</strong><img alt="" src="https://s2.loli.net/2022/08/06/2GnQfWEJy7Dzmct.png" /></p>
+<h4 id="variable-elimination_1">Variable Elimination</h4>
+<p><img alt="" src="https://s2.loli.net/2022/08/06/zDiTuqlfYpBC5VQ.png" />
+<img alt="" src="https://s2.loli.net/2022/08/06/1S4ekWJIB5npa9X.png" />
+- 一般情况下，变量剔除的顺序会极大影响计算的复杂度
+    - 案例：<img alt="" src="https://s2.loli.net/2022/08/07/CldyOx1PLbzINWe.png" />
+    1. 法一：<img alt="" src="https://s2.loli.net/2022/08/07/p4yiEjo6DVZt8Se.png" /><img alt="" src="https://s2.loli.net/2022/08/07/hojA1im8eDas5rq.png" /></p>
+<h2 id="sampling">贝叶斯网络：取样(Sampling)</h2>
+<ul>
+<li>取样(Sampling)：取样是一个重复模拟的过程</li>
+<li>基本思路：<ul>
+<li>从取样的分布S中抽取N个样本</li>
+<li>计算<strong>近似</strong>的概率</li>
+<li>收敛至正确的概率</li>
+</ul>
+</li>
+<li>意义：<ul>
+<li>学习：从不知道的分布中获得样本</li>
+<li>推断：获得样本比直接计算正确的概率要快</li>
+</ul>
+</li>
+</ul>
+<h3 id="prior-sampling">Prior Sampling</h3>
+<p><img alt="" src="https://s2.loli.net/2022/08/07/5L4qzHXpnjEYScN.png" />
+- 产生各个样本的概率为：$$S_{PS}(x_1...x_n)=\prod^n_{i=1}P(x_i|Parents(X_i))=P(x_1...x_n)$$
+- 当样本数量足够多后，获得的概率就会收敛于真实值<img alt="" src="https://s2.loli.net/2022/08/07/pfxZnJ7KNTRIGrl.png" />
+- 案例：<img alt="" src="https://s2.loli.net/2022/08/07/9vh2dgriToUYXHl.png" /></p>
+<h3 id="rejection-sampling">Rejection Sampling</h3>
+<ul>
+<li>如果有一个预先确定好的evidence，在选择采样结果时，可以忽略不符合evidence的样本
+<img alt="image.png" src="https://s2.loli.net/2022/08/07/I9n52DAGvoSOztB.png" /></li>
+<li>问题：<ul>
+<li>当evidence几乎不可能时，会拒绝大量的样本，产生大量无用的样本</li>
+<li>在取样时，evidence并没有被利用</li>
+</ul>
+</li>
+</ul>
+<h3 id="likelihood-weighting">Likelihood Weighting</h3>
+<ul>
+<li>思路：处理evidence，让所有的样本都符合evidence<ul>
+<li>weight bt probability of evidence given parents
+<img alt="image.png" src="https://s2.loli.net/2022/08/07/5WvSlpJq9s1R2dw.png" /><img alt="" src="https://s2.loli.net/2022/08/07/AMuaEbHwvyFoznR.png" /></li>
+</ul>
+</li>
+<li>针对z取样，e为evidence$$\begin{aligned}
+S_{WS}(z,e)=\prod^l_{i=1}P(z_i|Parents(Z_i))
+\
+w(z,e)=\prod^m_{i=1}P(e_i|Parents(E_i))
+\
+P(z,e)=S_{WS}(z,e)·w(z,e)
+\end{aligned}$$</li>
+<li>优缺点：<ul>
+<li>优点：<ul>
+<li>考虑了evidence</li>
+<li>更好的反映了在evidence影响下的世界</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>evidence可能会影响下游的随机变量的选择，导致出现错误的结果</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="gibbs-sampling">Gibbs Sampling</h3>
+<ul>
+<li>步骤：<ol>
+<li>确定evidence</li>
+<li>初始化其他随机变量（随机初始化）</li>
+<li>重复：<ol>
+<li>随机选择一个非evidence变量$X$</li>
+<li>从$P(X|all\ other\ variables)$中取样
+<img alt="" src="https://s2.loli.net/2022/08/07/4CPvOHtuwrFQGZ1.png" /></li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../%E6%A6%82%E7%8E%87%28Probabilistic%29/" class="btn btn-neutral float-left" title="概率(Probabilistic)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../%E9%9A%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B%28HMMs%29/" class="btn btn-neutral float-right" title="隐马尔可夫模型(Hidden Markov Models-HMMs)">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../%E6%A6%82%E7%8E%87%28Probabilistic%29/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../%E9%9A%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B%28HMMs%29/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
