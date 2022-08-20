@@ -1,3 +1,4 @@
 site_name: My Notes
 # Theme
-theme: readthedocs
+theme:
+  name: material
