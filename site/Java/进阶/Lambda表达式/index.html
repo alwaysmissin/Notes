@@ -40,6 +40,8 @@
     
       <link rel="stylesheet" href="../../../mkdocs/css/unordered-list-symbols.css">
     
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -248,18 +250,11 @@
   
   
   
-    
-
-  
-  
-  
     <li class="md-tabs__item">
-      <a href="../../%E5%9F%BA%E7%A1%80/Arrays%E7%B1%BB/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         Java
       </a>
     </li>
-  
-
   
 
       
@@ -850,6 +845,10 @@
       
         
           
+            
+          
+        
+          
         
           
         
@@ -857,10 +856,16 @@
         
       
       
-        <label class="md-nav__link" for="__nav_4">
-          Java
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../">Java</a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
       
       <nav class="md-nav" aria-label="Java" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
@@ -868,6 +873,8 @@
           Java
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
           
             
               
@@ -878,7 +885,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" checked>
       
       
       
@@ -899,13 +906,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_4_1">
+        <label class="md-nav__link" for="__nav_4_2">
           基础
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="基础" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_1">
+        <label class="md-nav__title" for="__nav_4_2">
           <span class="md-nav__icon md-icon"></span>
           基础
         </label>
@@ -931,8 +938,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%9F%BA%E7%A1%80/Java%20%E6%B5%81%28Stream%29%E3%80%81%E6%96%87%E4%BB%B6%28File%29%E5%92%8CIO/" class="md-nav__link">
-        Java 流(Stream)、文件(File)和IO
+      <a href="../../%E5%9F%BA%E7%A1%80/JavaDoc/" class="md-nav__link">
+        JavaDoc
       </a>
     </li>
   
@@ -945,8 +952,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%9F%BA%E7%A1%80/JavaDoc/" class="md-nav__link">
-        JavaDoc
+      <a href="../../%E5%9F%BA%E7%A1%80/Java%E6%B5%81%28Stream%29%E3%80%81%E6%96%87%E4%BB%B6%28File%29%E5%92%8CIO/" class="md-nav__link">
+        Java 流(Stream)、文件(File)和IO
       </a>
     </li>
   
@@ -1027,7 +1034,7 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" checked>
       
       
       
@@ -1048,13 +1055,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_4_2">
+        <label class="md-nav__link" for="__nav_4_3">
           进阶
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="进阶" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_2">
+        <label class="md-nav__title" for="__nav_4_3">
           <span class="md-nav__icon md-icon"></span>
           进阶
         </label>
@@ -1155,6 +1162,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    方法引用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    构造器引用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    变量作用域
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lambda_1" class="md-nav__link">
+    处理lambda表达式
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1222,7 +1257,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" checked>
       
       
       
@@ -1237,13 +1272,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_4_3">
+        <label class="md-nav__link" for="__nav_4_4">
           面向对象
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="面向对象" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_3">
+        <label class="md-nav__title" for="__nav_4_4">
           <span class="md-nav__icon md-icon"></span>
           面向对象
         </label>
@@ -3222,6 +3257,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    方法引用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    构造器引用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    变量作用域
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lambda_1" class="md-nav__link">
+    处理lambda表达式
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3254,14 +3317,14 @@
 <ul>
 <li>Lambda表达式就是一个代码块，需要传入代码的变量规范</li>
 <li>Lambda表达式形式：<ul>
-<li>参数<ul>
+<li><strong>参数</strong><ul>
 <li>无参时要保留参数的括号：<code>()-&gt;{代码块\表达式}</code></li>
 <li>如果可以推断出lambda表达式的参数类型，则可以忽略其类型：<code>(first, second)-&gt;first.length() - second.length()</code></li>
 <li>如果仅有一个参数，且参数类型可推导，可以省略括号：<code>event -&gt; {代码块、表达式}</code></li>
 </ul>
 </li>
-<li>箭头(<code>-&gt;</code>)</li>
-<li>表达式<ul>
+<li><strong>箭头</strong>(<code>-&gt;</code>)</li>
+<li><strong>表达式</strong><ul>
 <li>或者是完整的代码块，并且包含<code>return</code>语句</li>
 <li>无需指定表达式的返回类型，自动由上下文推导而出</li>
 <li>如果lambda表达式只在某些分支返回一个值，而其他分支不返回值，该lambda表达式不合法：<code>(int x)-&gt;{if (x &gt;= 0) return 1;}</code></li>
@@ -3308,7 +3371,99 @@
 </li>
 </ul>
 </li>
-<li><code>Supplier&lt;T&gt;</code></li>
+<li><code>Supplier&lt;T&gt;</code><ul>
+<li>supplier没有参数，调用时会生成一个T类型的值</li>
+<li>一般用于实现懒计算</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="_3">方法引用</h2>
+<ul>
+<li>直接将方法传递至构造器</li>
+<li>以下两种方法等价：</li>
+</ul>
+<pre><code class="language-java">// 出现一个定时器事件就打印这个事件对象
+var timer = new Timer(1000, event -&gt; System.out.println(event));
+// 直接把println方法传递到Timer构造器中
+var timer = new Timer(1000, System.out::println);
+</code></pre>
+<ul>
+<li>System.out::println是一个方法引用(method reference)，它只是编译器生成一个函数式接口的实例，覆盖这个接口的抽象方法来调用给定的方法<ul>
+<li>在上例中，会生成一个ActionListener，其ActionPerformed方法调用sout</li>
+</ul>
+</li>
+<li>调用的三种方法<ol>
+<li><code>object::instanceMethod</code><ul>
+<li>等价于向方法传递参数的lambda表达式</li>
+<li>如<code>System.out::println</code>等价于<code>x-&gt;System.out.println(x)</code>（<code>System.out</code>为一个<code>static PrintStream</code>对象）</li>
+</ul>
+</li>
+<li><code>Class::instanceMethod</code><ul>
+<li>第一个参数会成为方法的隐式参数</li>
+<li>如<code>String::compareToIngoreCase</code>等价于<code>(x,y)-&gt;x.compareToIngoreCase(y)</code></li>
+</ul>
+</li>
+<li><code>Class::staticMethod</code><ul>
+<li>所有的参数都传递到静态方法</li>
+<li>如<code>Math::pow</code>等价于<code>(x,y)-&gt;Math.pow(x,y)</code>
+<img alt="" src="https://s2.loli.net/2022/08/21/mpjvcwLb8du1K4o.png" /></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>包含对象的方法引用与等价的lambda表达式的一个细微区别：
+例：
+1. <code>separator::equals</code>：如果separator为null，在构造时立即抛出一个<code>NullPointerException</code>异常
+2. <code>x-&gt;separator.equals(x)</code>：只在调用时抛出<code>NullPointerException</code>异常</p>
+</blockquote>
+<ul>
+<li><code>this</code>参数：<code>this::equals</code>等价于<code>x-&gt;this.equals(x)</code><ul>
+<li>同样的，使用<code>super</code>也是合法的</li>
+</ul>
+</li>
+</ul>
+<h2 id="_4">构造器引用</h2>
+<ul>
+<li>与方法的引用类似，但方法名为<code>new</code><ul>
+<li><code>Person::new</code>为<code>Person</code>构造器的引用</li>
+<li>使用哪一个构造器取决于上下文</li>
+</ul>
+</li>
+</ul>
+<h2 id="_5">变量作用域</h2>
+<ul>
+<li>lambda表达式可以捕获外围作用域中变量的值，但只能<strong>引用值不会改变的变量</strong><ul>
+<li>原因：如果在lambda表达式中更改变量，线程是不安全的</li>
+</ul>
+</li>
+<li>几种不合法的情况：<ul>
+<li>在lambda表达式中改变变量的值<img alt="image.png" src="https://s2.loli.net/2022/08/21/2jtA536hiJDnqET.png" /></li>
+<li>变量在lambda表达式外部发生改变<img alt="image.png" src="https://s2.loli.net/2022/08/21/s1XGE2SDzM4rdab.png" /></li>
+<li>在lambda表达式中声明一个与局部变量同名的变量或参数<img alt="image.png" src="https://s2.loli.net/2022/08/21/5LCEtZhTXJofDlu.png" /></li>
+</ul>
+</li>
+<li>在lambda中使用<code>this</code>关键字时，指的是创建这个<strong>lambda表达式方法</strong>的<code>this</code>参数（即，在lambda表达式中<code>this</code>关键字的意义不发生改变）</li>
+</ul>
+<h2 id="lambda_1">处理lambda表达式</h2>
+<ul>
+<li>特点：延迟执行(defferred execution)</li>
+<li>希望以后在执行代码的原因：<ul>
+<li>在一个单独的线程中运行代码</li>
+<li>多次运行代码</li>
+<li>在算法的适当位置运行代码<ul>
+<li>排序中的比较操作</li>
+</ul>
+</li>
+<li>发生某种情况时执行代码<ul>
+<li>点击按钮事件</li>
+<li>数据到达</li>
+</ul>
+</li>
+<li>只在必要时运行代码</li>
 </ul>
 </li>
 </ul>
@@ -3393,7 +3548,7 @@
     
       <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../../javascripts/config.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

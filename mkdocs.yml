@@ -65,3 +65,4 @@ extra_javascript:
 extra_css:
   - mkdocs/css/no-footer.css
   - mkdocs/css/unordered-list-symbols.css
+  - stylesheets/extra.css
