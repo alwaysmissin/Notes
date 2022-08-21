@@ -5,14 +5,14 @@ theme:
   name: material
   palette: 
     - scheme: default 
-      primary: indigo 
-      accent: orange 
+      primary: blue grey
+      accent: teal   
       toggle:
         icon: material/weather-night 
         name: 切换至夜间模式 
     - scheme: slate 
       primary: indigo
-      accent: orange
+      accent: teal
       toggle:
         icon: material/weather-sunny
         name: 切换至日间模式
