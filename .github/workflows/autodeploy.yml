@@ -1,0 +1,2 @@
+- name: MkDocs builder
+  uses: moonpathbg/mkdocs_builder@latest
