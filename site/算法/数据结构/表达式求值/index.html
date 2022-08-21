@@ -3241,8 +3241,8 @@
 
 
 
-<h1 id="_1">表达式求值<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h3 id="_2">需要处理的问题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h1 id="_1">表达式求值</h1>
+<h3 id="_2">需要处理的问题</h3>
 <ol>
 <li>如何确定运算符的优先级<ul>
 <li>使用<code>unordered_map</code>确定不同运算符的优先级</li>
@@ -3264,113 +3264,62 @@
 </ul>
 </li>
 </ol>
-<h3 id="5312-44-8">示例：<span class="arithmatex">\(5+3*(12 + 4)/4-8\)</span><a class="headerlink" href="#5312-44-8" title="Permanent link">&para;</a></h3>
+<h3 id="5312-44-8">示例：<span class="arithmatex">\(5+3*(12 + 4)/4-8\)</span></h3>
 <p><img alt="" src="https://s2.loli.net/2022/05/03/uh3Dk69VXQmdHan.png" /></p>
-<h3 id="_3">代码：<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unordered_map&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stack&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstring&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
-<span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">num</span><span class="p">;</span><span class="w"></span>
-<span class="n">stack</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span><span class="w"> </span><span class="n">op</span><span class="p">;</span><span class="w"></span>
+<h3 id="_3">代码：</h3>
+<pre><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;unordered_map&gt;
+#include &lt;stack&gt;
+#include &lt;cstring&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+stack&lt;int&gt; num;
+stack&lt;char&gt; op;
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">eval</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num</span><span class="p">.</span><span class="n">top</span><span class="p">();</span><span class="w"> </span><span class="n">num</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num</span><span class="p">.</span><span class="n">top</span><span class="p">();</span><span class="w"> </span><span class="n">num</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">op</span><span class="p">.</span><span class="n">top</span><span class="p">();</span><span class="w"> </span><span class="n">op</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;+&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;-&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;*&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">num</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+void eval(){
+    auto b = num.top(); num.pop();
+    auto a = num.top(); num.pop();
+    auto c = op.top(); op.pop();
+    int x;
+    if(c == '+') x = a + b;
+    else if(c == '-') x = a - b;
+    else if(c == '*') x = a * b;
+    else x = a / b;
+    num.push(x);
+}
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">char</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pr</span><span class="p">{{</span><span class="sc">&#39;+&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="sc">&#39;-&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="sc">&#39;*&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="sc">&#39;/&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">}};</span><span class="w"></span>
-<span class="w">    </span><span class="c1">//确定运算的优先级</span>
-<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">str</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">str</span><span class="p">;</span><span class="w"></span>
+int main(){
+    unordered_map&lt;char, int&gt; pr{{'+',1}, {'-',1}, {'*', 2}, {'/',2}};
+    //确定运算的优先级
+    string str;
+    cin &gt;&gt; str;
 
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">str</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">isdigit</span><span class="p">(</span><span class="n">c</span><span class="p">)){</span><span class="w">         </span><span class="c1">//如果是数字</span>
-<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="k">while</span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">str</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">isdigit</span><span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">j</span><span class="p">]))</span><span class="w">    </span><span class="c1">//继续统计完整的数字</span>
-<span class="w">                </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">str</span><span class="p">[</span><span class="n">j</span><span class="o">++</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="n">num</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w">            </span><span class="c1">//入栈</span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;(&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">op</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">c</span><span class="p">);</span><span class="w">   </span><span class="c1">//做括号，则入栈</span>
-<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;)&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">             </span><span class="c1">//右括号，则计算至左括号</span>
-<span class="w">            </span><span class="k">while</span><span class="p">(</span><span class="n">op</span><span class="p">.</span><span class="n">top</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">&#39;(&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">eval</span><span class="p">();</span><span class="w"></span>
-<span class="w">            </span><span class="n">op</span><span class="p">.</span><span class="n">pop</span><span class="p">();}</span><span class="w">                  </span><span class="c1">//左括号出栈</span>
-<span class="w">        </span><span class="k">else</span><span class="p">{</span><span class="w">                       </span><span class="c1">//如果是运算符</span>
-<span class="w">            </span><span class="k">while</span><span class="p">(</span><span class="n">op</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w">         </span><span class="c1">//运算符栈不为空</span>
-<span class="w">                </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">op</span><span class="p">.</span><span class="n">top</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">&#39;(&#39;</span><span class="w">  </span><span class="c1">//运算符栈顶不为左括号</span>
-<span class="w">                </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">pr</span><span class="p">[</span><span class="n">op</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">pr</span><span class="p">[</span><span class="n">c</span><span class="p">])</span><span class="w"> </span><span class="n">eval</span><span class="p">();</span><span class="w">   </span><span class="c1">//当前符号的优先级小于运算符栈顶</span>
-<span class="w">            </span><span class="n">op</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">c</span><span class="p">);</span><span class="w">             </span><span class="c1">//当前运算符入栈</span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+    for(int i = 0;i &lt; str.size();i++){
+        auto c = str[i];
+        if(isdigit(c)){         //如果是数字
+            int x = 0, j = i;
+            while(j &lt; str.size() &amp;&amp; isdigit(str[j]))    //继续统计完整的数字
+                x = x * 10 + str[j++] - '0';
+            i = j - 1;
+            num.push(x);            //入栈
+        }
+        else if(c == '(') op.push(c);   //做括号，则入栈
+        else if(c == ')') {             //右括号，则计算至左括号
+            while(op.top() != '(') eval();
+            op.pop();}                  //左括号出栈
+        else{                       //如果是运算符
+            while(op.size()         //运算符栈不为空
+                &amp;&amp; op.top() != '('  //运算符栈顶不为左括号
+                &amp;&amp; pr[op.top()] &gt;= pr[c]) eval();   //当前符号的优先级小于运算符栈顶
+            op.push(c);             //当前运算符入栈
+        }
+    }
 
-<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">op</span><span class="p">.</span><span class="n">size</span><span class="p">())</span><span class="w"> </span><span class="n">eval</span><span class="p">();</span><span class="w">        </span><span class="c1">//运算剩余</span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">num</span><span class="p">.</span><span class="n">top</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+    while(op.size()) eval();        //运算剩余
+    cout &lt;&lt; num.top() &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
 
 
 
@@ -3452,11 +3401,11 @@
     
       <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -3567,10 +3567,10 @@
 
 
 
-<h1 id="_1">图<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">[[基本术语]]<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h2 id="_3">图的存储结构<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="_4">==邻接矩阵==<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h1 id="_1">图</h1>
+<h2 id="_2">[[基本术语]]</h2>
+<h2 id="_3">图的存储结构</h2>
+<h3 id="_4">==邻接矩阵==</h3>
 <ul>
 <li>邻接矩阵是表示顶点之间关系的矩阵</li>
 <li>存储方法：使用一个一维数组存储图中的<strong>顶点的信息</strong>，用一个二维数组存储图中<strong>顶点之间的邻接关系</strong></li>
@@ -3610,7 +3610,7 @@
 </ol>
 </li>
 </ul>
-<h3 id="_5">==邻接表==<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_5">==邻接表==</h3>
 <ul>
 <li>一种链式存储，包含顶点和邻接点</li>
 <li>适用于<strong>稀疏图</strong></li>
@@ -3649,54 +3649,54 @@
 </ol>
 </li>
 </ul>
-<h3 id="_6">十字链表<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<h3 id="_7">邻接多重表<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<h2 id="_8">图的遍历<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<h3 id="dfsbfsbfsbfs">[[DFS与BFS#BFS|广度优先遍历（BFS）]]<a class="headerlink" href="#dfsbfsbfsbfs" title="Permanent link">&para;</a></h3>
+<h3 id="_6">十字链表</h3>
+<h3 id="_7">邻接多重表</h3>
+<h2 id="_8">图的遍历</h2>
+<h3 id="dfsbfsbfsbfs">[[DFS与BFS#BFS|广度优先遍历（BFS）]]</h3>
 <ul>
 <li>借助队列来实现</li>
 </ul>
-<h4 id="_9">算法步骤：<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<h4 id="_9">算法步骤：</h4>
 <ol>
 <li>初始化图中所有的顶点未被访问，初始化一个空队列</li>
 <li>从图中的某个顶点<span class="arithmatex">\(v\)</span>出发，访问<span class="arithmatex">\(v\)</span>并标记已访问，将<span class="arithmatex">\(v\)</span>入队</li>
 <li>如果队列非空，则继续执行，否则算法 结束</li>
 <li>队头<span class="arithmatex">\(v\)</span>出队，一次访问<span class="arithmatex">\(v\)</span>的所有未被访问的邻接点，标记已访问并入队，重复步骤3</li>
 </ol>
-<h4 id="_10">时间复杂度分析：<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<h4 id="_10">时间复杂度分析：</h4>
 <ol>
 <li>基于邻接矩阵的BFS算法：<span class="arithmatex">\(O(n^2)\)</span></li>
 <li>基于邻接表的BFS算法：<span class="arithmatex">\(O(n +e)\)</span></li>
 </ol>
-<h4 id="_11">应用：<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<h4 id="_11">应用：</h4>
 <p>最短路：
     简单最短路
     [[Dijkstra]]
 最小生成树：
     [[最小生成树#Prim|Prim]]</p>
-<h3 id="dfsbfsdfsdfs">[[DFS与BFS#DFS|深度优先遍历（DFS）]]<a class="headerlink" href="#dfsbfsdfsdfs" title="Permanent link">&para;</a></h3>
+<h3 id="dfsbfsdfsdfs">[[DFS与BFS#DFS|深度优先遍历（DFS）]]</h3>
 <ul>
 <li>秘籍：后被访问的顶点，其临界点先被访问</li>
 <li>借助栈实现（递归）</li>
 </ul>
-<h4 id="_12">算法步骤：<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<h4 id="_12">算法步骤：</h4>
 <ol>
 <li>初始化图中所有顶点未被访问</li>
 <li>从图中 的某个顶点<span class="arithmatex">\(v\)</span>出发，访问<span class="arithmatex">\(v\)</span>并标记已访问</li>
 <li>一次检查<span class="arithmatex">\(v\)</span>的所有邻接点，如果<span class="arithmatex">\(w\)</span>未被访问，则从<span class="arithmatex">\(w\)</span>出发进行深度优先遍历（重复2、3步）</li>
 </ol>
-<h4 id="_13">应用<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<h4 id="_13">应用</h4>
 <ol>
 <li>括号引理</li>
 </ol>
-<h2 id="_14">图的应用<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
-<h3 id="dijkstradijkstra">[[Dijkstra|单源最短路径——Dijkstra]]<a class="headerlink" href="#dijkstradijkstra" title="Permanent link">&para;</a></h3>
-<h3 id="bellman-ford">[[Bellman-Ford]]<a class="headerlink" href="#bellman-ford" title="Permanent link">&para;</a></h3>
-<h3 id="spfa">[[SPFA]]<a class="headerlink" href="#spfa" title="Permanent link">&para;</a></h3>
-<h3 id="floydfloyd">[[Floyd|各顶点之间最短路径——Floyd]]<a class="headerlink" href="#floydfloyd" title="Permanent link">&para;</a></h3>
-<h3 id="primprim">[[最小生成树#Prim|最小生成树Prim]]<a class="headerlink" href="#primprim" title="Permanent link">&para;</a></h3>
-<h3 id="kruskalkruskal">[[最小生成树#Kruskal|最小生成树Kruskal]]<a class="headerlink" href="#kruskalkruskal" title="Permanent link">&para;</a></h3>
-<h3 id="_15">[[拓扑排序]]<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<h2 id="_14">图的应用</h2>
+<h3 id="dijkstradijkstra">[[Dijkstra|单源最短路径——Dijkstra]]</h3>
+<h3 id="bellman-ford">[[Bellman-Ford]]</h3>
+<h3 id="spfa">[[SPFA]]</h3>
+<h3 id="floydfloyd">[[Floyd|各顶点之间最短路径——Floyd]]</h3>
+<h3 id="primprim">[[最小生成树#Prim|最小生成树Prim]]</h3>
+<h3 id="kruskalkruskal">[[最小生成树#Kruskal|最小生成树Kruskal]]</h3>
+<h3 id="_15">[[拓扑排序]]</h3>
 
 
 
@@ -3778,11 +3778,11 @@
     
       <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

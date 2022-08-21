@@ -3391,76 +3391,47 @@
 
 
 
-<h1 id="_1">函数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">一、初见函数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h1 id="_1">函数</h1>
+<h2 id="_2">一、初见函数</h2>
 <ol>
 <li></li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">//素数</span>
-<span class="kt">int</span><span class="w"> </span><span class="nf">isPrime</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">){</span><span class="w"></span>
-<span class="w">            </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<pre><code class="language-c">//素数
+int isPrime(int i)
+{
+    int ret = 1;
+    int k;
+    for ( k = 2 ; k &lt; i - 1 ; k++){
+        if (i % k == 0){
+            ret = 0;
+            break;
+        }
+    }
+    return ret;
+}
+</code></pre>
 <ul>
 <li>代码复制是程序质量不良的表现</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">//求和</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">begin</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">begin</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d到%d的和是%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">begin</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<pre><code class="language-c">//求和
+void sum(int begin, int end)
+{
+    int i;
+    int sum = 0;
+    for ( i = begin ; i &lt;= end ; i++){
+        sum += i;
+    }
+    printf(&quot;%d到%d的和是%d\n&quot;,begin, end, sum);
+}
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sum</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sum</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span><span class="mi">45</span><span class="p">);</span><span class="w"></span>
+int main(){
+    sum(1,10);
+    sum(20,30);
+    sum(35,45);
 
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+    return 0;
+}
+</code></pre>
 <ol>
 <li>函数的定义和调用</li>
 <li>
@@ -3491,44 +3462,27 @@
 </ol>
 </li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">//求和</span>
-<span class="kt">void</span><span class="cm">/*返回类型*/</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">begin</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="cm">/*函数名*/</span><span class="w">     </span><span class="c1">//函数头</span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">begin</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d到%d的和是%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">begin</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w">       </span><span class="c1">//函数体</span>
+<pre><code class="language-c">//求和
+void/*返回类型*/ sum(int begin, int end)/*函数名*/     //函数头
+{
+    int i;
+    int sum = 0;
+    for ( i = begin ; i &lt;= end ; i++){
+        sum += i;
+    }
+    printf(&quot;%d到%d的和是%d\n&quot;,begin, end, sum);
+}       //函数体
 
-<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sum</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">sum</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span><span class="mi">45</span><span class="p">);</span><span class="w"></span>
+int main(){
+    sum(1,10);
+    sum(20,30);
+    sum(35,45);
 
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w">   </span>
-</code></pre></div></td></tr></table></div>
+    return 0;
+}   
+</code></pre>
 <p>​   </p>
-<h2 id="_3">二、函数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">二、函数</h2>
 <ol>
 <li>函数原型</li>
 <li>
@@ -3552,12 +3506,10 @@
 <p>内联函数</p>
 </li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">iMax</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">iVal1</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">iVal2</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">iVal1</span><span class="o">&gt;</span><span class="n">iVal2</span><span class="o">?</span><span class="n">iVal1</span><span class="o">:</span><span class="n">iVal2</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<p><code>c
+   inline int iMax(int iVal1,int iVal2){
+       return iVal1&gt;iVal2?iVal1:iVal2;
+   }</code></p>
 <ol>
 <li>适用于<strong>1-5句</strong>的小函数；</li>
 <li>
@@ -3613,7 +3565,7 @@
 <p>main 函数</p>
 </li>
 </ol>
-<h2 id="_4">三、变量的四种存储类型<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_4">三、变量的四种存储类型</h2>
 <ol>
 <li>
 <p>局部变量</p>
@@ -3639,48 +3591,28 @@
 </li>
 <li>
 <p>生存期：从程序开始到程序结束</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iomanip&gt;</span><span class="cp"></span>
-<span class="n">using</span><span class="w"> </span><span class="n">namespace</span><span class="w"> </span><span class="n">std</span><span class="p">;</span><span class="w"></span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">row</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span><span class="w"></span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="n">b</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span><span class="n">b</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="n">row</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">row</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">     </span><span class="c1">//static使a在函数内一直有效</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="n">b</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span><span class="n">b</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">setw</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">a</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<p>```c
+  #include <iostream>
+  #include <iomanip>
+  using namespace std;
+  void row(void);</p>
+<p>int main(void){
+      int b;
+      for(b = 1;b &lt;= 9;b++){
+          row();
+      }
+      return 0;
+  }
+  void row(void){
+      static int a = 1;     //static使a在函数内一直有效
+      int b;
+      for(b = 1;b &lt;= 9;b++){
+          cout &lt;&lt; setw(4)&lt;&lt; a * b;
+      }
+      cout &lt;&lt; endl;
+      a++;
+  }
+  ```</p>
 </li>
 <li>
 <p>外部类型</p>
@@ -3693,7 +3625,7 @@
 <li>注：不能用作函数参数</li>
 <li>可以通过<strong>extern</strong>来改变其作用域</li>
 </ol>
-<h2 id="_5">四、函数间的数据传递<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_5">四、函数间的数据传递</h2>
 <ol>
 <li>函数见数据传递方式</li>
 <li>通过函数参数<strong>传值或传地址</strong><ol>
@@ -3705,19 +3637,19 @@
 <li>函数参数为引用</li>
 <li>通过<strong>全局变量</strong>传递参数或结果</li>
 </ol>
-<h2 id="_6">五、数组与函数参数<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_6">五、数组与函数参数</h2>
 <ol>
 <li>数组作为函数参数定义的三种方式</li>
 <li><strong>形参作为指针：<code>int ave(int *p);</code></strong></li>
 <li>形参为无下表数组：<code>int ave(int p[])</code>;</li>
 <li>形参为有下标数组：<code>int ave(int p[10]);</code></li>
 </ol>
-<h2 id="_7">六、返回指针的函数<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_7">六、返回指针的函数</h2>
 <ol>
 <li>概念：函数结束时候返回一个地址</li>
 <li>注意：定义函数时候要加上“ * ”(返回值的类型与函数类型一致)</li>
 </ol>
-<h2 id="_8">七、指向函数的指针<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_8">七、指向函数的指针</h2>
 <ol>
 <li>
 <p>函数在内存中的首地址为函数的入口地址</p>
@@ -3736,146 +3668,78 @@
 <p>示例：</p>
 </li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">Imax</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="n">funp</span><span class="p">)(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">funp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Imax</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">funp</span><span class="p">)(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The max is :&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">Imax</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">&gt;</span><span class="n">y</span><span class="o">?</span><span class="n">x</span><span class="o">:</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">Add</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="nf">Sub</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="nf">funa</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="p">));</span><span class="w"></span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">funa</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">Add</span><span class="p">);</span><span class="w">     </span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">funa</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">Sub</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"></span>
-
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">funa</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="n">fun</span><span class="p">)(</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="p">)){</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">fun</span><span class="p">)(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">Add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">Sub</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-<h2 id="_9">八、递归函数<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>```c++
+   #include <iostream>
+   using namespace std;</p>
+<p>int Imax(int, int);
+   int main(){
+       int a,b,c;
+       int(<em>funp)(int, int);
+       funp = Imax;
+       cin &gt;&gt; a &gt;&gt; b;
+       c = (</em>funp)(a,b);
+       cout &lt;&lt; "The max is :" &lt;&lt; c;
+       return 0;
+   }</p>
+<p>int Imax(int x, int y){
+       return (x&gt;y?x:y);
+   }
+   ```</p>
+<p>```c++
+   #include <iostream>
+   using namespace std;</p>
+<p>int Add(int,int);
+   int Sub(int,int);
+   int funa(int, int, int(*)(int,int));</p>
+<p>int main(){
+       int a,b,c;
+       cin &gt;&gt; a &gt;&gt; b;
+       c = funa(a, b, Add);   <br />
+       cout &lt;&lt; c;
+       c = funa(a, b, Sub);
+       cout &lt;&lt; c;</p>
+<pre><code>   return 0;
+</code></pre>
+<p>}</p>
+<p>int funa(int a, int b, int(<em>fun)(int,int)){
+       return (</em>fun)(a,b);
+   }</p>
+<p>int Add(int a,int b){
+       return (a + b);
+   }</p>
+<p>int Sub(int a, int b){
+       return (a - b);
+   }
+   ```</p>
+<h2 id="_9">八、递归函数</h2>
 <ol>
 <li>概念：函数直接或间接地自我调用称为递归函数</li>
 <li>通过控制条件，使递归终止</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="n">using</span><span class="w"> </span><span class="n">namespace</span><span class="w"> </span><span class="n">std</span><span class="p">;</span><span class="w"></span>
-<span class="kt">long</span><span class="w"> </span><span class="nf">ifac</span><span class="p">(</span><span class="kt">long</span><span class="p">);</span><span class="w"></span>
+<pre><code class="language-c">#include &lt;iostream&gt;
+using namespace std;
+long ifac(long);
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ifac</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+int main(void){
+    long i, x;
+    cin &gt;&gt; i;
+    x = ifac(i);
+    cout &lt;&lt; x &lt;&lt; endl;
+    return 0;
+}
 
-<span class="kt">long</span><span class="w"> </span><span class="nf">ifac</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">n</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="k">else</span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ifac</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-<h2 id="_10">九、命令行参数<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
-<h2 id="_11">十、编译预处理<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
-<h3 id="_12">宏<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+long ifac(long n){
+    if(n == 0 || n == 1){
+        return 1;
+    }
+    else{
+        return n * ifac(n - 1);
+    }
+}
+</code></pre>
+<h2 id="_10">九、命令行参数</h2>
+<h2 id="_11">十、编译预处理</h2>
+<h3 id="_12">宏</h3>
 <ol>
 <li><code># 关键词 参数表</code></li>
 <li><strong>禁止' ; '</strong></li>
@@ -3912,11 +3776,10 @@
 </ol>
 </li>
 </ol>
-<h3 id="_13">文件包含<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;被包含的文件名&gt;</span><span class="c1">      //&lt;&gt;表示编译系统定义路径</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;被包含的文件名&quot;</span><span class="c1">      //&quot;&quot;表示用户指明路径</span><span class="cp"></span>
-</code></pre></div></td></tr></table></div>
+<h3 id="_13">文件包含</h3>
+<pre><code class="language-c">#include &lt;被包含的文件名&gt;      //&lt;&gt;表示编译系统定义路径
+#include &quot;被包含的文件名&quot;      //&quot;&quot;表示用户指明路径
+</code></pre>
 <ol>
 <li>作用：将指定文件的内容与当前文件一起编译</li>
 <li>说明</li>
@@ -3925,7 +3788,7 @@
 <li>一般来说，原型声明及宏定义放在包含文件中</li>
 <li>被包含的文件一般拓展名为.h，称为头文件</li>
 </ol>
-<h3 id="_14">条件编译<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<h3 id="_14">条件编译</h3>
 <ol>
 <li>
 <p>通过控制程序，使程序编译不同的程序段</p>
@@ -3934,63 +3797,37 @@
 <p>三种形式</p>
 </li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">//1</span>
-<span class="cp">#ifdef 标识符</span>
-<span class="w">    </span><span class="n">program</span><span class="w"> </span>
-<span class="cp">#else</span>
-<span class="w">    </span><span class="n">program</span><span class="w"></span>
-<span class="cp">#endif</span>
+<pre><code class="language-c">//1
+#ifdef 标识符
+    program 
+#else
+    program
+#endif
 
-<span class="c1">//2</span>
-<span class="cp">#ifndef 标识符</span>
-<span class="w">    </span><span class="n">program</span><span class="w"></span>
-<span class="cp">#else </span>
-<span class="w">    </span><span class="n">program</span><span class="w"></span>
-<span class="cp">#endif</span>
+//2
+#ifndef 标识符
+    program
+#else 
+    program
+#endif
 
 
-<span class="c1">//3</span>
-<span class="cp">#if 表达式</span>
-<span class="w">    </span><span class="n">program</span><span class="w"></span>
-<span class="cp">#else</span>
-<span class="w">    </span><span class="n">program</span><span class="w"></span>
-<span class="cp">#endif        </span>
-</code></pre></div></td></tr></table></div>
+//3
+#if 表达式
+    program
+#else
+    program
+#endif        
+</code></pre>
 <p>实例</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#define DEBUG</span>
-<span class="w">    </span><span class="p">.....</span><span class="w"></span>
-<span class="w">    </span><span class="p">.....</span><span class="w"></span>
-<span class="w">    </span><span class="p">.....</span><span class="w"></span>
-<span class="cp">#ifdef DEBUG</span>
-<span class="w">    </span><span class="n">用于调试语句的程序</span><span class="w"></span>
-<span class="cp">#endif      </span>
-</code></pre></div></td></tr></table></div>
+<pre><code class="language-c">#define DEBUG
+    .....
+    .....
+    .....
+#ifdef DEBUG
+    用于调试语句的程序
+#endif      
+</code></pre>
 
 
 
@@ -4072,11 +3909,11 @@
     
       <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

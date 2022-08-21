@@ -3321,7 +3321,7 @@
 
 
 
-<h1 id="_1">最小生成树<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_1">最小生成树</h1>
 <ul>
 <li>两种算法：<strong>Prim</strong>、<strong>Kruskal</strong></li>
 <li>优化：<ol>
@@ -3341,14 +3341,14 @@
 </ol>
 </li>
 </ul>
-<h2 id="prim">Prim<a class="headerlink" href="#prim" title="Permanent link">&para;</a></h2>
+<h2 id="prim">Prim</h2>
 <blockquote>
 <p>找出<span class="arithmatex">\(n-1\)</span>条权值最小且无回路的边即可</p>
 </blockquote>
 <ul>
 <li>思路与[[Dijkstra]]基本相似，区别在于Prim<strong>将一整个集合看作源点，去寻找最短边</strong></li>
 </ul>
-<h3 id="_2">概念：<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_2">概念：</h3>
 <ol>
 <li>[[基本术语#^e89c2f|子图]]</li>
 <li>[[基本术语#^e89c2f|生成子图]]</li>
@@ -3357,7 +3357,7 @@
 <li>集合避圈法：在生成树的过程中，把已在生成树中的节点看作一个集合，把剩余的节点看作另一个集合，从连接两个集合中的边选择一条<strong>权值最小</strong>的边</li>
 <li>实质：贪心-&gt;每一次加入的边总是权重最小的边</li>
 </ol>
-<h3 id="_3">算法步骤<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_3">算法步骤</h3>
 <ol>
 <li>数据结构：邻接矩阵<code>G[u][v] = w / ∞</code> ，bool数组<code>st[]</code>，用于标记是否加入集合<span class="arithmatex">\(U\)</span>，使用一个小根堆（优先队列）维护将两个集合连接的边的权重，利用其他结构存储相应的后继</li>
 <li>初始化，将源点加入集合U，将源点的所有连接邻接点的边加入优先队列中，</li>
@@ -3365,12 +3365,12 @@
 <li>图解
 <img alt="" src="https://s2.loli.net/2022/06/08/6LrZE2u4mOvaFJ5.png" /></li>
 </ol>
-<h2 id="kruskal">Kruskal<a class="headerlink" href="#kruskal" title="Permanent link">&para;</a></h2>
-<h3 id="_4">思路：<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="kruskal">Kruskal</h2>
+<h3 id="_4">思路：</h3>
 <p>先将所有的边按照权重排序，接下来开始贪心：不断地选取<strong>最小</strong>且<strong>不会令集合中产生回路的边</strong>，如果产生回路，则不进行选取，继续贪心
 - 如何判断加入边后不会产生回路？
     - 集合避圈：如果选择加入的起点和终点都在集合中，则一定会产生回路-&gt;边的两个节点不能属于同一个集合</p>
-<h3 id="_5">算法步骤<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_5">算法步骤</h3>
 <ol>
 <li>初始化：将图中所有的边按从小到大顺序排序，<strong>每个顶点独立成为一个集合</strong></li>
 <li>找权值最小的边<span class="arithmatex">\((i,j)\)</span></li>
@@ -3379,7 +3379,7 @@
 <li>图解：
 <img alt="" src="https://s2.loli.net/2022/06/08/xZJoWKdhENn318a.png" /></li>
 </ol>
-<h3 id="_6">算法优化<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_6">算法优化</h3>
 <ol>
 <li>时间优化：<ol>
 <li>更快的排序算法</li>
@@ -3469,11 +3469,11 @@
     
       <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

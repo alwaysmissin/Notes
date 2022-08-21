@@ -3471,12 +3471,12 @@
 
 
 
-<h1 id="_1">马尔可夫决策过程<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_1">马尔可夫决策过程</h1>
 <ul>
 <li>不确定搜索问题：世界中存在一定程度的不确定性的问题被称为不确定搜索问题<span class="arithmatex">\(\rightarrow\)</span>使用<strong>马尔可夫决策过程</strong>解决</li>
 </ul>
-<h2 id="_2">马尔可夫决策过程<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="_3">属性：<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="_2">马尔可夫决策过程</h2>
+<h3 id="_3">属性：</h3>
 <ul>
 <li>一个<strong>状态</strong>集<span class="arithmatex">\(S\)</span> </li>
 <li>一个<strong>操作</strong>集<span class="arithmatex">\(A\)</span></li>
@@ -3487,7 +3487,7 @@
 <li>可能存在一个或多个最终状态</li>
 <li>可能会有一个<strong>折扣因子(discount factor)</strong><span class="arithmatex">\(\gamma\)</span></li>
 </ul>
-<h3 id="eg">eg:<a class="headerlink" href="#eg" title="Permanent link">&para;</a></h3>
+<h3 id="eg">eg:</h3>
 <p><img alt="" src="https://s2.loli.net/2022/07/27/AUpzLSyxk9tOEFv.png" />
 - 三种状态：<span class="arithmatex">\(S=\{cool, warm, overheated\}\)</span>
 - 两种可能的操作：<span class="arithmatex">\(A=\{slow, fast\}\)</span>
@@ -3509,8 +3509,8 @@
     - <span class="arithmatex">\(R(warm, fast, overheated) = -10\)</span>
 - 一个agent的行动可以表示为：<span class="arithmatex">\(s_0 \overset{a_0} \rightarrow s_{1} \overset{a_1} \rightarrow s_{2}\overset{a_2} \rightarrow s_{3}……\)</span>
 - 其效益为：<span class="arithmatex">\(U([s_0, a_0,s_1, ,a_1,s_2,a_2,s_3…]) = R\left(s_{0}, a_{0}, s_{1}\right)+R\left(s_{1}, a_{1}, s_{2}\right) \\+R\left(s_{2}, a_{2}, s_{3}\right)+\ldots\)</span></p>
-<h2 id="_4">无限效益<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<h3 id="discount-factors">折扣因子(Discount Factors)<a class="headerlink" href="#discount-factors" title="Permanent link">&para;</a></h3>
+<h2 id="_4">无限效益</h2>
+<h3 id="discount-factors">折扣因子(Discount Factors)</h3>
 <ul>
 <li>折扣因子<span class="arithmatex">\(\gamma(0&lt;\gamma&lt;1)\)</span>表示奖励值随时间变化的<strong>指数</strong>衰减</li>
 <li>现折扣后效益：<span class="arithmatex">\(U\left(\left[s_{0}, a_{0}, s_{1}, a_{1}, s_{2}, \ldots\right]\right)=R\left(s_{0}, a_{0}, s_{1}\right)+\gamma R\left(s_{1}, a_{1}, s_{2}\right)+\gamma^{2} R\left(s_{2}, a_{2}, s_{3}\right)+\ldots\)</span></li>
@@ -3519,18 +3519,18 @@
 <img alt="" src="https://s2.loli.net/2022/07/28/otyRzJKeX72hMAv.png" />
 <img alt="" src="https://s2.loli.net/2022/07/28/afcTyS3lnOJkBDx.png" /></li>
 </ul>
-<h3 id="finite-horizon">有限界（Finite Horizon）<a class="headerlink" href="#finite-horizon" title="Permanent link">&para;</a></h3>
+<h3 id="finite-horizon">有限界（Finite Horizon）</h3>
 <ul>
 <li>类似于深度限制搜索(Depth-Limited Search)<ul>
 <li>在固定步数后结束“生命”</li>
 </ul>
 </li>
 </ul>
-<h3 id="absorbing-state">必然最终态(Absorbing State)<a class="headerlink" href="#absorbing-state" title="Permanent link">&para;</a></h3>
+<h3 id="absorbing-state">必然最终态(Absorbing State)</h3>
 <ul>
 <li>无论选择何种策略，最后必然达到一个最终状态(Terminal State)</li>
 </ul>
-<h2 id="optimal-quantities">最优量(Optimal Quantities)<a class="headerlink" href="#optimal-quantities" title="Permanent link">&para;</a></h2>
+<h2 id="optimal-quantities">最优量(Optimal Quantities)</h2>
 <p><img alt="" src="https://s2.loli.net/2022/07/28/rLiEmo9Dna4WtOv.png" />
 1. state s：<span class="arithmatex">\(V^*(s)=\)</span> 从状态s开始，剩余寿命中选择执行<strong>最优行为</strong>所获得的<strong>期望效益</strong>
 2. q-state(s,a)：<span class="arithmatex">\(Q^*（s,a)=\)</span> 状态s下选择执行<strong>行为a</strong>，并且获得<strong>最优结果</strong>的<strong>期望效益</strong>，并且从此后采取的都是最优行动
@@ -3540,27 +3540,27 @@ $$
 \begin{array}{l}
 V^{<em>}(s)=\max _{a} Q^{</em>}(s, a) \
 Q^{<em>}(s, a)=\sum_{s^{\prime}} T\left(s, a, s^{\prime}\right)\left[R\left(s, a, s^{\prime}\right)+\gamma V^{</em>}\left(s^{\prime}\right)\right] \
-V^{<em>}(s)=\max <em s_prime="s^{\prime">{a} \sum</em>} T\left(s, a, s^{\prime}\right)\left[R\left(s, a, s^{\prime}\right)+\gamma V^{</em>}\left(s^{\prime}\right)\right]
+V^{<em>}(s)=\max <em>{a} \sum</em>{s^{\prime}} T\left(s, a, s^{\prime}\right)\left[R\left(s, a, s^{\prime}\right)+\gamma V^{</em>}\left(s^{\prime}\right)\right]
 \end{array}
 $$
 - egs:
 <img alt="" src="https://s2.loli.net/2022/07/28/dbulKwp9NEVLBy4.png" />
 <img alt="" src="https://s2.loli.net/2022/07/28/Dkde58XrJKtUSzL.png" /></p>
-<h2 id="markovianess">马尔可夫性（Markovianess）<a class="headerlink" href="#markovianess" title="Permanent link">&para;</a></h2>
+<h2 id="markovianess">马尔可夫性（Markovianess）</h2>
 <ul>
 <li>马尔可夫性：过去与未来是条件独立的<span class="arithmatex">\(\rightarrow S_{t+1}\)</span> 与 <span class="arithmatex">\(S_{t}\)</span>之间存在关系，与先前无关，即只与最近的状态有关
 <span class="arithmatex">\(P\left(S_{t+1}=s_{t+1} \mid S_{t}=s_{t}, A_{t}=a_{t}, S_{t-1}=s_{t-1}, A_{t-1}=a_{t-1}, \ldots, S_{0}=s_{0}\right)=P\left(S_{t+1}=s_{t+1} \mid S_{t}=s_{t}, A_{t}=a_{t}\right)\)</span></li>
 </ul>
-<h2 id="bellman-equations">贝尔曼方程(Bellman Equations)<a class="headerlink" href="#bellman-equations" title="Permanent link">&para;</a></h2>
+<h2 id="bellman-equations">贝尔曼方程(Bellman Equations)</h2>
 <ul>
 <li>定义<span class="arithmatex">\(<span class="arithmatex">\(V^{*}(s)=\max _{a} \sum_{s^{\prime}} T\left(s, a, s^{\prime}\right)\left[R\left(s, a, s^{\prime}\right)+\gamma V^{*}\left(s^{\prime}\right)\right]\)</span>\)</span></li>
 <li>Bellman Equation是动态规划的一个例子，这种方程可以通过其内在的递归结构将问题拆分成一个个小问题</li>
 </ul>
-<h2 id="value-iteration">值迭代(Value Iteration)<a class="headerlink" href="#value-iteration" title="Permanent link">&para;</a></h2>
+<h2 id="value-iteration">值迭代(Value Iteration)</h2>
 <ul>
 <li>如何计算出最优值-&gt;限时值(time-limited value)</li>
 </ul>
-<h3 id="time-limited-value">限时值(Time-limited Value)<a class="headerlink" href="#time-limited-value" title="Permanent link">&para;</a></h3>
+<h3 id="time-limited-value">限时值(Time-limited Value)</h3>
 <ul>
 <li>限时值：强化有限界得到的结果</li>
 <li>限制时间步数为<span class="arithmatex">\(k\)</span>的一个状态<span class="arithmatex">\(s\)</span>的限时值为<span class="arithmatex">\(V_k(s)\)</span>，代表在已知当前MDP会在<span class="arithmatex">\(k\)</span>时间步后终止的情况下，从s出发能得到的最大期望效益</li>
@@ -3579,7 +3579,7 @@ $$
 </li>
 <li>达到收敛时，每个状态的Bellman方程都不会改变&lt;-<span class="arithmatex">\(\forall s \in S, V(s)=V_{k+1}(s)=V^*(s)\)</span> </li>
 </ul>
-<h3 id="eg_1">eg<a class="headerlink" href="#eg_1" title="Permanent link">&para;</a></h3>
+<h3 id="eg_1">eg</h3>
 <p><span class="arithmatex">\(\gamma = 0.5\)</span> 
 <img alt="" src="https://s2.loli.net/2022/07/28/Y9SmvHRVt2oZi8e.png" />
 1. 初始化：
@@ -3594,7 +3594,7 @@ $$
 | <span class="arithmatex">\(V_0\)</span> |  0   |  0   |     0      |
 | <span class="arithmatex">\(V_1\)</span> |  2   |  1   |     0      |
 | <span class="arithmatex">\(V_2\)</span> | 2.75 | 1.75 | 0           |</p>
-<h2 id="_5">策略提取<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_5">策略提取</h2>
 <ul>
 <li>解决：如何确定最优策略？</li>
 <li>表达式：<span class="arithmatex">(<span class="arithmatex">\(\forall s \in S, \pi^*(s) = arg\max_aQ^*(s,a)\\
@@ -3603,7 +3603,7 @@ $$
 </ul>
 </li>
 </ul>
-<h2 id="_6">策略迭代<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_6">策略迭代</h2>
 <ul>
 <li>值迭代存在的问题：<ul>
 <li><strong>时间成本高</strong>：对每个q值得计算，需要轮流对|S|个状态再次进行迭代</li>
@@ -3624,7 +3624,7 @@ $$
 </ul>
 </li>
 </ul>
-<h3 id="eg_2">eg：<a class="headerlink" href="#eg_2" title="Permanent link">&para;</a></h3>
+<h3 id="eg_2">eg：</h3>
 <p><span class="arithmatex">\(\gamma = 0.5\)</span>
 <img alt="" src="https://s2.loli.net/2022/07/29/D92Vb6gRmInNyMp.png" />
 - 任意确定初始状态：
@@ -3726,11 +3726,11 @@ $$
     
       <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

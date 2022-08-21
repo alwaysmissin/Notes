@@ -3225,8 +3225,8 @@
 
 
 
-<h1 id="stl">常用STL<a class="headerlink" href="#stl" title="Permanent link">&para;</a></h1>
-<h2 id="vector">vector容器<a class="headerlink" href="#vector" title="Permanent link">&para;</a></h2>
+<h1 id="stl">常用STL</h1>
+<h2 id="vector">vector容器</h2>
 <ol>
 <li>定义<ol>
 <li><code>vector&lt;typename&gt; name</code></li>
@@ -3259,7 +3259,7 @@
 </ol>
 </li>
 </ol>
-<h2 id="set">set<a class="headerlink" href="#set" title="Permanent link">&para;</a></h2>
+<h2 id="set">set</h2>
 <ul>
 <li>set是<strong>内部自动有序(递增)</strong> 且<strong>不含重复元素</strong>的容器</li>
 <li>定义<ol>
@@ -3269,12 +3269,10 @@
 <li>set内元素的访问<ol>
 <li>只能通过迭代器访问<code>set&lt;typename&gt;::iterator it</code></li>
 <li>遍历方式：
-    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">st</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">st</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="n">it</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">it</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div></li>
+    <code>C++
+    for(set&lt;int&gt;::iterator it = st.begin();it != st.end();it++){
+        cout &lt;&lt; *it &lt;&lt; endl;
+    }</code></li>
 </ol>
 </li>
 <li>常用函数<ol>
@@ -3372,11 +3370,11 @@
     
       <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

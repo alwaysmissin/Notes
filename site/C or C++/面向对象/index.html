@@ -3351,8 +3351,8 @@
 
 
 
-<h1 id="_1">面向对象<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">基本概念<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h1 id="_1">面向对象</h1>
+<h2 id="_2">基本概念</h2>
 <ol>
 <li>对象：</li>
 <li>特征：   <ol>
@@ -3374,26 +3374,19 @@
 </ol>
 </li>
 </ol>
-<h2 id="_3">类与对象<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">类与对象</h2>
 <ol>
 <li>类的定义</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">类名称</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">     </span><span class="n">私有数据或函数</span><span class="err">（</span><span class="n">通过共有函数访问</span><span class="o">/</span><span class="n">友元函数</span><span class="o">/</span><span class="n">友元类</span><span class="err">）</span><span class="w"></span>
-<span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">     </span><span class="n">公用数据或函数</span><span class="w"></span>
-<span class="w">    </span><span class="k">protected</span><span class="o">:</span><span class="w"></span>
-<span class="w">     </span><span class="n">保护型数据或函数</span><span class="p">(</span><span class="n">与继承有关</span><span class="p">)</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<p><code>c++
+   class 类名称{
+       private:
+        私有数据或函数（通过共有函数访问/友元函数/友元类）
+       public:
+        公用数据或函数
+       protected:
+        保护型数据或函数(与继承有关)
+   }</code></p>
 <ol>
 <li>
 <p>缺省参数</p>
@@ -3429,7 +3422,7 @@
 </li>
 <li>引用：<code>对象名.共有成员数据（方法）</code></li>
 </ol>
-<h2 id="_4">构造函数及析构函数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_4">构造函数及析构函数</h2>
 <blockquote>
 <p>初始化方式与结构体不同，不能使用{}来进行初始化，因为数据部分是私有的，因此使用构造函数来对对象进行初始化的操作</p>
 </blockquote>
@@ -3472,7 +3465,7 @@
 </ol>
 </li>
 </ol>
-<h2 id="_5">静态成员<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_5">静态成员</h2>
 <ol>
 <li>静态属性</li>
 <li>使用static声明<code>static int a;</code>的成员，为所有的对象共有（属于一个类，而不仅仅属于一个对象）</li>
@@ -3491,20 +3484,20 @@
 </ol>
 </li>
 </ol>
-<h2 id="this">this指针<a class="headerlink" href="#this" title="Permanent link">&para;</a></h2>
+<h2 id="this">this指针</h2>
 <ol>
 <li>每个函数都能通过this指针<strong>访问自己的地址</strong><code>this-&gt;成员</code>，可以在函数内调用对象（或对象里的另一个函数）</li>
 <li>友元函数（类）没有this指针，因为友元函数（类）不是类的成员</li>
 <li>同样的，也可以定义一个指针指向对象：<code>* 指针名 = new 类名</code></li>
 </ol>
-<h2 id="_6">友元<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_6">友元</h2>
 <ol>
 <li>友元类（函数）可以访问一个类的私有成员</li>
 <li>声明友元函数：<code>friend 函数名 (参数表)</code></li>
 <li>声明友元类：<code>friend class 类名</code></li>
 <li>声明友元类中的函数：<code>friend 类名::函数名 (参数表)</code></li>
 </ol>
-<h2 id="_7">继承<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_7">继承</h2>
 <ol>
 <li>
 <p>派生类</p>
@@ -3530,7 +3523,7 @@
 <p>基类名表大于等于二（基类之间用逗号隔开）</p>
 </li>
 </ol>
-<h2 id="_8">多态<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_8">多态</h2>
 <ol>
 <li>
 <p>一个接口，多个方法</p>
@@ -3546,52 +3539,30 @@
 <ol>
 <li>关键字：virtual(在基类中只能使用一次)</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
-<span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="p">{</span><span class="w"></span>
-<span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">virtualfun</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;this is base</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-<span class="k">class</span><span class="w"> </span><span class="nc">Derived</span><span class="o">:</span><span class="k">public</span><span class="w"> </span><span class="n">Base</span><span class="p">{</span><span class="w"></span>
-<span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">virtualfun</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;this is derived class</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">Base</span><span class="w"> </span><span class="n">baseobject</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">Derived</span><span class="w"> </span><span class="n">derivedobject</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">baseobject</span><span class="p">.</span><span class="n">virtualfun</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="n">derivedobject</span><span class="p">.</span><span class="n">virtualfun</span><span class="p">();</span><span class="w"></span>
-
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<p>```c++
+  #include <iostream>
+  using namespace std;
+  class Base{
+  public:
+      virtual void virtualfun(void){
+          cout &lt;&lt; "this is base\n";
+      }
+  };
+  class Derived:public Base{
+  public:
+      void virtualfun(void){
+          cout &lt;&lt; "this is derived class\n";
+      }
+  };</p>
+<p>int main(){
+      Base baseobject;
+      Derived derivedobject;
+      baseobject.virtualfun();
+      derivedobject.virtualfun();</p>
+<pre><code>  return 0;
+</code></pre>
+<p>}
+  ```</p>
 </li>
 <li>
 <p>说明</p>
@@ -3604,7 +3575,7 @@
 </ol>
 </li>
 </ol>
-<h2 id="_9">重载<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h2 id="_9">重载</h2>
 <ol>
 <li>
 <p>函数重载</p>
@@ -3620,95 +3591,51 @@
 </li>
 <li>
 <p>声明方式：<code>函数类型 operator 运算符 (形参表);</code></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
-<span class="k">class</span><span class="w"> </span><span class="nc">opre</span><span class="p">{</span><span class="w"></span>
-<span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">opre</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">++</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">opre</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">++</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">display</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="n">opre</span><span class="p">();</span><span class="w">       </span><span class="c1">//构造函数</span>
-<span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-<span class="n">opre</span><span class="o">::</span><span class="n">opre</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="kt">void</span><span class="w"> </span><span class="n">opre</span><span class="o">::</span><span class="w"> </span><span class="n">display</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;x = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="n">opre</span><span class="w"> </span><span class="n">opre</span><span class="o">::</span><span class="k">operator</span><span class="w"> </span><span class="o">++</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">opre</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
-
-<span class="w">    </span><span class="o">++</span><span class="n">x</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="n">opre</span><span class="w"> </span><span class="n">opre</span><span class="o">::</span><span class="k">operator</span><span class="w"> </span><span class="o">++</span><span class="p">(</span><span class="kt">int</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="n">opre</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">x</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">opre</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">X</span><span class="p">.</span><span class="n">display</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="o">++</span><span class="n">X</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">Y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">++</span><span class="n">X</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">X</span><span class="p">.</span><span class="n">display</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="n">Y</span><span class="p">.</span><span class="n">display</span><span class="p">();</span><span class="w"></span>
-
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<p>```c++
+  #include <iostream>
+  using namespace std;
+  class opre{
+  public:
+      opre operator ++(void);
+      opre operator ++(int);
+      void display();
+      opre();       //构造函数
+  private:
+      int x;
+  };
+  opre::opre(){
+      x = 0;
+  }
+  void opre:: display(){
+      cout &lt;&lt; "x = " &lt;&lt; x &lt;&lt; endl;
+  }</p>
+<p>opre opre::operator ++(){
+      opre a;</p>
+<pre><code>  ++x;
+  a.x = x;
+  return a;
+</code></pre>
+<p>}</p>
+<p>opre opre::operator ++(int){
+      opre a;
+      x++;
+      a.x = x;
+      return a;
+  }</p>
+<p>int main(){
+      opre X,Y;
+      X.display();
+      ++X;
+      Y = ++X;
+      X.display();
+      Y.display();</p>
+<pre><code>  return 0;
+</code></pre>
+<p>}
+  ```</p>
 </li>
 </ol>
-<h2 id="_10">模板<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h2 id="_10">模板</h2>
 <ol>
 <li>
 <p>用来创建一个通用功能的函数</p>
@@ -3720,13 +3647,11 @@
 <p>函数定义:</p>
 </li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">Max</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="n">T</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-<h2 id="const">const<a class="headerlink" href="#const" title="Permanent link">&para;</a></h2>
+<p><code>c++
+   inline T const&amp; Max(T const&amp; a,T const&amp; b){
+       return a &lt; b ? b : a;
+   }</code></p>
+<h2 id="const">const</h2>
 <ol>
 <li>类中的const成员不能被改变</li>
 <li>类中的const函数不能改变其他元素的值</li>
@@ -3818,11 +3743,11 @@
     
       <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

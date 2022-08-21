@@ -3487,13 +3487,13 @@
 
 
 
-<h1 id="_1">二叉树<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">定义<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h1 id="_1">二叉树</h1>
+<h2 id="_2">定义</h2>
 <ul>
 <li>每个节点至多只有两颗子树</li>
 <li>子树存在左右之分，次序不能任意颠倒</li>
 </ul>
-<h2 id="_3">性质<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">性质</h2>
 <ol>
 <li>在二叉树的第<span class="arithmatex">\(i\)</span>层上至多有<span class="arithmatex">\(2^{i-1}\)</span>个节点</li>
 <li>深度为<span class="arithmatex">\(k\)</span>的二叉树至多有<span class="arithmatex">\(2^k-1\)</span>个节点(<span class="arithmatex">\(k&gt;=1\)</span>)</li>
@@ -3504,32 +3504,29 @@
 <li>对于完全二叉树，若从上至下，从左至右编号，则编号为i的结点，左孩子的编号一定为<span class="arithmatex">\(2i\)</span>，右孩子的编号一定为<span class="arithmatex">\(2i+1\)</span>，双亲的编号一定为<span class="arithmatex">\(i/2\)</span>，这样的<strong>特点方便了后续使用一维数组存储二叉树</strong></li>
 <li>一个具有<span class="arithmatex">\(n\)</span>个节点的完全二叉树,其叶子节点的个数<span class="arithmatex">\(n_0\)</span>为:<span class="arithmatex">\(\lceil \frac{n}{2} \rceil\)</span> ，或者<span class="arithmatex">\(\lfloor \frac{n+1}{2} \rfloor\)</span> </li>
 </ol>
-<h2 id="_4">二叉树的存储结构<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<h3 id="_5">顺序存储结构<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h2 id="_4">二叉树的存储结构</h2>
+<h3 id="_5">顺序存储结构</h3>
 <p><img alt="完全二叉树的顺序存储" src="https://s2.loli.net/2022/05/02/yTxBC6EKjrD1IYn.png" />
 - 非常适用于完全二叉树的存储
 - 对于普通二叉树的存储，可以在其他位置上补0，或其他标志，代表当前位置没有孩子 <strong>（浪费空间）</strong>
 <img alt="普通二叉树的存储" src="https://s2.loli.net/2022/05/02/vNCXOwn6jhTGx4Q.png" /></p>
-<h3 id="_6">链式存储结构<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_6">链式存储结构</h3>
 <ul>
-<li>使用二叉链表存储
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">BiNode</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w">                    </span><span class="c1">//数据域</span>
-<span class="w">    </span><span class="n">BiNode</span><span class="w"> </span><span class="o">*</span><span class="n">lchild</span><span class="p">,</span><span class="o">*</span><span class="n">rchild</span><span class="p">;</span><span class="w">       </span><span class="c1">//左右孩子</span>
-<span class="p">};</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-<img alt="" src="https://s2.loli.net/2022/05/02/5vmS3WUEM6AatBd.png" /></li>
+<li>使用二叉链表存储</li>
 </ul>
+<pre><code class="language-C++">struct BiNode{
+    char data;                    //数据域
+    BiNode *lchild,*rchild;       //左右孩子
+};
+</code></pre>
+<p><img alt="" src="https://s2.loli.net/2022/05/02/5vmS3WUEM6AatBd.png" /></p>
 <p><img alt="" src="https://s2.loli.net/2022/05/02/j2rLtMGpnys9zXa.png" /></p>
 <ul>
 <li>使用三叉链表存储
 <img alt="" src="https://s2.loli.net/2022/05/02/vlFnXe37ydGqagt.png" /></li>
 </ul>
 <p><img alt="" src="https://s2.loli.net/2022/05/02/uEvO5UcKetNloGY.png" /></p>
-<h2 id="_7">二叉树的创建<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_7">二叉树的创建</h2>
 <p><a href="https://blog.csdn.net/lingling_nice/article/details/80960439?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=%E4%BA%8C%E5%8F%89%E6%A0%91%E5%88%9B%E5%BB%BA&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-1-80960439.nonecase&amp;spm=1018.2226.3001.4187">二叉树的各种创建方法_玲max的博客-CSDN博客_二叉树的创建</a>
 1. 补空法
     1. 利用先序遍历的顺序，进行创建
@@ -3537,36 +3534,26 @@
     3. 空结点使用特殊字符表示</p>
 <blockquote>
 <p><strong>注意：由于使用的时先序遍历的方式，从第一个字符到第一个特殊字符（代表空）的前一个字符的数量为二叉树的层数，在测试的时候要适量，否则数量过多的话，二叉树的层数过多，可能让结点数量过多，产生程序错误的错觉</strong>
-2. 代码实现：
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">CreateBiTree</span><span class="p">(</span><span class="n">BiNode</span><span class="o">*</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;#&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w">              </span><span class="c1">//输入特殊字符时为空</span>
-<span class="w">    </span><span class="k">else</span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BiNode</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="n">CreateBiTree</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="p">);</span><span class="w">        </span><span class="c1">//进行左孩子的创建</span>
-<span class="w">        </span><span class="n">CreateBiTree</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="p">);</span><span class="w">        </span><span class="c1">//进行右孩子的创建</span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div></p>
+2. 代码实现：</p>
 </blockquote>
-<h2 id="_8">二叉树的遍历<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<pre><code class="language-C++">void CreateBiTree(BiNode* &amp;p){
+    char x;
+    cin &gt;&gt; x;
+    if(x == '#') p = NULL;              //输入特殊字符时为空
+    else{
+        p = new BiNode;
+        p-&gt;data = x;
+        CreateBiTree(p-&gt;lchild);        //进行左孩子的创建
+        CreateBiTree(p-&gt;rchild);        //进行右孩子的创建
+    }
+}
+</code></pre>
+<h2 id="_8">二叉树的遍历</h2>
 <ul>
 <li>使用<strong>递归</strong>实现对二叉树的遍历</li>
 <li>实际上时将一个<strong>非线性结构进行线性化</strong>的操作</li>
 </ul>
-<h3 id="_9">先序遍历<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h3 id="_9">先序遍历</h3>
 <ul>
 <li>步骤<ol>
 <li>访问根节点</li>
@@ -3576,20 +3563,15 @@
 </li>
 </ul>
 <p><img alt="" src="https://s2.loli.net/2022/05/02/bxJ26isvGwj7Pko.png" />
-- 代码实现：
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">PreOrderTravellser</span><span class="p">(</span><span class="n">BiNode</span><span class="o">*</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">PreOrderTravellser</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">PreOrderTravellser</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div></p>
-<h3 id="_10">中序遍历<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+- 代码实现：</p>
+<pre><code class="language-C++">void PreOrderTravellser(BiNode* &amp;p){
+    if(p == NULL) return;
+    cout &lt;&lt; p -&gt; data &lt;&lt; endl;
+    PreOrderTravellser(p-&gt;lchild);
+    PreOrderTravellser(p-&gt;rchild);
+}
+</code></pre>
+<h3 id="_10">中序遍历</h3>
 <ul>
 <li>步骤<ol>
 <li>中序遍历左子树</li>
@@ -3599,20 +3581,15 @@
 </li>
 </ul>
 <p><img alt="" src="https://s2.loli.net/2022/05/02/hTI8XPykEpwrz1e.png" />
-- 代码实现：
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">InOrderTravellser</span><span class="p">(</span><span class="n">BiNode</span><span class="o">*</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">InOrderTravellser</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">InOrderTravellser</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div></p>
-<h3 id="_11">后序遍历<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+- 代码实现：</p>
+<pre><code class="language-C++">void InOrderTravellser(BiNode* &amp;p){
+    if(p == NULL) return;
+    InOrderTravellser(p-&gt;lchild);
+    cout &lt;&lt; p-&gt;data &lt;&lt; endl;
+    InOrderTravellser(p-&gt;rchild);
+}
+</code></pre>
+<h3 id="_11">后序遍历</h3>
 <ul>
 <li>步骤<ol>
 <li>后序遍历左子树</li>
@@ -3622,44 +3599,39 @@
 </li>
 </ul>
 <p><img alt="" src="https://s2.loli.net/2022/05/02/8DJAk5p6tQOdxC4.png" />
-- 代码实现：
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">PostOrderTravellser</span><span class="p">(</span><span class="n">BiNode</span><span class="o">*</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">PostOrderTravellser</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">PostOrderTravellser</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div></p>
+- 代码实现：</p>
+<pre><code class="language-C++">void PostOrderTravellser(BiNode* &amp;p){
+    if(p == NULL) return;
+    PostOrderTravellser(p-&gt;lchild);
+    PostOrderTravellser(p-&gt;rchild);
+    cout &lt;&lt; p-&gt;data &lt;&lt; endl;
+}
+</code></pre>
 <blockquote>
 <p>先序、中序、后序遍历之间的区别仅仅是先输出、递归左孩子、递归右孩子的顺序之间的区别</p>
 </blockquote>
-<h3 id="_12">层次遍历<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h3 id="_12">层次遍历</h3>
 <ul>
 <li>逐层往下遍历</li>
 </ul>
-<h2 id="_13">线索二叉树<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
-<h3 id="_14">引入：<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<h2 id="_13">线索二叉树</h2>
+<h3 id="_14">引入：</h3>
 <blockquote>
 <p>二叉树采用二叉链表存储时，每个节点有两个指针域，如果二叉链表有<span class="arithmatex">\(n\)</span>个节点，则一共有<span class="arithmatex">\(2n\)</span>个指针域，而只有<span class="arithmatex">\(n-1\)</span>个是实指针，其余<span class="arithmatex">\(n+1\)</span>个都是空指针，为了充分利用空指针，我们使用空指针记录节点的前驱或后继的信息
 - 前驱与后继：指以特定的方式遍历时，线性化之后的前驱和后继</p>
 </blockquote>
-<h3 id="_15">方法：<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<h3 id="_15">方法：</h3>
 <p>如果节点有左孩子，则<code>lchild</code>指向左孩子，否则<code>lchild</code>指向其前驱，右孩子同理，同时，再使用一个<strong>标志域</strong>，区分指向的是孩子还是前驱/后继，节点如下图：
 <img alt="线索链表节点" src="https://s2.loli.net/2022/05/04/UDeK8hHS1p3gRyW.png" /></p>
 <p><img alt="先序线索二叉树链表结构" src="https://s2.loli.net/2022/05/04/O6JHSCh5bGYqVEB.png" /></p>
-<h3 id="_16">概念<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<h3 id="_16">概念</h3>
 <ul>
 <li>线索链表：带有标志域的二叉链表</li>
 <li>线索：指向前驱和后继的<strong>指针</strong></li>
 <li>线索二叉树：带有线索的二叉树</li>
 <li>线索化：<strong>以某种遍历方式</strong>将二叉树转化为线索二叉树的过程</li>
 </ul>
-<h3 id="_17">构造线索二叉树<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<h3 id="_17">构造线索二叉树</h3>
 <ul>
 <li>二叉树线索化的过程，实际上实在遍历过程中修改空指针的过程<ul>
 <li>如果当前节点<code>p</code>的左孩子为空，则该节点的<code>lchild</code>指向其前驱，即<code>p-&gt;lchild=pre</code></li>
@@ -3667,7 +3639,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="_18">遍历线索二叉树<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<h3 id="_18">遍历线索二叉树</h3>
 <ul>
 <li>利用前驱和后继的信息进行遍历<blockquote>
 <p>对于频繁的查找前驱和后继的运算，线索二叉树优于普通二叉树
@@ -3675,7 +3647,7 @@
 </blockquote>
 </li>
 </ul>
-<h2 id="_19">应用<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<h2 id="_19">应用</h2>
 <ol>
 <li>[[树表查找#二叉查找树|二叉查找树]]</li>
 </ol>
@@ -3760,11 +3732,11 @@
     
       <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

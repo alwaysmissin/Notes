@@ -3293,19 +3293,19 @@
 
 
 
-<h1 id="_1">递归<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">基本概念<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h1 id="_1">递归</h1>
+<h2 id="_2">基本概念</h2>
 <ol>
 <li>函数体内直接调用自己：直接递归</li>
 <li>函数通过调用其他函数，反过来调用自己：间接递归</li>
 <li>任意循环都能写成递归</li>
 </ol>
-<h2 id="_3">递归程序的阅读<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">递归程序的阅读</h2>
 <ol>
 <li>根据调用的情况，将函数作为图中的节点，使用有向边进行连接</li>
 <li>从递归的出口点开始，逐次返回，在边上使用返回值作为边的权重</li>
 </ol>
-<h2 id="_4">递归的三要素<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_4">递归的三要素</h2>
 <ul>
 <li>写递归代码时，通过以下<strong>三个要素</strong>来写（以下使用二叉树的先序遍历为例）</li>
 <li>确定递归函数的<strong>参数和返回值</strong><ul>
@@ -3325,15 +3325,15 @@
     preorder(node-&gt;lchild);
     preorder(node-&gt;rchild);</code></li>
 </ul>
-<h2 id="_5">优缺点<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<h3 id="_6">优点<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h2 id="_5">优缺点</h2>
+<h3 id="_6">优点</h3>
 <ol>
 <li>容易编程实现</li>
 <li>健壮性和可维护性好</li>
 <li>充分利用计算机的算力</li>
 <li>代码简短，便于阅读</li>
 </ol>
-<h3 id="_7">缺点<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h3 id="_7">缺点</h3>
 <ul>
 <li>时空效率低</li>
 </ul>
@@ -3418,11 +3418,11 @@
     
       <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

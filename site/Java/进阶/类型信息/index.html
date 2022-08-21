@@ -3309,18 +3309,18 @@
 
 
 
-<h1 id="_1">类型信息<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_1">类型信息</h1>
 <blockquote>
 <p>运行时类型信息使得你可以在程序运行时发现个使用类型信息
 主要有两种方式
 1. 传统的RTTI：假定我们在编译时已经知道了所有的类型
 2. 反射：允许我们在运行时发现和使用类的信息</p>
 </blockquote>
-<h2 id="rtti">为什么需要RTTI<a class="headerlink" href="#rtti" title="Permanent link">&para;</a></h2>
+<h2 id="rtti">为什么需要RTTI</h2>
 <ol>
 <li>RTTI名字的含义：在运行时，识别一个对象的类型</li>
 </ol>
-<h2 id="class">Class对象<a class="headerlink" href="#class" title="Permanent link">&para;</a></h2>
+<h2 id="class">Class对象</h2>
 <ul>
 <li>它包含了与<strong>类有关的信息</strong></li>
 <li>每一个类都有一个Class对象-&gt;Class对象是被保存在一个<strong>同名的.class文件</strong>中</li>
@@ -3376,7 +3376,7 @@
 </ol>
 </li>
 </ul>
-<h3 id="_2">类字面常量<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_2">类字面常量</h3>
 <ul>
 <li>另一种生成对Class对象的引用：<code>对象.class</code></li>
 <li>优势：<ol>
@@ -3393,7 +3393,7 @@
 </ol>
 </li>
 </ul>
-<h3 id="class_1">泛化的Class引用<a class="headerlink" href="#class_1" title="Permanent link">&para;</a></h3>
+<h3 id="class_1">泛化的Class引用</h3>
 <ul>
 <li><code>Class&lt;Integer&gt; IntegerClass = int.class</code></li>
 <li>通过使用泛型语法，可以让编译器强制执行额外的类型检查</li>
@@ -3405,19 +3405,19 @@
 <li>将通配符与<code>extends</code>结合，限定一个范围：<code>Class&lt;? extends SuperClass&gt; class = something.class</code></li>
 <li><code>newInstance()</code>将返回对象的确切类型</li>
 </ul>
-<h3 id="cast">新的转型语法：<code>cast()</code><a class="headerlink" href="#cast" title="Permanent link">&para;</a></h3>
+<h3 id="cast">新的转型语法：<code>cast()</code></h3>
 <ul>
 <li><code>cast()</code>方法接受参数对象，将其转型为Class引用的类型</li>
 <li><code>类 a = classname.cast(b)</code></li>
 </ul>
-<h2 id="instanceofclass">instanceof与Class的等价性<a class="headerlink" href="#instanceofclass" title="Permanent link">&para;</a></h2>
+<h2 id="instanceofclass">instanceof与Class的等价性</h2>
 <ol>
 <li><code>instanceof()</code> 与<code>isInstance()</code>等价</li>
 <li><code>==</code>与<code>equals()</code>等价</li>
 <li><code>instanceof()</code>保持了类型的概念，指：<strong>你是这个类嘛？或你是这个类的派生类嘛？</strong></li>
 <li><code>==</code>比较实际的对象，不考虑继承</li>
 </ol>
-<h2 id="_3">反射：运行时的类信息<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">反射：运行时的类信息</h2>
 <ul>
 <li>RTTI的限制：这个类型在编译时必须一致，这样才能使用RTTI识别它，并利用这些信息做一些有用的事</li>
 <li>
@@ -3545,11 +3545,11 @@
     
       <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -3225,8 +3225,8 @@
 
 
 
-<h1 id="_1"><a href="C:\Users\11146\OneDrive\coding\program\opencv\OpenCV_Learning\矩阵的掩膜操作.cpp">矩阵的掩膜操作</a><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">一、获取图像像素指针<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h1 id="_1"><a href="C:\Users\11146\OneDrive\coding\program\opencv\OpenCV_Learning\矩阵的掩膜操作.cpp">矩阵的掩膜操作</a></h1>
+<h2 id="_2">一、获取图像像素指针</h2>
 <ol>
 <li>获取像素指针：</li>
 <li>获取像素矩阵指针：<code>Mat.ptr&lt;uchar&gt;(int i = 0)</code><ol>
@@ -3236,15 +3236,13 @@
 <li>获取当前行指针：<code>const uchar* current = mtimage.ptr&lt;uchar&gt;(row)</code></li>
 <li>获取当前像素点P(row, col)的像素值：<code>current[col]</code></li>
 <li>像素范围处理：<code>saturate_cast&lt;uchar&gt;</code></li>
-<li>作用：确保RGB值在0~255间
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">saturate_cast</span><span class="o">&lt;</span><span class="n">uchar</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">-100</span><span class="p">)</span><span class="w">      </span><span class="c1">//返回0</span>
-<span class="n">saturate_cast</span><span class="o">&lt;</span><span class="n">uchar</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">288</span><span class="p">)</span><span class="w">       </span><span class="c1">//返回255</span>
-<span class="n">saturate_cast</span><span class="o">&lt;</span><span class="n">uchar</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w">       </span><span class="c1">//返回100</span>
-</code></pre></div></td></tr></table></div></li>
+<li>作用：确保RGB值在0~255间</li>
 </ol>
-<h2 id="_3">二、掩膜操作解释<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<pre><code class="language-C++">saturate_cast&lt;uchar&gt;(-100)      //返回0
+saturate_cast&lt;uchar&gt;(288)       //返回255
+saturate_cast&lt;uchar&gt;(100)       //返回100
+</code></pre>
+<h2 id="_3">二、掩膜操作解释</h2>
 <ol>
 <li>
 <p>通过掩膜操作提高图像对比度</p>
@@ -3336,11 +3334,11 @@
     
       <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -3434,8 +3434,8 @@
   <h1>面向对象</h1>
 
 <p>t# 面向对象</p>
-<h2 id="_1">一、构造器<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h2 id="_2">二、修饰符<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_1">一、构造器</h2>
+<h2 id="_2">二、修饰符</h2>
 <ol>
 <li>四种访问权限</li>
 <li>default</li>
@@ -3489,13 +3489,13 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_3">三、封装<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">三、封装</h2>
 <ol>
 <li>追求：高内聚，低耦合</li>
 <li>高内聚：类的内部操作细节自己完成，不允许外部干涉</li>
 <li>低耦合：仅暴露少量的方法给外部使用</li>
 </ol>
-<h2 id="_4">四、继承<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_4">四、继承</h2>
 <ol>
 <li>
 <p>子类是父类的继承</p>
@@ -3528,7 +3528,7 @@
 <p>所有类都默认直接或间接继承自<code>object</code>类</p>
 </li>
 </ol>
-<h2 id="super">五、super<a class="headerlink" href="#super" title="Permanent link">&para;</a></h2>
+<h2 id="super">五、super</h2>
 <ol>
 <li>
 <p><code>this</code>调用当前对象的方法，<code>super</code>调用父类的同名public方法</p>
@@ -3554,7 +3554,7 @@
 </ol>
 </li>
 </ol>
-<h2 id="final">final关键词<a class="headerlink" href="#final" title="Permanent link">&para;</a></h2>
+<h2 id="final">final关键词</h2>
 <ol>
 <li>final类<ol>
 <li>不能被继承</li>
@@ -3566,7 +3566,7 @@
 </li>
 <li>用于修饰常量(替代const的作用)</li>
 </ol>
-<h2 id="_5">六、方法重写<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_5">六、方法重写</h2>
 <ol>
 <li>
 <p>静态方法</p>
@@ -3576,10 +3576,9 @@
 </li>
 <li>方法的调用只与定义的数据类型有关</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">A</span><span class="p">();</span><span class="w"></span>
-<span class="n">B</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">A</span><span class="p">();</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<p><code>java
+   A a = new A();
+   B b = new A();</code></p>
 <ol>
 <li>
 <p>非静态方法</p>
@@ -3594,10 +3593,9 @@
 <li>方法体可以不同</li>
 <li>抛出的异常：范围可以被缩小但不能扩大</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">B</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">A</span><span class="p">();</span><span class="w">       </span><span class="c1">//同名方法为非静态方法</span><span class="w"></span>
-<span class="c1">//调用同名方法时，使用的都是A类的方法</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<p><code>java
+   B b = new A();       //同名方法为非静态方法
+   //调用同名方法时，使用的都是A类的方法</code></p>
 <ol>
 <li>为什么需要重写：<ol>
 <li>父类的功能子类不一定需要或不一定满足</li>
@@ -3615,7 +3613,7 @@
 <li><code>final</code></li>
 <li><code>private</code></li>
 </ol>
-<h2 id="_6">七、多态<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_6">七、多态</h2>
 <ol>
 <li>即同一方法可以根据发送对象的不同而采用多种不同的行为方式</li>
 <li>一个对象的实际类型是确定的，但是可以指向对象的引用类型有很多（ 父类、有关系的类）<code>father s = new son();</code></li>
@@ -3628,25 +3626,17 @@
 <li>动态编译</li>
 <li>通过父类new子类</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">//Student是person的子类</span><span class="w"></span>
+<pre><code class="language-java">//Student是person的子类
 
-<span class="c1">//Student能调用的方法都是自己或者继承父类的</span><span class="w"></span>
-<span class="n">Student</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">();</span><span class="w"></span>
-<span class="c1">//Person父类型，可以指向子类，但是不能调用子类独有的方法</span><span class="w"></span>
-<span class="n">Person</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="p">();</span><span class="w"></span>
-<span class="c1">//想要调用的话，可以使用强制类型转化</span><span class="w"></span>
-<span class="c1">//将对象类型强制转化为目标类型</span><span class="w"></span>
-<span class="p">((</span><span class="n">Student</span><span class="p">)</span><span class="n">s2</span><span class="p">).</span><span class="na">eat</span><span class="p">();</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-<h2 id="instanceof">八、Instanceof和类型转化<a class="headerlink" href="#instanceof" title="Permanent link">&para;</a></h2>
+//Student能调用的方法都是自己或者继承父类的
+Student s1 = new Student();
+//Person父类型，可以指向子类，但是不能调用子类独有的方法
+Person s2 = new Person();
+//想要调用的话，可以使用强制类型转化
+//将对象类型强制转化为目标类型
+((Student)s2).eat();
+</code></pre>
+<h2 id="instanceof">八、Instanceof和类型转化</h2>
 <ol>
 <li><code>X Instanceof Y</code></li>
 <li>存在父子关系才可以编译通过</li>
@@ -3656,7 +3646,7 @@
 <li>意义</li>
 <li>方便方法的调用，减少重复</li>
 </ol>
-<h2 id="static">九、static关键词<a class="headerlink" href="#static" title="Permanent link">&para;</a></h2>
+<h2 id="static">九、static关键词</h2>
 <ul>
 <li>静态即<strong>固定的位置</strong></li>
 <li>
@@ -3669,7 +3659,7 @@
 <li>静态方法只能访问静态对象</li>
 <li>不能用static来修饰构造方法</li>
 </ul>
-<h2 id="_7">十、抽象类<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_7">十、抽象类</h2>
 <ol>
 <li><code>abstract</code>关键词</li>
 <li>抽象类的所有方法，继承了它的非抽象子类，都必须实现它的方法</li>
@@ -3682,7 +3672,7 @@
 <li>抽象类可以写普通方法</li>
 <li>抽象方法必须在抽象类中</li>
 </ol>
-<h2 id="_8">十一、接口<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_8">十一、接口</h2>
 <ol>
 <li>区别</li>
 <li>普通类：只有具体实现</li>
@@ -3699,17 +3689,15 @@
 <li><strong>Lambda表达式</strong><ol>
 <li>匿名方法</li>
 <li>书写方法：参数列表和方法体之间的符号是-&gt;
-    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="n">参数列表</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">方法体</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div></li>
+    <code>Java
+    (参数列表)-&gt;{
+        方法体;
+    }</code> </li>
 <li>必须有特殊的上下文，编译器才能推断出Lambda表达式是哪个方法，Lambda表达式的值就是方法的入口地址</li>
 </ol>
 </li>
 </ol>
-<h2 id="_9">十二、内部类<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h2 id="_9">十二、内部类</h2>
 <ol>
 <li>套娃</li>
 <li>new：通过外部类来new内部类</li>
@@ -3735,7 +3723,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="_10">对象的组合<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h2 id="_10">对象的组合</h2>
 <ol>
 <li>组合和复用<ol>
 <li>对象a组合了对象b，对象a就可以委托对象b调用其方法</li>
@@ -3762,12 +3750,12 @@
 </ol>
 </li>
 </ol>
-<h2 id="var">var局部变量<a class="headerlink" href="#var" title="Permanent link">&para;</a></h2>
+<h2 id="var">var局部变量</h2>
 <ul>
 <li>使用var声明局部变量时，必须显式的指定初值（不可以是null），编译器会自动推断出变量的类型</li>
 <li>方法的参数和方法的返回不能用var来声明</li>
 </ul>
-<h2 id="_11">对象的上转型对象<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h2 id="_11">对象的上转型对象</h2>
 <ul>
 <li>即使用子类的构造方法构造一个父类的对象</li>
 <li>特点<ul>
@@ -3778,7 +3766,7 @@
 </li>
 <li>可以将对象的上转型对象再强制转换为一个<strong>子类对象</strong></li>
 </ul>
-<h2 id="_12">垃圾回收机制<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h2 id="_12">垃圾回收机制</h2>
 <ul>
 <li>标记——清扫：<ol>
 <li>遍历所有的引用，找出所有存活的对象</li>
@@ -3878,11 +3866,11 @@
     
       <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

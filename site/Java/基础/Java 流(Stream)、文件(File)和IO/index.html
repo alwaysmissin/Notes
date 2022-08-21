@@ -3167,20 +3167,20 @@
 
 
 
-<h1 id="java-streamfileio">Java 流(Stream)、文件(File)和IO<a class="headerlink" href="#java-streamfileio" title="Permanent link">&para;</a></h1>
-<h1 id="io">一、IO<a class="headerlink" href="#io" title="Permanent link">&para;</a></h1>
+<h1 id="java-streamfileio">Java 流(Stream)、文件(File)和IO</h1>
+<h1 id="io">一、IO</h1>
 <ol>
 <li>Java.io包几乎包含了所有操作输入输出的类</li>
 <li>支持的格式：基本类型、对象、本地化字符集</li>
 </ol>
-<h2 id="bufferedreader">二、BufferedReader(从控制台读取字符串)<a class="headerlink" href="#bufferedreader" title="Permanent link">&para;</a></h2>
+<h2 id="bufferedreader">二、BufferedReader(从控制台读取字符串)</h2>
 <ol>
 <li>创建<code>BufferedReader</code>的基本语法：<code>BufferedReader br = new BufferedReader(new InputStreamReader(System.in));</code></li>
 <li>常用方法</li>
 <li><code>int read() throws IOException</code>：读取int长度</li>
 <li><code>String readLine() throws IOException</code>：读取一行字符</li>
 </ol>
-<h2 id="_1">三、读写文件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">三、读写文件</h2>
 <ol>
 <li>
 <p>两个重要流：<code>FileInputStream</code> <code>FileOutputStream</code></p>
@@ -3196,10 +3196,9 @@
 </li>
 <li>
 <p>先使用一个File对象</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">File</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">&quot;文件路径&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="n">InputStream</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="w"> </span><span class="nf">InputStream</span><span class="p">(</span><span class="n">f</span><span class="p">);</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<p><code>java
+ File f = new File("文件路径");
+ InputStream in = new File InputStream(f);</code></p>
 </li>
 </ol>
 </li>
@@ -3222,15 +3221,15 @@
 <li>如果目标文件不存在，则自动创建</li>
 <li>方法也类似（read变write）</li>
 </ol>
-<h2 id="_2">四、文件字节输入流<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h4 id="_3">四个基本步骤<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<h2 id="_2">四、文件字节输入流</h2>
+<h4 id="_3">四个基本步骤</h4>
 <ol>
 <li>设定输入流的源</li>
 <li>创建指向源的输入流</li>
 <li>让输入流读取源中的数据</li>
 <li>关闭输入流</li>
 </ol>
-<h2 id="_4">四、实例<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_4">四、实例</h2>
 
 
 
@@ -3312,11 +3311,11 @@
     
       <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

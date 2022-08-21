@@ -3267,8 +3267,8 @@
 
 
 
-<h1 id="_1">文件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">一、操作<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h1 id="_1">文件</h1>
+<h2 id="_2">一、操作</h2>
 <ol>
 <li>操作过程</li>
 <li>打开文件：建立一个文件和流的对应关系</li>
@@ -3276,7 +3276,7 @@
 <li>关闭文件：释放文件所占用的资源</li>
 <li>C++的文件类</li>
 </ol>
-<h2 id="_3">二、文件的打开与关闭<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">二、文件的打开与关闭</h2>
 <p>⚠️upload failed, check dev console</p>
 <ol>
 <li>
@@ -3287,10 +3287,9 @@
 <ol>
 <li>
 <p>open函数(函数原型：<code>void open(const char *szFilename, int mode)</code>)</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">fstream</span><span class="w"> </span><span class="n">outFile</span><span class="p">;</span><span class="w"></span>
-<span class="n">outFile</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;text.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ios</span><span class="o">::</span><span class="n">out</span><span class="p">);</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<p><code>c++
+ fstream outFile;
+ outFile.open("text.txt", ios::out);</code></p>
 <ol>
 <li>
 <p><code>argu1</code> 指针指向含路径的文件名</p>
@@ -3354,8 +3353,8 @@
 </li>
 <li>
 <p>定义流对象时，通过构造函数打开</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">fstream</span><span class="w"> </span><span class="n">outFile</span><span class="p">(</span><span class="s">&quot;test.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ios</span><span class="o">::</span><span class="n">out</span><span class="p">);</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<p><code>c++
+ fstream outFile("test.txt", ios::out);</code></p>
 </li>
 </ol>
 </li>
@@ -3369,72 +3368,47 @@
 <p><code>file.close();</code></p>
 </li>
 </ol>
-<h2 id="_4">三、写入文件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_4">三、写入文件</h2>
 <ol>
 <li>写入与在屏幕上输出类似，使用流</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fstream&gt;</span><span class="cp"></span>
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">fstream</span><span class="w"> </span><span class="n">outFile</span><span class="p">(</span><span class="s">&quot;text.txt&quot;</span><span class="p">,</span><span class="n">ios</span><span class="o">::</span><span class="n">out</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">outFile</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;open failed&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="n">outFile</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;string&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mf">1.2</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">outFile</span><span class="p">.</span><span class="n">close</span><span class="p">();</span><span class="w">        </span><span class="c1">//关闭文件</span>
+<pre><code class="language-c++">#include &lt;fstream&gt;
+using namespace std;
+int main(){
+    fstream outFile(&quot;text.txt&quot;,ios::out);
+    if(!outFile){
+        cout &lt;&lt; &quot;open failed&quot;;
+        exit(0);
+    }
+    outFile &lt;&lt; 5 &lt;&lt; &quot;string&quot; &lt;&lt; 1.2;
+    outFile.close();        //关闭文件
 
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-<h2 id="_5">四、读文件<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+    return 0;
+}
+</code></pre>
+<h2 id="_5">四、读文件</h2>
 <ol>
 <li>同上</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fstream&gt;</span><span class="cp"></span>
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">fstream</span><span class="w"> </span><span class="n">outFile</span><span class="p">(</span><span class="s">&quot;text.txt&quot;</span><span class="p">,</span><span class="n">ios</span><span class="o">::</span><span class="n">out</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">outFile</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;open failed&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">outFile</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">outFile</span><span class="p">.</span><span class="n">close</span><span class="p">();</span><span class="w">        </span><span class="c1">//关闭文件</span>
+<pre><code class="language-c++">#include &lt;fstream&gt;
+using namespace std;
+int main(){
+    fstream outFile(&quot;text.txt&quot;,ios::out);
+    if(!outFile){
+        cout &lt;&lt; &quot;open failed&quot;;
+        exit(0);
+    }
+    int data;
+    outFile &gt;&gt; data;
+    outFile.close();        //关闭文件
 
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+    return 0;
+}
+</code></pre>
 <ol>
 <li></li>
 </ol>
-<h2 id="_6">五、二进制文件的读写<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_6">五、二进制文件的读写</h2>
 <ol>
 <li>
 <p>二进制文件使一标准数据的二进制表示方式存储，读取数据以字节为单位</p>
@@ -3477,44 +3451,27 @@
 <p>程序示例</p>
 </li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fstream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdlib&gt;</span><span class="cp"></span>
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">fstream</span><span class="w"> </span><span class="n">file</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">msg</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;This is a test message&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span><span class="w"></span>
-<span class="w">    </span><span class="n">file</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;text.txt&quot;</span><span class="p">,</span><span class="n">ios</span><span class="o">::</span><span class="n">out</span><span class="o">|</span><span class="n">ios</span><span class="o">::</span><span class="n">in</span><span class="o">|</span><span class="n">ios</span><span class="o">::</span><span class="n">trunc</span><span class="o">|</span><span class="n">ios</span><span class="o">::</span><span class="n">binary</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">file</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="n">exit</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="n">file</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">msg</span><span class="p">));</span><span class="w"></span>
-<span class="w">    </span><span class="n">file</span><span class="p">.</span><span class="n">seekp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">ios</span><span class="o">::</span><span class="n">beg</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">file</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">file</span><span class="p">.</span><span class="n">gcount</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">buf</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<p>```c++
+   #include <iostream>
+   #include <fstream>
+   #include <cstdlib>
+   using namespace std;
+   int main(){
+       fstream file;
+       char msg[] = "This is a test message", buf[20];
+       file.open("text.txt",ios::out|ios::in|ios::trunc|ios::binary);
+       if(!file){
+           exit(2);
+       }
+       file.write(msg, sizeof(msg));
+       file.seekp(0,ios::beg);
+       file.read(buf,20);
+       cout &lt;&lt; file.gcount() &lt;&lt; endl;
+       cout &lt;&lt; buf &lt;&lt; endl;</p>
+<pre><code>   return 0;
+</code></pre>
+<p>}
+   ```</p>
 <p>## 六、文件的定位操作</p>
 <ol>
 <li>取文件当前位置的方法<ol>
@@ -3616,11 +3573,11 @@
     
       <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

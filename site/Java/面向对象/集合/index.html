@@ -3479,14 +3479,14 @@
 
 
 
-<h1 id="_1">集合<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">集合<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="_3">优点<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h1 id="_1">集合</h1>
+<h2 id="_2">集合</h2>
+<h3 id="_3">优点</h3>
 <ol>
 <li>动态保存任意多个对象，使用方便</li>
 <li>提供了一系列方便的方法</li>
 </ol>
-<h3 id="_4">框架体系<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_4">框架体系</h3>
 <ol>
 <li>分为两组：<ol>
 <li>单列集合：单个对象<ol>
@@ -3502,45 +3502,45 @@
 </ol>
 </li>
 </ol>
-<h3 id="iterator">iterator<a class="headerlink" href="#iterator" title="Permanent link">&para;</a></h3>
+<h3 id="iterator">iterator</h3>
 <ul>
 <li>使用<code>iterator()</code>方法返回一个迭代器</li>
 <li>使用<code>iterator.hasNext()</code></li>
 <li>再次遍历则重置迭代器</li>
 </ul>
-<h2 id="list">List接口<a class="headerlink" href="#list" title="Permanent link">&para;</a></h2>
-<h3 id="arraylist">ArrayList<a class="headerlink" href="#arraylist" title="Permanent link">&para;</a></h3>
+<h2 id="list">List接口</h2>
+<h3 id="arraylist">ArrayList</h3>
 <ol>
 <li>基本等同于<code>Vector</code>，但<code>ArrayList</code>是线程不安全的（效率高），在多线程的情况下一般使用<code>Vector</code></li>
 </ol>
-<h4 id="_5">源码分析<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<h4 id="_5">源码分析</h4>
 <ol>
 <li><code>ArrayList</code>中维护了一个<code>Object</code>类型的数组<code>transient Object[] elementData</code></li>
 <li>创建对象时，入伙使用的时无参构造器，则初始elementData容量为0</li>
 <li>添加元素时，先判断是否需要扩容，如需要，则调用<code>grow()</code>方法，使容量变为<code>1.5</code>倍</li>
 </ol>
-<h3 id="vector">Vector<a class="headerlink" href="#vector" title="Permanent link">&para;</a></h3>
+<h3 id="vector">Vector</h3>
 <ol>
 <li><code>Vector</code>的所有方法都是带<code>Synchronized</code>，都是线程同步的、线程安全的（多线程开发时）</li>
 </ol>
-<h4 id="_6">源码分析<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<h4 id="_6">源码分析</h4>
 <ol>
 <li><code>Vector</code>中维护了一个<code>Object</code>类型的数组<code>transient Object[] elementData</code></li>
 <li>创建对象时，入伙使用的时无参构造器，则初始elementData容量为10</li>
 <li>添加元素时，先判断是否需要扩容，如需要，则调用<code>grow()</code>方法，使容量变为<code>2</code>倍</li>
 </ol>
-<h3 id="linkedlist">LinkedList<a class="headerlink" href="#linkedlist" title="Permanent link">&para;</a></h3>
+<h3 id="linkedlist">LinkedList</h3>
 <ul>
 <li>底层实现了双向链表和双端队列的特点</li>
 <li>可以添加任意元素</li>
 <li>线程不安全</li>
 </ul>
-<h4 id="_7">底层结构<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<h4 id="_7">底层结构</h4>
 <ul>
 <li>维护了一个双向链表</li>
 <li>维护了两个属性：<code>first</code> 、<code>last</code></li>
 </ul>
-<h2 id="set">Set接口<a class="headerlink" href="#set" title="Permanent link">&para;</a></h2>
+<h2 id="set">Set接口</h2>
 <ol>
 <li>基本介绍：<ol>
 <li>无序，无法索引，顺序取决于hash后索引的结果</li>
@@ -3548,8 +3548,8 @@
 </ol>
 </li>
 </ol>
-<h3 id="hashset">HashSet<a class="headerlink" href="#hashset" title="Permanent link">&para;</a></h3>
-<h4 id="_8">底层机制<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<h3 id="hashset">HashSet</h3>
+<h4 id="_8">底层机制</h4>
 <ol>
 <li>HashSet底层是<strong>HashMap</strong></li>
 <li>添加一个元素时，先得到hash值，再转换成索引值</li>
@@ -3645,11 +3645,11 @@
     
       <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

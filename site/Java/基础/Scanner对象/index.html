@@ -3227,50 +3227,33 @@
 
 
 
-<h1 id="scanner">Scanner对象<a class="headerlink" href="#scanner" title="Permanent link">&para;</a></h1>
-<h2 id="scanner_1">一、Scanner对象<a class="headerlink" href="#scanner_1" title="Permanent link">&para;</a></h2>
+<h1 id="scanner">Scanner对象</h1>
+<h2 id="scanner_1">一、Scanner对象</h2>
 <ol>
 <li>通过Scanner类来获取用户的输入</li>
 <li>基本语法：<code>Scanner s = new Scanner(System.in);</code></li>
 <li>通过Scanner类的<code>next()</code>与<code>nextLine()</code>方法获取输入的字符串，</li>
 <li>在读取前我们一般需要使用<code>hasNext()</code>与<code>hasNextLine()</code>判断是否还有输入的数据</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">scanner方法</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;使用next方法接接受&quot;</span><span class="p">);</span><span class="w"></span>
+<pre><code class="language-java">public class scanner方法 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(&quot;使用next方法接接受&quot;);
 
-<span class="w">        </span><span class="c1">//判断用户有没有输入字符串</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">scanner</span><span class="p">.</span><span class="na">hasNext</span><span class="p">()){</span><span class="w"></span>
-<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">next</span><span class="p">();</span><span class="w"></span>
-<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;输入的内容为&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">str</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="k">else</span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;用户没有输入&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
+        //判断用户有没有输入字符串
+        if(scanner.hasNext()){
+            String str = scanner.next();
+            System.out.println(&quot;输入的内容为&quot; + str);
+        }
+        else{
+            System.out.println(&quot;用户没有输入&quot;)
+        }
 
-<span class="w">        </span><span class="c1">//凡是IO流的类如果不关闭就会一直占用资源</span><span class="w"></span>
-<span class="w">        </span><span class="n">scanner</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+        //凡是IO流的类如果不关闭就会一直占用资源
+        scanner.close();
+    }
+}
+</code></pre>
 <ol>
 <li>两种输入方式的区别</li>
 <li>next():<ol>
@@ -3286,7 +3269,7 @@
 </ol>
 </li>
 </ol>
-<h2 id="scanner_2">二、Scanner进阶使用<a class="headerlink" href="#scanner_2" title="Permanent link">&para;</a></h2>
+<h2 id="scanner_2">二、Scanner进阶使用</h2>
 <p><code>Scanner对象名.hasNext数据类型</code></p>
 
 
@@ -3369,11 +3352,11 @@
     
       <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

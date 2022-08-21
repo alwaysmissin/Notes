@@ -3335,8 +3335,8 @@
 
 
 
-<h1 id="_1">关键路径<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="aoe">AOE网<a class="headerlink" href="#aoe" title="Permanent link">&para;</a></h2>
+<h1 id="_1">关键路径</h1>
+<h2 id="aoe">AOE网</h2>
 <ol>
 <li>一个带权的有向无环图，顶点表示时间，弧表示活动，弧上的权值表示活动持续的时间</li>
 <li>实际工程问题：<ol>
@@ -3345,12 +3345,12 @@
 </ol>
 </li>
 </ol>
-<h2 id="_2">关键路径<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">关键路径</h2>
 <ol>
 <li>关键路径：<strong>源点-&gt;汇点</strong>的带权路径<strong>长度最大</strong>的路径称为关键路径，关键路径上的活动称为<strong>关键活动</strong></li>
 </ol>
-<h3 id="_3">关键路径的确定：<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<h4 id="v_ivei">事件<span class="arithmatex">\(V_i\)</span>的最早发生时间<span class="arithmatex">\(ve[i]\)</span><a class="headerlink" href="#v_ivei" title="Permanent link">&para;</a></h4>
+<h3 id="_3">关键路径的确定：</h3>
+<h4 id="v_ivei">事件<span class="arithmatex">\(V_i\)</span>的最早发生时间<span class="arithmatex">\(ve[i]\)</span></h4>
 <ol>
 <li>事件发生的最早时间是从源点到<span class="arithmatex">\(V_i\)</span>的<strong>最大</strong>路径长度<ul>
 <li>最大：需要事件<span class="arithmatex">\(V_i\)</span>的所有入边活动都已经完成，<span class="arithmatex">\(V_i\)</span>才可以开始</li>
@@ -3360,22 +3360,22 @@
 <li><span class="arithmatex">\(ve[i] =\max(V_e + W_{ei})\)</span>
 <img alt="" src="https://s2.loli.net/2022/06/08/iYkCyrOoq47Rv9j.png" /></li>
 </ol>
-<h4 id="v_ivli">事件<span class="arithmatex">\(V_i\)</span>的最晚发生时间<span class="arithmatex">\(vl[i]\)</span><a class="headerlink" href="#v_ivli" title="Permanent link">&para;</a></h4>
+<h4 id="v_ivli">事件<span class="arithmatex">\(V_i\)</span>的最晚发生时间<span class="arithmatex">\(vl[i]\)</span></h4>
 <ol>
 <li>事件<span class="arithmatex">\(V_i\)</span>的最迟发生时间不能影响其所有后继的最迟发生时间，<strong>即<span class="arithmatex">\(V_i\)</span>的最迟发生时间减去活动<span class="arithmatex">\(a_{ik} = &lt;V_i, V_k&gt;\)</span>的持续时间</strong></li>
 <li>利用<strong>逆拓扑排序</strong>，从汇点向源点递推，求解事件的最迟发生时间</li>
 <li><strong>初始化</strong>汇点的最迟发生时间为<strong>汇点的最早发生时间</strong>
 <img alt="" src="https://s2.loli.net/2022/06/08/jcSEXik1HUoZRqW.png" /></li>
 </ol>
-<h4 id="a_i-v_jv_kei">活动<span class="arithmatex">\(a_i = &lt;V_j,V_k&gt;\)</span>的最早发生事件<span class="arithmatex">\(e[i]\)</span><a class="headerlink" href="#a_i-v_jv_kei" title="Permanent link">&para;</a></h4>
+<h4 id="a_i-v_jv_kei">活动<span class="arithmatex">\(a_i = &lt;V_j,V_k&gt;\)</span>的最早发生事件<span class="arithmatex">\(e[i]\)</span></h4>
 <ul>
 <li>事件<span class="arithmatex">\(V_j\)</span>之后发生</li>
 </ul>
-<h4 id="a_i-v_jv_kli">活动<span class="arithmatex">\(a_i = &lt;V_j,V_k&gt;\)</span>的最晚发生事件<span class="arithmatex">\(l[i]\)</span><a class="headerlink" href="#a_i-v_jv_kli" title="Permanent link">&para;</a></h4>
+<h4 id="a_i-v_jv_kli">活动<span class="arithmatex">\(a_i = &lt;V_j,V_k&gt;\)</span>的最晚发生事件<span class="arithmatex">\(l[i]\)</span></h4>
 <ul>
 <li>活动<span class="arithmatex">\(a_i\)</span>的最迟发生时间等于弧尾的最迟发生时间减去边值，<span class="arithmatex">\(l[i] = vl[k]-w_{jk}\)</span></li>
 </ul>
-<h2 id="_4">算法步骤<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_4">算法步骤</h2>
 <ol>
 <li>利用拓扑排序，将拓扑排序结果保存在<span class="arithmatex">\(topo[]\)</span></li>
 <li>将每个事件的最早发生时间初始化为0，</li>
@@ -3475,11 +3475,11 @@
     
       <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -3165,8 +3165,8 @@
 
 
 
-<h1 id="3">预习材料 3<a class="headerlink" href="#3" title="Permanent link">&para;</a></h1>
-<h1 id="_1">小结一下上次培训内容<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="3">预习材料 3</h1>
+<h1 id="_1">小结一下上次培训内容</h1>
 <p>为什么要强调一个函数纯还是不纯呢？</p>
 <p>因为纯的函数有一个非常好的性质 —— <strong>引用透明</strong>！而对于一个纯的系统，我们可以使用<strong>代换模型</strong>对其求值。代换模型是简单的求值模型。</p>
 <p>数学表达式的化简，就是使用代换模型对表达式求值的一个例子。注意：我们不管先计算表达式的哪一部分，最后得到的结果都是一样的。由此我们可以窥见纯与不纯的系统的区别所在。</p>
@@ -3198,33 +3198,33 @@
 </blockquote>
 <p>可以证明，<strong>所有的循环都可以被等价地改写为尾递归，反之亦然</strong>。（Scala、Racket 等多范式语言中的循环实际上就是用尾递归实现的）</p>
 <p>函数式编程的核心思想就是<strong>构造一个从输入到输出的纯函数</strong>。这个函数通常是由若干个小函数组合而成的，柯里化、匿名函数、高阶函数等都是用来组合函数的有用工具。为保证整个系统是纯的，我们<strong>不能引入变量</strong>（<strong>常量是可以的</strong>）。因此，不能使用过程式编程中我们熟悉的循环，因为循环必须要有变量，而是使用和循环等价的递归。能将递归改写为尾递归是最好的，因为尾递归占用的空间是常数，不会随着计算的进行而增加。</p>
-<h1 id="_2">循环不变式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
-<h2 id="_3">快速排序中的两种划分算法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h1 id="_2">循环不变式</h1>
+<h2 id="_3">快速排序中的两种划分算法</h2>
 <p><a href="https://zhuanlan.zhihu.com/p/340520050">快速排序</a></p>
-<h1 id="_4">面向对象编程<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h1>
-<h2 id="_5">对象 = 属性（数值） + 行为<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h1 id="_4">面向对象编程</h1>
+<h2 id="_5">对象 = 属性（数值） + 行为</h2>
 <p>对象（Object）属性（Attribute）行为（action）</p>
 <p><img alt="img" src="https://cdn.nlark.com/yuque/0/2021/png/1937915/1637050428246-b5885651-ef93-4564-a7ae-d56dfcb0e4a7.png" /></p>
-<h2 id="_6">类 —— 创建对象的模板<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_6">类 —— 创建对象的模板</h2>
 <p>类（Class）</p>
 <p>实例（Instance）</p>
-<h2 id="_7">抽象类 —— 对属性和行为的抽象<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<h2 id="_8">接口 —— 仅对行为的抽象<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_7">抽象类 —— 对属性和行为的抽象</h2>
+<h2 id="_8">接口 —— 仅对行为的抽象</h2>
 <p>接口（Interface）</p>
 <ol>
 <li>能对对象进行的操作</li>
 </ol>
-<h1 id="_9">泛型<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h1>
+<h1 id="_9">泛型</h1>
 <p><a href="https://zhuanlan.zhihu.com/p/287965990">泛型和元编程的模型</a></p>
-<h2 id="_10">装箱<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
-<h2 id="_11">单态化<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
-<h1 id="_12">多态<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h1>
-<h2 id="_13">派发<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
-<h3 id="_14">静态派发<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<h2 id="_10">装箱</h2>
+<h2 id="_11">单态化</h2>
+<h1 id="_12">多态</h1>
+<h2 id="_13">派发</h2>
+<h3 id="_14">静态派发</h3>
 <p><a href="https://zhuanlan.zhihu.com/p/23290464">说说C++的Concept</a></p>
-<h3 id="_15">动态派发<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
-<h1 id="_16">编译到可执行文件 &amp; 库<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h1>
-<h2 id="_17">库<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<h3 id="_15">动态派发</h3>
+<h1 id="_16">编译到可执行文件 &amp; 库</h1>
+<h2 id="_17">库</h2>
 <p>一些不用编译就能使用的函数打包后就得到了一个库。一个库的头文件可以类比为这个库的说明书，指明了库里面有那些函数是可用的，应该怎么用（参数是什么，返回值是什么）。</p>
 <p>之所以不用编译就能用，因为预先已经编译过了。因此生成一个库的方法也很简单，用编译器编译就好了。</p>
 
@@ -3308,11 +3308,11 @@
     
       <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -36,22 +36,31 @@ plugins:
         - en
         - ja
   - tags 
-markdown_extensions:
-  - pymdownx.arithmatex: # latex支持
-      generic: true
-  - attr_list 
-  - toc:
-      permalink: true
-  - pymdownx.highlight: # 代码块高亮
-      linenums: true # 显示行号
-      auto_title: true # 显示编程语言名称
-  - pymdownx.superfences # 代码块高亮插件
-  - meta # 支持Markdown文件上方自定义标题标签等
+# markdown_extensions:
+#   - pymdownx.arithmatex: # latex支持
+#       generic: true
+#   - attr_list 
+#   - toc:
+#       permalink: true
+#   - pymdownx.highlight: # 代码块高亮
+#       linenums: true # 显示行号
+#       auto_title: true # 显示编程语言名称
+#   - pymdownx.superfences # 代码块高亮插件
+#   - meta # 支持Markdown文件上方自定义标题标签等
+# extra_javascript:
+#   # latex支持
+#   - mkdocs/javascripts/mathjax.js
+#   - https://polyfill.io/v3/polyfill.min.js?features=es6
+#   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 extra_javascript:
-  # latex支持
-  - mkdocs/javascripts/mathjax.js
+  - javascripts/config.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
 extra_css:
   - mkdocs/css/no-footer.css
   - mkdocs/css/unordered-list-symbols.css

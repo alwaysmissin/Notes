@@ -3239,13 +3239,13 @@
 
 
 
-<h1 id="_1">图像操作<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">一、读写图像<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h1 id="_1">图像操作</h1>
+<h2 id="_2">一、读写图像</h2>
 <ol>
 <li><code>imread</code></li>
 <li><code>imwrite</code></li>
 </ol>
-<h2 id="_3">二、读写像素<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">二、读写像素</h2>
 <ol>
 <li>
 <p>读一个GRAY像素点的像素值(CV_8UC1)</p>
@@ -3260,15 +3260,12 @@
 <p>读一个RGB像素点的像素值</p>
 </li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Vec3f</span><span class="w"> </span><span class="n">intensity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">img</span><span class="p">.</span><span class="n">at</span><span class="o">&lt;</span><span class="n">Vec3f</span><span class="o">&gt;</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">);</span><span class="w"></span>
-<span class="kt">float</span><span class="w"> </span><span class="n">blue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intensity</span><span class="p">.</span><span class="n">val</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w"></span>
-<span class="kt">float</span><span class="w"> </span><span class="n">green</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intensity</span><span class="p">.</span><span class="n">val</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
-<span class="kt">float</span><span class="w"> </span><span class="n">red</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intensity</span><span class="p">.</span><span class="n">val</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-<h2 id="_4">三、修改像素值<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p><code>C++
+   Vec3f intensity = img.at&lt;Vec3f&gt;(y,x);
+   float blue = intensity.val[0];
+   float green = intensity.val[1];
+   float red = intensity.val[2];</code></p>
+<h2 id="_4">三、修改像素值</h2>
 
 
 
@@ -3350,11 +3347,11 @@
     
       <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

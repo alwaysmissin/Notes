@@ -3253,48 +3253,43 @@
 
 
 
-<h1 id="_1">字符数组<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">一、字符数组的说明<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h1 id="_1">字符数组</h1>
+<h2 id="_2">一、字符数组的说明</h2>
 <ol>
 <li>类似数组</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">str</span><span class="p">[</span><span class="n">number</span><span class="p">];</span><span class="w"></span>
-<span class="kt">char</span><span class="w"> </span><span class="n">str</span><span class="p">[</span><span class="n">number</span><span class="p">][</span><span class="n">number</span><span class="p">];</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<pre><code class="language-c">char str[number];
+char str[number][number];
+</code></pre>
 <ol>
 <li>初始化</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">str</span><span class="p">[</span><span class="n">number</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;hello&quot;</span><span class="p">};</span><span class="w"></span>
-<span class="kt">char</span><span class="w"> </span><span class="n">str</span><span class="p">[</span><span class="n">number</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="sc">&#39;h&#39;</span><span class="p">,</span><span class="sc">&#39;e&#39;</span><span class="p">,</span><span class="sc">&#39;l&#39;</span><span class="p">,</span><span class="sc">&#39;l&#39;</span><span class="p">,</span><span class="sc">&#39;o&#39;</span><span class="p">};</span><span class="w"></span>
-<span class="kt">char</span><span class="w"> </span><span class="n">str</span><span class="p">[</span><span class="n">number</span><span class="p">][</span><span class="n">number</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="s">&quot;world&quot;</span><span class="p">};</span><span class="w"> </span>
-</code></pre></div></td></tr></table></div>
+<pre><code class="language-c">char str[number] = {&quot;hello&quot;};
+char str[number] = {'h','e','l','l','o'};
+char str[number][number] = {&quot;hello&quot;,&quot;world&quot;}; 
+</code></pre>
 <ol>
 <li>注意：字符串后会默认加一个'\0',因此要为此预留一个位置</li>
 </ol>
-<h2 id="_3">二、字符数组的输入输出<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">二、字符数组的输入输出</h2>
 <ol>
 <li>cin对象输入方法</li>
 <li>使用cin时，遇见空格自然结束</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span><span class="w"></span>
-<span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<p><code>c
+   char a[20];
+   cin &gt;&gt; a;</code></p>
 <p>输入pingtan fujian</p>
 <p>输出结果 pingtan<strong>\0</strong></p>
 <ol>
 <li>cin.getline遇见回车形成一个字符串</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span><span class="w"></span>
-<span class="n">cin</span><span class="p">.</span><span class="n">getline</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<p><code>c
+   char a[20];
+   cin.getline(a,20);</code></p>
 <p>输入pingtan fujian</p>
 <p>输出结果 pingtan fujian<strong>\0</strong></p>
-<h2 id="_4">三、常见的字符数组处理函数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_4">三、常见的字符数组处理函数</h2>
 <ol>
 <li>
 <p>拷贝   strcpy(str1,str2)</p>
@@ -3303,12 +3298,10 @@
 <p>作用：将后者覆盖前者</p>
 </li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">str1</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span><span class="n">str2</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;computer&quot;</span><span class="p">};</span><span class="w"></span>
-<span class="n">strcpy</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span><span class="n">str2</span><span class="p">);</span><span class="w">       </span><span class="c1">//str1的内容变为&quot;computer&quot;</span>
-<span class="n">strcpy</span><span class="p">(</span><span class="n">str2</span><span class="p">,</span><span class="s">&quot;program&quot;</span><span class="p">);</span><span class="w">      </span><span class="c1">//str2的内容变为&quot;program&quot;</span>
-</code></pre></div></td></tr></table></div>
+<p><code>c
+   char str1[10],str2[]={"computer"};
+   strcpy(str1,str2);       //str1的内容变为"computer"
+   strcpy(str2,"program");      //str2的内容变为"program"</code></p>
 <ol>
 <li>
 <p>注意：</p>
@@ -3324,12 +3317,10 @@
 <p>作用：连接</p>
 </li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">str1</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;pingtan&quot;</span><span class="p">},</span><span class="n">str2</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;fujian&quot;</span><span class="p">};</span><span class="w"></span>
-<span class="n">strcat</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span><span class="n">str2</span><span class="p">);</span><span class="w">       </span><span class="c1">//连接后的内容赋给前者</span>
-<span class="n">puts</span><span class="p">(</span><span class="n">str1</span><span class="p">);</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<p><code>c
+   char str1[10]={"pingtan"},str2[10]={"fujian"};
+   strcat(str1,str2);       //连接后的内容赋给前者
+   puts(str1);</code></p>
 <ol>
 <li>
 <p>注意</p>
@@ -3343,14 +3334,11 @@
 </li>
 <li>
 <p>作用：字符串长度</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">lenth</span><span class="p">;</span><span class="w"></span>
-<span class="kt">char</span><span class="w"> </span><span class="n">str1</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;China&quot;</span><span class="p">};</span><span class="w"></span>
-<span class="n">lenth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">str1</span><span class="p">);</span><span class="w"></span>
-<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">lenth</span><span class="p">;</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<p><code>c
+  int lenth;
+  char str1[]={"China"};
+  lenth = strlen(str1);
+  cout &lt;&lt; lenth;</code></p>
 </li>
 <li>
 <p>注意：输出的长度里不包括\0</p>
@@ -3399,94 +3387,53 @@
 </ol>
 </li>
 </ol>
-<h2 id="string">四、string类<a class="headerlink" href="#string" title="Permanent link">&para;</a></h2>
+<h2 id="string">四、string类</h2>
 <ol>
 <li>包含了上述所有操作（且更加方便、易于理解），并增加了更多</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<pre><code class="language-c">#include &lt;iostream&gt;
+#include &lt;string&gt;
 
-<span class="n">using</span><span class="w"> </span><span class="n">namespace</span><span class="w"> </span><span class="n">std</span><span class="p">;</span><span class="w"></span>
+using namespace std;
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">   </span><span class="n">string</span><span class="w"> </span><span class="n">str1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;runoob&quot;</span><span class="p">;</span><span class="w">      </span><span class="c1">//定义对象，赋值</span>
-<span class="w">   </span><span class="n">string</span><span class="w"> </span><span class="n">str2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;google&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">   </span><span class="n">string</span><span class="w"> </span><span class="n">str3</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="sc">&#39;a&#39;</span><span class="p">);</span><span class="w">     </span><span class="c1">//&#39;a&#39;字符重复十次</span>
-<span class="w">   </span><span class="n">string</span><span class="w"> </span><span class="n">str3</span><span class="p">;</span><span class="w"></span>
-<span class="w">   </span><span class="kt">int</span><span class="w">  </span><span class="n">len</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+int main ()
+{
+   string str1 = &quot;runoob&quot;;      //定义对象，赋值
+   string str2 = &quot;google&quot;;
+   string str3(10,'a');     //'a'字符重复十次
+   string str3;
+   int  len ;
 
-<span class="w">   </span><span class="c1">// 复制 str1 到 str3</span>
-<span class="w">   </span><span class="n">str3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str1</span><span class="p">;</span><span class="w"></span>
-<span class="w">   </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;str3 : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">str3</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+   // 复制 str1 到 str3
+   str3 = str1;
+   cout &lt;&lt; &quot;str3 : &quot; &lt;&lt; str3 &lt;&lt; endl;
 
-<span class="w">   </span><span class="c1">// 连接 str1 和 str2</span>
-<span class="w">   </span><span class="n">str3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">str2</span><span class="p">;</span><span class="w"></span>
-<span class="w">   </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;str1 + str2 : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">str3</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+   // 连接 str1 和 str2
+   str3 = str1 + str2;
+   cout &lt;&lt; &quot;str1 + str2 : &quot; &lt;&lt; str3 &lt;&lt; endl;
 
-<span class="w">   </span><span class="c1">// 连接后，str3 的总长度</span>
-<span class="w">   </span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str3</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"></span>
-<span class="w">   </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;str3.size() :  &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+   // 连接后，str3 的总长度
+   len = str3.size();
+   cout &lt;&lt; &quot;str3.size() :  &quot; &lt;&lt; len &lt;&lt; endl;
 
-<span class="w">    </span><span class="c1">//字符交换</span>
-<span class="w">    </span><span class="n">str1</span><span class="p">.</span><span class="n">swap</span><span class="p">(</span><span class="n">str2</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s2</span><span class="p">;</span><span class="w"></span>
+    //字符交换
+    str1.swap(str2);
+    cout &lt;&lt; s1 &lt;&lt; s2;
 
-<span class="w">    </span><span class="c1">//字符串的修改</span>
-<span class="w">    </span><span class="n">s1</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="n">len</span><span class="p">);</span><span class="w">        </span><span class="c1">//从index开始擦除len长</span>
-<span class="w">    </span><span class="n">s1</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="n">s2</span><span class="p">);</span><span class="w">        </span><span class="c1">//在index插入s2</span>
-<span class="w">    </span><span class="n">s1</span><span class="p">,</span><span class="n">replace</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="n">len</span><span class="p">,</span><span class="n">s2</span><span class="p">);</span><span class="w">       </span><span class="c1">//从index开始长度len替换为s2</span>
+    //字符串的修改
+    s1.erase(index,len);        //从index开始擦除len长
+    s1.insert(index,s2);        //在index插入s2
+    s1,replace(index,len,s2);       //从index开始长度len替换为s2
 
-<span class="w">    </span><span class="c1">//字符提取子串</span>
-<span class="w">    </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s1</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
+    //字符提取子串
+    s2 = s1.substr(6,5);
 
-<span class="w">    </span><span class="c1">//字符串分解</span>
-<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strtok</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span><span class="sc">&#39; &#39;</span><span class="p">);</span><span class="w"></span>
+    //字符串分解
+    char *token = strtok(str1,' ');
 
-<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+   return 0;
+}
+</code></pre>
 
 
 
@@ -3568,11 +3515,11 @@
     
       <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

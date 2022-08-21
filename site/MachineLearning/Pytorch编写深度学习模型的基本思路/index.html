@@ -3279,13 +3279,13 @@
 
 
 
-<h1 id="pytorch">Pytorch编写深度学习模型的基本思路<a class="headerlink" href="#pytorch" title="Permanent link">&para;</a></h1>
+<h1 id="pytorch">Pytorch编写深度学习模型的基本思路</h1>
 <ul>
 <li>模型学习过程
 <img alt="" src="https://s2.loli.net/2022/07/18/7ECb9plHZeFGoBj.png" /></li>
 </ul>
-<h2 id="_1">四大步骤<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="_2">输入处理模块<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="_1">四大步骤</h2>
+<h3 id="_2">输入处理模块</h3>
 <ol>
 <li><code>torch.utils.data.Dataset</code><ul>
 <li>需要重写的方法<ul>
@@ -3301,7 +3301,7 @@
 </ul>
 </li>
 </ol>
-<h3 id="_3">模型构建模块<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_3">模型构建模块</h3>
 <ul>
 <li>所有的模型需要继承<code>torch.nn.Module</code></li>
 <li>需要实现的方法：<ul>
@@ -3310,31 +3310,23 @@
 </ul>
 </li>
 </ul>
-<h3 id="_4">定义代价函数和优化器模块<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">(</span><span class="n">reduction</span> <span class="o">=</span> <span class="s1">&#39;mean&#39;</span><span class="p">)</span>
-<span class="n">optimizer</span> <span class="o">=</span>  <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span> <span class="o">=</span> <span class="mf">0.001</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<h3 id="_5">构建训练过程<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_4">定义代价函数和优化器模块</h3>
+<pre><code class="language-python">criterion = nn.MSELoss(reduction = 'mean')
+optimizer =  torch.optim.SGD(model.parameters(), lr = 0.001, momentum=0.9)
+</code></pre>
+<h3 id="_5">构建训练过程</h3>
 <ul>
-<li>循环大致如下
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">epoch</span><span class="p">):</span>    <span class="c1"># </span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dataLoader</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
-        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data</span>
-        <span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># 前向传播</span>
-        <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># 计算代价函数</span>
-        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>   <span class="c1"># 梯度清零，进行下一步计算</span>
-        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>   <span class="c1"># 反向传播</span>
-        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>  <span class="c1"># 更新训练参数</span>
-</code></pre></div></td></tr></table></div></li>
+<li>循环大致如下</li>
 </ul>
+<pre><code class="language-python">def train(epoch):    # 
+    for i, data in enumerate(dataLoader, 0):
+        x, y = data
+        y_pred = model(x)  # 前向传播
+        loss = criterion(y_pred, y)  # 计算代价函数
+        optimizer.zero_grad()   # 梯度清零，进行下一步计算
+        loss.backward()   # 反向传播
+        optimizer.step()  # 更新训练参数
+</code></pre>
 <p><img alt="" src="https://s2.loli.net/2022/07/18/2OAuod83iEGPIyz.png" /></p>
 
 
@@ -3417,11 +3409,11 @@
     
       <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

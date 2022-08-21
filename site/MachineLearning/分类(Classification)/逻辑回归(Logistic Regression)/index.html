@@ -3431,45 +3431,45 @@
 
 
 
-<h1 id="logistic-regression">逻辑回归(Logistic Regression)<a class="headerlink" href="#logistic-regression" title="Permanent link">&para;</a></h1>
-<h2 id="_1">模型<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h1 id="logistic-regression">逻辑回归(Logistic Regression)</h1>
+<h2 id="_1">模型</h2>
 <p>Sigmoid(0~1)</p>
-<h2 id="cross-entropy">代价函数：交叉熵(Cross Entropy)<a class="headerlink" href="#cross-entropy" title="Permanent link">&para;</a></h2>
+<h2 id="cross-entropy">代价函数：交叉熵(Cross Entropy)</h2>
 <p><img alt="image.png" src="https://s2.loli.net/2022/07/22/tpwVeIfYjd4uRx5.png" /></p>
-<h3 id="_2">推导过程<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_2">推导过程</h3>
 <div class="arithmatex">\[L(w,b) = f_{w,b}(x^1)f_{w,b}(x^2)(1-f_{w,b}(x^3))……f_{w,b}(x^n)$$
 $$w^*,b^* = arg \max_{w,b}L(w,b)=arg\min_{w,b}-\ln{L(w,b)}$$
 $$-\ln{L(w,b)}=\sum_n -[\hat{y}\ln{f_{w,b}(x^n)+(1-\hat {y}^n)\ln{1-f_{w,b}(x^n)}}]\]</div>
 <ul>
 <li><span class="arithmatex">\(-[\hat{y}\ln{f_{w,b}(x^n)+(1-\hat {y}^n)\ln{(1-f_{w,b}(x^n)})}]\)</span>为两个<a href="https://zh.wikipedia.org/zh-cn/%E4%BC%AF%E5%8A%AA%E5%88%A9%E5%88%86%E5%B8%83">伯努利分布（两点分布）</a>的交叉熵</li>
 </ul>
-<h3 id="_3">意义<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_3">意义</h3>
 <p>交叉熵<strong>越小</strong>代表两个Distribution<strong>越接近</strong>，完全相同时为0，用于逐渐逼近真实概率、评判参数的好坏
 <img alt="image.png" src="https://s2.loli.net/2022/07/22/fZhIdutWxs9368E.png" /></p>
-<h3 id="_4">目的<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_4">目的</h3>
 <p>通过优化，不断减小交叉熵(Cross Entropy)</p>
-<h3 id="square-error">为什么不使用Square Error<a class="headerlink" href="#square-error" title="Permanent link">&para;</a></h3>
+<h3 id="square-error">为什么不使用Square Error</h3>
 <p><img alt="image.png" src="https://s2.loli.net/2022/07/22/SIwvaK1NA4UGQin.png" />
 - 对于Square Error：在远离最优点和最优点处的变化率都相对较小
     - 固定学习率：在远离最优点时，学习慢
     - 自适应学习率：无法判断当前与最优点的距离，而采用了错误的学习率</p>
-<h3 id="optimizer">优化(Optimizer)<a class="headerlink" href="#optimizer" title="Permanent link">&para;</a></h3>
+<h3 id="optimizer">优化(Optimizer)</h3>
 <ul>
 <li>BP</li>
 <li>使用梯度下降
 <span class="arithmatex">\(<span class="arithmatex">\(w_i \leftarrow w_i - \eta\sum_n-(\hat y^n -f_{w,b}(x^n))x_i^n\)</span>\)</span></li>
 </ul>
-<h2 id="_5">区别<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_5">区别</h2>
 <p><img alt="" src="https://s2.loli.net/2022/07/22/1UYvHNAyQEGMhPg.png" /></p>
-<h2 id="discriminative-and-generative">判别模型与生成模型(Discriminative and Generative)<a class="headerlink" href="#discriminative-and-generative" title="Permanent link">&para;</a></h2>
+<h2 id="discriminative-and-generative">判别模型与生成模型(Discriminative and Generative)</h2>
 <p><span class="arithmatex">\(<span class="arithmatex">\(P(C_1|x)=\sigma(w·x+b)\)</span>\)</span>
 同样的模型，选择不同的函数可能有不同的结果</p>
-<h3 id="discriminative">判别模型(Discriminative)<a class="headerlink" href="#discriminative" title="Permanent link">&para;</a></h3>
+<h3 id="discriminative">判别模型(Discriminative)</h3>
 <ul>
 <li>直接找到<span class="arithmatex">\(w\)</span>和<span class="arithmatex">\(b\)</span></li>
 <li>一般来说，更好（先验概率对生成模型的影响）</li>
 </ul>
-<h3 id="generative">生成模型(Generative)<a class="headerlink" href="#generative" title="Permanent link">&para;</a></h3>
+<h3 id="generative">生成模型(Generative)</h3>
 <ul>
 <li>通过高斯分布，找<span class="arithmatex">\(\mu^1、\mu^2、\Sigma^{-1}\)</span>，<span class="arithmatex">\(<span class="arithmatex">\(\begin{array}{ll}
 w^T=(\mu^1-\mu^2)^T\Sigma^{-1}
@@ -3477,13 +3477,13 @@ w^T=(\mu^1-\mu^2)^T\Sigma^{-1}
 b=-\frac{1}{2}(\mu^1)^T(\Sigma^1)^{-1}\mu^1+\frac{1}{2}(\mu^2)^T(\Sigma^2)^{-1}\mu^2+\ln{\frac{N_1}{N_2}}\\
 \end{array}\)</span>\)</span></li>
 </ul>
-<h2 id="multi-class-clasification">多个类别分类(Multi-class Clasification)<a class="headerlink" href="#multi-class-clasification" title="Permanent link">&para;</a></h2>
+<h2 id="multi-class-clasification">多个类别分类(Multi-class Clasification)</h2>
 <div class="arithmatex">\[\begin{array}{ll}
 \mathrm{C}_{1}: w^{1}, b_{1} &amp; z_{1}=w^{1} \cdot x+b_{1} \\
 \mathrm{C}_{2}: w^{2}, b_{2} &amp; z_{2}=w^{2} \cdot x+b_{2} \\
 \mathrm{C}_{3}: w^{3}, b_{3} &amp; z_{3}=w^{3} \cdot x+b_{3}
 \end{array}\]</div>
-<h3 id="softmax">Softmax<a class="headerlink" href="#softmax" title="Permanent link">&para;</a></h3>
+<h3 id="softmax">Softmax</h3>
 <ul>
 <li>功能：<ul>
 <li>归一化</li>
@@ -3492,7 +3492,7 @@ b=-\frac{1}{2}(\mu^1)^T(\Sigma^1)^{-1}\mu^1+\frac{1}{2}(\mu^2)^T(\Sigma^2)^{-1}\
 </ul>
 </li>
 </ul>
-<h2 id="logistic-regression_1">Logistic Regression的限制<a class="headerlink" href="#logistic-regression_1" title="Permanent link">&para;</a></h2>
+<h2 id="logistic-regression_1">Logistic Regression的限制</h2>
 <p><img alt="" src="https://s2.loli.net/2022/07/22/lrcgWPR9bHneKmA.png" />
 - 方案：选择其他特征</p>
 
@@ -3576,11 +3576,11 @@ b=-\frac{1}{2}(\mu^1)^T(\Sigma^1)^{-1}\mu^1+\frac{1}{2}(\mu^2)^T(\Sigma^2)^{-1}\
     
       <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

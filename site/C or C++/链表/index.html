@@ -3267,8 +3267,8 @@
 
 
 
-<h1 id="_1">链表<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="linkedlist">一、链表（linkedlist）<a class="headerlink" href="#linkedlist" title="Permanent link">&para;</a></h2>
+<h1 id="_1">链表</h1>
+<h2 id="linkedlist">一、链表（linkedlist）</h2>
 <ol>
 <li>
 <p>定义：动态分配内存的数据结构，按需随时开辟，随时释放</p>
@@ -3287,16 +3287,12 @@
 </li>
 <li>
 <p>定义形式：</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">stu_node</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">score</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">stu_node</span><span class="w"> </span><span class="o">*</span><span class="n">next</span><span class="p">;</span><span class="w">        </span><span class="c1">//next指向下一个结点</span>
-<span class="p">};</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<p><code>c
+  struct stu_node{
+      int num;
+      float score;
+      struct stu_node *next;        //next指向下一个结点
+  };</code></p>
 </li>
 <li>
 <p>表头结点的地址最为重要，常定义一个头指针来存放表头结点的地址，用来找到该链表</p>
@@ -3309,7 +3305,7 @@
 </ol>
 </li>
 </ol>
-<h2 id="_2">二、建立链表<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">二、建立链表</h2>
 <ol>
 <li>逐个开辟，并且建立联系</li>
 <li>两种方法：</li>
@@ -3333,59 +3329,34 @@
 <p>实例：学生管理系统</p>
 </li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
-<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">stu_node</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">score</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">stu_node</span><span class="w"> </span><span class="o">*</span><span class="n">next</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="n">stu</span><span class="p">;</span><span class="w"></span>
-<span class="cp">#define LEN sizeof(struct stu_node)</span>
-<span class="n">stu</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">creat</span><span class="p">(){</span><span class="w">              </span><span class="c1">//无参数</span>
-<span class="w">    </span><span class="n">stu</span><span class="w"> </span><span class="o">*</span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="o">*</span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="o">*</span><span class="n">head</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;请输入学号和成绩（输入0时结束）</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d %f&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">);</span><span class="w">              </span><span class="c1">//读取学号与成绩</span>
-<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">n</span><span class="o">!=</span><span class="mi">0</span><span class="p">){</span><span class="w">        </span><span class="c1">//判断是否继续</span>
-<span class="w">        </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">stu</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">LEN</span><span class="p">);</span><span class="w">        </span><span class="c1">//开辟一块内存</span>
-<span class="w">        </span><span class="n">p1</span><span class="o">-&gt;</span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w">                    </span><span class="c1">//读入学号和成绩</span>
-<span class="w">        </span><span class="n">p1</span><span class="o">-&gt;</span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">head</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="n">head</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p1</span><span class="p">;</span><span class="w">     </span><span class="c1">//头指针为空，则指向表头结点</span>
-<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="n">p2</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p1</span><span class="p">;</span><span class="w">             </span><span class="c1">//头指针不为空，则p2的指针成员指向p1</span>
-<span class="w">        </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p1</span><span class="p">;</span><span class="w">                        </span><span class="c1">//p2指向新的表尾结点</span>
-<span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d %f&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">,</span><span class="o">&amp;</span><span class="n">s</span><span class="p">);</span><span class="w">           </span><span class="c1">//再次读取数据</span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="n">p2</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w">                    </span><span class="c1">//结尾</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">head</span><span class="p">;</span><span class="w">                        </span><span class="c1">//返回头指针</span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-<h2 id="_3">三、输出链表<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+typedef struct stu_node{
+    int num;
+    float score;
+    struct stu_node *next;
+}stu;
+#define LEN sizeof(struct stu_node)
+stu * creat(){              //无参数
+    stu *p1 = NULL,*p2 = NULL,*head = NULL;
+    int n;
+    float s;
+    printf(&quot;请输入学号和成绩（输入0时结束）\n&quot;);
+    scanf(&quot;%d %f&quot;,&amp;n, &amp;s);              //读取学号与成绩
+    while(n!=0){        //判断是否继续
+        p1 = (stu *)malloc(LEN);        //开辟一块内存
+        p1-&gt;num = n;                    //读入学号和成绩
+        p1-&gt;score = s;
+        if(head == NULL) head = p1;     //头指针为空，则指向表头结点
+        else p2-&gt;next = p1;             //头指针不为空，则p2的指针成员指向p1
+        p2 = p1;                        //p2指向新的表尾结点
+        scanf(&quot;%d %f&quot;,&amp;n,&amp;s);           //再次读取数据
+    }
+    p2-&gt;next = NULL;                    //结尾
+    return head;                        //返回头指针
+}
+</code></pre>
+<h2 id="_3">三、输出链表</h2>
 <ol>
 <li>遍历</li>
 <li>使用</li>
@@ -3394,40 +3365,25 @@
 <li>重复2，直到指针指向NULL</li>
 <li>实例：学生管理系统</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">stu</span><span class="w"> </span><span class="o">*</span><span class="n">head</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="n">stu</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">head</span><span class="o">==</span><span class="nb">NULL</span><span class="p">)</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;链表为空</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">else</span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">head</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">){</span><span class="w"></span>
-<span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d,%5.2f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">num</span><span class="p">,</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">score</span><span class="p">);</span><span class="w"></span>
-<span class="w">            </span><span class="n">p</span><span class="o">=</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span><span class="w">                  </span><span class="c1">//令p指向下一个结点</span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">stu</span><span class="w"> </span><span class="o">*</span><span class="n">head</span><span class="p">;</span><span class="w">                          </span><span class="c1">//定义一个结点类型的指针变量</span>
-<span class="w">    </span><span class="n">head</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">creat</span><span class="p">();</span><span class="w">                     </span><span class="c1">//创建链表</span>
-<span class="w">    </span><span class="n">list</span><span class="p">(</span><span class="n">head</span><span class="p">);</span><span class="w">                         </span><span class="c1">//输出</span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-<h2 id="_4">四、删除结点<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<h2 id="_5">五、插入结点<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<pre><code class="language-c">void list(stu *head){
+    stu *p;
+    if(head==NULL)printf(&quot;链表为空\n&quot; );
+    else{
+        p = head;
+        while (p != NULL){
+            printf(&quot;%d,%5.2f\n&quot;,p-&gt;num,p-&gt;score);
+            p=p-&gt;next;                  //令p指向下一个结点
+        }
+    }
+}
+void main(){
+    stu *head;                          //定义一个结点类型的指针变量
+    head = creat();                     //创建链表
+    list(head);                         //输出
+}
+</code></pre>
+<h2 id="_4">四、删除结点</h2>
+<h2 id="_5">五、插入结点</h2>
 
 
 
@@ -3509,11 +3465,11 @@
     
       <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

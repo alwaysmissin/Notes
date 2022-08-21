@@ -3499,8 +3499,8 @@
 
 
 
-<h1 id="bayesian-network">贝叶斯网络(Bayesian Network)<a class="headerlink" href="#bayesian-network" title="Permanent link">&para;</a></h1>
-<h2 id="indenpendence">独立(Indenpendence)<a class="headerlink" href="#indenpendence" title="Permanent link">&para;</a></h2>
+<h1 id="bayesian-network">贝叶斯网络(Bayesian Network)</h1>
+<h2 id="indenpendence">独立(Indenpendence)</h2>
 <ul>
 <li>两者（随机变量）之间互不影响
 <span class="arithmatex">\(<span class="arithmatex">\(\forall x,y:P(x,y)=P(x)P(y)\Longrightarrow X \perp Y\)</span>\)</span>
@@ -3509,7 +3509,7 @@
 <li>可以将投掷硬币的情况写成如下，极大减少了数据量
 <img alt="" src="https://s2.loli.net/2022/08/02/zpMNxJAP5fq217Z.png" /></li>
 </ul>
-<h2 id="conditional-independence">条件独立(Conditional Independence)<a class="headerlink" href="#conditional-independence" title="Permanent link">&para;</a></h2>
+<h2 id="conditional-independence">条件独立(Conditional Independence)</h2>
 <ul>
 <li>对于未知的环境，条件独立是我们最基础的和最直接的了解形式</li>
 <li><span class="arithmatex">\(X\)</span>与<span class="arithmatex">\(Y|Z\)</span>条件独立：<span class="arithmatex">\(X \perp \!\!\! \perp Y|Z\)</span><ul>
@@ -3526,13 +3526,13 @@
 </ul>
 </li>
 </ul>
-<h2 id="bayesian-networkrepresentation">贝叶斯网络：表示(Bayesian Network:Representation)<a class="headerlink" href="#bayesian-networkrepresentation" title="Permanent link">&para;</a></h2>
-<h3 id="_1">联合分布的缺点<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h2 id="bayesian-networkrepresentation">贝叶斯网络：表示(Bayesian Network:Representation)</h2>
+<h3 id="_1">联合分布的缺点</h3>
 <ul>
 <li>在随机变量较多的时候，数据量大</li>
 <li>难以一次从经验上学习关于多个变量的任何东西</li>
 </ul>
-<h3 id="_2">贝叶斯网络<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_2">贝叶斯网络</h3>
 <ul>
 <li>贝叶斯网络：使用简单的方式（有向无环图(DAG)）表达复杂的联合分布概率模型
 <img alt="image.png" src="https://s2.loli.net/2022/08/03/Vqv4H1hbSjRp56z.png" /></li>
@@ -3558,7 +3558,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="conditional-indenpendence">贝叶斯网络：条件独立(Conditional Indenpendence)<a class="headerlink" href="#conditional-indenpendence" title="Permanent link">&para;</a></h2>
+<h2 id="conditional-indenpendence">贝叶斯网络：条件独立(Conditional Indenpendence)</h2>
 <ul>
 <li>D-separation<ul>
 <li>研究三元组的<strong>独立性</strong></li>
@@ -3591,11 +3591,11 @@
 <img alt="" src="https://s2.loli.net/2022/08/06/JRHUG1xItg9bwE3.png" /></li>
 <li>一个贝叶斯网络可能<strong>不存在任何独立性</strong>：<img alt="" src="https://s2.loli.net/2022/08/06/TQHNLe4r7jU3Icw.png" /></li>
 </ul>
-<h2 id="probabilistic-inference">贝叶斯网络：推导(Probabilistic Inference)<a class="headerlink" href="#probabilistic-inference" title="Permanent link">&para;</a></h2>
+<h2 id="probabilistic-inference">贝叶斯网络：推导(Probabilistic Inference)</h2>
 <ul>
 <li>Inference：从一个联合分布概率模型中计算其他想要的概率</li>
 </ul>
-<h3 id="inference-by-enumeration">枚举推理(Inference by Enumeration)<a class="headerlink" href="#inference-by-enumeration" title="Permanent link">&para;</a></h3>
+<h3 id="inference-by-enumeration">枚举推理(Inference by Enumeration)</h3>
 <p><img alt="" src="https://s2.loli.net/2022/08/06/BsgjFJ8Wrioe5vh.png" />
 - 步骤：
     - Select the entries consistent with the evidence
@@ -3603,12 +3603,12 @@
     - Normalize
 <img alt="" src="https://s2.loli.net/2022/08/01/sfmrR7HCwoexF98.png" />
 - 案例：<img alt="" src="https://s2.loli.net/2022/08/06/uQlObzE3tevLgNV.png" /></p>
-<h3 id="variable-elimination">变量剔除（Variable Elimination）<a class="headerlink" href="#variable-elimination" title="Permanent link">&para;</a></h3>
+<h3 id="variable-elimination">变量剔除（Variable Elimination）</h3>
 <ul>
 <li>在枚举推理中，在去除其他隐变量之前，加入了完整的联合分布概率，导致<strong>枚举推理运行效率低</strong><img alt="" src="https://s2.loli.net/2022/08/06/dBCLhjcGURyqvtz.png" /></li>
 <li>变量剔除：交叉加入并且即时进行边缘化操作</li>
 </ul>
-<h3 id="factors">因子（Factors）<a class="headerlink" href="#factors" title="Permanent link">&para;</a></h3>
+<h3 id="factors">因子（Factors）</h3>
 <ul>
 <li><strong>Joint Distribution</strong>:<span class="arithmatex">\(P(X,Y)\)</span><ul>
 <li>和为1</li>
@@ -3644,21 +3644,21 @@
 </ul>
 </li>
 </ul>
-<h3 id="_3">两种方案对比<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_3">两种方案对比</h3>
 <p><img alt="" src="https://s2.loli.net/2022/08/06/SOqlyJ9ucVKGk7E.png" /></p>
-<h4 id="inference-by-enumeration_1">Inference by Enumeration<a class="headerlink" href="#inference-by-enumeration_1" title="Permanent link">&para;</a></h4>
+<h4 id="inference-by-enumeration_1">Inference by Enumeration</h4>
 <ul>
 <li><strong>Join all factors</strong><img alt="" src="https://s2.loli.net/2022/08/06/YZ2hpN3L4E6fHR7.png" /><img alt="" src="https://s2.loli.net/2022/08/06/6gRHxarFXjTcSGd.png" /><img alt="" src="https://s2.loli.net/2022/08/06/2waKRp8ysutS6N5.png" /></li>
 </ul>
 <p><span class="arithmatex">\(<span class="arithmatex">\(\forall r,t:P(r,t)=P(r)·P(t|r)\)</span>\)</span>
 - <strong>Eliminate</strong><img alt="" src="https://s2.loli.net/2022/08/06/2GnQfWEJy7Dzmct.png" /></p>
-<h4 id="variable-elimination_1">Variable Elimination<a class="headerlink" href="#variable-elimination_1" title="Permanent link">&para;</a></h4>
+<h4 id="variable-elimination_1">Variable Elimination</h4>
 <p><img alt="" src="https://s2.loli.net/2022/08/06/zDiTuqlfYpBC5VQ.png" />
 <img alt="" src="https://s2.loli.net/2022/08/06/1S4ekWJIB5npa9X.png" />
 - 一般情况下，变量剔除的顺序会极大影响计算的复杂度
     - 案例：<img alt="" src="https://s2.loli.net/2022/08/07/CldyOx1PLbzINWe.png" />
     1. 法一：<img alt="" src="https://s2.loli.net/2022/08/07/p4yiEjo6DVZt8Se.png" /><img alt="" src="https://s2.loli.net/2022/08/07/hojA1im8eDas5rq.png" /></p>
-<h2 id="sampling">贝叶斯网络：取样(Sampling)<a class="headerlink" href="#sampling" title="Permanent link">&para;</a></h2>
+<h2 id="sampling">贝叶斯网络：取样(Sampling)</h2>
 <ul>
 <li>取样(Sampling)：取样是一个重复模拟的过程</li>
 <li>基本思路：<ul>
@@ -3673,12 +3673,12 @@
 </ul>
 </li>
 </ul>
-<h3 id="prior-sampling">Prior Sampling<a class="headerlink" href="#prior-sampling" title="Permanent link">&para;</a></h3>
+<h3 id="prior-sampling">Prior Sampling</h3>
 <p><img alt="" src="https://s2.loli.net/2022/08/07/5L4qzHXpnjEYScN.png" />
 - 产生各个样本的概率为：<span class="arithmatex">\(<span class="arithmatex">\(S_{PS}(x_1...x_n)=\prod^n_{i=1}P(x_i|Parents(X_i))=P(x_1...x_n)\)</span>\)</span>
 - 当样本数量足够多后，获得的概率就会收敛于真实值<img alt="" src="https://s2.loli.net/2022/08/07/pfxZnJ7KNTRIGrl.png" />
 - 案例：<img alt="" src="https://s2.loli.net/2022/08/07/9vh2dgriToUYXHl.png" /></p>
-<h3 id="rejection-sampling">Rejection Sampling<a class="headerlink" href="#rejection-sampling" title="Permanent link">&para;</a></h3>
+<h3 id="rejection-sampling">Rejection Sampling</h3>
 <ul>
 <li>如果有一个预先确定好的evidence，在选择采样结果时，可以忽略不符合evidence的样本
 <img alt="image.png" src="https://s2.loli.net/2022/08/07/I9n52DAGvoSOztB.png" /></li>
@@ -3688,7 +3688,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="likelihood-weighting">Likelihood Weighting<a class="headerlink" href="#likelihood-weighting" title="Permanent link">&para;</a></h3>
+<h3 id="likelihood-weighting">Likelihood Weighting</h3>
 <ul>
 <li>思路：处理evidence，让所有的样本都符合evidence<ul>
 <li>weight bt probability of evidence given parents
@@ -3715,7 +3715,7 @@ P(z,e)=S_{WS}(z,e)·w(z,e)
 </ul>
 </li>
 </ul>
-<h3 id="gibbs-sampling">Gibbs Sampling<a class="headerlink" href="#gibbs-sampling" title="Permanent link">&para;</a></h3>
+<h3 id="gibbs-sampling">Gibbs Sampling</h3>
 <ul>
 <li>步骤：<ol>
 <li>确定evidence</li>
@@ -3810,11 +3810,11 @@ P(z,e)=S_{WS}(z,e)·w(z,e)
     
       <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

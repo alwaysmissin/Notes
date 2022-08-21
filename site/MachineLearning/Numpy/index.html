@@ -1371,13 +1371,20 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    算数运算
+    获取元素
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    算数运算
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     数组变形
   </a>
   
@@ -1404,21 +1411,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     批量处理
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     通用函数
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     广播机制
   </a>
   
@@ -3301,13 +3308,20 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    算数运算
+    获取元素
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    算数运算
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     数组变形
   </a>
   
@@ -3334,21 +3348,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     批量处理
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     通用函数
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     广播机制
   </a>
   
@@ -3375,8 +3389,8 @@
 
 
 
-<h1 id="numpy">Numpy<a class="headerlink" href="#numpy" title="Permanent link">&para;</a></h1>
-<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h1 id="numpy">Numpy</h1>
+<h2 id="_1">概述</h2>
 <ol>
 <li>特点<ol>
 <li>快速节省空间的多维数组ndarray，提供数组化的算术运算和高级的广播功能</li>
@@ -3387,14 +3401,14 @@
 </ol>
 </li>
 </ol>
-<h2 id="numpy_1">生成Numpy数组<a class="headerlink" href="#numpy_1" title="Permanent link">&para;</a></h2>
-<h3 id="1">1. 从已有的数据中创建数组<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<h2 id="numpy_1">生成Numpy数组</h2>
+<h3 id="1">1. 从已有的数据中创建数组</h3>
 <ol>
 <li>将列表转换成ndarray</li>
 <li>嵌套列表可以转换为多维数组</li>
 <li>将列表替换为元组同样适用</li>
 </ol>
-<h3 id="2-random">2. 利用random模块<a class="headerlink" href="#2-random" title="Permanent link">&para;</a></h3>
+<h3 id="2-random">2. 利用random模块</h3>
 <table>
 <thead>
 <tr>
@@ -3507,44 +3521,26 @@
 <td align="center">- 根据输入的指定数据范围以及等份数量，自动生成一个线性等分<strong>向量</strong></td>
 <td align="center"></td>
 </tr>
-<tr>
-<td align="center"><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>import numpy as np
-print(np.linspace(0, 1, 10))
-</code></pre></div></td></tr></table></div></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">## 获取元素</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"><img alt="" src="https://s2.loli.net/2022/07/17/imAtFzwQUBqLI5h.png" /></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">1. <code>[:,:-1]</code>: This will take all rows and all but the last column.</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">2. <code>[:,-1]</code>: This will take all rows and only the last column.</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">3. <code>:</code>denotes "all", and -1 in indexing means the last row/column.</td>
-<td align="center"></td>
-</tr>
 </tbody>
 </table>
-<h2 id="_2">算数运算<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<pre><code class="language-jupyter">import numpy as np
+print(np.linspace(0, 1, 10))
+
+</code></pre>
+<h2 id="_2">获取元素</h2>
+<p><img alt="" src="https://s2.loli.net/2022/07/17/imAtFzwQUBqLI5h.png" />
+1. <code>[:,:-1]</code>: This will take all rows and all but the last column.
+2. <code>[:,-1]</code>: This will take all rows and only the last column.
+3. <code>:</code>denotes "all", and -1 in indexing means the last row/column.</p>
+<h2 id="_3">算数运算</h2>
 <ol>
 <li>逐元乘法：<code>np.multiply()</code>
 <img alt="" src="https://s2.loli.net/2022/07/17/CY8TQzNjtfh9bkU.png" /></li>
 <li>点积（内积元素）：<code>np.dot()</code>
 <img alt="" src="https://s2.loli.net/2022/07/17/XF6alWBRGLvsrxn.png" /></li>
 </ol>
-<h2 id="_3">数组变形<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="1_1">1. 更改数组的形状<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<h2 id="_4">数组变形</h2>
+<h3 id="1_1">1. 更改数组的形状</h3>
 <table>
 <thead>
 <tr>
@@ -3591,7 +3587,7 @@ print(np.linspace(0, 1, 10))
 </tr>
 </tbody>
 </table>
-<h3 id="2">2. 合并数组<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<h3 id="2">2. 合并数组</h3>
 <table>
 <thead>
 <tr>
@@ -3630,13 +3626,13 @@ print(np.linspace(0, 1, 10))
 </tr>
 </tbody>
 </table>
-<h2 id="_4">批量处理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<h2 id="_5">通用函数<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_5">批量处理</h2>
+<h2 id="_6">通用函数</h2>
 <ul>
 <li>使用C语言级别下实现，相比math库中的函数，计算速度快</li>
 <li>操作对象为数组</li>
 </ul>
-<h2 id="_6">广播机制<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_7">广播机制</h2>
 <ul>
 <li>规则<ol>
 <li>让所有输入数组都向其中shape最长的数组看齐，不足的部分则通过在前面加1补齐</li>
@@ -3728,11 +3724,11 @@ print(np.linspace(0, 1, 10))
     
       <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

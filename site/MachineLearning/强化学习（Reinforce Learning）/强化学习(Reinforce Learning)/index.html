@@ -3403,16 +3403,16 @@
 
 
 
-<h1 id="reinforce-learning">强化学习(Reinforce Learning)<a class="headerlink" href="#reinforce-learning" title="Permanent link">&para;</a></h1>
-<h2 id="offline-planningonline-planning">Offline planning/Online planning<a class="headerlink" href="#offline-planningonline-planning" title="Permanent link">&para;</a></h2>
-<h3 id="offline-planning">Offline planning<a class="headerlink" href="#offline-planning" title="Permanent link">&para;</a></h3>
+<h1 id="reinforce-learning">强化学习(Reinforce Learning)</h1>
+<h2 id="offline-planningonline-planning">Offline planning/Online planning</h2>
+<h3 id="offline-planning">Offline planning</h3>
 <ul>
 <li>马尔可夫问题得解决就是一个offline planning的例子<ul>
 <li>informed：在解决马尔可夫问题时，<strong>知道</strong>状态转移函数和奖励函数</li>
 </ul>
 </li>
 </ul>
-<h3 id="online-planning">Online planning<a class="headerlink" href="#online-planning" title="Permanent link">&para;</a></h3>
+<h3 id="online-planning">Online planning</h3>
 <ul>
 <li>在强化学习中，主要解决的问题是Online planning<ul>
 <li>agent不知道状态转移函数和奖励函数</li>
@@ -3432,7 +3432,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="model-based-learning">Model-Based Learning<a class="headerlink" href="#model-based-learning" title="Permanent link">&para;</a></h2>
+<h2 id="model-based-learning">Model-Based Learning</h2>
 <ul>
 <li>在基于模型的强化学习中，agent通过多次尝试，生成一个状态转移函数的估计-&gt;<span class="arithmatex">\(\hat T(s,a,s^\prime)\)</span>，然后再利用[[MDP（马尔可夫决策过程）]]找到最优解</li>
 <li>eg：<span class="arithmatex">\(\gamma=1, noise = 0.2\)</span></li>
@@ -3444,7 +3444,7 @@
 <img alt="" src="https://s2.loli.net/2022/07/30/S5sKb43RJcMxaCp.png" />
 <img alt="" src="https://s2.loli.net/2022/07/30/NIZ69i4anOq2vTj.png" /></li>
 </ul>
-<h2 id="model-free-learning">Model-Free Learning<a class="headerlink" href="#model-free-learning" title="Permanent link">&para;</a></h2>
+<h2 id="model-free-learning">Model-Free Learning</h2>
 <ul>
 <li>三种模型：<ul>
 <li>被动强化学习(Passive Reinforcement Learning)：<ul>
@@ -3461,7 +3461,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="direct-evaluation">直接评估(Direct Evaluation)<a class="headerlink" href="#direct-evaluation" title="Permanent link">&para;</a></h3>
+<h3 id="direct-evaluation">直接评估(Direct Evaluation)</h3>
 <ul>
 <li>根据<span class="arithmatex">\(\pi\)</span>执行</li>
 <li>每经过一个状态，记下收益和到达的次数</li>
@@ -3485,7 +3485,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="temporal-difference-learning">时间差分学习(Temporal Difference Learning)<a class="headerlink" href="#temporal-difference-learning" title="Permanent link">&para;</a></h3>
+<h3 id="temporal-difference-learning">时间差分学习(Temporal Difference Learning)</h3>
 <ul>
 <li>思路：<ul>
 <li>对于每次<span class="arithmatex">\((s,a,s^\prime,r)\)</span>都更新一次<span class="arithmatex">\(V(s)\)</span></li>
@@ -3518,7 +3518,7 @@
 <li>示例：
 <img alt="image.png" src="https://s2.loli.net/2022/07/31/JnptsXTAghKEaxM.png" /></li>
 </ul>
-<h3 id="q-learning">Q-Learning<a class="headerlink" href="#q-learning" title="Permanent link">&para;</a></h3>
+<h3 id="q-learning">Q-Learning</h3>
 <ul>
 <li>被动强化学习中的问题：要找到最优的策略，我们必须知道状态的q-values</li>
 <li>Q-Learning：直接学习状态的q-values（无需其他任何values, T, R)，为每一个q-state找到最佳的q-value</li>
@@ -3534,7 +3534,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="approximate-q-learning">==Approximate Q-Learning==<a class="headerlink" href="#approximate-q-learning" title="Permanent link">&para;</a></h3>
+<h3 id="approximate-q-learning">==Approximate Q-Learning==</h3>
 <ul>
 <li>Q-learning必须存储所有的状态-&gt;<strong>数据量过大</strong>
 <img alt="" src="https://s2.loli.net/2022/07/31/zEXYnkor6eVvqu1.png" /></li>
@@ -3576,11 +3576,11 @@ w_{1} &amp; w_{2} &amp; \ldots &amp; w_{n}\end{matrix}\right]^{T}\)</span>\)</sp
 <li>eg:
 <img alt="" src="https://s2.loli.net/2022/07/31/1QOg4V8vj9pFztM.png" /></li>
 </ul>
-<h2 id="exploration-or-exploitation">Exploration or Exploitation<a class="headerlink" href="#exploration-or-exploitation" title="Permanent link">&para;</a></h2>
+<h2 id="exploration-or-exploitation">Exploration or Exploitation</h2>
 <ul>
 <li>足够的探索在深度学习中是必要的</li>
 </ul>
-<h3 id="-greedy-policies"><span class="arithmatex">\(ε\)</span>-Greedy Policies<a class="headerlink" href="#-greedy-policies" title="Permanent link">&para;</a></h3>
+<h3 id="-greedy-policies"><span class="arithmatex">\(ε\)</span>-Greedy Policies</h3>
 <ul>
 <li>每一步都投掷一枚“硬币”<ul>
 <li><span class="arithmatex">\(ε\)</span>：exploration</li>
@@ -3588,7 +3588,7 @@ w_{1} &amp; w_{2} &amp; \ldots &amp; w_{n}\end{matrix}\right]^{T}\)</span>\)</sp
 </ul>
 </li>
 </ul>
-<h3 id="exploration-function">Exploration Function<a class="headerlink" href="#exploration-function" title="Permanent link">&para;</a></h3>
+<h3 id="exploration-function">Exploration Function</h3>
 <ul>
 <li>modified update function：<span class="arithmatex">\(<span class="arithmatex">\(Q(s,a)\leftarrow (1-\alpha)Q(s,a)+\alpha·[R(s,a,s^\prime)+\gamma\max_{a^\prime}f(s^\prime,a^\prime)]\)</span>\)</span></li>
 <li>exploration function：<span class="arithmatex">(<span class="arithmatex">\(f(s,a)=Q(s,a)+\frac{k}{N(s,a)}\)</span>\)</span><ul>
@@ -3679,11 +3679,11 @@ w_{1} &amp; w_{2} &amp; \ldots &amp; w_{n}\end{matrix}\right]^{T}\)</span>\)</sp
     
       <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

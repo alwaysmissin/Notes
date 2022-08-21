@@ -3323,18 +3323,18 @@
 
 
 
-<h1 id="_1">拓扑排序<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_1">拓扑排序</h1>
 <ul>
 <li>一个无环的有向图称为有向无环图</li>
 </ul>
-<h2 id="aov">AOV网<a class="headerlink" href="#aov" title="Permanent link">&para;</a></h2>
+<h2 id="aov">AOV网</h2>
 <ol>
 <li>用顶点表示活动，用弧表示活动之间的优先关系的有向图，称为顶点表示活动的网(Activity On Vertex Network)，即<strong>AOV网</strong></li>
 <li>若从顶点<span class="arithmatex">\(i\)</span>到顶点<span class="arithmatex">\(j\)</span>之间存在一条有向路径，则称<span class="arithmatex">\(i\)</span>是<span class="arithmatex">\(j\)</span>的前驱，或<span class="arithmatex">\(j\)</span>是<span class="arithmatex">\(i\)</span>的后继</li>
 <li>若<span class="arithmatex">\(&lt;i,j&gt;\)</span>是图中的弧，则称<span class="arithmatex">\(i\)</span>是<span class="arithmatex">\(j\)</span>的直接前驱，<span class="arithmatex">\(j\)</span>是<span class="arithmatex">\(i\)</span>的直接后继</li>
 <li>AOV网中不允许有环，如何判断AOV中是否有环？-&gt;拓扑排序、</li>
 </ol>
-<h2 id="_2">拓扑排序<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">拓扑排序</h2>
 <ol>
 <li>拓扑排序：指将AOV网中的顶点排成一个<strong>线性序列</strong></li>
 <li>满足：若从顶点<span class="arithmatex">\(i\)</span>到顶点<span class="arithmatex">\(j\)</span>有一条路径，则该序列中的顶点<span class="arithmatex">\(i\)</span>一定在顶点<span class="arithmatex">\(j\)</span>之前</li>
@@ -3347,7 +3347,7 @@
 </ol>
 </li>
 </ol>
-<h2 id="_3">算法步骤<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">算法步骤</h2>
 <ol>
 <li>在数组<code>indegree[]</code>中存储各个顶点的入度，栈<code>S</code>用于临时存储入度为<span class="arithmatex">\(0\)</span>的顶点</li>
 <li><code>if(!S.empty())</code><ol>
@@ -3358,20 +3358,20 @@
 <li>得出结论</li>
 <li>排序序列即出栈序列</li>
 </ol>
-<h2 id="_4">复杂度分析<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<h3 id="_5">时间复杂度<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h2 id="_4">复杂度分析</h2>
+<h3 id="_5">时间复杂度</h3>
 <ul>
 <li>求入度：<span class="arithmatex">\(O(e)\)</span></li>
 <li>度数为<span class="arithmatex">\(0\)</span>的顶点入栈：<span class="arithmatex">\(O(n)\)</span></li>
 <li>若有向图无环，则每个顶点出栈后入度减1：<span class="arithmatex">\(O(n)\)</span>
 时间复杂度：<span class="arithmatex">\(O(n + e)\)</span></li>
 </ul>
-<h3 id="_6">空间复杂度<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<h2 id="_7">逆拓扑排序<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="_6">空间复杂度</h3>
+<h2 id="_7">逆拓扑排序</h2>
 <ul>
 <li>与正向拓扑排序相反，操作的对象为<strong>出度</strong>为<span class="arithmatex">\(0\)</span>的点</li>
 </ul>
-<h2 id="_8">应用:<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_8">应用:</h2>
 <p>[[关键路径]]</p>
 
 
@@ -3454,11 +3454,11 @@
     
       <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

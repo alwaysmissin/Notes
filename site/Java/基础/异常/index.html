@@ -3283,14 +3283,14 @@
 
 
 
-<h1 id="_1">异常<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">一、什么是异常<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h1 id="_1">异常</h1>
+<h2 id="_2">一、什么是异常</h2>
 <ol>
 <li>分类</li>
 <li>检查性异常</li>
 <li>运行时异常</li>
 </ol>
-<h2 id="_3">二、异常体系结构<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">二、异常体系结构</h2>
 <ol>
 <li>
 <p>java中把异常当作对象来处理，并定义了一个基类<code>java.lang.Throwable</code>作为所有异常的超类</p>
@@ -3322,7 +3322,7 @@
 </ol>
 </li>
 </ol>
-<h2 id="java">三、Java异常处理机制<a class="headerlink" href="#java" title="Permanent link">&para;</a></h2>
+<h2 id="java">三、Java异常处理机制</h2>
 <ol>
 <li>
 <p>抛出异常</p>
@@ -3339,26 +3339,20 @@
 </li>
 <li>finally：处理善后工作(可以省去)</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">try</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="n">b</span><span class="p">);</span><span class="w">     </span><span class="c1">//可能发生异常的语句</span><span class="w"></span>
-<span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="n">ArithmeticException</span><span class="w"> </span><span class="n">e</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;程序出现异常，变量b不能为0&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="k">finally</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;finally&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<p><code>java
+   try{
+       System.out.println(a/b);     //可能发生异常的语句
+   }catch(ArithmeticException e){
+       System.out.println("程序出现异常，变量b不能为0");
+   }finally{
+       System.out.println("finally");
+   }</code></p>
 <blockquote>
 <p>五个关键词：try, catch, finally, throw, throws</p>
 </blockquote>
-<h2 id="_4">四、处理异常<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<h2 id="_5">五、自定义异常<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<h2 id="_6">六、总结<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_4">四、处理异常</h2>
+<h2 id="_5">五、自定义异常</h2>
+<h2 id="_6">六、总结</h2>
 
 
 
@@ -3440,11 +3434,11 @@
     
       <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

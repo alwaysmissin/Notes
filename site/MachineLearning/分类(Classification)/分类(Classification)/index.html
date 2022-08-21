@@ -3309,8 +3309,8 @@
 
 
 
-<h1 id="classification">分类(Classification)<a class="headerlink" href="#classification" title="Permanent link">&para;</a></h1>
-<h2 id="_1">分类<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h1 id="classification">分类(Classification)</h1>
+<h2 id="_1">分类</h2>
 <ol>
 <li><span class="arithmatex">\(x \rightarrow f(x) \rightarrow Class n\)</span></li>
 <li>应用：<ol>
@@ -3321,14 +3321,14 @@
 </ol>
 </li>
 </ol>
-<h2 id="pokemon-classificationbinary-classification">示例：Pokemon Classification(Binary Classification)<a class="headerlink" href="#pokemon-classificationbinary-classification" title="Permanent link">&para;</a></h2>
-<h3 id="regression">如果使用Regression<a class="headerlink" href="#regression" title="Permanent link">&para;</a></h3>
+<h2 id="pokemon-classificationbinary-classification">示例：Pokemon Classification(Binary Classification)</h2>
+<h3 id="regression">如果使用Regression</h3>
 <ul>
 <li>在分类聚集时候可能表现较好</li>
 <li>在远端出现聚集时，Regression会为了降低Loss，而出现偏差（这样的情况不符合分类的要求）
 <img alt="" src="https://s2.loli.net/2022/07/22/Yl9LawUfcRH5SJq.png" /></li>
 </ul>
-<h3 id="_2">理想的选择<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_2">理想的选择</h3>
 <ol>
 <li>模型：
 $$
@@ -3342,7 +3342,7 @@ $$</li>
 <li>匹配错误的次数和</li>
 <li>最好的函数：Perceptron, SVM</li>
 </ol>
-<h3 id="_3">贝叶斯<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_3">贝叶斯</h3>
 <p><img alt="" src="https://s2.loli.net/2022/07/22/J8OGovswbfcmHue.png" />
 - 朴素贝叶斯：
     - 公式：<span class="arithmatex">\(<span class="arithmatex">\(p(C|F_1,…,F_n) = \frac{p(C)p(F_1,…,F_n|C)}{p(F_1,…,F_n)}\)</span>\)</span>
@@ -3350,7 +3350,7 @@ $$</li>
 - 对于案例：
     - <span class="arithmatex">\(x\)</span>属于某一个集合的概率：<span class="arithmatex">\(<span class="arithmatex">\(P(C_1|x)=\frac{P(x|C_1)P(C_1)}{P(x|C_1)P(C_1) + P(x|C_2)P(C_2)}\)</span>\)</span>
     - 生成模型（朴素贝叶斯）：<span class="arithmatex">\(P(x)=P(x|C_1)P(C_1) + P(x|C_2)P(C_2)\)</span></p>
-<h3 id="_4">高斯分布(正态分布)<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_4">高斯分布(正态分布)</h3>
 <p><a href="https://zh.wikipedia.org/zh-cn/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83">正态分布 - 维基百科，自由的百科全书</a>
 <span class="arithmatex">\(<span class="arithmatex">\(f_{\mu, \Sigma}(x) = \frac{1}{(2\pi)^{D/2}} \frac{1}{\lvert\Sigma\rvert^{1/2}}exp\{-\frac{1}{2}(x-\mu)^{T}\Sigma^{-1}(x-\mu)\}\)</span>\)</span>
 - 输入：向量<span class="arithmatex">\(x\)</span>
@@ -3358,7 +3358,7 @@ $$</li>
 - 图的形状取决于<span class="arithmatex">\(\mu\)</span>和<span class="arithmatex">\(\Sigma\)</span> 
 <img alt="" src="https://s2.loli.net/2022/07/22/rW5lUFuRwZizPML.png" />
 <strong>如何找到<span class="arithmatex">\(\mu\)</span>和<span class="arithmatex">\(\Sigma\)</span></strong><span class="arithmatex">\(\rightarrow\)</span> <strong>极大似然估计(Maximum Likelihood)</strong> </p>
-<h3 id="maximum-likelihood">极大似然(Maximum Likelihood)<a class="headerlink" href="#maximum-likelihood" title="Permanent link">&para;</a></h3>
+<h3 id="maximum-likelihood">极大似然(Maximum Likelihood)</h3>
 <p><span class="arithmatex">\(<span class="arithmatex">\(\begin{array}
 L(\mu,\Sigma) = f_{\mu,\Sigma}(x^1)f_{\mu,\Sigma}(x^2)f_{\mu,\Sigma}(x^3)…f_{\mu,\Sigma}(x^n)
 \\
@@ -3456,11 +3456,11 @@ L(\mu,\Sigma) = f_{\mu,\Sigma}(x^1)f_{\mu,\Sigma}(x^2)f_{\mu,\Sigma}(x^3)…f_{\
     
       <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

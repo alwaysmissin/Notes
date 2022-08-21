@@ -3311,8 +3311,8 @@
 
 
 
-<h1 id="java">Java多线程机制<a class="headerlink" href="#java" title="Permanent link">&para;</a></h1>
-<h2 id="_1">进程与线程<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h1 id="java">Java多线程机制</h1>
+<h2 id="_1">进程与线程</h2>
 <ol>
 <li>线程之间可以共享内存</li>
 <li>用来实现数据交换、实时通信与必要的同步操作</li>
@@ -3334,7 +3334,7 @@
 </ol>
 </li>
 </ol>
-<h2 id="thread">Thread类与线程的创建<a class="headerlink" href="#thread" title="Permanent link">&para;</a></h2>
+<h2 id="thread">Thread类与线程的创建</h2>
 <ol>
 <li>使用Thread的子类 <strong>（例12-1）</strong><ol>
 <li>优点：<ol>
@@ -3355,7 +3355,7 @@
 </li>
 </ol>
 <p><img alt="创建线程的方法" src="https://s2.loli.net/2022/03/24/kaDzy5CR1hlujQ4.png" /></p>
-<h2 id="_2">线程的常用方法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">线程的常用方法</h2>
 <ol>
 <li><code>start()</code></li>
 <li><code>run()</code>：与Runnable接口中<code>run()</code>方法相同</li>
@@ -3364,12 +3364,12 @@
 <li><code>currentThread()</code>：返回正在使用cpu资源的线程</li>
 <li><code>interrupt()</code>：用来吵醒休眠的线程，重新进入Runnable状态</li>
 </ol>
-<h2 id="_3">线程同步<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">线程同步</h2>
 <ol>
 <li>若干个线程都需要使用<code>synchronized</code>修饰的<strong>方法或代码块</strong></li>
 <li>多线程调用<code>synchronized</code> 方法必须遵守同步机制（即排队使用）<strong>（例12-7）</strong></li>
 </ol>
-<h2 id="_4">协调同步的线程<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_4">协调同步的线程</h2>
 <ol>
 <li><code>wait()</code>方法<ol>
 <li>中断线程的执行，暂时<strong>让出</strong>cpu的使用权等待通知后，才参与CPU资源抢夺</li>
@@ -3389,12 +3389,12 @@
 </li>
 <li>注：不可以在非同步方法中使用以上三个方法</li>
 </ol>
-<h2 id="_5">线程联合<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_5">线程联合</h2>
 <ol>
 <li>一个线程A在占有cpu资源期间可以让其他线程调用<code>join()</code>与本线程联合</li>
 <li>联合后A将立即中断执行，直到B线程执行完毕，A再重新排队等待cpu资源</li>
 </ol>
-<h2 id="gui">[[GUI]]线程<a class="headerlink" href="#gui" title="Permanent link">&para;</a></h2>
+<h2 id="gui">[[GUI]]线程</h2>
 <ol>
 <li>两个重要线程：<ol>
 <li><code>AWT-EventQuecue</code><ol>
@@ -3408,7 +3408,7 @@
 </ol>
 </li>
 </ol>
-<h2 id="_6">守护线程<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_6">守护线程</h2>
 <ol>
 <li>守护线程：当程序中的所有用户线程都已经结束运行时，守护线程立刻结束运行（无视<code>run()</code>方法）</li>
 <li>常见的守护线程：垃圾回收机制</li>
@@ -3496,11 +3496,11 @@
     
       <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

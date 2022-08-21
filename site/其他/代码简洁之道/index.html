@@ -3165,80 +3165,80 @@
 
 
 
-<h1 id="_1">整洁代码<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_1">整洁代码</h1>
 <ul>
 <li>让读的过程便轻松，即使编写过程困难</li>
 </ul>
-<h1 id="_2">有意义的命名<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
-<h2 id="_3">名副其实<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h1 id="_2">有意义的命名</h1>
+<h2 id="_3">名副其实</h2>
 <p>==<strong>命名必须有意义</strong>==
 - 模糊度：上下文在代码中未被明确体现的程度</p>
-<h2 id="_4">避免误导<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_4">避免误导</h2>
 <ol>
 <li>避免留下掩藏代码本意的错误线索，避免使用与本意相悖的词</li>
 <li>提防使用不同之处较小的名称</li>
 </ol>
-<h2 id="_5">做有意义的区分<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_5">做有意义的区分</h2>
 <p>通过区分提供不同的信息</p>
-<h2 id="_6">使用读的出来的名称<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_6">使用读的出来的名称</h2>
 <ul>
 <li>方便口头表述</li>
 </ul>
-<h2 id="_7">使用可搜索的名称<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_7">使用可搜索的名称</h2>
 <ul>
 <li>虽然长但方便检索和辨别</li>
 </ul>
-<h2 id="_8">避免使用编码<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<h2 id="_9">避免思维映射<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h2 id="_8">避免使用编码</h2>
+<h2 id="_9">避免思维映射</h2>
 <ul>
 <li>明确是王道</li>
 </ul>
-<h2 id="_10">类名<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h2 id="_10">类名</h2>
 <ul>
 <li>名词</li>
 </ul>
-<h2 id="_11">方法名<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h2 id="_11">方法名</h2>
 <ul>
 <li>动词</li>
 </ul>
-<h2 id="_12">每个概念对应一个词<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h2 id="_12">每个概念对应一个词</h2>
 <ul>
 <li>函数名称应该独一无二并且保持一致</li>
 </ul>
-<h2 id="_13">别用双关语<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
-<h2 id="_14">使用解决方案领域名称<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<h2 id="_13">别用双关语</h2>
+<h2 id="_14">使用解决方案领域名称</h2>
 <ul>
 <li>尽量使用术语、算法名、模式名、数学术语</li>
 </ul>
-<h2 id="_15">使用源自所涉问题领域的名称<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
-<h2 id="_16">添加有意义的语境<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<h2 id="_15">使用源自所涉问题领域的名称</h2>
+<h2 id="_16">添加有意义的语境</h2>
 <ul>
 <li>单独出现的<code>state</code>与添加了语境后单独出现的<code>addrstate</code></li>
 <li>更好的方案：创建名为<code>Address</code>的类</li>
 </ul>
-<h2 id="_17">不要添加没用的语境<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
-<h1 id="_18">函数<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h1>
-<h2 id="_19">短小<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<h2 id="_17">不要添加没用的语境</h2>
+<h1 id="_18">函数</h1>
+<h2 id="_19">短小</h2>
 <ul>
 <li>每个函数都只说一件事</li>
 <li>每个函数都依序把你带到下一个函数</li>
 <li><strong>避免过多的缩进和嵌套循环</strong></li>
 </ul>
-<h2 id="_20">只做一件事<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<h2 id="_20">只做一件事</h2>
 <ul>
 <li>函数应该做一件事，做好这件事</li>
 <li>要判断函数是否只做了一件事，就看是否能再拆除一个函数</li>
 </ul>
-<h2 id="_21">每个函数一个抽象层级<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
+<h2 id="_21">每个函数一个抽象层级</h2>
 <p><a href="https://www.cnblogs.com/ryelqy/p/10104139.html">抽象层次 - ryelqy - 博客园</a>
 - 要确保函数只做一件事情，函数中的语句都要在同一抽象层级上
 - 代码清单3-7</p>
-<h2 id="switch">switch语句<a class="headerlink" href="#switch" title="Permanent link">&para;</a></h2>
+<h2 id="switch">switch语句</h2>
 <ul>
 <li>确保每个switch都埋藏在较低的抽象层级，并且永不重复</li>
 <li>利用多态来实现</li>
 </ul>
-<h2 id="_22">使用描述性名称<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h2>
+<h2 id="_22">使用描述性名称</h2>
 <ul>
 <li>描述函数所做的事</li>
 <li>别害怕长名称</li>
@@ -3246,46 +3246,46 @@
 <li>描述性的名称能够理清关于模块的设计思路</li>
 <li>命名方式保持一致</li>
 </ul>
-<h2 id="_23">函数参数<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h2>
+<h2 id="_23">函数参数</h2>
 <ul>
 <li>最理想：零参数</li>
 <li>不太期望信息通过参数输出（利用面向对象可以一定程度上避免）</li>
 </ul>
-<h3 id="_24">一元函数的普遍形式<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<h3 id="_24">一元函数的普遍形式</h3>
 <ol>
 <li>询问有关参数的问题</li>
 <li>操作该参数</li>
 <li>如果函数要对输入参数进行转换操作，转换结果应该体现在返回值</li>
 </ol>
-<h3 id="_25">标识参数<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<h3 id="_25">标识参数</h3>
 <ul>
 <li>丑陋不堪，破坏了函数单个抽象层级</li>
 </ul>
-<h3 id="_26">二元函数<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
+<h3 id="_26">二元函数</h3>
 <ul>
 <li>自然的组合或自然的排序</li>
 <li>尽量利用一些机制将二元转换为一元</li>
 </ul>
-<h3 id="_27">三元函数<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
-<h3 id="_28">参数对象<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
+<h3 id="_27">三元函数</h3>
+<h3 id="_28">参数对象</h3>
 <ul>
 <li>如果函数需要三个以上的参数，则说明这些参数需要封装成类</li>
 </ul>
-<h2 id="_29">无副作用<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h2>
+<h2 id="_29">无副作用</h2>
 <ul>
 <li>可能导致古怪的<a href="https://aihailan.com/%E6%97%B6%E5%BA%8F%E8%80%A6%E5%90%88/">时序耦合</a>及顺序依赖</li>
 </ul>
-<h2 id="_30">分隔指令与询问<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h2>
+<h2 id="_30">分隔指令与询问</h2>
 <ul>
 <li>函数要么做什么事，要么回答什么事</li>
 </ul>
-<h2 id="_31">==使用异常替代返回错误码==<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h2>
+<h2 id="_31">==使用异常替代返回错误码==</h2>
 <ul>
 <li>使用异常代替返回错误码，错误处理代码就能从主路径代码中分离</li>
 <li>抽离try/catch代码块，，独立形成一个函数</li>
 <li>使用异常替代错误码，新异常就可以直接从旧异常中派生出来</li>
 </ul>
-<h2 id="_32">如何写出这样的函数<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h2>
+<h2 id="_32">如何写出这样的函数</h2>
 <ul>
 <li>粗稿：冗长而复杂</li>
 <li>打磨：<ul>
@@ -3296,20 +3296,20 @@
 </ul>
 </li>
 </ul>
-<h1 id="_33">注释<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h1>
+<h1 id="_33">注释</h1>
 <ul>
 <li>注释的作用：<strong>弥补</strong>在用代码表达意图时遭遇的<strong>失败</strong></li>
 <li>把力气放在<strong>书写清楚代码</strong>上</li>
 <li>不准确的注释比没有注释坏的多</li>
 </ul>
-<h2 id="_34">注释不能美化糟糕的代码<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h2>
+<h2 id="_34">注释不能美化糟糕的代码</h2>
 <ul>
 <li>写注释的<strong>动机</strong>之一：<strong>糟糕代码</strong>的存在</li>
 <li>==<strong>把代码弄干净！！</strong>==</li>
 <li>==花时间<strong>清洁糟糕的代码</strong>==</li>
 </ul>
-<h2 id="_35">用代码来阐述<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h2>
-<h2 id="_36">好注释<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h2>
+<h2 id="_35">用代码来阐述</h2>
+<h2 id="_36">好注释</h2>
 <ol>
 <li>法律信息</li>
 <li>==提供消息==的注释<ol>
@@ -3334,7 +3334,7 @@
 </li>
 <li>公共API中的Javadoc</li>
 </ol>
-<h2 id="_37">坏注释<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h2>
+<h2 id="_37">坏注释</h2>
 <ol>
 <li>喃喃自语<ol>
 <li>如果决定写注释，就花时间写最好的注释</li>
@@ -3359,18 +3359,18 @@
 <li>信息过多</li>
 <li>不明显的关系</li>
 </ol>
-<h1 id="_38">格式<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h1>
-<h2 id="_39">垂直格式<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h2>
-<h3 id="_40">概念间垂直方向上的区隔<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h3>
+<h1 id="_38">格式</h1>
+<h2 id="_39">垂直格式</h2>
+<h3 id="_40">概念间垂直方向上的区隔</h3>
 <ul>
 <li>每组代码行展示一条完整的思路</li>
 <li>每个空白行都是一条线索，标识出新的独立概念</li>
 </ul>
-<h3 id="_41">垂直方向上的靠近<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h3>
+<h3 id="_41">垂直方向上的靠近</h3>
 <ul>
 <li>靠近的代码行暗示了他们之间的紧密关系</li>
 </ul>
-<h3 id="_42">垂直距离<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h3>
+<h3 id="_42">垂直距离</h3>
 <ul>
 <li>关系密切的概念应该互相靠近</li>
 <li>变量声明：变量声明应该尽可能靠近其使用的位置<ul>
@@ -3388,19 +3388,19 @@
 </ul>
 </li>
 </ul>
-<h2 id="_43">横向格式<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h2>
+<h2 id="_43">横向格式</h2>
 <ul>
 <li>在赋值操作符周围加上空格字符，达到强调的目的</li>
 <li>不再函数名和左圆括号之间添加空格，表明函数与其参数密切相关</li>
 <li>空格字符的另一种用法：强调其前面的运算符</li>
 <li>乘法因子之间没有空格，表明高优先级</li>
 </ul>
-<h1 id="_44">对象和数据结构<a class="headerlink" href="#_44" title="Permanent link">&para;</a></h1>
-<h2 id="_45">数据抽象<a class="headerlink" href="#_45" title="Permanent link">&para;</a></h2>
+<h1 id="_44">对象和数据结构</h1>
+<h2 id="_45">数据抽象</h2>
 <ul>
 <li>以最好的方式呈现某个对象包含的数据</li>
 </ul>
-<h2 id="_46">数据、对象的反对称性<a class="headerlink" href="#_46" title="Permanent link">&para;</a></h2>
+<h2 id="_46">数据、对象的反对称性</h2>
 <ul>
 <li>过程式代码<ul>
 <li>在不改动既有数据结构的前提下添加新函数<ul>
@@ -3417,7 +3417,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="_47">得墨忒耳律<a class="headerlink" href="#_47" title="Permanent link">&para;</a></h2>
+<h2 id="_47">得墨忒耳律</h2>
 <ul>
 <li>模块不应了解它所操作对象内部的情形</li>
 <li>类C的方法f只应该调用以下对象的方法<ul>
@@ -3428,25 +3428,25 @@
 </ul>
 </li>
 </ul>
-<h2 id="_48">数据传送对象<a class="headerlink" href="#_48" title="Permanent link">&para;</a></h2>
+<h2 id="_48">数据传送对象</h2>
 <ul>
 <li>只有公共变量、没有函数的类</li>
 <li>数据库通信、</li>
 </ul>
-<h1 id="_49">错误处理<a class="headerlink" href="#_49" title="Permanent link">&para;</a></h1>
+<h1 id="_49">错误处理</h1>
 <ul>
 <li>错误处理非常重要，但如果它搞乱了代码逻辑，就是错误的做法</li>
 </ul>
-<h2 id="_50">使用异常而非返回码<a class="headerlink" href="#_50" title="Permanent link">&para;</a></h2>
+<h2 id="_50">使用异常而非返回码</h2>
 <ul>
 <li>遇到错误时，最好抛出一个异常</li>
 </ul>
-<h2 id="try-catch-finally">先写Try-Catch-Finally语句<a class="headerlink" href="#try-catch-finally" title="Permanent link">&para;</a></h2>
+<h2 id="try-catch-finally">先写Try-Catch-Finally语句</h2>
 <ul>
 <li>try是事务</li>
 <li>catch将程序维持在一种持续的状态</li>
 </ul>
-<h2 id="_51">使用不可控异常<a class="headerlink" href="#_51" title="Permanent link">&para;</a></h2>
+<h2 id="_51">使用不可控异常</h2>
 <ul>
 <li>可控异常的代价：<ul>
 <li>违反开闭原则</li>
@@ -3454,20 +3454,20 @@
 </li>
 <li>如果异常可控，函数签名就要添加throw子句</li>
 </ul>
-<h2 id="_52">给出异常发生的环境说明<a class="headerlink" href="#_52" title="Permanent link">&para;</a></h2>
+<h2 id="_52">给出异常发生的环境说明</h2>
 <ul>
 <li>抛出的每一个异常，都应当提供足够的环境说明，一边判断错误的来源和处所</li>
 <li>创建信息充分的错误消息，并且和异常一起传递出去</li>
 <li>传递足够的信息给catch块，并且记录下来</li>
 </ul>
-<h2 id="_53">依调用者需要定义异常类<a class="headerlink" href="#_53" title="Permanent link">&para;</a></h2>
+<h2 id="_53">依调用者需要定义异常类</h2>
 <p>通过打包调用API、确保它返回通用异常类型-&gt;简化代码</p>
-<h2 id="null">别返回null值<a class="headerlink" href="#null" title="Permanent link">&para;</a></h2>
+<h2 id="null">别返回null值</h2>
 <ul>
 <li>如果打算在方法中返回null值，不如抛出异常，或是返回特例对象</li>
 <li>如果在第三方API中可能返回null值的方法，可以考虑用新方法打包这个方法</li>
 </ul>
-<h2 id="null_1">别传递null值<a class="headerlink" href="#null_1" title="Permanent link">&para;</a></h2>
+<h2 id="null_1">别传递null值</h2>
 <p>除非API要求你向他传递null值，否则就要尽可能避免传递null值</p>
 
 
@@ -3550,11 +3550,11 @@
     
       <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../mkdocs/javascripts/mathjax.js"></script>
+        <script src="../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
