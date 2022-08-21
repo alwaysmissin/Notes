@@ -11,5 +11,8 @@ jobs: # 工作流的具体内容
       - uses: actions/setup-python@v2 # 再安装Python3和相关环境
         with:
           python-version: 3.x
+      - run: pip install mkdocs
       - run: pip install mkdocs-material # 使用pip包管理工具安装mkdocs-material
+      - run: mkdocs build --clean
+      - run: mkdocs build
       - run: mkdocs gh-deploy --force # 使用mkdocs-material部署gh-pages分支
