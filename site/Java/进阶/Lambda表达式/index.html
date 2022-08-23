@@ -40,8 +40,6 @@
     
       <link rel="stylesheet" href="../../../mkdocs/css/unordered-list-symbols.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
-    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -3311,71 +3309,104 @@
 <li>Lambda表达式是一个可以传递的代码块，可以在以后执行一次或多次</li>
 </ul>
 <h2 id="_1">语法</h2>
-<pre><code class="language-java">(String first, String second)
+<pre><code class="language-java">
+(String first, String second)
+
     -&gt; first.length() - second.length()
+
 </code></pre>
 <ul>
 <li>Lambda表达式就是一个代码块，需要传入代码的变量规范</li>
-<li>Lambda表达式形式：<ul>
-<li><strong>参数</strong><ul>
+<li>
+<p>Lambda表达式形式：</p>
+</li>
+<li>
+<p><strong>参数</strong></p>
+<ul>
 <li>无参时要保留参数的括号：<code>()-&gt;{代码块\表达式}</code></li>
 <li>如果可以推断出lambda表达式的参数类型，则可以忽略其类型：<code>(first, second)-&gt;first.length() - second.length()</code></li>
 <li>如果仅有一个参数，且参数类型可推导，可以省略括号：<code>event -&gt; {代码块、表达式}</code></li>
-</ul>
-</li>
 <li><strong>箭头</strong>(<code>-&gt;</code>)</li>
-<li><strong>表达式</strong><ul>
-<li>或者是完整的代码块，并且包含<code>return</code>语句</li>
+<li>
+<p><strong>表达式</strong></p>
+</li>
+<li>
+<p>或者是完整的代码块，并且包含 <code>return</code>语句</p>
+</li>
 <li>无需指定表达式的返回类型，自动由上下文推导而出</li>
 <li>如果lambda表达式只在某些分支返回一个值，而其他分支不返回值，该lambda表达式不合法：<code>(int x)-&gt;{if (x &gt;= 0) return 1;}</code></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<pre><code class="language-java">public class lambdatest {  
+<pre><code class="language-java">
+public class lambdatest {  
+
     public static void main(String[] args) {  
+
         String[] planets = new String[] {&quot;Mercury&quot;, &quot;Venus&quot;, &quot;Earth&quot;, &quot;Mars&quot;, &quot;Jupiter&quot;, &quot;Saturn&quot;, &quot;Uranus&quot;, &quot;Neptune&quot;};  
+
         System.out.println(&quot;len：&quot; + planets.length);  
 
+
+
         System.out.println(&quot;Before Sort&quot;);  
+
         System.out.println(Arrays.toString(planets));  
 
+
+
         Arrays.sort(planets, (first, second) -&gt; first.length() - second.length()); // Lambda Expression  
+
         System.out.println(&quot;Sorted&quot;);  
+
         System.out.println(Arrays.toString(planets));  
+
     }  
+
 }
+
 </code></pre>
 <h2 id="_2">函数式接口</h2>
 <ul>
-<li>函数式接口：对于只有一个抽象方法的接口，需要这种接口的对象时，就可以提供一个lambda表达式<ul>
-<li>例：<code>Arrays.sort(planets, (first, second) -&gt; first.length() - second.length())</code></li>
-</ul>
+<li>
+<p>函数式接口：对于只有一个抽象方法的接口，需要这种接口的对象时，就可以提供一个lambda表达式</p>
 </li>
-<li>与传统的内联类相比，更加高效<blockquote>
+<li>
+<p>例：<code>Arrays.sort(planets, (first, second) -&gt; first.length() - second.length())</code></p>
+</li>
+<li>与传统的内联类相比，更加高效</li>
+</ul>
+<blockquote>
 <p>最好将lambda表达式看作一个函数，而非对象，并且接受lambda表达式可以传递到函数式接口（所能做的也仅是转换为函数式接口）</p>
 </blockquote>
+<ul>
+<li>
+<p>java.util.function</p>
 </li>
-<li>java.util.function<ul>
-<li>该包中定义了很多通用的函数式接口</li>
-<li><code>BiFunction&lt;T,U,R&gt;</code><ul>
+<li>
+<p>该包中定义了很多通用的函数式接口</p>
+</li>
+<li>
+<p><code>BiFunction&lt;T,U,R&gt;</code></p>
+<ul>
 <li>描述了参数类型为T、U，返回类型为R的函数</li>
 <li>例：<code>BiFunction&lt;String, String, Integer&gt; comp = (first, second) -&gt; first.length() - second.length()</code></li>
-</ul>
+<li>
+<p><code>Predicate&lt;T&gt;</code></p>
 </li>
-<li><code>Predicate&lt;T&gt;</code><ul>
-<li><code>ArrayList.removeIf(Predicate)</code><ul>
-<li>从数组中删除所有null值：<code>array.removeIf(e -&gt; e == null)</code></li>
-</ul>
+<li>
+<p><code>ArrayList.removeIf(Predicate)</code></p>
 </li>
-</ul>
+<li>
+<p>从数组中删除所有null值：<code>array.removeIf(e -&gt; e == null)</code></p>
 </li>
-<li><code>Supplier&lt;T&gt;</code><ul>
-<li>supplier没有参数，调用时会生成一个T类型的值</li>
+<li>
+<p><code>Supplier&lt;T&gt;</code></p>
+</li>
+<li>
+<p>supplier没有参数，调用时会生成一个T类型的值</p>
+</li>
 <li>一般用于实现懒计算</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -3384,85 +3415,112 @@
 <li>直接将方法传递至构造器</li>
 <li>以下两种方法等价：</li>
 </ul>
-<pre><code class="language-java">// 出现一个定时器事件就打印这个事件对象
+<pre><code class="language-java">
+// 出现一个定时器事件就打印这个事件对象
+
 var timer = new Timer(1000, event -&gt; System.out.println(event));
+
 // 直接把println方法传递到Timer构造器中
+
 var timer = new Timer(1000, System.out::println);
+
 </code></pre>
 <ul>
-<li>System.out::println是一个方法引用(method reference)，它只是编译器生成一个函数式接口的实例，覆盖这个接口的抽象方法来调用给定的方法<ul>
-<li>在上例中，会生成一个ActionListener，其ActionPerformed方法调用sout</li>
-</ul>
+<li>
+<p>System.out::println是一个方法引用(method reference)，它只是编译器生成一个函数式接口的实例，覆盖这个接口的抽象方法来调用给定的方法</p>
 </li>
-<li>调用的三种方法<ol>
-<li><code>object::instanceMethod</code><ul>
+<li>
+<p>在上例中，会生成一个ActionListener，其ActionPerformed方法调用sout</p>
+</li>
+<li>
+<p>调用的三种方法</p>
+</li>
+<li>
+<p><code>object::instanceMethod</code></p>
+<ul>
 <li>等价于向方法传递参数的lambda表达式</li>
-<li>如<code>System.out::println</code>等价于<code>x-&gt;System.out.println(x)</code>（<code>System.out</code>为一个<code>static PrintStream</code>对象）</li>
+<li>如 <code>System.out::println</code>等价于 <code>x-&gt;System.out.println(x)</code>（<code>System.out</code>为一个 <code>static PrintStream</code>对象）</li>
+<li>
+<p><code>Class::instanceMethod</code></p>
+</li>
+<li>
+<p>第一个参数会成为方法的隐式参数</p>
+</li>
+<li>如 <code>String::compareToIngoreCase</code>等价于 <code>(x,y)-&gt;x.compareToIngoreCase(y)</code></li>
+<li>
+<p><code>Class::staticMethod</code></p>
+</li>
+<li>
+<p>所有的参数都传递到静态方法</p>
+</li>
+<li>如 <code>Math::pow</code>等价于 <code>(x,y)-&gt;Math.pow(x,y)</code></li>
 </ul>
 </li>
-<li><code>Class::instanceMethod</code><ul>
-<li>第一个参数会成为方法的隐式参数</li>
-<li>如<code>String::compareToIngoreCase</code>等价于<code>(x,y)-&gt;x.compareToIngoreCase(y)</code></li>
 </ul>
-</li>
-<li><code>Class::staticMethod</code><ul>
-<li>所有的参数都传递到静态方法</li>
-<li>如<code>Math::pow</code>等价于<code>(x,y)-&gt;Math.pow(x,y)</code>
-<img alt="" src="https://s2.loli.net/2022/08/21/mpjvcwLb8du1K4o.png" /></li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
+<p><img alt="" src="https://s2.loli.net/2022/08/21/mpjvcwLb8du1K4o.png" /></p>
 <blockquote>
-<p>包含对象的方法引用与等价的lambda表达式的一个细微区别：
-例：
-1. <code>separator::equals</code>：如果separator为null，在构造时立即抛出一个<code>NullPointerException</code>异常
-2. <code>x-&gt;separator.equals(x)</code>：只在调用时抛出<code>NullPointerException</code>异常</p>
+<p>包含对象的方法引用与等价的lambda表达式的一个细微区别：</p>
+<p>例：</p>
+<p><code>1. separator::equals</code>：如果separator为null，在构造时立即抛出一个 <code>NullPointerException</code>异常</p>
+<p><code>2. x-&gt;separator.equals(x)</code>：只在调用时抛出 <code>NullPointerException</code>异常</p>
 </blockquote>
 <ul>
-<li><code>this</code>参数：<code>this::equals</code>等价于<code>x-&gt;this.equals(x)</code><ul>
-<li>同样的，使用<code>super</code>也是合法的</li>
-</ul>
+<li>
+<p><code>this</code>参数：<code>this::equals</code>等价于 <code>x-&gt;this.equals(x)</code></p>
+</li>
+<li>
+<p>同样的，使用 <code>super</code>也是合法的</p>
 </li>
 </ul>
 <h2 id="_4">构造器引用</h2>
 <ul>
-<li>与方法的引用类似，但方法名为<code>new</code><ul>
-<li><code>Person::new</code>为<code>Person</code>构造器的引用</li>
-<li>使用哪一个构造器取决于上下文</li>
-</ul>
+<li>
+<p>与方法的引用类似，但方法名为 <code>new</code></p>
 </li>
+<li>
+<p><code>Person::new</code>为 <code>Person</code>构造器的引用</p>
+</li>
+<li>使用哪一个构造器取决于上下文</li>
 </ul>
 <h2 id="_5">变量作用域</h2>
 <ul>
-<li>lambda表达式可以捕获外围作用域中变量的值，但只能<strong>引用值不会改变的变量</strong><ul>
-<li>原因：如果在lambda表达式中更改变量，线程是不安全的</li>
-</ul>
+<li>
+<p>lambda表达式可以捕获外围作用域中变量的值，但只能<strong>引用值不会改变的变量</strong></p>
 </li>
-<li>几种不合法的情况：<ul>
-<li>在lambda表达式中改变变量的值<img alt="image.png" src="https://s2.loli.net/2022/08/21/2jtA536hiJDnqET.png" /></li>
+<li>
+<p>原因：如果在lambda表达式中更改变量，线程是不安全的</p>
+</li>
+<li>
+<p>几种不合法的情况：</p>
+</li>
+<li>
+<p>在lambda表达式中改变变量的值<img alt="image.png" src="https://s2.loli.net/2022/08/21/2jtA536hiJDnqET.png" /></p>
+</li>
 <li>变量在lambda表达式外部发生改变<img alt="image.png" src="https://s2.loli.net/2022/08/21/s1XGE2SDzM4rdab.png" /></li>
 <li>在lambda表达式中声明一个与局部变量同名的变量或参数<img alt="image.png" src="https://s2.loli.net/2022/08/21/5LCEtZhTXJofDlu.png" /></li>
-</ul>
-</li>
-<li>在lambda中使用<code>this</code>关键字时，指的是创建这个<strong>lambda表达式方法</strong>的<code>this</code>参数（即，在lambda表达式中<code>this</code>关键字的意义不发生改变）</li>
+<li>在lambda中使用 <code>this</code>关键字时，指的是创建这个<strong>lambda表达式方法</strong>的 <code>this</code>参数（即，在lambda表达式中 <code>this</code>关键字的意义不发生改变）</li>
 </ul>
 <h2 id="lambda_1">处理lambda表达式</h2>
 <ul>
 <li>特点：延迟执行(defferred execution)</li>
-<li>希望以后在执行代码的原因：<ul>
-<li>在一个单独的线程中运行代码</li>
+<li>
+<p>希望以后在执行代码的原因：</p>
+</li>
+<li>
+<p>在一个单独的线程中运行代码</p>
+</li>
 <li>多次运行代码</li>
-<li>在算法的适当位置运行代码<ul>
+<li>
+<p>在算法的适当位置运行代码</p>
+<ul>
 <li>排序中的比较操作</li>
-</ul>
+<li>
+<p>发生某种情况时执行代码</p>
 </li>
-<li>发生某种情况时执行代码<ul>
-<li>点击按钮事件</li>
+<li>
+<p>点击按钮事件</p>
+</li>
 <li>数据到达</li>
-</ul>
-</li>
 <li>只在必要时运行代码</li>
 </ul>
 </li>
@@ -3530,6 +3588,28 @@ var timer = new Timer(1000, System.out::println);
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
       Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://space.bilibili.com/21739030?spm_id_from=333.1007.0.0" target="_blank" rel="noopener" title="space.bilibili.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92.02c-26.45-.8-48.21-9.8-65.28-27.2C9.682 419.4.767 396.5 0 368.2V169.8c.767-26 9.682-47.6 26.74-65.7C43.81 87.75 65.57 78.77 92.02 78h29.38L96.05 52.19c-5.75-5.73-8.63-13-8.63-21.79 0-8.8 2.88-16.06 8.63-21.797C101.8 2.868 109.1 0 117.9 0s16.1 2.868 21.9 8.603L213.1 78h88l74.5-69.397C381.7 2.868 389.2 0 398 0c8.8 0 16.1 2.868 21.9 8.603 5.7 5.737 8.6 12.997 8.6 21.797 0 8.79-2.9 16.06-8.6 21.79L394.6 78h29.3c26.4.77 48 9.75 64.7 26.1zm-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96.05c-9.59.4-17.45 3.7-23.58 9.8-6.14 6.1-9.4 13.9-9.78 23.5v194.4c0 9.2 3.26 17 9.78 23.5s14.38 9.8 23.58 9.8H416.4c9.2 0 17-3.3 23.3-9.8 6.3-6.5 9.7-14.3 10.1-23.5V173.8zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5-9.6 0-17.5-3.2-23.6-9.5-6.1-6.3-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2 6.3-6.3 13.2-9.6 23.3-10 9.2.4 17 3.7 23.3 10zm191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.1 6.3-14 9.5-23.6 9.5-9.6 0-17.4-3.2-23.6-9.5-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2 6.3-6.3 14.1-9.6 23.3-10 9.2.4 17 3.7 23.3 10z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/alwaysmissin" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
     </a>
   
 </div>
