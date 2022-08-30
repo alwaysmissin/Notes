@@ -58,3 +58,19 @@ int count = words.parallelStream()
 		- 产生一个顺序序列
 		- `iterate`方法接受一个“**种子**”值，以及一个**函数**（为`UnaryOperation<T>`）
 		- 递增：`Stream<Integer> integers = Stream.iterate(BigInteger.ZERO, n -> n.add(BigIngeter.ONE))`
+		- 如果要产生一个有限序列，则需要添加一个谓词来描述迭代该如何结束
+			- `Stream<BigInteger> integers = Stream.iterate(BigInteger.ZERO, n->n.compareTo(new BigInteger("100000")), n->n.add(BigInteger.ONE)`
+			- 只要谓词拒绝了某个迭代产生的值，这个流即结束
+- `Stream.ofNullable`
+	- 如果对象**为null**，那么这个流的长度为**0**
+	- 如果对象**不为null**，那么这个流的长度为**1**，且仅包含**该对象**
+- 其他API可以产生流的方法
+	- `Pattern.splitAsStream`
+		- 按照某个正则表达式来分割一个`CharSequence`对象
+		- `Stream<String> words = Pattern.complie("\\PL+").splitAsStream(contents)`
+	- `Scanner.tokens`
+		- 产生一个扫描器的符号流
+		- `Stream<String> words = new Scanner(contents).tokens()`
+	- `Files.lines`
+		- 返回包含文件中所有行的Stream
+		- `Stream<String> lines = File.lines(path))`

@@ -85,6 +85,7 @@
 ### 网课
 
 - [【零基础 快速学Java】韩顺平 零基础30天学会Java_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1fh411y7R8)
+- [尚java(密码：8op3)](https://pan.baidu.com/s/1Kg7UUpO3wwALX6x28cWA7A#list/path=%2F&parentPath=%2F)
   
 ### 博客
 
