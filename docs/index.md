@@ -2,37 +2,41 @@
 ## 博客
 - [菜鸟教程 - 学的不仅是技术，更是梦想！](https://www.runoob.com/)
 - [Road 2 Coding](https://www.r2coding.com/#/README)
-## 数据结构
-### 书籍
-- **趣学数据结构**
-- **算法导论**
-- 数据结构（清华大学教材）
-### 网课
-- **[数据结构（上）——清华大学](https://www.xuetangx.com/learn/THU08091000384/THU08091000384/10322765/article/17436683)**
-- **[数据结构（下）——清华大学](https://www.xuetangx.com/learn/THU08091002048/THU08091002048/10322575/article/17418293)**
-- [【MIT6.006最新】算法导论(中英|2020春) Introduction to Algorithms 麻省理工_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1fu41127MN?p=9&share_medium=android&share_plat=android&share_session_id=fede1fc7-4a1b-48fd-9e90-91c2170a1d77&share_source=COPY&share_tag=s_i&timestamp=1652158205&unique_k=GnUmWNh&share_times=1)
-### 其他
-- [Data Structure Visualization|数据结构可视化](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
 
----
-
-## 算法
+## Java
 
 ### 书籍
 
-- 趣学算法
+- **Think in Java**
 
-- **算法导论**
+- **Head First Java**
 
-- 算法笔记
+- **Effective Java**
 
-- 漫画算法合集
+- Java核心技术卷
   
 ### 网课
 
-- [算法基础课——Acwing](https://www.acwing.com/activity/content/11/)
+- [【零基础 快速学Java】韩顺平 零基础30天学会Java_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1fh411y7R8)
+- [尚java(密码：8op3)](https://pan.baidu.com/s/1Kg7UUpO3wwALX6x28cWA7A#list/path=%2F&parentPath=%2F)
+  
+### 博客
 
-- [【MIT6.006最新】算法导论(中英|2020春) Introduction to Algorithms 麻省理工_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1fu41127MN?p=9&share_medium=android&share_plat=android&share_session_id=fede1fc7-4a1b-48fd-9e90-91c2170a1d77&share_source=COPY&share_tag=s_i&timestamp=1652158205&unique_k=GnUmWNh&share_times=1)
+- [Java教程——廖雪峰](https://www.liaoxuefeng.com/wiki/1252599548343744)
+
+- [Java 全栈知识体系](https://pdai.tech/)
+
+---
+
+## Python
+
+### 书籍
+
+### 网课
+
+### 博客
+
+[Python教程 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/1016959663602400#0)
 
 ---
 
@@ -70,28 +74,47 @@
 
 ---
 
-## Java
+## Linux
+
+### 书籍
+- 鸟哥的Linux私房菜
+### 网课
+
+### 博客
+
+
+---
+## 数据结构
+### 书籍
+- **趣学数据结构**
+- **算法导论**
+- 数据结构（清华大学教材）
+### 网课
+- **[数据结构（上）——清华大学](https://www.xuetangx.com/learn/THU08091000384/THU08091000384/10322765/article/17436683)**
+- **[数据结构（下）——清华大学](https://www.xuetangx.com/learn/THU08091002048/THU08091002048/10322575/article/17418293)**
+- [【MIT6.006最新】算法导论(中英|2020春) Introduction to Algorithms 麻省理工_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1fu41127MN?p=9&share_medium=android&share_plat=android&share_session_id=fede1fc7-4a1b-48fd-9e90-91c2170a1d77&share_source=COPY&share_tag=s_i&timestamp=1652158205&unique_k=GnUmWNh&share_times=1)
+### 其他
+- [Data Structure Visualization|数据结构可视化](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
+
+---
+
+## 算法
 
 ### 书籍
 
-- **Think in Java**
+- 趣学算法
 
-- **Head First Java**
+- **算法导论**
 
-- **Effective Java**
+- 算法笔记
 
-- Java核心技术卷
+- 漫画算法合集
   
 ### 网课
 
-- [【零基础 快速学Java】韩顺平 零基础30天学会Java_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1fh411y7R8)
-- [尚java(密码：8op3)](https://pan.baidu.com/s/1Kg7UUpO3wwALX6x28cWA7A#list/path=%2F&parentPath=%2F)
-  
-### 博客
+- [算法基础课——Acwing](https://www.acwing.com/activity/content/11/)
 
-- [Java教程——廖雪峰](https://www.liaoxuefeng.com/wiki/1252599548343744)
-
-- [Java 全栈知识体系](https://pdai.tech/)
+- [【MIT6.006最新】算法导论(中英|2020春) Introduction to Algorithms 麻省理工_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1fu41127MN?p=9&share_medium=android&share_plat=android&share_session_id=fede1fc7-4a1b-48fd-9e90-91c2170a1d77&share_source=COPY&share_tag=s_i&timestamp=1652158205&unique_k=GnUmWNh&share_times=1)
 
 ---
 
@@ -119,18 +142,6 @@
 
 - 数据库系统概念
 - MySQL必知必会
-
----
-
-## Python
-
-### 书籍
-
-### 网课
-
-### 博客
-
-[Python教程 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/1016959663602400#0)
 
 ---
 
