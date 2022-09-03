@@ -81,6 +81,9 @@ $$\bar x_n =\frac{x_n+(1-\alpha)x_{n-1}+(1-\alpha)^{2}x_{n-2}+……}{1+(1-\alph
 - **警告**：
 	- 必须有**足够多的探索**
 	- 最后要让learning rate足够小但不能下降过快
+![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20220903212124.png)
+
+
 ### ==Approximate Q-Learning==
 - Q-learning必须存储所有的状态->**数据量过大**
 ![](https://s2.loli.net/2022/07/31/zEXYnkor6eVvqu1.png)
