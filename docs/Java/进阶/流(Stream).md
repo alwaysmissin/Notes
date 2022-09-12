@@ -74,3 +74,71 @@ int count = words.parallelStream()
 	- `Files.lines`
 		- 返回包含文件中所有行的Stream
 		- `Stream<String> lines = File.lines(path))`
+## filter、map和flatmap方法
+### filter方法
+- `filter`转换回产生一个新流，他的元素与某种条件相匹配
+- 将一个字符串流转换为只包含长单词的另一个流：
+	- `filter`的引元是`Predicate<T>`，即从`T`到`boolean`的函数
+```java
+List<String> words = "...";
+Stream<String> longwords = words.stream.filter(w->w.length() > 12);
+```
+### map方法
+- 使用`map`方法，可以让我们按照某种方式来转换流中的值
+	- 使用`map`时，会有一个函数应用到每一个元素上，并且其结果时包含了应用该函数后所产生结果的流
+- 将单词转换为小写：
+```java
+Stream<String> lowerwords = words.stream.map(String::lowerCase);
+```
+- 通常来说，也可以使用[Lambda](Lambda表达式.md)表达式替换
+```java
+Stream<String> firstletter = words.stream.map(s->s.subString(0,1));
+```
+### flatmap方法
+ ```java
+ public static Stream<String> codePoints(String s){
+	 var result = new ArrayList<String>();
+	 int i = 0;
+	 while(i < s.length()){
+		 int j = s.offsetByCodePoints(i,1);
+		 result.add(s.subString(i,j));
+		 i = j;
+	 }
+	 return result.stream();
+ }
+ ```
+- 为了**摊平**(降维)单个流，可以使用`flatmap`方法
+```java
+Stream<String> flatResult = words.stream.flatmap(w->codePoints(w));
+```
+
+## 抽取子流和组合流
+- `stream.limit(n)`
+	- 会返回一个新的流
+	- 在`n`个元素后结束
+	- 适用于裁剪无限流的尺寸
+	- `Stream<Double> randoms = Stream.generate(Math::random).limit(100);`
+- `stream.skip(n)`
+	- 会返回一个新的流
+	- 丢弃前`n`个元素
+	- `Stream<String> words = Stream.of(contents.split("regex").skip(1);`
+- `stream.takeWhile(predicate)`
+	- 会在谓词为真时获取流中的所有元素
+	- 收集所有数字字符
+		- `Stream<String> nums = codePoints(str).takeWhile(s->"0123456789".contains(s));`
+- `dropWhile`
+	- 与`takeWhile`相反，在条件为真时丢弃元素
+	- 并产生一个由第一个使该条件为假的字符开始的所有元素构成的流
+	- `Stream<String> withoutInitialWhiteSpace = codePoints(str).dropWhile(s->s.trim().length() == 0);`
+- `static concat`
+	- 连接两个流
+	- 第一个流不应该是无限的，否则永远不会处理第二个流
+
+## 其他的流转换
+- `distinct`
+	- 返回一个流，他的元素是从原有流中产生的，按同样的**顺序剔除重复的元素**后产生的
+- `sort`
+	- 排序
+- `peek`
+	- 产生另一个流，元素与原流中的元素相同，但是每次获取一个元素时，都会调用一个函数
+	- 适合用于调试

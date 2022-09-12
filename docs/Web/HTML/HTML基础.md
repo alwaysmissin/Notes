@@ -93,7 +93,29 @@
 		- 使用`<ul>`元素包围
 	- 有序列表
 		- 使用`<ol>`元素包围
+### 加粗
+- `<strong>content</strong>`
+### 斜体
+- `<em>content</em>`
 ## 链接
 - `<a>content</a>`
 	- a->anchor
 - `href`属性->hyper refference
+
+## 表单
+- 作用：收集数据，提交给服务器
+- 语法：
+```HTML
+<form action = "服务器地址" method = "请求方式" enctype = "数据格式">
+	<!--表单项-->
+	<input type = "submit" value = "提交按钮">
+</form>
+```
+- `type`：
+	- 文本框：`text`
+	- 密码框：`password`
+	- 隐藏框：`hidden`
+	- 日期框：`date`
+	- 单选：`radio`
+	- 多选：`checkbox`
+	- 文件上传：`file`
