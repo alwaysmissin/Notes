@@ -3,7 +3,7 @@
 - [菜鸟教程 - 学的不仅是技术，更是梦想！](https://www.runoob.com/)
 - [Road 2 Coding](https://www.r2coding.com/#/README)
 
-## Java
+## [Java](./Java/index.md)
 
 ### 书籍
 
