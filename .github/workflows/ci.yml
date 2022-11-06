@@ -11,6 +11,7 @@ jobs: # 工作流的具体内容
       - uses: actions/setup-python@v2 # 再安装Python3和相关环境
         with:
           python-version: 3.x
+      - run: ls -a -l
       - run: pip install mkdocs
       - run: pip install mkdocs-material # 使用pip包管理工具安装mkdocs-material
       - run: mkdocs build --clean
