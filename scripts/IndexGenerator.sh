@@ -1,5 +1,4 @@
 #!/bin/bash
-# echo "hello world"
 readDir(){
     local dir=$1
     local files
@@ -17,4 +16,4 @@ readDir(){
     done
 }
 
-readDir /home/jiunian/scripts/MyNotes
+readDir /home/runner/work/Notes/Notes/docs
