@@ -92,7 +92,7 @@
 ![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221102162434.png)
 - 用来原地修改![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221102162534.png)
 - 结合`del`删除列表元素![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221102162558.png)
-- 切片返回的是列表元素的浅复制
+- 切片返回的是列表元素的浅复制，**左开右闭**
 	- 浅复制：生成一个**新的列表**，并且把原列表元素的**引用**都复制到新的列表中![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221102162807.png)
 	- 修改任何一个都会对原列表产生影响
 > 深复制：使用copy.deepcopy()函数实现
@@ -163,3 +163,38 @@
 ![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221102233758.png)
 ![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221102234015.png)
 ![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221102234146.png)
+![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103085115.png)
+![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103085238.png)
+![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103085250.png)
+> Python的许多内置函数也可以对字符串进行操作
+> 切片同样适用于字符串，但仅限于读取其中的元素，不支持字符串修改
+
+### 正则表达式
+![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103091151.png)
+![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103091158.png)
+![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103091243.png)
+![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103091356.png)
+- re![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103091431.png)
+	- re.sub()![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103092029.png)![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103092107.png)![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103092345.png)
+
+## 函数
+![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103094555.png)
+- 对于绝大多数情况下，在函数内部直接修改形参的值不会影响实参，而是创建一个新的变量
+- 如果传递给函数的实参是可变序列，并且在函数内部使用下表或可变序列自身的方法增加或删除或修改元素时，实参也得到响应的修改
+- 默认值参数的赋值只会在函数定义时被解释一次，当使用可变序列作为参数默认值时，需要谨慎![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103095518.png)
+![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103095622.png)
+![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103095832.png)
+![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103095856.png)
+![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103100103.png)
+![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103100259.png)
+![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103100357.png)
+- return语句及变量作用域
+![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103100735.png)
+![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103100754.png)
+
+### lambda表达式
+![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103100856.png)
+- 实例：
+![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103100952.png)
+![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103101022.png)
+![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221103101311.png)
