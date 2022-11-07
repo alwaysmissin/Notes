@@ -10,7 +10,7 @@ readDir(){
             readDir "$path"
         else
             if [ $file != "index.md" ]; then
-                echo "- [${file%.*}]($path)" >> $dir/index.md
+                echo "- [${file%.*}](./$file)" >> $dir/index.md
             fi
         fi
     done
