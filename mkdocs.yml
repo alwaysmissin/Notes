@@ -56,6 +56,14 @@ plugins:
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.betterem
+  - pymdownx.caret
+  
 
 extra:
   social:
