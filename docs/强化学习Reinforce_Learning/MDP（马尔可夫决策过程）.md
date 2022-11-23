@@ -1,7 +1,13 @@
 # 马尔可夫决策过程
 - 不确定搜索问题：世界中存在一定程度的不确定性的问题被称为不确定搜索问题$\rightarrow$使用**马尔可夫决策过程**解决
+## 马尔可夫奖励过程
+### $<\mathcal{S},\mathcal{P},r,\gamma>$属性
+- 一个**状态集**$\mathcal{S}$
+- 状态转移矩阵$\mathcal{P}$
+- 奖励函数$r$
+- 折扣因子$\gamma$
 ## 马尔可夫决策过程
-### 属性：
+### $<\mathcal{S},\mathcal{A},P,r,\gamma>$属性：
 - 一个**状态**集$S$ 
 - 一个**操作**集$A$
 - 一个起始状态
@@ -32,6 +38,12 @@
 	- $R(warm, fast, overheated) = -10$
 - 一个agent的行动可以表示为：$s_0 \overset{a_0} \rightarrow s_{1} \overset{a_1} \rightarrow s_{2}\overset{a_2} \rightarrow s_{3}……$
 - 其效益为：$U([s_0, a_0,s_1, ,a_1,s_2,a_2,s_3…]) = R\left(s_{0}, a_{0}, s_{1}\right)+R\left(s_{1}, a_{1}, s_{2}\right) \\+R\left(s_{2}, a_{2}, s_{3}\right)+\ldots$
+## 由马尔可夫决策过程转化为马尔可夫奖励过程
+- 边缘化：
+	- 对于某一个状态，我们根据策略将所有动作的概率进行加权，得到的奖励和就可以被认为是一个MRP在该状态下的奖励$$r^\prime(s)=\sum_{a\in\mathcal{A}}\pi(a|s)r(s,a)$$
+	- 同理可得MRP中的状态从$s$转移到$s^\prime$的概率：$$P^\prime(s^\prime|s)=\sum_{a\in\mathcal{A}}\pi(a|s)P(s^\prime|s,a)$$
+	即得到了一个MRP：$<\mathcal{S},P^\prime, r^\prime, \gamma>$
+- 根据价值函数的定义可得，MDP的状态价值函数和转化后的MRP的价值函数是一样的，于是可以使用MRP中计算价值的函数来计算状态价值函数
 
 ## 无限效益 
 ### 折扣因子(Discount Factors)
@@ -46,13 +58,23 @@
 	- 在固定步数后结束“生命”
 ### 必然最终态(Absorbing State)
 - 无论选择何种策略，最后必然达到一个最终状态(Terminal State)
+## 状态价值函数与动作价值函数
+### 状态价值函数
+- 使用$V^\pi(s)$表示MDP中基于策略$\pi$的**状态价值函数**
+	- 它被定义为从状态$s$出发，遵循策略$\pi$能获得的期望回报$$V^\pi(s)=E_\pi[G_t|S_t-s]$$
+### 动作价值函数
+- 使用$Q_\pi(s,a)$表示MDP在遵循策略$\pi$时，对当前状态$s$执行动作$a$的到的期望回报：$$Q^\pi(s,a)=E_\pi[G_t|S_t=s,A_t=a]$$
+### 二者之间的关系
+- 在使用策略$\pi$时，状态s的价值等于在该状态下基于策略$\pi$采取所有动作的概率与响应的价值相乘再求和的结果：$$V^\pi(s)=\sum_{a\in \mathcal{A}}\pi(a|s)Q^\pi(s,a)$$
+- 使用策略$\pi$时，状态下采取动作$a$的价值**等于即时奖励加上经过衰减后的所有可能的下一个状态的状态转移概率与相应的价值的乘积**$$Q^\pi(a,s)=r(a,s)+\gamma\sum_{s^\prime\in \mathcal{S}}P(s^\prime|s,a)V^\pi(s^\prime)$$
 
 ## 最优量(Optimal Quantities)
 ![](https://s2.loli.net/2022/07/28/rLiEmo9Dna4WtOv.png)
 1. state s：$V^*(s)=$ 从状态s开始，剩余寿命中选择执行**最优行为**所获得的**期望效益**
 2. q-state(s,a)：$Q^*（s,a)=$ 状态s下选择执行**行为a**，并且获得**最优结果**的**期望效益**，并且从此后采取的都是最优行动
 3. optimal policy：$\pi^*(s)=$ 状态s下的**最优行为**
-4. 价值(Value)的递归定义：
+> 智能体的策略通常用字母$\pi$表示，策略$\pi(a|s)=P(A_t=a|S_t=s)$是一个函数，表示在输入状态为$s$的情况下采取动作$a$的概率
+5. 价值(Value)的递归定义：
 $$
 \begin{array}{l}
 V^{*}(s)=\max _{a} Q^{*}(s, a) \\
