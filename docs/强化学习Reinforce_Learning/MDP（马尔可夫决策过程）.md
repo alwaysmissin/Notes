@@ -67,7 +67,19 @@
 ### 二者之间的关系
 - 在使用策略$\pi$时，状态s的价值等于在该状态下基于策略$\pi$采取所有动作的概率与响应的价值相乘再求和的结果：$$V^\pi(s)=\sum_{a\in \mathcal{A}}\pi(a|s)Q^\pi(s,a)$$
 - 使用策略$\pi$时，状态下采取动作$a$的价值**等于即时奖励加上经过衰减后的所有可能的下一个状态的状态转移概率与相应的价值的乘积**$$Q^\pi(a,s)=r(a,s)+\gamma\sum_{s^\prime\in \mathcal{S}}P(s^\prime|s,a)V^\pi(s^\prime)$$
-
+## 蒙特卡洛方法
+- 蒙特卡洛方法：统计模拟方法，是基于概率统计的数值计算方法
+	- 使用随机抽样
+	- 然后运用概率统计方法来从抽样结果中归纳出我们想要得到的目标的数值估计
+- 计算状态价值的具体过程
+	1. 使用策略$\pi$采样若干序列：$$s_0 \overset{a_0} \rightarrow s_{1} \overset{a_1} \rightarrow s_{2}\overset{a_2} \rightarrow s_{3}……$$
+	2. 对每一条序列中的每一时间步$t$的状态$s$进行以下操作
+		- 更新状态$s$的计数器$N(s)\leftarrow N(s)+1$
+		- 更新状态$s$的总回报$M(s)\leftarrow M(s)+G$
+	3. 每一个状态的价值被估计为回报的期望：$V(s)=\frac{M(s)}{N(s)}$
+> 另一种增量更新的方法：
+> - $N(s)\leftarrow N(s)+1$
+> - $V(s)\leftarrow V(s)+\frac{1}{N(s)}(G-V(s))$
 ## 最优量(Optimal Quantities)
 ![](https://s2.loli.net/2022/07/28/rLiEmo9Dna4WtOv.png)
 1. state s：$V^*(s)=$ 从状态s开始，剩余寿命中选择执行**最优行为**所获得的**期望效益**
