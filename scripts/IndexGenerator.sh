@@ -8,7 +8,7 @@ readDir(){
         if [ -d "$path" ];then
             echo "# $file" > $path/index.md
             readDir "$path"
-            echo "- [${file%.*}](./$file.index.md)" >> $dir/index.md
+            echo "- [${file%.*}](./$file/index.md)" >> $dir/index.md
         else
             if [ $file != "index.md" ]; then
                 echo "- [${file%.*}](./$file)" >> $dir/index.md
