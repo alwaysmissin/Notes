@@ -50,7 +50,7 @@
 		- **浪费了状态之间的关系**<-使用[[MDP（马尔可夫决策过程）#贝尔曼方程 Bellman Equations|Bellman方程]]，就可以将各个state联系起来->如何在不知道T、R的情况下使用Bellman更新？？->[[强化学习(Reinforce Learning)#时间差分学习 Temporal Difference Learning|TD Learning]]
 		- 每一个状态必须独立学习
 		- 花费**时间长**
-### 时间差分学习(Temporal Difference Learning)
+### [[时序差分算法|时间差分学习(Temporal Difference Learning)]]
 - 思路：
 	- 对于每次$(s,a,s^\prime,r)$都更新一次$V(s)$
 	- 可能的结果$s^\prime$将会更加频繁的提供更新
