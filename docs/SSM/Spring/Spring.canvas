@@ -1,0 +1,13 @@
+{
+	"nodes":[
+		{"id":"551ff1e29becde70","x":41,"y":-208,"width":261,"height":50,"type":"text","text":"## Spring Framework"},
+		{"id":"bf816993999e574a","x":408,"y":-497,"width":250,"height":226,"type":"text","text":"### 特性\n- 非侵入式\n- [[控制反转IOC]]\n- 面向切面编程(AOP)\n- 容器\n- 组件化\n- 声明式\n- 一站式"},
+		{"id":"1f7f75965ba691c0","x":-185,"y":-54,"width":139,"height":60,"type":"text","text":"# Spring"},
+		{"id":"a19083180322011c","x":408,"y":-183,"width":610,"height":208,"type":"text","text":"### 五大功能模块\n| 功能模块                | 功能介绍                                              |\n| ----------------------- | ----------------------------------------------------- |\n| Core Container          | 核心容器，在Spring环境下使用任何功能都必须基于IOC容器 |\n| AOP&Aspects             | 面向切面编程                                          |\n| Testing                 | 提供了对junit或TestNG测试框架的整合                   |\n| Data Access/Integration | 提供了对数据访问/集成的功能                           |\n| Spring MVC              | 提供了面向Web应用程序的集成功能                                                      |"}
+	],
+	"edges":[
+		{"id":"cfc05f5f03521452","fromNode":"1f7f75965ba691c0","fromSide":"right","toNode":"551ff1e29becde70","toSide":"left"},
+		{"id":"0be4f16a2f33d42f","fromNode":"551ff1e29becde70","fromSide":"right","toNode":"bf816993999e574a","toSide":"left"},
+		{"id":"d22297682a084fdb","fromNode":"551ff1e29becde70","fromSide":"right","toNode":"a19083180322011c","toSide":"left"}
+	]
+}

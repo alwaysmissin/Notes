@@ -213,5 +213,8 @@
 ---
 
 ## 编译原理
+### 网课
+- [CS143 斯坦福大学编译原理【中文字幕】_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1NE411376V/?spm_id_from=333.788.recommend_more_video.0&vd_source=104ff9cc1b7010d178a8d3c0d37be81e)
+	- [CS143: Compilers](https://web.stanford.edu/class/cs143/)
 
 ---

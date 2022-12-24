@@ -45,7 +45,7 @@
 		- `RUN ["可执行文件", "参数1", "参数2", ...]`
 		- `RUN ["./FaceTrack.py", "1", "0"]`
 - `RUN`是在`docker build`时运行
-- 注意：Dockerfile的指令每执行一次就会在docker上新建一层，使用`&&`符号链接买； ，执行之后只会创建一层镜像![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221113155809.png)
+- 注意：Dockerfile的指令每执行一次就会在docker上新建一层，使用`&&`符号链接多个语句 ，执行之后只会创建一层镜像![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221113155809.png)
 ### EXPOSE
 - 当前容器对外暴露出的端口
 ### WORKDIR

@@ -58,3 +58,73 @@ annotation-target: ../pdfs/RL/RLbook2020.pdf
 >%%TAGS%%
 >
 ^213poqire0h
+
+
+>%%
+>```annotation-json
+>{"created":"2022-12-12T15:19:35.760Z","updated":"2022-12-12T15:19:35.760Z","document":{"title":"RLbook2020.pdf","link":[{"href":"urn:x-pdf:8084268f8a7b70a39b0c37683e337727"},{"href":"vault:/pdfs/RL/RLbook2020.pdf"}],"documentFingerprint":"8084268f8a7b70a39b0c37683e337727"},"uri":"vault:/pdfs/RL/RLbook2020.pdf","target":[{"source":"vault:/pdfs/RL/RLbook2020.pdf","selector":[{"type":"TextPositionSelector","start":59976,"end":60122},{"type":"TextQuoteSelector","exact":" four main subelements of areinforcement learning system: a policy, a reward signal, a value function, and, optionally,a model of the environment.","prefix":"he environment, one can identify","suffix":"A policy defines the learning ag"}]}]}
+>```
+>%%
+>*%%PREFIX%%he environment, one can identify%%HIGHLIGHT%% ==four main subelements of areinforcement learning system: a policy, a reward signal, a value function, and, optionally,a model of the environment.== %%POSTFIX%%A policy defines the learning ag*
+>%%LINK%%[[#^nwwduwpdd5b|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^nwwduwpdd5b
+
+
+>%%
+>```annotation-json
+>{"created":"2022-12-12T15:19:48.463Z","updated":"2022-12-12T15:19:48.463Z","document":{"title":"RLbook2020.pdf","link":[{"href":"urn:x-pdf:8084268f8a7b70a39b0c37683e337727"},{"href":"vault:/pdfs/RL/RLbook2020.pdf"}],"documentFingerprint":"8084268f8a7b70a39b0c37683e337727"},"uri":"vault:/pdfs/RL/RLbook2020.pdf","target":[{"source":"vault:/pdfs/RL/RLbook2020.pdf","selector":[{"type":"TextPositionSelector","start":60122,"end":60190},{"type":"TextQuoteSelector","exact":"A policy defines the learning agent’s way of behaving at a given tim","prefix":"ally,a model of the environment.","suffix":"e. Roughly speaking,a policy is "}]}]}
+>```
+>%%
+>*%%PREFIX%%ally,a model of the environment.%%HIGHLIGHT%% ==A policy defines the learning agent’s way of behaving at a given tim== %%POSTFIX%%e. Roughly speaking,a policy is*
+>%%LINK%%[[#^claybst3l74|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^claybst3l74
+
+
+>%%
+>```annotation-json
+>{"created":"2022-12-12T15:19:53.115Z","text":"即时的奖励","updated":"2022-12-12T15:19:53.115Z","document":{"title":"RLbook2020.pdf","link":[{"href":"urn:x-pdf:8084268f8a7b70a39b0c37683e337727"},{"href":"vault:/pdfs/RL/RLbook2020.pdf"}],"documentFingerprint":"8084268f8a7b70a39b0c37683e337727"},"uri":"vault:/pdfs/RL/RLbook2020.pdf","target":[{"source":"vault:/pdfs/RL/RLbook2020.pdf","selector":[{"type":"TextPositionSelector","start":60763,"end":60832},{"type":"TextQuoteSelector","exact":"A reward signal defines the goal of a reinforcement learning problem.","prefix":"ngprobabilities for each action.","suffix":" On each timestep, the environme"}]}]}
+>```
+>%%
+>*%%PREFIX%%ngprobabilities for each action.%%HIGHLIGHT%% ==A reward signal defines the goal of a reinforcement learning problem.== %%POSTFIX%%On each timestep, the environme*
+>%%LINK%%[[#^chkka94n6jj|show annotation]]
+>%%COMMENT%%
+>即时的奖励
+>%%TAGS%%
+>
+^chkka94n6jj
+
+
+>%%
+>```annotation-json
+>{"created":"2022-12-12T16:02:32.574Z","text":"期望奖励","updated":"2022-12-12T16:02:32.574Z","document":{"title":"RLbook2020.pdf","link":[{"href":"urn:x-pdf:8084268f8a7b70a39b0c37683e337727"},{"href":"vault:/pdfs/RL/RLbook2020.pdf"}],"documentFingerprint":"8084268f8a7b70a39b0c37683e337727"},"uri":"vault:/pdfs/RL/RLbook2020.pdf","target":[{"source":"vault:/pdfs/RL/RLbook2020.pdf","selector":[{"type":"TextPositionSelector","start":61688,"end":61742},{"type":"TextQuoteSelector","exact":"a valuefunction specifies what is good in the long run","prefix":" is good in an immediate sense, ","suffix":". Roughly speaking, the value of"}]}]}
+>```
+>%%
+>*%%PREFIX%%is good in an immediate sense,%%HIGHLIGHT%% ==a valuefunction specifies what is good in the long run== %%POSTFIX%%. Roughly speaking, the value of*
+>%%LINK%%[[#^gdz7h9l919|show annotation]]
+>%%COMMENT%%
+>期望奖励
+>%%TAGS%%
+>
+^gdz7h9l919
+
+
+>%%
+>```annotation-json
+>{"created":"2022-12-12T16:05:00.485Z","updated":"2022-12-12T16:05:00.485Z","document":{"title":"RLbook2020.pdf","link":[{"href":"urn:x-pdf:8084268f8a7b70a39b0c37683e337727"},{"href":"vault:/pdfs/RL/RLbook2020.pdf"}],"documentFingerprint":"8084268f8a7b70a39b0c37683e337727"},"uri":"vault:/pdfs/RL/RLbook2020.pdf","target":[{"source":"vault:/pdfs/RL/RLbook2020.pdf","selector":[{"type":"TextPositionSelector","start":62698,"end":62760},{"type":"TextQuoteSelector","exact":"the only purpose of estimating values is toachieve more reward","prefix":"s there could be no values, and ","suffix":". Nevertheless, it is values wit"}]}]}
+>```
+>%%
+>*%%PREFIX%%s there could be no values, and%%HIGHLIGHT%% ==the only purpose of estimating values is toachieve more reward== %%POSTFIX%%. Nevertheless, it is values wit*
+>%%LINK%%[[#^1ej7beapexh|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^1ej7beapexh
