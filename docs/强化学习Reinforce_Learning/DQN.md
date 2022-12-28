@@ -41,3 +41,18 @@
 - 具体实践：
 	- 将训练网络作为Double DQN算法中的第一套神经网络来选取动作
 	- 将目标网络作为第二套神经网络来计算$Q$值$$r+\gamma Q_{\omega^{-}}\left(s^{\prime}, \underset{a^{\prime}}{\arg \max } Q_{\omega}\left(s^{\prime}, a^{\prime}\right)\right)$$
+
+## Dueling DQN
+> 在强化学习中，我们将动作价值函数$Q$减去状态价值函数$V$的结果定义为优势函数A，即$A(s,a)=Q(s,a)-V(s)$
+> 在同一个状态下，所有动作的优势值之和为0
+- 在Dueling DQN中，Q网络被建模为$$Q_{\eta, \alpha, \beta}(s, a)=V_{\eta, \alpha}(s)+A_{\eta, \beta}(s, a)$$
+	- $V_{\eta, \alpha}(s)$为状态价值函数，$A_{\eta, \beta}(s, a)$为该状态下采取不同动作的优势函数，表示采取动作的差异性
+	- $\eta$是状态价值函数和优势函数共享的神经网络参数，一般用在神经网络中，用来提取特征的前几层
+	- $\alpha\quad\beta$分别为状态价值函数和优势函数的参数
+- 在这样的模型下，我们不再让神经网络直接输出Q值，而是训练神经who最后几层的两个分支
+	- 分别输出状态价值函数和优势函数，再求得Q值![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221227153232.png)
+
+- 分别建模的好处：
+	- 某些情境下智能体只会关注状态的价值，而不关心不同动作导致的差异，此时将二者分开建模能够使智能体更好的处理动作关联较小的状态
+		- 在前方没有车的情况下，采取的动作之间并没有太大的差异![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221227153128.png)
+		- 当前方有车时候，智能体才关注不同动作优势值之间的差异![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221227153212.png)
