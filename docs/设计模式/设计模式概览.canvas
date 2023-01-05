@@ -1,0 +1,21 @@
+{
+	"nodes":[
+		{"id":"2f68b58affbf6c31","x":-310,"y":-58,"width":167,"height":60,"color":"#f2dc86","type":"text","text":"# 设计模式"},
+		{"id":"fdb1641800a8b64b","x":10,"y":-431,"width":292,"height":67,"color":"#5977a7","type":"text","text":"## [[七大面向对象编程原则]]\n"},
+		{"id":"d130e9d66dbcb018","x":435,"y":-633,"width":399,"height":152,"color":"#f8aabc","type":"text","text":"### 设计目标\n1. [[七大面向对象编程原则#开闭原则(Open-Closed Principle)|开闭原则(Open-Closed Principle)]]\n2. [[七大面向对象编程原则#接口隔离原则(Interface Segregation Principle)|接口隔离原则(Interface Segregation Principle)]]\n3. [[七大面向对象编程原则#迪米特法则(Law of Demeter)|迪米特法则(Law of Demeter)]]"},
+		{"id":"f967386b2f767c69","x":435,"y":-397,"width":399,"height":216,"color":"#f8aabc","type":"text","text":"### 设计方法\n1. [[七大面向对象编程原则#单一职责(Single Responsiblity Principle)|单一职责(Single Responsiblity Principle)]]\n2. [[七大面向对象编程原则#迪米特法则(Law of Demeter)|迪米特法则(Law of Demeter)]]\n3. [[七大面向对象编程原则#依赖倒置原则(Dependency Inversion Principle)|依赖倒置原则(Dependency Inversion Principle)]]\n4. [[七大面向对象编程原则#合成复用原则(Composite Reuse Principle)|合成复用原则(Composite Reuse Principle)]]\n5. [[七大面向对象编程原则#里式替换原则(Liskov Substitution Principle)|里式替换原则(Liskov Substitution Principle)]]"},
+		{"id":"68e3f48359c77d32","x":435,"y":-139,"width":281,"height":192,"color":"#f3b7c5","type":"text","text":"### 创建型设计模式\n1. 单例模式(Singleton Pattern)\n2. 原型模式(Prototype Pattern)\n3. 建造者模式(Builder Pattern)\n4. 工厂模式(Factory Pattern)"},
+		{"id":"16da5df348105eb2","x":435,"y":73,"width":333,"height":293,"color":"#f6b6c5","type":"text","text":"### 结构型设计模式\n1. 代理模式(Proxy Pattern)\n2. 桥接模式(Bridge Pattern)\n3. 装饰器模式(Decorator Pattern)\n4. 适配器模式(Adapter Pattern)\n5. 门面模式(Facade Pattern)\n6. 组合模式(Composite Pattern)\n7. 享元模式(Flyweight Pattern)\n8. 过滤器模式(Filter、Criteria Pattern)"},
+		{"id":"bf2df34d69818a6a","x":435,"y":393,"width":378,"height":402,"color":"#f5b8c7","type":"text","text":"### 行为型设计模式\n1. 观察者模式(Observer Pattern)\n2. 模板模式(Template Pattern)\n3. 策略模式(Strategy Pattern)\n4. 职责链模式(Chain of Responsibility Pattern)\n5. 迭代器模式(Iterator Pattern)\n6. 状态模式(State Pattern)\n7. 访问者模式(Visitor Pattern)\n8. 备忘录模式(Memento Pattern)\n9. 命令模式(Command Pattern)\n10. 解释器模式(Interpreter Pattern)\n11. 中介模式(Mediator Pattern)\n12. 空对象模式(Null Object Pattern)"},
+		{"id":"bfd79f0b0638220d","x":56,"y":160,"width":201,"height":60,"color":"#5f7eaf","type":"text","text":"## 三类设计模式"}
+	],
+	"edges":[
+		{"id":"4606459a6204c73b","fromNode":"2f68b58affbf6c31","fromSide":"right","toNode":"fdb1641800a8b64b","toSide":"left"},
+		{"id":"0a7612ff5540719d","fromNode":"fdb1641800a8b64b","fromSide":"right","toNode":"d130e9d66dbcb018","toSide":"left"},
+		{"id":"da2d1889bb0fd1ff","fromNode":"fdb1641800a8b64b","fromSide":"right","toNode":"f967386b2f767c69","toSide":"left"},
+		{"id":"6a5d47fadc00056a","fromNode":"2f68b58affbf6c31","fromSide":"right","toNode":"bfd79f0b0638220d","toSide":"left"},
+		{"id":"c56a5bd53492837a","fromNode":"bfd79f0b0638220d","fromSide":"right","toNode":"68e3f48359c77d32","toSide":"left"},
+		{"id":"12c87489ab4776e2","fromNode":"bfd79f0b0638220d","fromSide":"right","toNode":"16da5df348105eb2","toSide":"left"},
+		{"id":"94a895f852e9ee13","fromNode":"bfd79f0b0638220d","fromSide":"right","toNode":"bf2df34d69818a6a","toSide":"left"}
+	]
+}

@@ -214,4 +214,40 @@
 ```xml
 <context:component-scan base-package="com.cjd.spring"></context:component-scan>
 ```
-- 指定要排除的组件：
+- 指定要排除的组件`context:exclude-filter`：
+	- `type`：设置排除或包括的依据
+	- `type="annotation"`：排除指定的注解，需要设置注解的全类名
+	- `type="assignable"`：排除指定类型，需要设置类型的全类名
+```xml
+<context:component-scan base-package="com.cjd.spring">  
+    <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>  
+    <context:exclude-filter type="assignable" expression="com.cjd.spring.controller.UserController"/>  
+</context:component-scan>
+```
+- 仅扫描指定组件`context:include-filter`：
+	- 注意：需要设置`use-default-filters="false"`来关闭默认扫描规则
+- 组件对应的`bean`的`id`：
+	- 默认情况：类名首字母小写
+	- 可以通过标识组件的注解`value`属性设置自定义的`bean`的`id`：`@blabla("beanid")`
+
+### 自动装配
+- `@Autowire`注解：直接标记该注解即可完成自动装配，不需要提供`setXXX()`方法
+	- `@Autowire`注解可以标记在**构造器和`set`方法**上
+- `@Autowire`注解的原理
+	- 默认通过`byType`的方式，在IOC容器中通过类型匹配某个bean为属性赋值
+	- 如果有多个类型匹配的bean，则通过`byName`方式进行
+	- 如果以上两个方法都失败，**错误**
+	- 此时可以在要赋值的属性上添加`@Qualifier`注解
+		- 通过该注解的`value`属性值，指定某个bean的id，将这个bean为属性
+- `@Autowire`的工作流程：![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221231115434.png)
+	- 首先根据所需要的组件类型到IOC容器中查找
+		- 能够找到唯一的bean：直接执行装配
+		- 如果完全找不到匹配这个类型的bean：装配失败
+		- 和所需类型匹配的bean不止一个
+			- 没有`@Qualifier`注解：根据`@Autowired`标记未知成员变量的变量名作为bean的id进行匹配
+				- 能够找到：执行装配
+				- 找不到：装配失败
+			- 使用`@Qualifier`注解：根据`@Qualifier`注解中指定的名称作为bean的id进行匹配
+				- 能够找到：执行装配
+				- 找不到：装配失败
+- 可以通过设置`require`属性表示是否必须
