@@ -2,6 +2,20 @@
 ## 博客
 - [菜鸟教程 - 学的不仅是技术，更是梦想！](https://www.runoob.com/)
 - [Road 2 Coding](https://www.r2coding.com/#/README)
+---
+## 计算机组成原理
+### 书籍
+- 计算机组成原理——高教出版社
+- [计算机组成与设计：硬件软件接口 RISC-V版 (戴维 A.帕特森_ 约翰 L.亨尼斯)](http://120.55.96.129:8888/%e5%ad%a6%e4%b9%a0%e8%b5%84%e6%96%99/%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%bb%84%e6%88%90%e5%8e%9f%e7%90%86/%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%bb%84%e6%88%90%e4%b8%8e%e8%ae%be%e8%ae%a1%ef%bc%9a%e7%a1%ac%e4%bb%b6%e8%bd%af%e4%bb%b6%e6%8e%a5%e5%8f%a3%20RISC-V%e7%89%88%20(%e6%88%b4%e7%bb%b4%20A.%e5%b8%95%e7%89%b9%e6%a3%ae_%20%e7%ba%a6%e7%bf%b0%20L.%e4%ba%a8%e5%b0%bc%e6%96%af)%20(z-lib.org).pdf)
+- [深入理解计算机系统.pdf](http://120.55.96.129:8888/%e5%ad%a6%e4%b9%a0%e8%b5%84%e6%96%99/%e7%bc%96%e7%a8%8b/%e6%b7%b1%e5%85%a5%e7%90%86%e8%a7%a3%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%b3%bb%e7%bb%9f.pdf)
+	- [[CSAPP概览.canvas|CSAPP概览]]
+### 网课
+- 计算机系统基础——南大
+	- [计算机系统基础(一)：程序的表示、转换与链接_南京大学_中国大学MOOC(慕课)](https://www.icourse163.org/course/NJU-1001625001)
+	- [计算机系统基础（二）：程序的执行和存储访问_南京大学_中国大学MOOC(慕课)](https://www.icourse163.org/course/NJU-1001964032?from=searchPage&outVendor=zw_mooc_pcssjg_)
+	- [计算机系统基础(三)：异常、中断和输入/输出_南京大学_中国大学MOOC(慕课)](https://www.icourse163.org/course/NJU-1002532004?from=searchPage&outVendor=zw_mooc_pcssjg_)
+	- [计算机系统基础（四）：编程与调试实践_南京大学_中国大学MOOC(慕课)](https://www.icourse163.org/course/NJU-1449521162?from=searchPage&outVendor=zw_mooc_pcssjg_)
+
 
 ## [Java](./Java/index.md)
 
@@ -25,18 +39,6 @@
 - [Java教程——廖雪峰](https://www.liaoxuefeng.com/wiki/1252599548343744)
 
 - [Java 全栈知识体系](https://pdai.tech/)
-
----
-
-## Python
-
-### 书籍
-
-### 网课
-
-### 博客
-
-[Python教程 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/1016959663602400#0)
 
 ---
 
@@ -102,6 +104,18 @@
 - [【MIT6.006最新】算法导论(中英|2020春) Introduction to Algorithms 麻省理工_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1fu41127MN?p=9&share_medium=android&share_plat=android&share_session_id=fede1fc7-4a1b-48fd-9e90-91c2170a1d77&share_source=COPY&share_tag=s_i&timestamp=1652158205&unique_k=GnUmWNh&share_times=1)
 ### 其他
 - [Data Structure Visualization|数据结构可视化](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
+
+---
+
+## Python
+
+### 书籍
+
+### 网课
+
+### 博客
+
+[Python教程 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/1016959663602400#0)
 
 ---
 

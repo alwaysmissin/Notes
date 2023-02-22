@@ -12,7 +12,7 @@
 			- **植物**成熟可能会延迟或者加速
 			- 野生**动物**的迁徙模式收到影响
 	- 正面：
-	- 取决于当地的**发展水平、人口、生物多样性、地理和气候等等**
+	- 取决于当地的**发展水平（GDP）、人口、生物多样性、地理和气候等等**
 - 治理：
 	- 干预，减轻光污染的负面影响
 - 人造光的影响：
@@ -51,3 +51,10 @@
 [光害 - 维基百科，自由的百科全书](https://zh.wikipedia.org/zh-cn/%E5%85%89%E5%AE%B3)
 [Mapping CIty Light With Nighttime Data from the DMSP Operational Linescan System.pdf](http://120.55.96.129:8888/%e5%ad%a6%e4%b9%a0%e8%b5%84%e6%96%99/%e7%be%8e%e8%b5%9b/Mapping%20CIty%20Light%20With%20Nighttime%20Data%20from%20the%20DMSP%20Operational%20Linescan%20System.pdf)
 [Poverty_evaluation_using_NPP_VIIRS_night.pdf](http://120.55.96.129:8888/%e5%ad%a6%e4%b9%a0%e8%b5%84%e6%96%99/%e7%be%8e%e8%b5%9b/Poverty_evaluation_using_NPP_VIIRS_night.pdf)
+
+
+## blbla
+- 考虑因素：
+	- GDP
+	- 人口密度
+	- 
