@@ -1,15 +1,15 @@
 {
 	"nodes":[
-		{"id":"629a307288f32af9","x":-218,"y":-54,"width":136,"height":73,"type":"text","text":"# CSAPP"},
-		{"id":"bdcc73eee80c5ff1","x":-3,"y":-252,"width":332,"height":72,"type":"text","text":"## 第一部分 程序结构和执行\n\n\n"},
-		{"id":"e6cd552badc9aa43","x":472,"y":-603,"width":312,"height":116,"type":"text","text":"### 信息的表示和处理\n- [[浮点数]]"},
-		{"id":"35f8dbf8e476f17b","x":472,"y":-437,"width":312,"height":185,"type":"text","text":"### 程序的机器级表示\n- [[数组分配和访问]]\n- [[内存越界引用和缓冲区溢出]]\n- [[过程]]"},
-		{"id":"af34d846782be006","x":470,"y":-210,"width":317,"height":157,"type":"text","text":"### 处理器体系结构\n- [[Y86-64的顺序实现]]\n- [[流水线的通用原理]]\n- [[Y86-64的流水线实现]]"},
-		{"id":"666c64e5f9527ed4","x":472,"y":-10,"width":312,"height":60,"type":"text","text":"### 优化程序性能"},
-		{"id":"81bba632aa7e3ea2","x":472,"y":89,"width":312,"height":60,"type":"text","text":"### 存储器层次结构"},
-		{"id":"abb8d32baacc7778","x":889,"y":48,"width":388,"height":142,"type":"text","text":"#### 相关内容推荐\n- 经典论文：[What Every Programmer Should Know About Memory —— Ulrich Drepper](https://www.akkadia.org/drepper/cpumemory.pdf)"},
-		{"id":"44994e7a7a67bc66","x":889,"y":-198,"width":388,"height":133,"type":"text","text":"#### 相关内容推荐\n- 《计算机组成与设计：软件/硬件接口》\n- 《编码》"},
-		{"id":"59a0fe2371d87879","x":-322,"y":-487,"width":345,"height":196,"type":"text","text":"## 相关推荐\n- [BILIBILI - CSAPP解读](https://space.bilibili.com/354767108/channel/collectiondetail?sid=373847)\n- [BILIBILI - CSAPP重点导读](https://www.bilibili.com/video/BV1RK4y1R7Kf/?spm_id_from=333.337.search-card.all.click)\n\t- [GitBook - CSAPP重点解读](https://fengmuzi2003.gitbook.io/csapp3e/)\n- [BILIBILI - CMU - CSAPP - 课程视频](https://www.bilibili.com/video/BV1iW411d7hd/?spm_id_from=333.337.search-card.all.click&vd_source=104ff9cc1b7010d178a8d3c0d37be81e)"}
+		{"type":"text","text":"# CSAPP","id":"629a307288f32af9","x":-260,"y":-54,"width":178,"height":74},
+		{"type":"text","text":"## 第一部分 程序结构和执行\n\n\n","id":"bdcc73eee80c5ff1","x":-3,"y":-252,"width":332,"height":72},
+		{"type":"text","text":"### 信息的表示和处理\n- [[浮点数]]","id":"e6cd552badc9aa43","x":472,"y":-603,"width":312,"height":116},
+		{"type":"text","text":"### 程序的机器级表示\n- [[数组分配和访问]]\n- [[内存越界引用和缓冲区溢出]]\n- [[过程]]","id":"35f8dbf8e476f17b","x":472,"y":-437,"width":312,"height":185},
+		{"type":"text","text":"### 处理器体系结构\n- [[Y86-64的顺序实现]]\n- [[流水线的通用原理]]\n- [[Y86-64的流水线实现]]","id":"af34d846782be006","x":470,"y":-210,"width":317,"height":157},
+		{"type":"text","text":"### 优化程序性能","id":"666c64e5f9527ed4","x":472,"y":-10,"width":312,"height":60},
+		{"type":"text","text":"### 存储器层次结构","id":"81bba632aa7e3ea2","x":472,"y":89,"width":312,"height":60},
+		{"type":"text","text":"#### 相关内容推荐\n- 经典论文：[What Every Programmer Should Know About Memory —— Ulrich Drepper](https://www.akkadia.org/drepper/cpumemory.pdf)\n\t- 解读：[[原创] 每个程序员都应该知道的内存知识 (带你走读Ulrich Drepper的经典论文)\\_哔哩哔哩\\_bilibili](https://www.bilibili.com/video/BV1Xy4y1b7SK/?spm_id_from=333.1007.top_right_bar_window_default_collection.content.click&vd_source=104ff9cc1b7010d178a8d3c0d37be81e)","id":"abb8d32baacc7778","x":889,"y":48,"width":388,"height":232},
+		{"type":"text","text":"## 相关推荐\n- [BILIBILI - CSAPP解读](https://space.bilibili.com/354767108/channel/collectiondetail?sid=373847)\n- [BILIBILI - CSAPP重点导读](https://www.bilibili.com/video/BV1RK4y1R7Kf/?spm_id_from=333.337.search-card.all.click)\n\t- [GitBook - CSAPP重点解读](https://fengmuzi2003.gitbook.io/csapp3e/)\n- [BILIBILI - CMU - CSAPP - 课程视频](https://www.bilibili.com/video/BV1iW411d7hd/?spm_id_from=333.337.search-card.all.click&vd_source=104ff9cc1b7010d178a8d3c0d37be81e)","id":"59a0fe2371d87879","x":-322,"y":-487,"width":345,"height":196},
+		{"type":"text","text":"#### 相关内容推荐\n- 《计算机组成与设计：软件/硬件接口》\n- 《编码》","id":"44994e7a7a67bc66","x":889,"y":-225,"width":388,"height":188}
 	],
 	"edges":[
 		{"id":"1bdb5be041716414","fromNode":"629a307288f32af9","fromSide":"right","toNode":"bdcc73eee80c5ff1","toSide":"left"},
