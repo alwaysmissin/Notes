@@ -1,5 +1,5 @@
 # Dockerfile
-- Dockerfile是用来构建Docker镜像的文本文件
+- Dockerfile是用来构建Docker**镜像**的文本文件
 	- 由一条条构建镜像所需的指令和参数构成的脚本
 ![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221113154129.png)
 - 构建三步骤：
@@ -80,6 +80,11 @@ ENV <key1>=<value1> <key2>=<value2>...
 	- 避免重要的数据，因容器重启而丢失
 	- 避免容器不断变大
 - 在启动容器`docker run`的时候，可以通过`-v`参数修改挂载点
+- 用途：
+	- 数据持久化
+	- 数据共享
+	- 数据备份和恢复
+	- 数据库和文件存储
 ### CMD
 - 指定容器启动后要干的事情
 - 格式：

@@ -2,7 +2,7 @@
 	"nodes":[
 		{"type":"text","text":"# CSAPP","id":"629a307288f32af9","x":-260,"y":-54,"width":178,"height":74},
 		{"type":"text","text":"## 第一部分 程序结构和执行\n\n\n","id":"bdcc73eee80c5ff1","x":-3,"y":-252,"width":332,"height":72},
-		{"type":"text","text":"### 信息的表示和处理\n- [[浮点数]]","id":"e6cd552badc9aa43","x":472,"y":-603,"width":312,"height":116},
+		{"type":"text","text":"### 信息的表示和处理\n- [[Reading/CSAPP/信息的表示和处理/浮点数]]","id":"e6cd552badc9aa43","x":472,"y":-603,"width":312,"height":116},
 		{"type":"text","text":"### 程序的机器级表示\n- [[数组分配和访问]]\n- [[内存越界引用和缓冲区溢出]]\n- [[过程]]","id":"35f8dbf8e476f17b","x":472,"y":-437,"width":312,"height":185},
 		{"type":"text","text":"### 处理器体系结构\n- [[Y86-64的顺序实现]]\n- [[流水线的通用原理]]\n- [[Y86-64的流水线实现]]","id":"af34d846782be006","x":470,"y":-210,"width":317,"height":157},
 		{"type":"text","text":"### 优化程序性能","id":"666c64e5f9527ed4","x":472,"y":-10,"width":312,"height":60},
