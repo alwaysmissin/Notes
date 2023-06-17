@@ -8,3 +8,5 @@
 > [!hint] 
 > 因此，在分析栈中，我们需要使用一个附加的域来存放综合属性值
 > 假设语义规则$A.a := f(X.x, Y.y, Z.z)$是对应于产生式$A\rightarrow XYZ$：![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230604155638.png)
+
+![S-属性文法的自下而上计算.gif](https://raw.githubusercontent.com/alwaysmissin/picgo/main/S-%E5%B1%9E%E6%80%A7%E6%96%87%E6%B3%95%E7%9A%84%E8%87%AA%E4%B8%8B%E8%80%8C%E4%B8%8A%E8%AE%A1%E7%AE%97.gif)

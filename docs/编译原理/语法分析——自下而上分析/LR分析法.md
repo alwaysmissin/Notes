@@ -1,5 +1,5 @@
 # LR分析法
-- LR
+- #编译原理重点 LR
 	- L：表示从左向右扫描输入串
 	- R：构造最右推导的逆过程
 - 大多数使用上下文无关文法描述的高级语言的语法成分都可以使用LR分析器来识别
@@ -7,14 +7,15 @@
 - 关键问题：如何确定可归约的串？
 	- 解决方案：通过**求句柄，逐步归约**
 	- 如何求得句柄？
-		- 在算符优先分析中，是通过算符的优先关系求得；在LR方法中，是通过活前缀求得
+		- 在算符优先分析中，是通过算符的优先关系求得
+		- 在LR方法中，是通过活前缀求得
 
 ## LR分析器
 - **核心问题：寻找句柄**
-- 基本思想：在规范归约的过程中，**一方面记住已经移进和归约出的整个符号串**（历史），**另一方面有根据所用产生式来推测未来可能碰到的输入符号**（未来）
+- #编译原理重点 基本思想：在规范归约的过程中，**一方面记住已经移进和归约出的整个符号串**（历史），**另一方面有根据所用产生式来推测未来可能碰到的输入符号**（未来）
 	- 现实：当前的输入符号
 	- 当某一符号串类似于句柄出现在栈顶时，需要根据历史、展望和现实来决定栈顶的符号串是否构成一个句柄，是否需要归约
-- LR分析器的结构：![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230505224543.png)
+- #编译原理重点 LR分析器的结构：![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230505224543.png)
 	- 栈：用来存放状态
 		- 符号栈
 		- 状态栈
@@ -24,7 +25,7 @@
 			- `GOTO[s,X]`表：当状态$s$面临文法符号$X$时，下一个状态是什么
 > 利用栈与分析表，我们就可以根据栈顶状态和输入符号，唯一的确定下一个动作
 
-- `ACTION[s,a]`中的四种动作：
+- #编译原理重点 `ACTION[s,a]`中的四种动作：
 	- 移进(`s`)：把`(s,a)`的下一状态$s^\prime$和输入符号推进栈，下一个输入符号变成现输入符号
 	- 归约(`r`)：使用产生式$A\rightarrow \beta$进行归约，状态$s_{m-r}$成为新的栈顶，然后把$(s_{m-r},A)$的下一个状态$s^\prime=GOTO[s_{m-r}, A]$和文法符号$A$推进栈
 	- 接收(`acc`)：宣布结束
@@ -44,12 +45,14 @@
 		- $\alpha_0 = 开始符号$
 		- $\alpha_{i-1}$是$\alpha_i$经过把句柄替换为相应产生式左部符号而得
 - 在规范归约的过程中：
-	- 栈内的符号串和扫描剩下的输入符号串构成了一个规范句型
-	- 栈内如果出现句柄，则该句柄一定在栈顶![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230507195911.png)
+	- 栈内的符号串和扫描剩下的输入符号串构成了一个**规范句型**
+	- 栈内如果出现**句柄**，则该句柄一定在栈顶![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230507195911.png)
+- #编译原理重点 对于LR(0)分析法，语法分析栈中存放的状态是识别规范句型**活前缀**的DFA状态
+
 ### 活前缀
 - 字的前缀：指字的任意首部
 	- abc的前缀：$\varepsilon$、a、ab、abc
-- 活前缀：指规范句型的一个前缀
+- #编译原理重点 活前缀：**指规范句型的一个前缀**
 	- 这样的前缀**不包含句柄之后的任何符号**
 	- 对于规范句型$\alpha \beta \delta$，其中$\beta$为句柄，则在$\beta$之前（包括$\beta$）都可以称为$\alpha\beta\delta$的活前缀，$\delta$为终结符串
 - 对于一个文法G，可以构造一个DFA，它能够识别G的所有活前缀
@@ -60,7 +63,7 @@
 		- 活前缀**不含有句柄的任何**符号：此时**期待从输入串中看到该句柄对应的产生式$A\rightarrow\alpha$的右部所推出的符号串**
 - 活前缀的识别示例：对于文法![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230507200711.png)，识别一个输入串abbcde：
 	- 最右推导顺序：$S\rightarrow aAcBe[1] \rightarrow aAcd[4]e[1] \rightarrow aAb[3]cd[4]e[1] \rightarrow ab[2]b[3]cd[4]e[1]$
-	- 规范句型及其活前缀：
+	- #编译原理重点 规范句型及其活前缀：
 		- $abbcde$：$\varepsilon, a, ab$
 		- $aAbcde$：$\varepsilon, a, aA, aAb$
 		- $aAcde$：$\varepsilon, a, aA, aAc, aAcd$
@@ -155,20 +158,43 @@
 
 ## SLR分析表的构造
 > LR((0)文法太简单，缺少了实用价值
-- SLR方法以LR(0)项和LR(0)自动机为基础
+- SLR方法**以LR(0)项和LR(0)自动机为基础**
 	- 即我们根据增广文法$G^\prime$构造出$G^\prime$的规范项集族C以及GOTO函数
+	- 需要每个非终结符的$FOLLOW$集合
+> [!attention] SLR分析表
+> 这里只有ACTION和GOTO表的构造与LR(0)不同，项目规范集族的构造是一致的
 - 算法：构造一个SLR语法分析表
 	- 输入：一个增广文法$G^\prime$
-	- 输出：$G^\prime$的SLR语法分析表函数ACTION和GOTO
+	- 输出：$G^\prime$的SLR语法分析表函数$ACTION$和$GOTO$
 	- 方法：
 		1. 构造$G^\prime$的规范$LR(0)$项集族$C=\{I_0, I_1, I_2, \cdots, I_n\}$
 		2. 根据$I_i$构造得到状态$i$：
 			1. 如果$[A\rightarrow\alpha\cdot a\beta]$在$I_i$中并且$GO(I_i, a) = I_j$，$a$为一个终结符号，则令$ACTION[i,a]=s_j$
-			2. 如果$A\rightarrow\alpha\cdot\in I_k$，那么对于$FOLLOW(A)$中的所有$a$，则令$ACTION[i, a]=r_j$
+			2. 如果$A\rightarrow\alpha\cdot\in I_k$，那么**对于$FOLLOW(A)$中的所有$a$**，则令$ACTION[i, a]=r_j$
+				- 这里是与LR(0)不同的地方，在LR(0)中，是对任何终结符a，令$ACTION[i, a]=r_j$
 			3. 如果$S^\prime=S\cdot\in I_i$，则令$ACTION[i,\#]=acc$
-			- 如果根据上面的规则商城了任何冲突动作，则该文法不是SLR(1)的。此时，无法生成一个语法分析器
+			- **如果根据上面的规则生成了任何冲突动作，则该文法不是SLR(1)的**。此时，无法生成一个语法分析器
 		3. 如果$GO(I_i, A)=I_j$，则$GOTO[i, A]=j$
 - 对于文法：![image.png](https://s2.loli.net/2023/05/09/6nNWdrabexqs3oI.png)
 	- LR(0)项目集规范族为：![image.png](https://s2.loli.net/2023/05/09/pTHn1L3WcfJNKwP.png)
 		- 其中$I_1, I_2, I_9$都含有“移进——归约”冲突
 	- 最终分析表：![image.png](https://s2.loli.net/2023/05/09/89Tj1teOud4DYc2.png)
+- #编译原理重点 条件：
+	- 假定LR(0)规范族的一个项目集$I$中含有
+		- $m$个移进项目：$A_1\rightarrow \alpha \cdot a_1\beta_1,A+2\rightarrow \alpha \cdot a_2 \beta_2,\cdots,A_m\rightarrow\alpha\cdot a_m \beta_m$
+		- $n$个归约项目：$B_1\rightarrow\alpha\cdot, B_2\rightarrow\alpha\cdot,\cdots,B_n\rightarrow\alpha\cdot$
+	- 那么，如果$\{a_1,a_2,\cdots,c_m\}$与$FOLLOW(B_1)$、$FOLLOW(B_2)$……$FOLLOW(B_n)$凉凉不相交，则隐含在$I$中的动作冲突可以通过检查现行输入符号来解决
+	- 则该文法为SLR(1)文法
+
+## 规范LR分析表的构造
+- 项目的一般形式：$[A\rightarrow \alpha \cdot \beta, a_1a_2\cdots a_n]$
+	- 向前搜索符串：$a_1a_2\cdots a_n$
+		- 向前搜索符串仅对于归约项目$[A\rightarrow \alpha \cdots, a_1a_2\cdots a_n]$有意义
+			- 意味着：当它所属的状态呈现在栈顶且后续的k个输入符号为$a_1a_2\cdots a_n$时，才执行归约动作
+		- 对于其他的移进或待归约项目，无用
+ - 项目集$I$的闭包$CLOSURE(I)$的构造方法：
+	 - $I$的任何项目都属于$CLOSURE(I)$
+	 - 若项目$[A\rightarrow \alpha \cdot B\beta,a]$属于$CLOSURE(I)$，并且$B\in \xi$是一个产生式，那么，对于$b\in FIRST(\beta a)$，如果$[B\rightarrow \cdots \xi, b]$原来不在$CLOSURE(I)$中，则将其添加进去
+	 - 重复执行上一个步骤，直到$CLOSURE(I)$不再增大
+ - #编译原理重点 LR分析的包含关系：$LR(0)\subset SLR(1)\subset LR(1)\subset 无二义文法$
+![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230614174745.png)
