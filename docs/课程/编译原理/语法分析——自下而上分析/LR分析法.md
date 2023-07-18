@@ -183,7 +183,7 @@
 	- 假定LR(0)规范族的一个项目集$I$中含有
 		- $m$个移进项目：$A_1\rightarrow \alpha \cdot a_1\beta_1,A+2\rightarrow \alpha \cdot a_2 \beta_2,\cdots,A_m\rightarrow\alpha\cdot a_m \beta_m$
 		- $n$个归约项目：$B_1\rightarrow\alpha\cdot, B_2\rightarrow\alpha\cdot,\cdots,B_n\rightarrow\alpha\cdot$
-	- 那么，如果$\{a_1,a_2,\cdots,c_m\}$与$FOLLOW(B_1)$、$FOLLOW(B_2)$……$FOLLOW(B_n)$凉凉不相交，则隐含在$I$中的动作冲突可以通过检查现行输入符号来解决
+	- 那么，如果$\{a_1,a_2,\cdots,c_m\}$与$FOLLOW(B_1)$、$FOLLOW(B_2)$……$FOLLOW(B_n)$两两不相交，则隐含在$I$中的动作冲突可以通过检查现行输入符号来解决
 	- 则该文法为SLR(1)文法
 
 ## 规范LR分析表的构造

@@ -32,7 +32,7 @@
 		- 若**序号小于左部**的非终结符，则将序号小的非终结符用其右部的串进行替换，然后消除新的直接左递归
 		- 这样，每次替换的非终结符均为前面已经处理过的非终结符
 
-## 消除回溯，提取左因子
+## 消除回溯，提取左公因子
 - 产生回溯的原因：推导时，若产生式存在多个候选式，选择哪个进行推导存在不确定性
 - #编译原理重点 提取左公因子：
 ![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230614234746.png)
@@ -50,7 +50,7 @@
 - 算法：
 	- 如果$X$是一个终结符号，那么$FIRST(X)=X$
 	- 如果$X$是一个非终结符号，且$X\rightarrow Y_1Y_2\cdots Y_k$
-		- 如果对于某个$i$，$\alpha$在$FIRST(Y_i)$中，且$\varepsilon$在所有的$FIRST(Y_1)$、$FIRST(Y_2)$、$cdots$、$FIRST(Y_{i -1 })$中，则将a添加到$FIRST(X)$中
+		- 如果对于某个$i$，$\alpha$在$FIRST(Y_i)$中，且$\varepsilon$在所有的$FIRST(Y_1)$、$FIRST(Y_2)$、$\cdots$、$FIRST(Y_{i -1 })$中，则将a添加到$FIRST(X)$中
 	- 如果$X\rightarrow\varepsilon$是一个产生式，则将$\varepsilon$添加到$FIRST(X)$中
 - 主要看产生式左边
 - 自下而上求
