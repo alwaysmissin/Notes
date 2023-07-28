@@ -99,3 +99,14 @@ all.c :
 clean:
 	rm -f *.c *.o*
 ```
+
+> [!bug] 痛苦的调试经历
+> **在链接测试程序时，确保`liblcthw.a`静态库的链接命令在测试程序源文件`tests/list_tests.c`的后面**，例如：`cc -g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG tests/list_tests.c build/liblcthw.a -o tests/list_tests`
+> 对Makefile的修改：
+> ```
+> - tests: CFLAGS += $(TARGET)
+> - tests: $(TESTS)
+> + tests: 
+> + $(CC) $(CFLAGS) $(TEST_SRC) $(TARGET) -o $(TESTS)
+> ```
+> ——Learn C The Hard Hard Way ： ex32
