@@ -80,3 +80,157 @@ include $(NVBOARD_HOME)/scripts/nvboard.mk
 ## 特技
 
 1. 可以用 `include/configs.h`选择贴图，让自己的虚拟FPGA开发板更有特色，贴图放在 `pic`目录下；
+
+## 引脚说明
+```
+input BTNC
+input BTNU
+input BTND
+input BTNL
+input BTNR
+
+input SW0
+input SW1
+input SW2
+input SW3
+input SW4
+input SW5
+input SW6
+input SW7
+input SW8
+input SW9
+input SW10
+input SW11
+input SW12
+input SW13
+input SW14
+input SW15
+
+output LD0
+output LD1
+output LD2
+output LD3
+output LD4
+output LD5
+output LD6
+output LD7
+output LD8
+output LD9
+output LD10
+output LD11
+output LD12
+output LD13
+output LD14
+output LD15
+
+output R16
+output G16
+output B16
+output R17
+output G17
+output B17
+
+output SEG0A
+output SEG0B
+output SEG0C
+output SEG0D
+output SEG0E
+output SEG0F
+output SEG0G
+output DEC0P
+
+output SEG1A
+output SEG1B
+output SEG1C
+output SEG1D
+output SEG1E
+output SEG1F
+output SEG1G
+output DEC1P
+
+output SEG2A
+output SEG2B
+output SEG2C
+output SEG2D
+output SEG2E
+output SEG2F
+output SEG2G
+output DEC2P
+
+output SEG3A
+output SEG3B
+output SEG3C
+output SEG3D
+output SEG3E
+output SEG3F
+output SEG3G
+output DEC3P
+
+output SEG4A
+output SEG4B
+output SEG4C
+output SEG4D
+output SEG4E
+output SEG4F
+output SEG4G
+output DEC4P
+
+output SEG5A
+output SEG5B
+output SEG5C
+output SEG5D
+output SEG5E
+output SEG5F
+output SEG5G
+output DEC5P
+
+output SEG6A
+output SEG6B
+output SEG6C
+output SEG6D
+output SEG6E
+output SEG6F
+output SEG6G
+output DEC6P
+
+output SEG7A
+output SEG7B
+output SEG7C
+output SEG7D
+output SEG7E
+output SEG7F
+output SEG7G
+output DEC7P
+
+rt_output VGA_VSYNC
+rt_output VGA_HSYNC
+rt_output VGA_BLANK_N
+rt_output VGA_R0
+rt_output VGA_R1
+rt_output VGA_R2
+rt_output VGA_R3
+rt_output VGA_R4
+rt_output VGA_R5
+rt_output VGA_R6
+rt_output VGA_R7
+rt_output VGA_G0
+rt_output VGA_G1
+rt_output VGA_G2
+rt_output VGA_G3
+rt_output VGA_G4
+rt_output VGA_G5
+rt_output VGA_G6
+rt_output VGA_G7
+rt_output VGA_B0
+rt_output VGA_B1
+rt_output VGA_B2
+rt_output VGA_B3
+rt_output VGA_B4
+rt_output VGA_B5
+rt_output VGA_B6
+rt_output VGA_B7
+
+rt_input PS2_CLK
+rt_input PS2_DAT
+
+```
