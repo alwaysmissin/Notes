@@ -1,0 +1,111 @@
+# 程序的执行和模拟器
+## freestanding运行时环境
+- 先前使用的环境是宿主操作环境
+	- 但是并不清楚`pringf`到底在哪实现了
+	- 因此，在学习时候，使用freestanding环境更加简单
+> [!note] 什么是freestanding环境
+> - freestanding implementation：不能包含C标准库，只能包含基本的头文件
+> - hosted implementation：能包含所有的C标准库
+> - freestanding environment：在这种环境下编译的程序，不能包含完整的C标准库，甚至连main入口都没有
+> 	- 应用：kernel开发，C标准库开发
+> - hosted environment：通常的编译环境，以`main`为入口，可以包含完整的C标准库。
+> 	- 因此基于操作系统上的应用程序开发，都可以称为hosted environment，可以直接使用现成的C标准库
+
+## 编写可读可维护的代码
+- 调试的最高境界：不用调试
+> Programs are meant to be read by humans and only incidentally for computers to execute.
+> --D.E.Knuth
+- 编写可读可维护的代码：
+	- 不言自明：看代码即可明白是做什么的
+	- 不言自证：看代码即可知道是否正确
+### 防御性编程
+- 不相信外界的输入/其他函数传递的参数，通过**断言**提前拦截非预期的情况
+```c++
+#include <assert.h>
+// ...
+int main(int argc, char *argv[]) {
+  PC = 0; R[0] = 0;
+  assert(argc >= 2);  // 要求至少包含一个参数
+  FILE *fp = fopen(argv[1], "r");
+  assert(fp != NULL); // 要求argv[1]是一个可以成功打开的文件
+  int ret = fseek(fp, 0, SEEK_END);
+  assert(ret != -1); // 要求fseek()成功
+  long fsize = ftell(fp);
+  assert(fsize != -1); // 要求ftell()成功
+  rewind(fp);
+  assert(fsize < 1024); // 要求程序大小不超过1024字节
+  ret = fread(M, 1, 1024, fp);
+  assert(ret == fsize); // 要求完全读出程序的内容
+  fclose(fp);
+  while (!halt) { inst_cycle(); }
+  return 0;
+}
+```
+
+- 防御性编程的意义：
+	- 将预期的正确行为直接写到程序中
+- 程序中的断言足够多->近似证明了程序的正确性
+
+
+### 减少代码中的隐含依赖
+- 使用define的方式，减少代码中的隐含依赖
+	- 进行一次性修改
+![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230814161852.png)
+
+### 将定义放在头文件中
+![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230814161840.png)
+
+### 拒绝copy-paste
+- 需要看很久的代码，基本上很难做到不言自证
+- 粘贴出上百行的代码，容易漏掉几处
+
+### 编写可复用的代码
+- 通过变量，函数，宏的方式消除重复/相似的代码
+```C++
+uint32_t inst = *(uint32_t *)&M[PC];
+uint32_t opcode = inst & 0x7f;
+uint32_t funct3 = (inst >> 12) & 0x7;
+uint32_t rd  = (inst >> 7 ) & 0x1f;
+uint32_t rs1 = (inst >> 15) & 0x1f;
+uint32_t imm = ((inst >> 20) & 0x7ff) - ((inst & 0x80000000) ? 4096 : 0);
+if (opcode == 0x13) {
+  if      (funct3 == 0x0) { R[rd] = R[rs1] + imm; } // addi
+  else if (funct3 == 0x4) { R[rd] = R[rs1] ^ imm; } // xori
+  else if (funct3 == 0x6) { R[rd] = R[rs1] | imm; } // ori
+  else if (funct3 == 0x7) { R[rd] = R[rs1] & imm; } // andi
+  else { panic("Unsupported funct3 = %d", funct3); }
+  R[0] = 0; // 若指令写入了R[0], 此处将其重置为0
+} else if (...) {  ...  }
+PC += 4;
+```
+
+### 使用合适的语言特性
+- 把细节交给语言规范和编译器
+```C++
+typedef union {
+  struct {
+    uint32_t opcode  :  7;
+    uint32_t rd      :  5;
+    uint32_t funct3  :  3;
+    uint32_t rs1     :  5;
+     int32_t imm11_0 : 12;
+  } I;
+  struct { /* ... */ } R;
+  uint32_t bytes;
+} inst_t;
+
+inst_t *inst = (inst_t *)&M[PC];
+uint32_t rd  = inst->I.rd;
+uint32_t rs1 = inst->I.rs1;
+uint32_t imm = (int32_t)inst->I.imm11_0;
+if (inst->I.opcode == 0b0010011) {
+  switch (inst->I.funct3) {
+    case 0b000: R[rd] = R[rs1] + imm; break; // addi
+    case 0b100: R[rd] = R[rs1] ^ imm; break; // xori
+    case 0b110: R[rd] = R[rs1] | imm; break; // ori
+    case 0b111: R[rd] = R[rs1] & imm; break; // andi
+    default: panic("Unsupported funct3 = %d", inst->I.funct3);
+  }
+  R[0] = 0; // 若指令写入了R[0], 此处将其重置为0
+} else if (inst->bytes == 0x00100073) {  ...  }
+```
