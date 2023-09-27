@@ -121,9 +121,10 @@ $P\left(S_{t+1}=s_{t+1} \mid S_{t}=s_{t}, A_{t}=a_{t}, S_{t-1}=s_{t-1}, A_{t-1}=
 $\gamma = 0.5$ 
 ![](https://s2.loli.net/2022/07/28/Y9SmvHRVt2oZi8e.png)
 1. 初始化：
+
 |       | cool | warm | overheated |
 | :-----: | :----: | :----: | :----------: |
-| $V_0$ | 0    | 0    | 0          | 
+| $V_0$ | 0    |0| 0          |
 2. 计算：
 ![](https://s2.loli.net/2022/07/28/u6NxCfqjdsI8ncA.png)
 ![](https://s2.loli.net/2022/07/28/LW1glC7veV64rQx.png)
