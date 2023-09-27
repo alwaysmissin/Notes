@@ -1,5 +1,5 @@
 # ARM运行模式
-- 7中运行模式![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230423091203.png)
+- 7种运行模式![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230423091203.png)
 - 用户模式与特权模式：
 	- 除用户模式外，其余模式均称为特权模式![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230518102413.png)
 
