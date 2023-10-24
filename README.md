@@ -10,6 +10,7 @@
 ### chisel
 - scala教程: [导言 | Scala 3 — Book | Scala Documentation](https://docs.scala-lang.org/zh-cn/scala3/book/introduction.html)
 - [Chisel/FIRRTL: General Cookbook](https://www.chisel-lang.org/chisel3/docs/cookbooks/cookbook.html)
+- [Chisel速成——跟着这个Chisel教程来就行了（已完结）_chisel练习_计算机体系结构-3rr0r的博客-CSDN博客](https://blog.csdn.net/weixin_43681766/article/details/124877558)
 - chisel-book-chinese.pdf
 ---
 ## 操作系统
