@@ -3,6 +3,38 @@
 - [菜鸟教程 - 学的不仅是技术，更是梦想！](https://www.runoob.com/)
 - [Road 2 Coding](https://www.r2coding.com/#/README)
 ---
+## ysyx
+- [第六期"一生一芯"课程主页 | 官方文档](https://ysyx.oscc.cc/docs/)
+- [南京大学 计算机科学与技术系 计算机系统基础 课程实验 2023 | 官方文档](https://ysyx.oscc.cc/docs/ics-pa/)
+
+### chisel
+- scala教程: [导言 | Scala 3 — Book | Scala Documentation](https://docs.scala-lang.org/zh-cn/scala3/book/introduction.html)
+- [Chisel/FIRRTL: General Cookbook](https://www.chisel-lang.org/chisel3/docs/cookbooks/cookbook.html)
+- chisel-book-chinese.pdf
+---
+## 操作系统
+### 书籍
+- 操作系统导论(OSTEP)
+- 现代操作系统: 原理与实现
+- 深入理解计算机系统
+### 课程
+- [操作系统：设计与实现 (2023 春季学期)](https://jyywiki.cn/OS/2023/index.html)
+
+### labs
+- [操作系统：设计与实现 (2023 春季学期)](https://jyywiki.cn/OS/2023/index.html)
+---
+## 计算机网络
+### 书籍
+- 计算机网络: 自顶向下方法
+- 图解TCP/IP
+
+### 课程
+- [中科大郑烇、杨坚全套《计算机网络（自顶向下方法 第7版，James F.Kurose，Keith W.Ross）》课程\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1JV411t7ow/?spm_id_from=pageDriver&vd_source=104ff9cc1b7010d178a8d3c0d37be81e)
+
+### labs
+- [wireshark](https://gaia.cs.umass.edu/kurose_ross/wireshark.php)
+- [CS 144: Introduction to Computer Networking](https://cs144.github.io/)
+---
 ## 计算机组成原理
 ### 书籍
 - 计算机组成原理——高教出版社
@@ -188,23 +220,6 @@
 
 - 学习OpenCV 3 中文版
 
----
-
-## 计算机系统
-
-### 书籍
-
-- **深入理解计算机系统**
-- **操作系统导论**
-
----
-
-## 计算机网络
-
-### 书籍
-
-- 计算机网络：自顶向下方法（黑皮）
-- 网络是怎样连接的
 
 ---
 
