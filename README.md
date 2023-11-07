@@ -12,6 +12,9 @@
 - [Chisel/FIRRTL: General Cookbook](https://www.chisel-lang.org/chisel3/docs/cookbooks/cookbook.html)
 - [Chisel速成——跟着这个Chisel教程来就行了（已完结）_chisel练习_计算机体系结构-3rr0r的博客-CSDN博客](https://blog.csdn.net/weixin_43681766/article/details/124877558)
 - chisel-book-chinese.pdf
+
+
+
 ---
 ## 操作系统
 ### 书籍
@@ -34,6 +37,7 @@
 
 ### 课程
 - [中科大郑烇、杨坚全套《计算机网络（自顶向下方法 第7版，James F.Kurose，Keith W.Ross）》课程\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1JV411t7ow/?spm_id_from=pageDriver&vd_source=104ff9cc1b7010d178a8d3c0d37be81e)
+- [深入浅出计算机网络 微课视频_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1NT411g7n6/?spm_id_from=333.1007.top_right_bar_window_custom_collection.content.click&vd_source=104ff9cc1b7010d178a8d3c0d37be81e)
 
 ### labs
 - [wireshark](https://gaia.cs.umass.edu/kurose_ross/wireshark.php)
