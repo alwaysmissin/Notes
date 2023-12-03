@@ -153,7 +153,7 @@ int main(int argc, char** argv, char** env) {
 
 ## Viewing Verilator waveforms
 - open the waveform dump file via `GTKWave`:
-![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230801141745.png)
+![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230801141745.png)
 
 ## Observations
 1. the simulation does not have any `x` or `unknown` values

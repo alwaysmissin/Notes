@@ -15,7 +15,7 @@
 - #编译原理重点 基本思想：在规范归约的过程中，**一方面记住已经移进和归约出的整个符号串**（历史），**另一方面有根据所用产生式来推测未来可能碰到的输入符号**（未来）
 	- 现实：当前的输入符号
 	- 当某一符号串类似于句柄出现在栈顶时，需要根据历史、展望和现实来决定栈顶的符号串是否构成一个句柄，是否需要归约
-- #编译原理重点 LR分析器的结构：![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230505224543.png)
+- #编译原理重点 LR分析器的结构：![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230505224543.png)
 	- 栈：用来存放状态
 		- 符号栈
 		- 状态栈
@@ -46,7 +46,7 @@
 		- $\alpha_{i-1}$是$\alpha_i$经过把句柄替换为相应产生式左部符号而得
 - 在规范归约的过程中：
 	- 栈内的符号串和扫描剩下的输入符号串构成了一个**规范句型**
-	- 栈内如果出现**句柄**，则该句柄一定在栈顶![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230507195911.png)
+	- 栈内如果出现**句柄**，则该句柄一定在栈顶![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230507195911.png)
 - #编译原理重点 对于LR(0)分析法，语法分析栈中存放的状态是识别规范句型**活前缀**的DFA状态
 
 ### 活前缀
@@ -61,7 +61,7 @@
 		- 活前缀已含有句柄的**全部**符号：表明该句柄对应的产生式$A\rightarrow \alpha$的右部$\alpha$已经出现在栈顶，此时**可以进行归约**操作，该活前缀称为可归约活前缀
 		- 活前缀只含句柄的**一部分**：表明在句柄对应的产生式$A\rightarrow \alpha 1\alpha 2$的右部子串$\alpha1$已经出现在栈顶，**期待从输入串中看到$\alpha2$推导出的字符串**
 		- 活前缀**不含有句柄的任何**符号：此时**期待从输入串中看到该句柄对应的产生式$A\rightarrow\alpha$的右部所推出的符号串**
-- 活前缀的识别示例：对于文法![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230507200711.png)，识别一个输入串abbcde：
+- 活前缀的识别示例：对于文法![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230507200711.png)，识别一个输入串abbcde：
 	- 最右推导顺序：$S\rightarrow aAcBe[1] \rightarrow aAcd[4]e[1] \rightarrow aAb[3]cd[4]e[1] \rightarrow ab[2]b[3]cd[4]e[1]$
 	- #编译原理重点 规范句型及其活前缀：
 		- $abbcde$：$\varepsilon, a, ab$
@@ -83,14 +83,14 @@
 		- $A\rightarrow XY\cdot Z$
 		- $A\rightarrow XYZ\cdot$
 	- **其中，$A\rightarrow \alpha\cdot$称为归约项目**
-	- ![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230507203743.png)
+	- ![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230507203743.png)
 - 项目的表示：使用一对整数表示
 	- 第一个整数代表**产生式编号**
 	- 第二个整数表示**圆点的位置**
-- 构造识别文法所有活前缀的NFA方法![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230507205930.png)
+- 构造识别文法所有活前缀的NFA方法![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230507205930.png)
 	1. 若状态$i$为$X\rightarrow X_1\cdots X_{i-1}\cdot X_{i}\cdots X_n$，状态$j$为$X\rightarrow X_1\cdots X_{i-1} X_{i}\cdot X_{i +1}\cdots X_n$，则从状态$i$画一条标志为$X_i$的有向边到状态$j$
 	2. 若状态$i$为$X\rightarrow\alpha\cdot A\beta$，$A$为非终结符，则从$i$画一条$\varepsilon$边到所有状态$A\rightarrow\cdot\gamma$
-- 通过确定化的操作，将NFA转换为DFA![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230507205947.png)
+- 通过确定化的操作，将NFA转换为DFA![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230507205947.png)
 
 ### 有效项目
 > 相对较难理解，需要结合上述得到的DFA进行理解
@@ -101,7 +101,7 @@
 	- 例：如果经过bc，则项目集合5中的3个项目对活前缀都是有效的
 - 结论：如果项目$A\rightarrow\alpha\cdot B\beta$对活前缀$\delta\alpha$是有效的并且$B\rightarrow\gamma$是一个产生式，则项目$B\rightarrow\cdot\gamma$对该活前缀也是有效的
 	- 这里的$\gamma$指的是某产生式右部
-- $\cdot$后面出现的串对于活前缀bc都是“有效”的，即此三个项目对于该活前缀是有效的![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230507220838.png)
+- $\cdot$后面出现的串对于活前缀bc都是“有效”的，即此三个项目对于该活前缀是有效的![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230507220838.png)
 
 > $\omega$是终结符
 
@@ -197,4 +197,4 @@
 	 - 若项目$[A\rightarrow \alpha \cdot B\beta,a]$属于$CLOSURE(I)$，并且$B\in \xi$是一个产生式，那么，对于$b\in FIRST(\beta a)$，如果$[B\rightarrow \cdots \xi, b]$原来不在$CLOSURE(I)$中，则将其添加进去
 	 - 重复执行上一个步骤，直到$CLOSURE(I)$不再增大
  - #编译原理重点 LR分析的包含关系：$LR(0)\subset SLR(1)\subset LR(1)\subset 无二义文法$
-![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230614174745.png)
+![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230614174745.png)

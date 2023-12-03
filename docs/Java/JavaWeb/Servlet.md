@@ -72,7 +72,7 @@
 		- 如果不得不定义成员变量
 			1. 不要修改成员变量的值
 			2. 不要根据成员变量的值做一些判断
-![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221013200347.png)
+![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20221013200347.png)
 - `ServletContext`
 	- 获取`ServletContext`的方法：
 		- 在初始化方法中：`ServletContext servletcontext = getServletContext()`
@@ -147,7 +147,7 @@
 	- `void session.setAttribute(k,v)`
 	- `Object session.getAttribute(k)`
 	- `void removeAttribute(k)`
-![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221013200424.png)
+![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20221013200424.png)
 
 
 ## 服务器内部转发客户端重定向

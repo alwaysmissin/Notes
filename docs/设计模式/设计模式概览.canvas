@@ -8,7 +8,7 @@
 		{"id":"16da5df348105eb2","x":435,"y":73,"width":333,"height":293,"color":"#f6b6c5","type":"text","text":"### 结构型设计模式\n1. **代理模式(Proxy Pattern)**\n2. **桥接模式(Bridge Pattern)**\n3. **装饰器模式(Decorator Pattern)**\n4. **适配器模式(Adapter Pattern)**\n5. 门面模式(Facade Pattern)\n6. 组合模式(Composite Pattern)\n7. 享元模式(Flyweight Pattern)\n8. 过滤器模式(Filter、Criteria Pattern)"},
 		{"id":"bf2df34d69818a6a","x":435,"y":393,"width":378,"height":402,"color":"#f5b8c7","type":"text","text":"### 行为型设计模式\n1. **观察者模式(Observer Pattern)**\n2. **模板模式(Template Pattern)**\n3. **策略模式(Strategy Pattern)**\n4. **职责链模式(Chain of Responsibility Pattern)**\n5. **迭代器模式(Iterator Pattern)**\n6. **状态模式(State Pattern)**\n7. 访问者模式(Visitor Pattern)\n8. 备忘录模式(Memento Pattern)\n9. 命令模式(Command Pattern)\n10. 解释器模式(Interpreter Pattern)\n11. 中介模式(Mediator Pattern)\n12. 空对象模式(Null Object Pattern)"},
 		{"id":"bfd79f0b0638220d","x":56,"y":160,"width":201,"height":60,"color":"#5f7eaf","type":"text","text":"## 三类设计模式"},
-		{"id":"087f7faad5a89fd0","x":-454,"y":312,"width":756,"height":564,"type":"text","text":"![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230106153938.png)\n"}
+		{"id":"087f7faad5a89fd0","x":-454,"y":312,"width":756,"height":564,"type":"text","text":"![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230106153938.png)\n"}
 	],
 	"edges":[
 		{"id":"4606459a6204c73b","fromNode":"2f68b58affbf6c31","fromSide":"right","toNode":"fdb1641800a8b64b","toSide":"left"},

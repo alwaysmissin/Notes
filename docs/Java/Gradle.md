@@ -1,5 +1,5 @@
 # Gradle
-![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221010213415.png)
+![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20221010213415.png)
 ## Gradle项目目录结构
 - `build`：封装编译后的字节码，打成的包、测试报告等信息
 - `gradle`：封装包装器的文件夹

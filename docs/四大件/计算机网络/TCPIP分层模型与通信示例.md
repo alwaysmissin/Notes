@@ -1,6 +1,6 @@
 # TCP/IP分层模型与通信示例
 ## 数据包首部
-![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20231009161132.png)
+![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20231009161132.png)
 - 在每一个分层中, 都会对所发送的数据添加一个首部
 - 首部中包含了该层的必要信息
 	- 比如发送的目标地址以及协议的相关信息
@@ -51,10 +51,10 @@ IP模块在收到的数据报上添加自己的首部信息, 包括了:
 3. 标志以太网类型的以太网数据的协议
 根据以上的信息, 以太网数据报将通过物理层, 将数据传输给接收端
 发送处理中的FCS(Frame Check Sequence)由硬件进行计算, 并且添加到包的最后(设置FCS的目的是为了判断数据包是否由于噪声而被破坏), 这一部分是属于**链路层**的功能
-![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20231009172111.png)
+![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20231009172111.png)
 
 ## 经过数据链路的包
-![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20231009172204.png)
+![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20231009172204.png)
 每个包的首部中至少都会包含两个信息:
 1. 发送端和接收端的地址
 2. 上一层的协议类型

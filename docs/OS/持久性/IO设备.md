@@ -1,6 +1,6 @@
 # I/O 设备
 ## 系统架构
-- 一个典型系统的架构: CPU 通过某种内存总线或互联电缆连接到系统内存; 高性能 I/O 通过常规的 I/O 总线连接到系统; 外围总线将更慢的设备连接到系统 ![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20231119225936.png)
+- 一个典型系统的架构: CPU 通过某种内存总线或互联电缆连接到系统内存; 高性能 I/O 通过常规的 I/O 总线连接到系统; 外围总线将更慢的设备连接到系统 ![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20231119225936.png)
 > [!question] 为什么使用这样的分层架构
 > 因为物理布局与造价成本
 > **越快的总线越短**, 因此高性能的内存总线没有足够的空间连接太多设备, 并且, 在工程上高性能总线的造价非常高.
@@ -8,7 +8,7 @@
 > 最大的好处就是可以**在外围总线上连接大量的设备**
 
 ## 标准设备
-![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20231119230241.png)
+![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20231119230241.png)
 - 设备
 	- 向其他部分展现的**硬件接口**: 
 		- 与软件一样, 硬件也需要一些接口, 让系统软件来控制它的操作
@@ -33,7 +33,7 @@
 ## 利用中断减少 CPU 开销
 - 向设备发出一个请求, 然后就可以让对应进程睡眠, 切换执行其他的任务
 - 当设备完成了自身操作, 会抛出一个硬件中断, 引发 CPU 跳转执行操作系统预定义好的中断服务, 或者是更简单的中断处理程序
-- 中断处理的时间线: ![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20231119232006.png)
+- 中断处理的时间线: ![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20231119232006.png)
 > [!attention] 中断并非总是最佳方案
 > 如果有一个非常高性能的设备, 处理请求的速度非常快, 通常**在 CPU 第一次轮询时就可以返回结果,** 此时如果**使用中断, 反而会使系统变得缓慢**, 因为**切换**到其他进程, 处理中断, 再切换回之前的进程代价不小.
 > 因此, 如果设备非常快, 那么最好的办法是使用轮询. 如果设备比较慢, 那么采用允许发生重叠的中断更好.

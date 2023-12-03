@@ -12,10 +12,10 @@
 	1. 实现算数运算和逻辑运算
 
 ### CPU结构框图
-![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230616141717.png)
+![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230616141717.png)
 
 ## 指令周期
-- 指令周期：取出并执行一条指令所需的全部时间![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230616141837.png)
+- 指令周期：取出并执行一条指令所需的全部时间![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230616141837.png)
 	- 取指周期
 		- 取指
 		- 译码
@@ -24,7 +24,7 @@
 - 不同指令的指令周期不同
 	- 原因是在执行阶段的访存次数可能不同
 	- 或者可能存在中断周期
-- 指令周期的流程：![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230616141957.png)
+- 指令周期的流程：![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230616141957.png)
 
 ## #计组重点 指令流水
 > [!note] 并行与并发

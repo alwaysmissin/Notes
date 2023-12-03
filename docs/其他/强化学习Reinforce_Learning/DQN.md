@@ -9,7 +9,7 @@
 	- 通常情况下：DQN只能处理离散的情况
 		- 在函数$Q$更新的过程中有$max_a$的操作
 - 表示：假设神经网络用来拟合函数Q的参数是$\omega$，则使用$Q_\omega(s,a)$来表示每一个状态$s$下所有可能的动作$a$的$Q$值
-- $Q$网络：用来拟合函数$Q$的神经网络![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221215211623.png)
+- $Q$网络：用来拟合函数$Q$的神经网络![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20221215211623.png)
 - Q网络的损失函数：$$ \omega ^{*}=arg \min \frac{1}{2N}\sum _{i=1}^{N}\left[ Q_{\omega}(s_{i},a_{i})-(r_{i}+ \gamma \ _{a^{\prime}}Q_{\omega}(s_{i}^{\prime},a^{\prime}))\right] ^{2}$$
 > 由于DQN是离线策略算法，因此在收集数据时候可以使用一个$\varepsilon$-贪婪策略来平衡探索与利用
 - DQN中两个重要的模块：
@@ -26,14 +26,14 @@
 	- **提高样本效率**：每一个样本可以被使用多次，适合深度神经网络的梯度学习
 
 ### 目标网络
-![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221215213406.png)
+![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20221215213406.png)
 - 目标网络：训练过程中Q网络的不断更新会导致目标不断发生改变，我们暂时先将TD目标中的Q网络固定住$\leftarrow$使用两套Q网络来实现
 	- 原训练网络$Q_\omega(s,a)$：用于计算损失函数$\frac{1}{2}\left[ Q_{\omega}(s,a)-(r+ \gamma \ _{a^{\prime}}Q_{\omega^-}(s^{\prime},a^{\prime}))\right] ^{2}$中所包含的$Q_\omega(s,a)$，并且使用正常的梯度下降方法来进行更新
 	- 目标网络$Q_{\omega^-}(s,a)$：用于计算损失函数$\frac{1}{2}\left[ Q_{\omega}(s,a)-(r+ \gamma \ _{a^{\prime}}Q_{\omega^-}(s^{\prime},a^{\prime}))\right] ^{2}$中所包含的$Q_{\omega^-}(s,a)$
 - 如果两套网络的的参数随时保持一致，则仍然为原来的不稳定的网络。为了使更新目标更加稳定，**目标网络并不会每一步都进行更新**。在目标网络中使用一套较旧的参数：**每隔C步，$\omega\rightarrow \omega^-$**
 
 ### 具体流程
-![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221215214023.png)
+![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20221215214023.png)
 ## Double DQN
 - 利用两套独立训练的神经网络来估计$\max_{a^\prime}Q^*(s^\prime, a^\prime)$
 	- 利用一套神经网络$Q_\omega$的输出来选取价值最大的动作，但在使用该动作的价值时，选择另一套神经网络$Q_{\omega^-}$来计算该动作的价值
@@ -50,9 +50,9 @@
 	- $\eta$是状态价值函数和优势函数共享的神经网络参数，一般用在神经网络中，用来提取特征的前几层
 	- $\alpha\quad\beta$分别为状态价值函数和优势函数的参数
 - 在这样的模型下，我们不再让神经网络直接输出Q值，而是训练神经who最后几层的两个分支
-	- 分别输出状态价值函数和优势函数，再求得Q值![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221227153232.png)
+	- 分别输出状态价值函数和优势函数，再求得Q值![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20221227153232.png)
 
 - 分别建模的好处：
 	- 某些情境下智能体只会关注状态的价值，而不关心不同动作导致的差异，此时将二者分开建模能够使智能体更好的处理动作关联较小的状态
-		- 在前方没有车的情况下，采取的动作之间并没有太大的差异![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221227153128.png)
-		- 当前方有车时候，智能体才关注不同动作优势值之间的差异![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221227153212.png)
+		- 在前方没有车的情况下，采取的动作之间并没有太大的差异![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20221227153128.png)
+		- 当前方有车时候，智能体才关注不同动作优势值之间的差异![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20221227153212.png)

@@ -23,13 +23,13 @@
 双方不一定同时关闭, 正常接收到确认报文的一方会立即释放 TCP 连接, 但没有收到确认报文的一方, 会在它发送确认报文之后的 2 MSL 时间后, 释放连接.
 
 最终, 客户机和服务器完成 TCP 连接的释放
-![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20231118130016.png)
+![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20231118130016.png)
 
 #### 双方的确认报文均丢失
 双方在发送确认报文的 2 MSL 时间后, 自行释放连接.
 
 最终, 客户机和服务器完成 TCP 连接的释放.
-![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20231118130032.png)
+![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20231118130032.png)
 
 ### 双方同时发出连接释放请求, 同时关闭后, 收到确认报文
 在此时收到确认报文, 会被接收方直接拒绝

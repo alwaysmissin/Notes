@@ -9,8 +9,8 @@
 	- 传统应用程序：有我们自己在对象中主动控制区直接获取以来对象（**正转**）
 	- IOC：由容器来帮忙创建及注入以来对象
 		- 反转：由容器帮我们查找以及注入依赖对象，对象只是被动地接收以来对象
-![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221224144917.png)
-**![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221224144921.png)
+![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20221224144917.png)
+**![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20221224144921.png)
 ## IOC能做什么
 - 解耦合：
 	- 把创建和查找依赖对象的控制权交给了容器，由容器进行注入组合对象，所以对象之间是松散耦合
@@ -49,7 +49,7 @@
 
 ## 依赖注入
 - 配置类所对应的bean，即将对象交给Spring的IOC容器管理
-	- `<bean id="" class=""></bean>`![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221226095303.png)
+	- `<bean id="" class=""></bean>`![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20221226095303.png)
 > Spring底层默认通过反射技术调用组件类的无参构造器来创建组件对象
 > 如果没有无参构造器，则会抛出异常
 - 获取bean的方式：
@@ -239,7 +239,7 @@
 	- 如果以上两个方法都失败，**错误**
 	- 此时可以在要赋值的属性上添加`@Qualifier`注解
 		- 通过该注解的`value`属性值，指定某个bean的id，将这个bean为属性
-- `@Autowire`的工作流程：![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221231115434.png)
+- `@Autowire`的工作流程：![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20221231115434.png)
 	- 首先根据所需要的组件类型到IOC容器中查找
 		- 能够找到唯一的bean：直接执行装配
 		- 如果完全找不到匹配这个类型的bean：装配失败

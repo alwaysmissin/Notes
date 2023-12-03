@@ -19,9 +19,9 @@ WSL是基于微软开发的虚拟机平台Hyper-V，同样是虚拟机，**相�
 
 ## 启用WSL
 
-1. 在windows自带的搜索中找到**Windows功能**![image-20221120233903330](https://raw.githubusercontent.com/alwaysmissin/picgo/main/image-20221120233903330.png)
+1. 在windows自带的搜索中找到**Windows功能**![image-20221120233903330](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2Fimage-20221120233903330.png)
 
-2. 向下翻页，打开`适用于Linux的Windows子系统`和`虚拟机平台`选项，接下来按照要求重启电脑![image-20221120233954234](https://raw.githubusercontent.com/alwaysmissin/picgo/main/image-20221120233954234.png)
+2. 向下翻页，打开`适用于Linux的Windows子系统`和`虚拟机平台`选项，接下来按照要求重启电脑![image-20221120233954234](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2Fimage-20221120233954234.png)
 3. 重启后使用`wsl_update_x64.msi`程序**更新wsl至wsl2**，直接点击`next`即可
 
 ## 在WSL中安装Ubuntu
@@ -36,22 +36,22 @@ WSL是基于微软开发的虚拟机平台Hyper-V，同样是虚拟机，**相�
 	- `Ubuntu`：你想要导入的分发版命名，可以自定义
 	- **注意同时要将`<>`替换**，后面命令中的替换方法也一样
 	
-2. 安装完成后，使用`wsl --list -v`命令就可以看到刚刚安装的Ubuntu环境，并且wsl的版本为2![image-20221120235804338](https://raw.githubusercontent.com/alwaysmissin/picgo/main/image-20221120235804338.png)
+2. 安装完成后，使用`wsl --list -v`命令就可以看到刚刚安装的Ubuntu环境，并且wsl的版本为2![image-20221120235804338](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2Fimage-20221120235804338.png)
 
     ## 进入Ubuntu环境
 
-    1. 重新开启终端![image-20221125193101974](https://raw.githubusercontent.com/alwaysmissin/picgo/main/image-20221125193101974.png)
+    1. 重新开启终端![image-20221125193101974](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2Fimage-20221125193101974.png)
     2. 在这里就可以看到刚刚装好的wsl下的ubuntu环境了
 
     ## ubuntu环境的基本配置
 
-1. 输入指令`passwd root`，设置root用户密码![image-20221122233130180](https://raw.githubusercontent.com/alwaysmissin/picgo/main/image-20221122233130180.png)
+1. 输入指令`passwd root`，设置root用户密码![image-20221122233130180](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2Fimage-20221122233130180.png)
 
 > 密码需要输入两次，并且输入的密码会被隐藏，并不是没有输入
 
 > root用户是超级管理员，拥有linux系统的最高权限，正常使用时候我们不使用root用户对系统进行操作，但你也可以在普通用户的模式下，随时切换到root用户或是使用sudo来进行更高权限的操作
 
-2. **添加一个自己的用户**：`adduser <你需要新建的用户名>`![image-20221122233434698](https://raw.githubusercontent.com/alwaysmissin/picgo/main/image-20221122233434698.png)
+2. **添加一个自己的用户**：`adduser <你需要新建的用户名>`![image-20221122233434698](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2Fimage-20221122233434698.png)
 
 > 在linux的使用中，尽可能地避免直接使用root用户（因为root用户的权限较高，避免root用户误操作带来的损失，比如`rm -rf`），使用普通用户也不需要担心权限不够的问题，我们可以通过sudo命令来解决
 
@@ -131,7 +131,7 @@ deb-src https://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted unive
 ### 在windows的文件管理器中添加wsl
 
 - 打开windows文件管理器，在地址栏输入`\\wsl$`访问wsl中的文件系统，在这里双击就可以直接打开ubuntu中的文件系统了
-- 为了后续方便进入这个文件系统，我们将其映射为盘符或固定到快速访问![image-20221124002003637](https://raw.githubusercontent.com/alwaysmissin/picgo/main/image-20221124002003637.png)
+- 为了后续方便进入这个文件系统，我们将其映射为盘符或固定到快速访问![image-20221124002003637](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2Fimage-20221124002003637.png)
 - 对于文件的部分操作我们可以直接在windows下进行
 
 ## 图形化界面连接
@@ -141,8 +141,8 @@ deb-src https://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted unive
 1. **法一：使用集成终端MobaXterm（推荐：无需手动配置、在窗口下方可以看到资源使用信息、在窗口右侧就可以直接看到当前打开的目录文件）**
    1. 下载`MobaXterm`（同样的，可以在群文件中找到）：[MobaXterm Xserver with SSH, telnet, RDP, VNC and X11 - Download (mobatek.net)](https://mobaxterm.mobatek.net/download.html)
    2. 正常安装即可
-   3. 安装后打开`MobaXterm`，你可以看到刚刚添加的WSL-Ubuntu已经出现在这里了![image-20221123000242837](https://raw.githubusercontent.com/alwaysmissin/picgo/main/image-20221123000242837.png)
-   4. 法二：设置`Setting-X11-X11 remote access`为`full`![image-20221124231855324](https://raw.githubusercontent.com/alwaysmissin/picgo/main/image-20221124231855324.png)
+   3. 安装后打开`MobaXterm`，你可以看到刚刚添加的WSL-Ubuntu已经出现在这里了![image-20221123000242837](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2Fimage-20221123000242837.png)
+   4. 法二：设置`Setting-X11-X11 remote access`为`full`![image-20221124231855324](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2Fimage-20221124231855324.png)
 2. 自行下载VcXsrv（稍麻烦，可以直接使用第一种方法）：
    1. 官网（可能需要魔法，你可以在群文件中找到它）：https://sourceforge.net/projects/vcxsrv/
    2. 安装：按照默认设置安装即可
@@ -151,7 +151,7 @@ deb-src https://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted unive
       2. 将`Display number`修改为 `0`
       4. 一直点击`下一步`即可
 
-> 注：在最后一个页面，我们可以选择保存当前的配置文件到桌面，后续需要打开X-Server时，就无需再次进行配置，直接通过保存下的配置文件即可打开X-Server![image-20221122235847420](https://raw.githubusercontent.com/alwaysmissin/picgo/main/image-20221122235847420.png)
+> 注：在最后一个页面，我们可以选择保存当前的配置文件到桌面，后续需要打开X-Server时，就无需再次进行配置，直接通过保存下的配置文件即可打开X-Server![image-20221122235847420](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2Fimage-20221122235847420.png)
 
 ### Ubuntu中的gui连接配置
 
@@ -171,9 +171,9 @@ export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/nu
 
 ​		然后按下`esc`退出编辑模式，直接输入命令`:wq`并敲击回车，保存并退出vim环境，在命令行中输入`source ~/.bashrc`更新`.bashrc`中的内容
 
-3. 测试：运行命令`gedit test.txt`，看到如下界面则说明图形化安装成功（**注意必须在windows中开启X-Server服务**）![image-20221124001027384](https://raw.githubusercontent.com/alwaysmissin/picgo/main/image-20221124001027384.png)
+3. 测试：运行命令`gedit test.txt`，看到如下界面则说明图形化安装成功（**注意必须在windows中开启X-Server服务**）![image-20221124001027384](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2Fimage-20221124001027384.png)
 
-> 如果安装完gedit后，可以在windows的开始菜单栏中看见`Text Editor`，你也可以尝试打开![image-20221124112348868](https://raw.githubusercontent.com/alwaysmissin/picgo/main/image-20221124112348868.png)
+> 如果安装完gedit后，可以在windows的开始菜单栏中看见`Text Editor`，你也可以尝试打开![image-20221124112348868](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2Fimage-20221124112348868.png)
 >
 > 这是微软在wsl2中添加支持的图形化界面，使用的是xrdp进行连接，也就是微软的远程连接服务来连接到wsl中的图形界面，但相比自己配置的X-Server，不够稳定，经常遇到打不开的情况
 
@@ -203,7 +203,7 @@ sudo vim /etc/fonts/local.conf
 </fontconfig>
 ```
 
-3. 测试：再次打开刚刚的图形化界面输入`gedit test.txt`，复制一段中文文本，查看效果![image-20221124112105047](https://raw.githubusercontent.com/alwaysmissin/picgo/main/image-20221124112105047.png)
+3. 测试：再次打开刚刚的图形化界面输入`gedit test.txt`，复制一段中文文本，查看效果![image-20221124112105047](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2Fimage-20221124112105047.png)
 
 > 安装中文字体是为了让图形界面中的中文显示正常，但还是无法在其图形界面中使用中文输入法，如果有需要，可以自行安装中文输入法
 
@@ -237,9 +237,9 @@ mv ./zulu17.34.19-ca-jdk17.0.3-linux_x64/ ./zulujdk17
 
 ## 使用VSCode连接WSL
 
-1. 在Windows端的VSCode中安装插件：`WSL`![image-20221124215657373](https://raw.githubusercontent.com/alwaysmissin/picgo/main/image-20221124215657373.png)
+1. 在Windows端的VSCode中安装插件：`WSL`![image-20221124215657373](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2Fimage-20221124215657373.png)
 
-2. 打开远程资源管理器，并且选择WSL Targets，在这里就可以看到你安装的WSL环境了![image-20221124215751652](https://raw.githubusercontent.com/alwaysmissin/picgo/main/image-20221124215751652.png)
+2. 打开远程资源管理器，并且选择WSL Targets，在这里就可以看到你安装的WSL环境了![image-20221124215751652](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2Fimage-20221124215751652.png)
 
 3. 点击对应分发版旁的`Connect To WSL`即可连接，并且打开了一个连接至WSl中的窗口
 

@@ -32,7 +32,7 @@ public String hello(){
 ## method属性
 - `@RequsetMapping`注解的`method`属性通过请求的请求方式(`get/post`)匹配请求映射
 - 同样是一个`RequestMethod`类型的数组，标识该请求映射能够匹配**多种请求方式的请求**
-![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230108113011.png)
+![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230108113011.png)
 
 > [!注]
 > 1. 对于处理指定请求方式的控制器方法，SpringMVC中提供了`@RequestMapping`的派生注解
@@ -51,7 +51,7 @@ public String hello(){
 	- `"param"`：要求请求映射所匹配的请求**必须携带**param请求参数
 	- `"!param"`：要求请求映射所匹配的请求**必须不能携带**param请求参数
 	- 同样的，可以通过`=`限制参数的值
-![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230108112957.png)
+![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230108112957.png)
 
 
 ## headers属性
@@ -66,4 +66,4 @@ public String hello(){
 ## 路径中的占位符
 - rest方式：/user/delete/1
 - SpringMVC路径中的占位符常用语RESTful风格中，当请求路径中将某些数据通过路径的方式传输到服务器中，就可以在相应的`@RequestMapping`注解的value属性中通过占位符`{xxx}`表示传输的数据，在方法中获取参数
-![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230109100609.png)
+![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230109100609.png)

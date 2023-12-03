@@ -5,7 +5,7 @@
 - 使用`<link href = "css-path" rel = "stylesheet">`添加
 
 ## CSS规则集详解
-![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20220906124049.png)
+![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20220906124049.png)
 - **选择器**（Selector）
 	- HTML 元素的名称位于规则集开始
 		- 选择一个或多个需要添加样式的元素（在这个例子中就是 p 元素）
@@ -61,7 +61,7 @@ p, h1, h2{
 		- 第一个值代表元素的上下方
 		- 第二个值代表元素的左右
 		- `auto`自动
-![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20220906193115.png)
+![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20220906193115.png)
 - 同时使用了：
 	- `width`：元素的宽度
 	- `background-color`：元素内容和内边距底下的颜色

@@ -10,7 +10,7 @@
 	6. 数据转换功能
 		1. 串->并
 		2. 并->串
-2. 组成：![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230616133356.png)
+2. 组成：![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230616133356.png)
 	1. 设备选择电路
 	2. 命令寄存器、命令译码器
 	3. 数据缓冲寄存器

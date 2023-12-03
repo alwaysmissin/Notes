@@ -19,7 +19,7 @@
 > T \rightarrow num\{print(num.lexme)\}
 > \end{array}
 > $$
-> ![翻译模式的使用.gif](https://raw.githubusercontent.com/alwaysmissin/picgo/main/%E7%BF%BB%E8%AF%91%E6%A8%A1%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8.gif)
+> ![翻译模式的使用.gif](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F%E7%BF%BB%E8%AF%91%E6%A8%A1%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8.gif)
 - 设计翻译模式的原则：
 	- 设计翻译模式时，必须保证当某个动作引用一个属性时，它必须是有定义的。
 	- L-属性文法本身就能确保每个动作不会引用尚未计算出来的属性
@@ -27,12 +27,12 @@
 ### 翻译模式的建立
 1. 当只需要综合属性时：
 	- 为每一个语义规则建立一个包含赋值的动作，并且**把这个动作放在相应的产生式右部的末尾**
-![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230610213450.png)
+![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230610213450.png)
 2. 如果既有综合属性又有继承属性，需要保证
 	- 产生式右边的符号的继承属性必须在这个符号以前的动作中计算出来
 	- 一个动作不能引用这个动作右边的符号的综合属性
 	- 产生式左边非终结符的综合属性只有在它所引用的所有属性都计算出来以后才能计算。（计算这种属性的动作通常可以放在产生式右端的末尾处）
-![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230610213729.png)![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230610213742.png)
+![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230610213729.png)![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230610213742.png)
 
 ## 自顶向下翻译
 - 动作是在处于相同位置上的符号**被成功匹配时执行的**

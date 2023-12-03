@@ -14,7 +14,7 @@
 ```
 - 通过查看getbuf代码得到，分配到的栈帧为40字节，因此输入的字符长度超过40字节后，产生栈溢出攻击，函数返回后的跳转地址在该栈帧起始位置的高40位中
 - 因此，我们需要产生一个40字节无效字符串+**4字节目标跳转地址**，来将原来的函数返回地址**覆盖**
-	- 查看`touch1`：![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230107210652.png)
+	- 查看`touch1`：![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230107210652.png)
 	```assembly
 	00000000004017c0 <touch1>:
 	  4017c0:	48 83 ec 08          	sub    $0x8,%rsp
@@ -42,7 +42,7 @@ c0 17 40 00 00 00 00 00
 ## phase_2 touch2
 > 题目：our task is to get CTARGET to execute the code for touch2 rather than returning to test. In this case, however, you must make it appear to touch2 as if you have passed your cookie as its argument.
 
-- `touch2`：![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230107210804.png)
+- `touch2`：![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230107210804.png)
 	- 可以看到，我们需要将cookie作为参数传入到touch2中，才可以实现攻击
 	- 同上一题，先查看`touch2`函数在内存中的位置：`00000000004017ec `
 - 如何传入参数？

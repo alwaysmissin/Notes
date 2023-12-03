@@ -1,8 +1,8 @@
 # C语言拾遗
 ## IDE的一个键做了什么
-![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230514133757.png)
-![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230514133805.png)
-![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230514133824.png)
+![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230514133757.png)
+![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230514133805.png)
+![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230514133824.png)
 
 ## `#include`指令
 - 什么是`#include`：

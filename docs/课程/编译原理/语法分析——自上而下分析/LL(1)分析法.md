@@ -22,7 +22,7 @@
 	- 不含回路：
 - 消除左递归的算法：
 	- 将文法$G$的所有非终结符按照某一种顺序排列，并逐个执行：
-	- ![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230513205246.png)
+	- ![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230513205246.png)
 	- 化简所得到的文法，去除从开始符号出发永远无法到达的非终结符的产生规则
 - 算法的注意事项：
 	- 适用于：消除了$P\rightarrow P$产生式和不以$\varepsilon$为右部的产生式文法
@@ -35,7 +35,7 @@
 ## 消除回溯，提取左公因子
 - 产生回溯的原因：推导时，若产生式存在多个候选式，选择哪个进行推导存在不确定性
 - #编译原理重点 提取左公因子：
-![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230614234746.png)
+![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230614234746.png)
 
 ## LL(1)分析条件
 - #编译原理重点 如果一个文法是LL(1)文法，则满足：
@@ -63,5 +63,5 @@
 	- 如果存在$A\rightarrow \alpha B$或存在产生式$A\rightarrow\alpha B\beta$且$FIRST(\beta)$中包含了$\varepsilon$（**可以理解为同一种情况$A\rightarrow \alpha B$**），则将$FOLLOW(A)$中的所有符号都放在$FOLLOW(B)$中
 - 只看产生式右边
 - 自上而下求
-![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230513213945.png)
+![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230513213945.png)
 

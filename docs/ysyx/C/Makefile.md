@@ -1,7 +1,7 @@
 # Makefiles
 ## 基本规则
 > [!note] 依赖图
-> ![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230722083150.png)
+> ![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230722083150.png)
 > 任何的文件被修改了，文件将会被重新编译
 > make会自动选择那些受影响的源文件重新编译，不受影响的源文件则不需要重新编译
 - 需要更新的情况：

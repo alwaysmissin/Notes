@@ -57,8 +57,8 @@ while(1){
 	```
 
 - 未定义行为：
-	- 针对函数的一些未定义行为：![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230823101338.png)
-	- 针对singed integer与unsigned integer的：![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230823101851.png)
+	- 针对函数的一些未定义行为：![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230823101338.png)
+	- 针对singed integer与unsigned integer的：![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230823101851.png)
 	- 则`cpu_exec(-1)`不属于未定义行为
 
 - `main`函数返回后，还会执行`atexit()`函数，来执行一些清理任务，
@@ -71,7 +71,7 @@ while(1){
 - 一点也不能长？
 	- 不可以，因为x86的指令长度不固定，最短的指令可能只有一个字节，如果使用两个字节替换了原指令，可能导致目标断点的下一个指令错误
 - 随意的断点：
-	- 不可以，出现：SEGEMENTATION FAULT![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230829150352.png)
+	- 不可以，出现：SEGEMENTATION FAULT![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230829150352.png)
 - 模拟器与调试器的区别：
 	- 模拟器为程序创造一个适合的运行环境
 	- 调试器控制程序的运行
@@ -96,21 +96,21 @@ while(1){
 	- riscv32中有哪几种指令格式(V1: 2.2 Base Instruction Formats   2.3 Immediate Encoding Variants)：
 		- 6种：
 			- Basic：
-				- R-type![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230829152847.png)
-				- I-type![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230829152855.png)
-				- S-type![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230829153005.png)
-				- U-type![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230829152908.png)
+				- R-type![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230829152847.png)
+				- I-type![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230829152855.png)
+				- S-type![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230829153005.png)
+				- U-type![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230829152908.png)
 			- Further：
-				- B-type![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230829153022.png)
-				- J-type![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230829153031.png)
+				- B-type![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230829153022.png)
+				- J-type![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230829153031.png)
 
 	- `LUI`指令的行为是什么(V1: 2.4 Integer Computational Instructions)
 		- LUI(Load Upper Immediate): build 32-bit constants
-		- U-type：![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230829153628.png)
+		- U-type：![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230829153628.png)
 		- 将目标寄存器的高20位替换为U-immediate，低位补0
 	- `mstatus`寄存器的结构是怎样的（V2：3.1.6 Machine Status Registers）
-		- rv32:![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230829154418.png)
-		- rv64:![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230829154430.png)
+		- rv32:![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230829154418.png)
+		- rv64:![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230829154430.png)
 - shell命令：
 	- 代码行数统计：`find . -name "*.[ch]" | xargs wc -l`
 		- 解释：
@@ -131,5 +131,5 @@ while(1){
 - RTFM：
 	- 如PA1中的监视点所说：`-Wall`和`-Werror`会在编译时候将一些潜在的fault直接转化为failure，在编译时候直接指出代码中的错误
 	- `-Wall`：enables all the warnings about constructions
-		- 所启用的警告标志：![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230829155450.png)
+		- 所启用的警告标志：![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230829155450.png)
 	- `-Werror`：make all warnings into errors, any warning will make compile fail

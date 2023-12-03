@@ -1,5 +1,5 @@
 # ARM微处理器工作状态
-![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230518103124.png)
+![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230518103124.png)
 ## ARM指令集与Thumb指令集
 - ARM指令集：
 	- 指令固定宽度32位，进行4字节对齐
@@ -8,9 +8,9 @@
 	- 为了减少代码量而提出
 	- 仅支持一些通用功能，可理解为ARM指令压缩形式的子集
 	- 必要时仍然需要ARM指令集支持
-![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230518103449.png)
+![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230518103449.png)
 
-- 区别：![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230518105950.png)
+- 区别：![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230518105950.png)
 
 - 切换方法：
 	- 当寄存器`Rm`的状态为`bit[0]=1`时，通过执行`BX Rm`指令，从ARM->Thumb

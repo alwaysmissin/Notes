@@ -30,7 +30,7 @@ stmt.executeUpdate(sql);
 ## JDBC API详解
 ### DriverManager
 - 注册驱动
-	- `registerDriver`方法是用于注册驱动的，`com.mysql.jdbc.Driver`源码：![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221011211054.png)
+	- `registerDriver`方法是用于注册驱动的，`com.mysql.jdbc.Driver`源码：![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20221011211054.png)
 		- 在该静态代码块中已经执行了`DriverManager`中的`registerDriver`方法进行驱动的加载了
 - 获取数据库连接
 	- `Connection getConnection(url, user, password);`

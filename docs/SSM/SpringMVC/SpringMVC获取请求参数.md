@@ -1,12 +1,12 @@
 # SpringMVC获取请求参数
 ## 通过ServletAPI获取
 将HttpServletRequest作为控制器方法的形参
-![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230109101701.png)
+![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230109101701.png)
 
 
 ## 通过控制器方法的形参获取请求参数
 - 只需要在控制器方法的形参位置，**设置与请求参数名字相同的形参**即可
-![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230109101928.png)
+![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230109101928.png)
 > [!注]
 > 若请求所传输的请求参数中有多个同名的请求参数，此时可以在控制器方法的形参中设置字符串数组或者字符串类型的形参接收此请求参数
 > - 若使用字符串数组类型的形参：此参数的数组中包含了每一个数据
@@ -51,6 +51,6 @@
     <url-pattern>/*</url-pattern>  
 </filter-mapping>
 ```
-> 在tomcat设置中，如下![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230109112255.png)
-> ![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230109112321.png)
+> 在tomcat设置中，如下![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230109112255.png)
+> ![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230109112321.png)
 

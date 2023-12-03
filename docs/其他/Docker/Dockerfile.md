@@ -1,7 +1,7 @@
 # Dockerfile
 - Dockerfile是用来构建Docker**镜像**的文本文件
 	- 由一条条构建镜像所需的指令和参数构成的脚本
-![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221113154129.png)
+![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20221113154129.png)
 - 构建三步骤：
 	- 编写Dockerfile文件
 	- `docker build` 命令构建镜像
@@ -26,7 +26,7 @@
 > - Docker镜像：软件的交付品
 > - Docker容器：软件镜像的运行态
 > Dockerfile面向开发，Docker镜像成为交付标准，Docker设计部署与运维
-> ![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221113155025.png)
+> ![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20221113155025.png)
 ### 上下文路径
 - 上下文路径，是指 docker 在构建镜像，有时候想要使用到本机的文件（比如复制），docker build 命令得知这个路径后，会将路径下的所有内容打包。
 ## Dockerfile的常用保留字指令
@@ -45,7 +45,7 @@
 		- `RUN ["可执行文件", "参数1", "参数2", ...]`
 		- `RUN ["./FaceTrack.py", "1", "0"]`
 - `RUN`是在`docker build`时运行
-- 注意：Dockerfile的指令每执行一次就会在docker上新建一层，使用`&&`符号链接多个语句 ，执行之后只会创建一层镜像![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221113155809.png)
+- 注意：Dockerfile的指令每执行一次就会在docker上新建一层，使用`&&`符号链接多个语句 ，执行之后只会创建一层镜像![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20221113155809.png)
 ### EXPOSE
 - 当前容器对外暴露出的端口
 ### WORKDIR
@@ -101,7 +101,7 @@ CMD ["<param1>","<param2>",...]  # 该写法是为 ENTRYPOINT 指令指定的程
 > - RUN是在docker build时运行
 ### ENTRYPOINT
 - 同样是用来指定一个容器启动时要运行的命令
-- 类似`CMD`指令，但是ENTRYPOINT不会被`docker run`后的命令覆盖，而且**这些命令行参数会被当做参数送给ENTRYPOINT指令指定的程序**![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20221113161145.png)
+- 类似`CMD`指令，但是ENTRYPOINT不会被`docker run`后的命令覆盖，而且**这些命令行参数会被当做参数送给ENTRYPOINT指令指定的程序**![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20221113161145.png)
 - 优点：在执行`docker run`的时候可以指定ENTRYPOINT运行所需的参数
 > [!注意]
 > Dockerfile中可以有多个ENTRYPOINT指令，但是只有最后一个生效

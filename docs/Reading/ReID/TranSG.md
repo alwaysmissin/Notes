@@ -12,11 +12,11 @@
 > - gallery set: gallery的意思是画廊, 类似于在一个人脸识别系统中, 每个人都在这个人脸识别系统中注册了自己的脸部图像, 并且与自己的身份相绑定, 形成一个巨大的数据库, 就如同画廊一般展示出来. 
 - 目的: 学习一个能够将骨骼序列映射到一个有效表示的**编码器**
 	- **encoded skeleton sequence representations in the probe set**(查询集合中编码过的骨骼序列表示) -> **representations of the same identity in the gallery set**(参考集中对应身份)
-- overview of network: ![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20231105120527.png)
-	1. 将骨架图像$G_1, G_2, G_3, \cdots$导入到SGT(skeleton graph transformer)中, 获得身体结构之间的关系![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20231105130933.png)
+- overview of network: ![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20231105120527.png)
+	1. 将骨架图像$G_1, G_2, G_3, \cdots$导入到SGT(skeleton graph transformer)中, 获得身体结构之间的关系![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20231105130933.png)
 		- 在网络中部署了多个SGT层
 		- 第$l^{th}$层的输出$h_i^{(l + 1)}$作为第$(l+1)^{th}$层的输入
-	2. 利用属于不同身份（ID）的图形特征的中心点生成图形原型![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20231105131054.png)
+	2. 利用属于不同身份（ID）的图形特征的中心点生成图形原型![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20231105131054.png)
 		- 通过$\mathcal{L}_{GPC}$增强同一个类型的相似性(距离), 减小不同类型之间的相似性(距离)
 	3. 随机屏蔽骨架图和结点轨迹, 将相应的掩蔽图作为上下文, 通过最小化$\mathcal{L}_{STPR}$来促进重建
 	4. 将从以上方法中学到的骨架图表示, 用于人员重识别(ReID)

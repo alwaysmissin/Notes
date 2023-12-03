@@ -10,7 +10,7 @@
 ### 概念
 - 代理模式：二十三中设计模式中的一种，属于结构式模式
 - 作用：提供一个代理类，让我们在对用目标方法的时候，不再是直接对目标方法进行调用，而是通过代理类间接调用。让不属于目标方法核心逻辑的代码从目标方法中剥离出来一一解耦
-	- 调用目标方法时，**先调用代理方法的对象**，减少对目标方法的调用和打扰，同时让附加功能能够几种在一起也有利于统一维护![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230102135445.png)
+	- 调用目标方法时，**先调用代理方法的对象**，减少对目标方法的调用和打扰，同时让附加功能能够几种在一起也有利于统一维护![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230102135445.png)
 - 类比：
 	- 经纪人
 	- 秘书
@@ -85,18 +85,18 @@ public class ProxyFactory {
 ### 概述
 AOP(Aspect Oriented Programming)是一种设计思想，是软件设计领域中的面向切面编程，它是面向对象编程的一种补充和完善，它以**预编译方式**和**运行期动态代理方式**实现在不修改源代码的情况下给程序**动态统一添加额外功能**的一种技术
 ### 相关术语
-- 横切关注点：从每一个方法中抽取出来的同一类**非核心业务**![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230103103619.png)
+- 横切关注点：从每一个方法中抽取出来的同一类**非核心业务**![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230103103619.png)
 - 通知：每一个横切关注点上要做的事情都需要写一个方法来实现，这样的方法叫做通知方法：
 	- 前置通知：在被代理的目标方法前执行
 	- 返回通知：被代理的目标方法成功结束后执行
 	- 异常通知：在被代理的目标方法异常结束后执行
 	- 后置通知：在被代理的目标方法最终结束后执行
-	- 环绕通知：使用`try...catch...finally`结构围绕整个被代理的目标方法，包括上面四种通知对应的位置![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230103103609.png)
-- 切面：封装通知方法的类![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230103103639.png)
+	- 环绕通知：使用`try...catch...finally`结构围绕整个被代理的目标方法，包括上面四种通知对应的位置![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230103103609.png)
+- 切面：封装通知方法的类![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230103103639.png)
 - 目标：被代理的目标对象
 - 代理：想目标对象应用通知之后创建的代理对象
 	- 无须手动创建，AOP帮助创建
-- 连接点：把方法排成一排，每一个横切位置看成x轴方向的，把方法从上到下执行的顺序看做y轴，x轴与y轴交叉的点就是连接点（**抽取横切关注点的位置**）![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230103103818.png)
+- 连接点：把方法排成一排，每一个横切位置看成x轴方向的，把方法从上到下执行的顺序看做y轴，x轴与y轴交叉的点就是连接点（**抽取横切关注点的位置**）![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230103103818.png)
 - 切入点：定位连接点的方式
 	- 每个类的方法中都包含多个连接点，所以连接点是类中客观存在的事物
 	- 如果把连接点看做数据库中记录的数据，那么切入点就是查询记录的SQL语句
@@ -109,7 +109,7 @@ AOP(Aspect Oriented Programming)是一种设计思想，是软件设计领域中
 
 ## 基于注解的AOP
 ### 技术说明
-![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230103105232.png)
+![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230103105232.png)
 - 具体实现层：
 	- 动态代理：使用的是JDK原生的实现方法，需要被代理的目标类必须实现接口
 		- 因为这个技术要求**代理对象和目标对象实现同样的接口**
@@ -130,7 +130,7 @@ AOP(Aspect Oriented Programming)是一种设计思想，是软件设计领域中
 		- `@AfterThrowing`：异常通知，在目标对象的`catch`字句中执行
 		- `@Around`：环绕同志
 			- 环绕通知方法的返回值必须和方法的返回值一致
-- **切入点表达式**：设置在标识通知的注解的value属性中![](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20230105101820.png)
+- **切入点表达式**：设置在标识通知的注解的value属性中![](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20230105101820.png)
 	- `@Before("execution(public int com.cjd.spring.aop.annotation.CalculatorImpl.add(int, int))")`
 	- `@Before("execution(* com.cjd.spring.aop.annotation.*.*(..))")`
 		- 第一个`*`表示任意的访问修饰符和返回值类型

@@ -39,7 +39,7 @@ Child process: abcdefghig
 ```
 - 在进行fork时候, 子进程获得了与父进程完全相同的拷贝, 也包括了打开的文件等PCB中的内容
 但是, 无论如何, 都无法使父进程和子进程输出完全一样的字符串, 这里似乎与前面所说的完全相同的拷贝有所冲突, 但实际上, 正是"**拷贝**"的实现导致了这个结果
-![image.png](https://raw.githubusercontent.com/alwaysmissin/picgo/main/20231023193639.png)
+![image.png](https://jiunian-pic-1310185536.cos.ap-nanjing.myqcloud.com/picgo%2F20231023193639.png)
 每个进程在运行的过程中都会维护一张已经打开文件的**文件描述符(File Descriptor, fd)表**
 
 > [!note] 文件描述符
