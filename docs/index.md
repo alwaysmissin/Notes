@@ -7,10 +7,43 @@
 - [第六期"一生一芯"课程主页 | 官方文档](https://ysyx.oscc.cc/docs/)
 - [南京大学 计算机科学与技术系 计算机系统基础 课程实验 2023 | 官方文档](https://ysyx.oscc.cc/docs/ics-pa/)
 
+### 数字电路
+- **DDCA** (数字电路与计算机体系结构)
+- STA 时序分析: 
+	- [数字集成电路静态时序分析基础\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1if4y1p7Dq/?spm_id_from=333.1007.top_right_bar_window_default_collection.content.click)
+- verilog
+	- 轻松成为设计高手 —— VerilogHDL 实用精解
+
+### 体系结构
+- **计算机体系结构: 量化研究方法**
+- **DDCA** (数字电路与计算机体系结构)
+
+### 计算机系统
+- CSAPP
+- 
+
 ### chisel
 - scala教程: [导言 | Scala 3 — Book | Scala Documentation](https://docs.scala-lang.org/zh-cn/scala3/book/introduction.html)
 - [Chisel/FIRRTL: General Cookbook](https://www.chisel-lang.org/chisel3/docs/cookbooks/cookbook.html)
 - chisel-book-chinese.pdf
+
+---
+## 算法
+
+### 书籍
+- 趣学算法
+- **算法导论**
+- 算法笔记
+- 漫画算法合集
+- [LeetCode Cookbook](https://books.halfrost.com/leetcode/)
+
+### 网站
+- [力扣 (LeetCode) 全球极客挚爱的技术成长平台](https://leetcode.cn/)
+
+### 网课
+- [算法基础课——Acwing](https://www.acwing.com/activity/content/11/)
+- [【MIT6.006最新】算法导论(中英|2020春) Introduction to Algorithms 麻省理工_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1fu41127MN?p=9&share_medium=android&share_plat=android&share_session_id=fede1fc7-4a1b-48fd-9e90-91c2170a1d77&share_source=COPY&share_tag=s_i&timestamp=1652158205&unique_k=GnUmWNh&share_times=1)
+
 ---
 ## 操作系统
 ### 书籍
@@ -149,25 +182,7 @@
 
 [Python教程 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/1016959663602400#0)
 
----
 
-## 算法
-
-### 书籍
-
-- 趣学算法
-
-- **算法导论**
-
-- 算法笔记
-
-- 漫画算法合集
-  
-### 网课
-
-- [算法基础课——Acwing](https://www.acwing.com/activity/content/11/)
-
-- [【MIT6.006最新】算法导论(中英|2020春) Introduction to Algorithms 麻省理工_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1fu41127MN?p=9&share_medium=android&share_plat=android&share_session_id=fede1fc7-4a1b-48fd-9e90-91c2170a1d77&share_source=COPY&share_tag=s_i&timestamp=1652158205&unique_k=GnUmWNh&share_times=1)
 
 ---
 
