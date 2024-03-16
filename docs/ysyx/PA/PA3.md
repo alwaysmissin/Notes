@@ -1,0 +1,28 @@
+# PA3-穿越时空的旅程: 批处理系统
+## 穿越时空的旅程
+- `trap.S` 中的宏展开过程:
+	- `MAP(REGS, PUSH)`
+		- `MAP(c, f)` -> `c(f) `
+	- `REGS(PUSH)`
+		- `REGS(f)` -> `REGS_LO16(f) REGS_HI16(f)`
+	- `REGS_LO16(PUSH) REGS_HI16(PUSH)`
+		- `REG_LO16(f)` -> `f(1) f(3) f(4) ... f(15)`
+		- `REG_HI16(f)` -> `f(16) f(17) ... f(31)`
+	- `PUSH(1) PUSH(3) PUSH(4) PUSH(5) PUSH(6) ... PUSH(30) PUSH(31)`
+		- `PUSH(n)` -> `STORE concat(x, n), (n * XLEN)(sp);`
+			- `STORE` -> `sw`
+			- `concat(x, n)` -> `xn`
+			- `(n * XLEN)(sp)` -> `(n * 4)(sp)`
+	- `sw x1, (4)(sp); sw x3, (3 * 4)(sp); sw x4, (4 * 4)(sp); ...; sw x31, (31 * 4)(sp);`
+- 在 `test yield` 中, 调用 ` ecall ` 后发生了什么: 
+	- `ecall` 调用 `isa_raise_intr(11, s -> pc)` (`ecall` 的行为) 引发中断, 调转到程序中提前设定好的中断处理函数 `__am_asm_trap` (`__am_asm_trap` 的代码位于 `trap.S` 中, 是一段汇编代码)
+	- 在 `__am_asm_trap` 中, 会先保存程序的上下文, 然后调用 `__am_irq_handle`, 在 `__am_irq_handle` 会调用 `cte_init` 时候设定好的中断处理函数, 在 `test yield` 中也就是 `simple_trap`
+- `cte_init` 初始化了什么? 
+	- `asm volatile("csrw mtvec, %0" : : "r"(__am_asm_trap))`: 设定 `mtvec` 这个 csr 寄存器的值为函数 `__am_asm_trap` 的地址, `mtvec` 是异常入口地址, 在发生异常或陷入时候会调用 `mtvec` 所指向的函数进行处理
+	- `user_handle = handler`: 设定异常处理的回调函数, 这个回调函数会在 `__am_asm_trap` 中调用 `__am_irq_handle` 时候被调用以处理异常
+- `__am_asm_trap` 做了什么? 
+	- 分配栈空间, 将上下文信息保存在栈中 (`Context`)
+	- 将被分配到的栈空间的起始地址作为 `__am_asm_handle` 的参数, 并调用 `__am_asm_handle`, 在 `__am_asm_handle` 中将会对上下文信息进行处理
+	- 返回后, 将上下文信息恢复, 释放栈帧, 并且调用 `mret` 返回
+- 为什么要实现正确的上下文信息的存储顺序? 
+	- 在 `trap.S` 中实现的 `__am_asm_trap` 中所实现的入栈顺序是已经固定下来, 并且将分配到的栈空间的起始地址作为 `__am_asm_handle` 的参数 `struct Context` 进行调用, 如果实现了错误的顺序, 在 `__am_asm_handle` 中通过偏移量获得的数据将会出现混乱的情况, 因此需要按照入栈的顺序来实现 `Context` 中成员的顺序

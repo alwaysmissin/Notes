@@ -17,6 +17,7 @@
 ### 体系结构
 - **计算机体系结构: 量化研究方法**
 - **DDCA** (数字电路与计算机体系结构)
+- [【中英】这才是数电和计算机体系结构该看的课程！！苏黎世联邦理工 ETH Zurich：Digital Design and Computer Architect\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1xw411i7sH/?spm_id_from=333.337.search-card.all.click&vd_source=104ff9cc1b7010d178a8d3c0d37be81e)
 
 ### 计算机系统
 - CSAPP
@@ -43,6 +44,12 @@
 ### 网课
 - [算法基础课——Acwing](https://www.acwing.com/activity/content/11/)
 - [【MIT6.006最新】算法导论(中英|2020春) Introduction to Algorithms 麻省理工_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1fu41127MN?p=9&share_medium=android&share_plat=android&share_session_id=fede1fc7-4a1b-48fd-9e90-91c2170a1d77&share_source=COPY&share_tag=s_i&timestamp=1652158205&unique_k=GnUmWNh&share_times=1)
+
+---
+
+## 其他
+- [清华邓博士投稿视频-清华邓博士视频分享-哔哩哔哩视频](https://space.bilibili.com/504069720/video)
+- 
 
 ---
 ## 操作系统
