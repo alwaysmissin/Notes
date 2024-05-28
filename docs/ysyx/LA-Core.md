@@ -19,7 +19,7 @@ kanban-plugin: basic
 
 ## CODE TODO
 
-- [ ] 发射单元
+- [ ] 发射单元[[超标量处理器设计#超标量处理器设计概览]]
 - [ ] I-Cache
 - [ ] D-Cache
 - [ ] TLB
