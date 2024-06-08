@@ -89,7 +89,7 @@
 	- [计算机系统基础（四）：编程与调试实践_南京大学_中国大学MOOC(慕课)](https://www.icourse163.org/course/NJU-1449521162?from=searchPage&outVendor=zw_mooc_pcssjg_)
 
 
-## [Java](./Java/index.md)
+## [Java](Language/Java/index.md)
 
 ### 书籍
 
