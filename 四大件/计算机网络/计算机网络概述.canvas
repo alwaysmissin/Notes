@@ -1,0 +1,24 @@
+{
+	"nodes":[
+		{"id":"f212645b8ddb87c5","type":"text","text":"# 计算机网络","x":-440,"y":-120,"width":202,"height":60},
+		{"id":"dad428f77db52f0f","type":"text","text":"## TCP/IP网络分层模型","x":-147,"y":228,"width":250,"height":60},
+		{"id":"a0ea8f4c6681adb7","type":"text","text":"## [[网络层]]\n- 网际协议IP\n- 静态路由配置\n- 因特网的路由协议选择\n- 网际控制报文协议\n- 虚拟专用网和网络地址转换\n- IP多播技术\n- 移动IP技术\n- 下一代网际协议IPv6\n- 软件定义网络","x":300,"y":-160,"width":280,"height":418},
+		{"id":"bb07b3f45d80b2b7","type":"text","text":"## [[运输层]]\n- UDP与TCP\n- 传输控制协议","x":300,"y":328,"width":280,"height":132},
+		{"id":"bdcbbb45b467ca5c","type":"text","text":"## [[计算机网络体系结构]]","x":-147,"y":-120,"width":287,"height":60},
+		{"id":"cb19e123e0f3cd8b","type":"text","text":"## [[计算机网络与因特网]]","x":-155,"y":-480,"width":303,"height":60},
+		{"id":"bc564acc1a9ad1bf","type":"text","text":"### [[物理层]]\n- 物理层下的传输媒体\n- 传输方式\n- 编码与调制\n- 信道的极限容量\n- 信道复用技术","x":300,"y":-880,"width":280,"height":267},
+		{"id":"e3cfbf56018719a0","type":"text","text":"## [[数据链路层]]\n- 数据链路层存在的问题\n- 点对点协议\n- 共享式以太网\n- 交换式以太网\n- 以太网的MAC帧格式\n- 虚拟局域网\n- 以太网的发展\n- 802.11无线局域网","x":300,"y":-560,"width":280,"height":368},
+		{"id":"6159112b735122e6","type":"text","text":"## [[应用层]]\n- C/S与P2P\n- 动态主机配置协议\n- 域名系统\n- 文件传输协议\n- 电子邮件\n- 万维网","x":300,"y":520,"width":280,"height":280},
+		{"id":"adbb174c75790282","x":-440,"y":401,"width":333,"height":259,"type":"text","text":"## 作业\n- [[概论作业]]\n- [[物理层作业]]\n- [[数据链路层作业]]\n- [[网络层作业]]\n- [[运输层作业]]"}
+	],
+	"edges":[
+		{"id":"c7c67e853a27884f","fromNode":"f212645b8ddb87c5","fromSide":"right","toNode":"dad428f77db52f0f","toSide":"left"},
+		{"id":"93dde7569c4e4c4a","fromNode":"dad428f77db52f0f","fromSide":"right","toNode":"6159112b735122e6","toSide":"left"},
+		{"id":"fdbd894955c869ea","fromNode":"dad428f77db52f0f","fromSide":"right","toNode":"bb07b3f45d80b2b7","toSide":"left"},
+		{"id":"d51a903557dcb884","fromNode":"dad428f77db52f0f","fromSide":"right","toNode":"a0ea8f4c6681adb7","toSide":"left"},
+		{"id":"943566684e59d08f","fromNode":"dad428f77db52f0f","fromSide":"right","toNode":"e3cfbf56018719a0","toSide":"left"},
+		{"id":"fee3933929192826","fromNode":"dad428f77db52f0f","fromSide":"right","toNode":"bc564acc1a9ad1bf","toSide":"left"},
+		{"id":"de19f7527ab1ce65","fromNode":"f212645b8ddb87c5","fromSide":"right","toNode":"bdcbbb45b467ca5c","toSide":"left"},
+		{"id":"73e82f6091233cba","fromNode":"f212645b8ddb87c5","fromSide":"right","toNode":"cb19e123e0f3cd8b","toSide":"left"}
+	]
+}
