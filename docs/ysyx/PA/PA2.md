@@ -41,7 +41,7 @@ echo "" add-longlong
 cat .result
 rm .result
 ```
-首先是利用简单的管道方式生成一个新的 Makefile 文件, 其中的内容为: 
+首先是利用简单的重定向方式生成一个新的 Makefile 文件, 其中的内容为: 
 ```Makefile
 NAME = add-longlong
 SRCS = tests/add-longlong.c
